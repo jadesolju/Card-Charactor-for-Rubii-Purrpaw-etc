@@ -1,0 +1,352 @@
+[
+  {
+    "category": "Minimal & Modern",
+    "id": 1,
+    "name": "Editorial Minimalism",
+    "colors": ["#F0EFED", "#E4DECD", "#82716E", "#252523"],
+    "role": "Soft White, Stone Grey, Muted Beige, Espresso"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 2,
+    "name": "Nordic Soft Frost",
+    "colors": ["#F3F4F6", "#E5E7EB", "#9CA3AF", "#1F2937"],
+    "role": "Tailwind-inspired clean look"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 3,
+    "name": "Quiet Luxury",
+    "colors": ["#F7F1E3", "#DCC7AA", "#6B7A8F", "#111827"],
+    "role": "Premium luxury lifestyle and architecture"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 4,
+    "name": "Warm Sand & Slate",
+    "colors": ["#FCEED1", "#E1B382", "#4F5F76", "#12343B"],
+    "role": "Cozy portfolio or agency website"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 5,
+    "name": "Intellectual Vibe",
+    "colors": ["#F5F5FA", "#B6B7D5", "#5A5E9A", "#23263B"],
+    "role": "Clean, academic, and professional"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 6,
+    "name": "Goldifox Contrast",
+    "colors": ["#FFFFFF", "#DFD8C8", "#A39274", "#1A1A1A"],
+    "role": "Pure White, Soft Wheat, Golden Wheat, Dark Gray"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 7,
+    "name": "Sage Minimalist",
+    "colors": ["#F9F8F3", "#A5A78F", "#4C4643", "#000000"],
+    "role": "Wellness, interior design, lifestyle"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 8,
+    "name": "Concrete & Coffee",
+    "colors": ["#F2F2F2", "#CFCFCF", "#8C8C8C", "#212121"],
+    "role": "High-contrast industrial minimalism"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 9,
+    "name": "French Laundry Blue",
+    "colors": ["#FDFBF7", "#C9AF98", "#3A4660", "#1D2731"],
+    "role": "Warm beige paired with elegant navy blue"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 10,
+    "name": "Creamy Latte",
+    "colors": ["#FAF8F5", "#E6DFD3", "#B3A394", "#4A3E3D"],
+    "role": "Earthy coffee-shop vibes"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 11,
+    "name": "Electric Pulse",
+    "colors": ["#635BFF", "#00E5E5", "#111827", "#FFFFFF"],
+    "role": "Stripe-Blue vibe for fintech and AI"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 12,
+    "name": "Tailwind Horizon",
+    "colors": ["#EFF6FF", "#3B82F6", "#1D4ED8", "#1E3A8A"],
+    "role": "Standard Modern Corporate SaaS"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 13,
+    "name": "Algolia Clean Blue",
+    "colors": ["#F2F3FF", "#7C8AFF", "#5468FF", "#141D61"],
+    "role": "Developer documentation & platform UI"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 14,
+    "name": "Cyan High-Velocity",
+    "colors": ["#E8FAFF", "#2CC8F7", "#009BCB", "#00526C"],
+    "role": "Hosting providers and Cloud systems"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 15,
+    "name": "Banking Mint",
+    "colors": ["#EBF6F5", "#5CBDB9", "#2F4F4F", "#FBE3E8"],
+    "role": "Safe finance branding with a splash of pink"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 16,
+    "name": "Indigo Authority",
+    "colors": ["#EEF2FF", "#818CF8", "#4F46E5", "#312E81"],
+    "role": "Dashboard and analytics applications"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 17,
+    "name": "Finastra Amethyst",
+    "colors": ["#D9D3F5", "#8F7BE1", "#694ED6", "#493694"],
+    "role": "Web3, Ethereum-vibe, security systems"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 18,
+    "name": "Double Trust Blue",
+    "colors": ["#1561AD", "#1C77AC", "#1DBAB4", "#FC5226"],
+    "role": "Insurance & Law firm tech platforms"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 19,
+    "name": "Flexport Ocean",
+    "colors": ["#F7F9FD", "#67768D", "#326089", "#0F2943"],
+    "role": "Modern logistics and supply chain tech"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 20,
+    "name": "Precision Teal",
+    "colors": ["#E6FCF3", "#5FEB9E", "#06B66C", "#005E36"],
+    "role": "Medical networks, healthtech, and green energy"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 21,
+    "name": "Carbon Mint",
+    "colors": ["#2D3436", "#00FFC2", "#0D1117", "#FFFFFF"],
+    "role": "Anthracite dashboard with neon mint glow"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 22,
+    "name": "Synth Wave",
+    "colors": ["#080808", "#FF2079", "#431C5D", "#E05915"],
+    "role": "Absolute black, loud pink and toxic orange"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 23,
+    "name": "GitHub Primer Dark",
+    "colors": ["#0D1117", "#161B22", "#58A6FF", "#C9D1D9"],
+    "role": "Official GitHub Dark developer layout"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 24,
+    "name": "Lava Core",
+    "colors": ["#1E293B", "#4B6584", "#FC5C65", "#FF8928"],
+    "role": "Urgency, e-sports, performance tracking"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 25,
+    "name": "Cyber Rose",
+    "colors": ["#1F1E33", "#5758BB", "#EF5777", "#F9A8D4"],
+    "role": "Immersive consumer tech and streaming"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 26,
+    "name": "Deep Space Blue",
+    "colors": ["#0B132B", "#1C2541", "#3A506B", "#5BC0BE"],
+    "role": "Popular deep space sci-fi theme"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 27,
+    "name": "Acid Neon Forest",
+    "colors": ["#1A4D2E", "#DFFF00", "#111827", "#59CE8F"],
+    "role": "Eco-cyberpunk, provocative web design"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 28,
+    "name": "Futuristic Lightbrite",
+    "colors": ["#161748", "#39A0CA", "#F95D9B", "#FFFFFF"],
+    "role": "Deep navy base with neon pink highlights"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 29,
+    "name": "Nordic Twilight",
+    "colors": ["#111C24", "#22333B", "#C6AC8F", "#EAE0D5"],
+    "role": "Muted dark luxury portfolio"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 30,
+    "name": "Tokyo Vaporwave",
+    "colors": ["#1A002C", "#00FFCC", "#FF007F", "#7B2CBF"],
+    "role": "Game landing pages and creative agency"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 31,
+    "name": "Digital Peach",
+    "colors": ["#FF7E5F", "#FEB9E2", "#3B3B98", "#F2F3FF"],
+    "role": "Human-centric apps and parenting tech"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 32,
+    "name": "90s Ice Cold Purple",
+    "colors": ["#A0D2EB", "#E5EAF5", "#D0BDF4", "#8458B3"],
+    "role": "Nostalgic aesthetic or clothing shop"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 33,
+    "name": "Apricot Citrus",
+    "colors": ["#F7882F", "#F7C331", "#DCC7AA", "#6B7A8F"],
+    "role": "Bakery, cafe, and energetic branding"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 34,
+    "name": "Easter Egg Sandwich",
+    "colors": ["#8BF0BA", "#94F0F1", "#F2B1D8", "#FFDC6A"],
+    "role": "Cute illustrations and youth branding"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 35,
+    "name": "Misty Mountain Pink",
+    "colors": ["#F9C5BD", "#7C677F", "#96858F", "#FFF5F5"],
+    "role": "Sophisticated cosmetic and skin-care brands"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 36,
+    "name": "Floral & Citrus Joy",
+    "colors": ["#F0EFED", "#CC6482", "#FABB02", "#3C0227"],
+    "role": "Playful optimism grounded with deep plum"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 37,
+    "name": "Soft Beach Day",
+    "colors": ["#51E2F5", "#9DF9EF", "#EDF756", "#FFAAAB"],
+    "role": "Highly bright, refreshing summer vibes"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 38,
+    "name": "Sakura Garden",
+    "colors": ["#FFB7B2", "#FFDAC1", "#E2F0CB", "#B5EAD7"],
+    "role": "Traditional cute pastel blocks"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 39,
+    "name": "Candy Shop Pop",
+    "colors": ["#F3A683", "#F19066", "#786FA6", "#574B90"],
+    "role": "Fun interface, badges, and games"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 40,
+    "name": "Lilac Cream",
+    "colors": ["#E8D7F1", "#D3BCCC", "#A3A3B1", "#6C6A84"],
+    "role": "Calm lavender aesthetic"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 41,
+    "name": "Deep Cherry & Plum",
+    "colors": ["#F0EFED", "#651714", "#3C0227", "#2A0D08"],
+    "role": "Luxury, bold editorial statement design"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 42,
+    "name": "Mediterranean Tan",
+    "colors": ["#F0EFED", "#7091A8", "#D6CFB5", "#C19066"],
+    "role": "Old money, travel, and lifestyle blogs"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 43,
+    "name": "Global Charity",
+    "colors": ["#F43A09", "#FFB766", "#C2EDDA", "#68D388"],
+    "role": "Non-profit and environmental campaign sites"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 44,
+    "name": "Deep Forest Green",
+    "colors": ["#0A2F1D", "#1F5F3E", "#F4EAE1", "#D4A373"],
+    "role": "Organic products, modern farm-to-table"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 45,
+    "name": "Bright Power Combo",
+    "colors": ["#FF1D58", "#F75990", "#00DDFF", "#0049B7"],
+    "role": "High impact marketing & conversion landing page"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 46,
+    "name": "Terrazzo Earth",
+    "colors": ["#EAC435", "#345995", "#03CEA4", "#FB4D3D"],
+    "role": "Creative agency or modern art museum"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 47,
+    "name": "Sunset Orange",
+    "colors": ["#FF5E62", "#FF9966", "#2D545E", "#12343B"],
+    "role": "Vibrant gradient base with deep contrast slate"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 48,
+    "name": "Mustard & Indigo Retro",
+    "colors": ["#E8A87C", "#C38D9E", "#E27D60", "#41B3A3"],
+    "role": "1970s warm retro illustration vibe"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 49,
+    "name": "Emerald & Gold",
+    "colors": ["#064E3B", "#F59E0B", "#F3F4F6", "#111827"],
+    "role": "High-end boutique, luxury jewelry"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 50,
+    "name": "Vintage Matcha Café",
+    "colors": ["#FFF5D7", "#A7F3D0", "#065F46", "#781A44"],
+    "role": "Aesthetic match-cafe, trendy editorial"
+  }
+]

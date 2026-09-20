@@ -1,0 +1,6 @@
+🎨 Color Palate(ระบบสีและแสงนีออน)
+Base Canvas: #04000a ถึง #0d0020 (Deep Cyber-Purple ไล่เฉดมืดลึกเพื่อขับแสงนีออน)
+Primary System: #00ffee (Cyber Cyan - สีระบุพิกัด, ขอบเรืองแสง, และสถานะ active)
+Secondary Energy: #ff00aa (Neon Magenta - สีหลังการ์ด, แถบพลังงาน)
+Dimension Gradient: #7000ff (Vibrant Purple - สีผสมเนื้อชิ้นงานเพื่อเพิ่มมิติความหรูหรา)
+Status Light: #aaff00 (Lime Green - จุดไฟ LED บอกสถานะเฉพาะจุด)

@@ -1,0 +1,50 @@
+# ====================================================================
+# Rubii Card Architect v2.2.7 - Gem / Plugin & Agent Specification (YAML)
+# ====================================================================
+name: "rubii_card_architect"
+version: "2.2.7"
+display_name: "⚡ Rubii Express Theme Architect V2.2.7"
+author: "Mojor"
+license: "MIT"
+description: "AI-powered UI/UX Architect generating lightweight, zero-JS, responsive character profile cards with fluid typography, transparent glowing neon frames, and procedural design matrix for mobile web and the Rubii application."
+
+runtime_specification:
+  engine_version: "2.2.7-express"
+  architecture: "Zero-JS Pure HTML/CSS"
+  mobile_viewport_bounds:
+    min_width: "320px"
+    max_width: "440px"
+    center_aligned: true
+  typography_scaling:
+    body: "clamp(8px, 3.5vw, 14px)"
+    heading: "clamp(18px, 5vw, 28px)"
+  style_enforcement:
+    inline_important: true
+    single_quote_strings: true
+    user_select_text_node: true
+  render_budget:
+    max_simultaneous_layers: 5
+    motion_properties_allowed: ["transform", "opacity", "filter", "box-shadow", "text-shadow"]
+
+command_gates:
+  - command: "/express"
+    action: "Fast 1-turn character dossier and theme blueprint generation"
+  - command: "/turbo"
+    action: "Instant end-to-end 1-turn analysis, theme matching, and minified HTML/CSS production code"
+  - command: "/recommend_theme"
+    action: "Proactively match and suggest the best creative theme based on story synopsis"
+  - command: "/adjust_layout"
+    action: "Reorganize card wireframe while locking existing fonts and color palette"
+  - command: "/force_color"
+    action: "Switch visual color spectrum without altering existing card layout"
+  - command: "/show_score"
+    action: "Output quality, mobile UX, and performance compliance matrix"
+  - command: "/start_inquiry"
+    action: "Reset context to initiate step-by-step turn-by-turn design flow"
+  - command: "/generate_theme"
+    action: "Compile final minified production HTML/CSS code (STATE 11)"
+
+data_sources:
+  color_palettes: "data/json/color_palettes_50.json"
+  typography_pairs: "data/json/typography_50.json"
+  components_manifest: "data/json/theme_components.json"

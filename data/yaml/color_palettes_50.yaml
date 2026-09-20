@@ -1,0 +1,303 @@
+# ====================================================================
+# Rubii Card Architect - 50 Master Color Palettes (YAML)
+# ====================================================================
+palettes:
+  - id: 1
+    category: "Minimal & Modern"
+    name: "Editorial Minimalism"
+    colors: ["#F0EFED", "#E4DECD", "#82716E", "#252523"]
+    role: "Soft White, Stone Grey, Muted Beige, Espresso"
+
+  - id: 2
+    category: "Minimal & Modern"
+    name: "Nordic Soft Frost"
+    colors: ["#F3F4F6", "#E5E7EB", "#9CA3AF", "#1F2937"]
+    role: "Tailwind-inspired clean look"
+
+  - id: 3
+    category: "Minimal & Modern"
+    name: "Quiet Luxury"
+    colors: ["#F7F1E3", "#DCC7AA", "#6B7A8F", "#111827"]
+    role: "Premium luxury lifestyle and architecture"
+
+  - id: 4
+    category: "Minimal & Modern"
+    name: "Warm Sand & Slate"
+    colors: ["#FCEED1", "#E1B382", "#4F5F76", "#12343B"]
+    role: "Cozy portfolio or agency website"
+
+  - id: 5
+    category: "Minimal & Modern"
+    name: "Intellectual Vibe"
+    colors: ["#F5F5FA", "#B6B7D5", "#5A5E9A", "#23263B"]
+    role: "Clean, academic, and professional"
+
+  - id: 6
+    category: "Minimal & Modern"
+    name: "Goldifox Contrast"
+    colors: ["#FFFFFF", "#DFD8C8", "#A39274", "#1A1A1A"]
+    role: "Pure White, Soft Wheat, Golden Wheat, Dark Gray"
+
+  - id: 7
+    category: "Minimal & Modern"
+    name: "Sage Minimalist"
+    colors: ["#F9F8F3", "#A5A78F", "#4C4643", "#000000"]
+    role: "Wellness, interior design, lifestyle"
+
+  - id: 8
+    category: "Minimal & Modern"
+    name: "Concrete & Coffee"
+    colors: ["#F2F2F2", "#CFCFCF", "#8C8C8C", "#212121"]
+    role: "High-contrast industrial minimalism"
+
+  - id: 9
+    category: "Minimal & Modern"
+    name: "French Laundry Blue"
+    colors: ["#FDFBF7", "#C9AF98", "#3A4660", "#1D2731"]
+    role: "Warm beige paired with elegant navy blue"
+
+  - id: 10
+    category: "Minimal & Modern"
+    name: "Creamy Latte"
+    colors: ["#FAF8F5", "#E6DFD3", "#B3A394", "#4A3E3D"]
+    role: "Earthy coffee-shop vibes"
+
+  - id: 11
+    category: "Tech, SaaS & Corporate"
+    name: "Electric Pulse"
+    colors: ["#635BFF", "#00E5E5", "#111827", "#FFFFFF"]
+    role: "Stripe-Blue vibe for fintech and AI"
+
+  - id: 12
+    category: "Tech, SaaS & Corporate"
+    name: "Tailwind Horizon"
+    colors: ["#EFF6FF", "#3B82F6", "#1D4ED8", "#1E3A8A"]
+    role: "Standard Modern Corporate SaaS"
+
+  - id: 13
+    category: "Tech, SaaS & Corporate"
+    name: "Algolia Clean Blue"
+    colors: ["#F2F3FF", "#7C8AFF", "#5468FF", "#141D61"]
+    role: "Developer documentation & platform UI"
+
+  - id: 14
+    category: "Tech, SaaS & Corporate"
+    name: "Cyan High-Velocity"
+    colors: ["#E8FAFF", "#2CC8F7", "#009BCB", "#00526C"]
+    role: "Hosting providers and Cloud systems"
+
+  - id: 15
+    category: "Tech, SaaS & Corporate"
+    name: "Banking Mint"
+    colors: ["#EBF6F5", "#5CBDB9", "#2F4F4F", "#FBE3E8"]
+    role: "Safe finance branding with a splash of pink"
+
+  - id: 16
+    category: "Tech, SaaS & Corporate"
+    name: "Indigo Authority"
+    colors: ["#EEF2FF", "#818CF8", "#4F46E5", "#312E81"]
+    role: "Dashboard and analytics applications"
+
+  - id: 17
+    category: "Tech, SaaS & Corporate"
+    name: "Finastra Amethyst"
+    colors: ["#D9D3F5", "#8F7BE1", "#694ED6", "#493694"]
+    role: "Web3, Ethereum-vibe, security systems"
+
+  - id: 18
+    category: "Tech, SaaS & Corporate"
+    name: "Double Trust Blue"
+    colors: ["#1561AD", "#1C77AC", "#1DBAB4", "#FC5226"]
+    role: "Insurance & Law firm tech platforms"
+
+  - id: 19
+    category: "Tech, SaaS & Corporate"
+    name: "Flexport Ocean"
+    colors: ["#F7F9FD", "#67768D", "#326089", "#0F2943"]
+    role: "Modern logistics and supply chain tech"
+
+  - id: 20
+    category: "Tech, SaaS & Corporate"
+    name: "Precision Teal"
+    colors: ["#E6FCF3", "#5FEB9E", "#06B66C", "#005E36"]
+    role: "Medical networks, healthtech, and green energy"
+
+  - id: 21
+    category: "Dark Mode & Cyberpunk"
+    name: "Carbon Mint"
+    colors: ["#2D3436", "#00FFC2", "#0D1117", "#FFFFFF"]
+    role: "Anthracite dashboard with neon mint glow"
+
+  - id: 22
+    category: "Dark Mode & Cyberpunk"
+    name: "Synth Wave"
+    colors: ["#080808", "#FF2079", "#431C5D", "#E05915"]
+    role: "Absolute black, loud pink and toxic orange"
+
+  - id: 23
+    category: "Dark Mode & Cyberpunk"
+    name: "GitHub Primer Dark"
+    colors: ["#0D1117", "#161B22", "#58A6FF", "#C9D1D9"]
+    role: "Official GitHub Dark developer layout"
+
+  - id: 24
+    category: "Dark Mode & Cyberpunk"
+    name: "Lava Core"
+    colors: ["#1E293B", "#4B6584", "#FC5C65", "#FF8928"]
+    role: "Urgency, e-sports, performance tracking"
+
+  - id: 25
+    category: "Dark Mode & Cyberpunk"
+    name: "Cyber Rose"
+    colors: ["#1F1E33", "#5758BB", "#EF5777", "#F9A8D4"]
+    role: "Immersive consumer tech and streaming"
+
+  - id: 26
+    category: "Dark Mode & Cyberpunk"
+    name: "Deep Space Blue"
+    colors: ["#0B132B", "#1C2541", "#3A506B", "#5BC0BE"]
+    role: "Popular deep space sci-fi theme"
+
+  - id: 27
+    category: "Dark Mode & Cyberpunk"
+    name: "Acid Neon Forest"
+    colors: ["#1A4D2E", "#DFFF00", "#111827", "#59CE8F"]
+    role: "Eco-cyberpunk, provocative web design"
+
+  - id: 28
+    category: "Dark Mode & Cyberpunk"
+    name: "Futuristic Lightbrite"
+    colors: ["#161748", "#39A0CA", "#F95D9B", "#FFFFFF"]
+    role: "Deep navy base with neon pink highlights"
+
+  - id: 29
+    category: "Dark Mode & Cyberpunk"
+    name: "Nordic Twilight"
+    colors: ["#111C24", "#22333B", "#C6AC8F", "#EAE0D5"]
+    role: "Muted dark luxury portfolio"
+
+  - id: 30
+    category: "Dark Mode & Cyberpunk"
+    name: "Tokyo Vaporwave"
+    colors: ["#1A002C", "#00FFCC", "#FF007F", "#7B2CBF"]
+    role: "Game landing pages and creative agency"
+
+  - id: 31
+    category: "Pastel & Sweet"
+    name: "Digital Peach"
+    colors: ["#FF7E5F", "#FEB9E2", "#3B3B98", "#F2F3FF"]
+    role: "Human-centric apps and parenting tech"
+
+  - id: 32
+    category: "Pastel & Sweet"
+    name: "90s Ice Cold Purple"
+    colors: ["#A0D2EB", "#E5EAF5", "#D0BDF4", "#8458B3"]
+    role: "Nostalgic aesthetic or clothing shop"
+
+  - id: 33
+    category: "Pastel & Sweet"
+    name: "Apricot Citrus"
+    colors: ["#F7882F", "#F7C331", "#DCC7AA", "#6B7A8F"]
+    role: "Bakery, cafe, and energetic branding"
+
+  - id: 34
+    category: "Pastel & Sweet"
+    name: "Easter Egg Sandwich"
+    colors: ["#8BF0BA", "#94F0F1", "#F2B1D8", "#FFDC6A"]
+    role: "Cute illustrations and youth branding"
+
+  - id: 35
+    category: "Pastel & Sweet"
+    name: "Misty Mountain Pink"
+    colors: ["#F9C5BD", "#7C677F", "#96858F", "#FFF5F5"]
+    role: "Sophisticated cosmetic and skin-care brands"
+
+  - id: 36
+    category: "Pastel & Sweet"
+    name: "Floral & Citrus Joy"
+    colors: ["#F0EFED", "#CC6482", "#FABB02", "#3C0227"]
+    role: "Playful optimism grounded with deep plum"
+
+  - id: 37
+    category: "Pastel & Sweet"
+    name: "Soft Beach Day"
+    colors: ["#51E2F5", "#9DF9EF", "#EDF756", "#FFAAAB"]
+    role: "Highly bright, refreshing summer vibes"
+
+  - id: 38
+    category: "Pastel & Sweet"
+    name: "Sakura Garden"
+    colors: ["#FFB7B2", "#FFDAC1", "#E2F0CB", "#B5EAD7"]
+    role: "Traditional cute pastel blocks"
+
+  - id: 39
+    category: "Pastel & Sweet"
+    name: "Candy Shop Pop"
+    colors: ["#F3A683", "#F19066", "#786FA6", "#574B90"]
+    role: "Fun interface, badges, and games"
+
+  - id: 40
+    category: "Pastel & Sweet"
+    name: "Lilac Cream"
+    colors: ["#E8D7F1", "#D3BCCC", "#A3A3B1", "#6C6A84"]
+    role: "Calm lavender aesthetic"
+
+  - id: 41
+    category: "Bold, Earthy & Retro"
+    name: "Deep Cherry & Plum"
+    colors: ["#F0EFED", "#651714", "#3C0227", "#2A0D08"]
+    role: "Luxury, bold editorial statement design"
+
+  - id: 42
+    category: "Bold, Earthy & Retro"
+    name: "Mediterranean Tan"
+    colors: ["#F0EFED", "#7091A8", "#D6CFB5", "#C19066"]
+    role: "Old money, travel, and lifestyle blogs"
+
+  - id: 43
+    category: "Bold, Earthy & Retro"
+    name: "Global Charity"
+    colors: ["#F43A09", "#FFB766", "#C2EDDA", "#68D388"]
+    role: "Non-profit and environmental campaign sites"
+
+  - id: 44
+    category: "Bold, Earthy & Retro"
+    name: "Deep Forest Green"
+    colors: ["#0A2F1D", "#1F5F3E", "#F4EAE1", "#D4A373"]
+    role: "Organic products, modern farm-to-table"
+
+  - id: 45
+    category: "Bold, Earthy & Retro"
+    name: "Bright Power Combo"
+    colors: ["#FF1D58", "#F75990", "#00DDFF", "#0049B7"]
+    role: "High impact marketing & conversion landing page"
+
+  - id: 46
+    category: "Bold, Earthy & Retro"
+    name: "Terrazzo Earth"
+    colors: ["#EAC435", "#345995", "#03CEA4", "#FB4D3D"]
+    role: "Creative agency or modern art museum"
+
+  - id: 47
+    category: "Bold, Earthy & Retro"
+    name: "Sunset Orange"
+    colors: ["#FF5E62", "#FF9966", "#2D545E", "#12343B"]
+    role: "Vibrant gradient base with deep contrast slate"
+
+  - id: 48
+    category: "Bold, Earthy & Retro"
+    name: "Mustard & Indigo Retro"
+    colors: ["#E8A87C", "#C38D9E", "#E27D60", "#41B3A3"]
+    role: "1970s warm retro illustration vibe"
+
+  - id: 49
+    category: "Bold, Earthy & Retro"
+    name: "Emerald & Gold"
+    colors: ["#064E3B", "#F59E0B", "#F3F4F6", "#111827"]
+    role: "High-end boutique, luxury jewelry"
+
+  - id: 50
+    category: "Bold, Earthy & Retro"
+    name: "Vintage Matcha Café"
+    colors: ["#FFF5D7", "#A7F3D0", "#065F46", "#781A44"]
+    role: "Aesthetic match-cafe, trendy editorial"

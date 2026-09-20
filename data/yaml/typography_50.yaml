@@ -1,0 +1,353 @@
+# ====================================================================
+# Rubii Card Architect - 50 Master Typography Archetypes (YAML)
+# ====================================================================
+typography_pairs:
+  - id: 1
+    name: "Eternal Library"
+    vibe: "Dark Academia"
+    heading: "Chonburi / EB Garamond"
+    body: "Anuphan / Lora"
+    fontFamily: "'Chonburi', 'EB Garamond', serif"
+
+  - id: 2
+    name: "Gothic Script"
+    vibe: "Gothic Royalty"
+    heading: "Pridi (Bold) / Almendra Display"
+    body: "Sarabun / Cormorant Garamond"
+    fontFamily: "'Almendra Display', serif"
+
+  - id: 3
+    name: "Vampire Dynasty"
+    vibe: "Crimson Noir"
+    heading: "Thasadith (Bold) / Cinzel"
+    body: "Bai Jamjuree / Fauna One"
+    fontFamily: "'Cinzel', serif"
+
+  - id: 4
+    name: "Witchcraft Scroll"
+    vibe: "Occult"
+    heading: "Srisakdi / Goudy Bookletter 1911"
+    body: "Sarabun / Sorts Mill Goudy"
+    fontFamily: "'Srisakdi', serif"
+
+  - id: 5
+    name: "Alchemist Ink"
+    vibe: "Ancient Lab"
+    heading: "Niramit (Bold) / Italiana"
+    body: "Anuphan / Cardo"
+    fontFamily: "'Italiana', serif"
+
+  - id: 6
+    name: "Terminal Glitch"
+    vibe: "Analog Horror"
+    heading: "Mitr (Bold) / Rubik Glitch"
+    body: "IBM Plex Sans Thai / JetBrains"
+    fontFamily: "'Rubik Glitch', monospace"
+
+  - id: 7
+    name: "VHS Distortion"
+    vibe: "Dystopian"
+    heading: "Chakra Petch / VT323"
+    body: "Kanit / Share Tech Mono"
+    fontFamily: "'VT323', monospace"
+
+  - id: 8
+    name: "CCTV Incident"
+    vibe: "Found Footage"
+    heading: "Pridi / Syne"
+    body: "Sarabun / Space Mono"
+    fontFamily: "'Syne', sans-serif"
+
+  - id: 9
+    name: "Classified File"
+    vibe: "Top Secret"
+    heading: "IBM Plex Looped / Anonymous Pro"
+    body: "IBM Plex Sans / Courier Prime"
+    fontFamily: "'Anonymous Pro', monospace"
+
+  - id: 10
+    name: "Mainframe Core"
+    vibe: "AI Overlord"
+    heading: "Taviraj / Major Mono Display"
+    body: "Kanit / Inconsolata"
+    fontFamily: "'Major Mono Display', monospace"
+
+  - id: 11
+    name: "Vogue Aesthetic"
+    vibe: "Silent Luxury"
+    heading: "Prompt (Light) / Tenor Sans"
+    body: "Inter / Montserrat (Light)"
+    fontFamily: "'Tenor Sans', sans-serif"
+
+  - id: 12
+    name: "Milano Runway"
+    vibe: "High-Fashion"
+    heading: "Chonburi / Bodoni Moda"
+    body: "Anuphan / Marcellus"
+    fontFamily: "'Bodoni Moda', serif"
+
+  - id: 13
+    name: "Abstract Gallery"
+    vibe: "Avant-Garde"
+    heading: "Niramit (Light) / Prata"
+    body: "Prompt / Julius Sans One"
+    fontFamily: "'Prata', serif"
+
+  - id: 14
+    name: "Quiet Wealth"
+    vibe: "Old Money"
+    heading: "Sukhumvit Set / Cormorant"
+    body: "Inter / Source Sans Pro"
+    fontFamily: "'Cormorant', serif"
+
+  - id: 15
+    name: "Monochrome Velvet"
+    vibe: "Modern Noir"
+    heading: "Taviraj / Playfair Display"
+    body: "Sarabun / Didact Gothic"
+    fontFamily: "'Playfair Display', serif"
+
+  - id: 16
+    name: "Wildflower Meadow"
+    vibe: "Cottagecore"
+    heading: "KoHo (Bold) / Alice"
+    body: "Bai Jamjuree / Fauna One"
+    fontFamily: "'Alice', serif"
+
+  - id: 17
+    name: "Herbalist Notebook"
+    vibe: "Botanical"
+    heading: "Charm / Kalam"
+    body: "Sarabun / Nanum Gothic"
+    fontFamily: "'Kalam', handwriting"
+
+  - id: 18
+    name: "Wooden Cabin"
+    vibe: "Warm Organic"
+    heading: "Mitr / Gimlet Display"
+    body: "Anuphan / Quattrocento"
+    fontFamily: "'Gimlet Display', serif"
+
+  - id: 19
+    name: "Earthy Clay"
+    vibe: "Vintage Craft"
+    heading: "Pridi / Neuton"
+    body: "Sarabun / Andika"
+    fontFamily: "'Neuton', serif"
+
+  - id: 20
+    name: "Forest Moss"
+    vibe: "Deep Woods"
+    heading: "K2D / Philosopher"
+    body: "Bai Jamjuree / Alegreya Sans"
+    fontFamily: "'Philosopher', sans-serif"
+
+  - id: 21
+    name: "Synthwave Drive"
+    vibe: "Neon 80s"
+    heading: "Pattaya / Monoton"
+    body: "Kanit / Orbitron"
+    fontFamily: "'Monoton', cursive"
+
+  - id: 22
+    name: "Arcade Neon"
+    vibe: "Retro Cyber"
+    heading: "Chakra Petch / Audiowide"
+    body: "Prompt / Russo One"
+    fontFamily: "'Audiowide', sans-serif"
+
+  - id: 23
+    name: "City Pop Night"
+    vibe: "Tokyo Retro"
+    heading: "Mitr / MuseoModerno"
+    body: "IBM Plex Sans / Exo 2"
+    fontFamily: "'MuseoModerno', sans-serif"
+
+  - id: 24
+    name: "Cyber Disco"
+    vibe: "Vaporwave Pop"
+    heading: "Kanit (Italic) / Righteous"
+    body: "Prompt / Jura"
+    fontFamily: "'Righteous', sans-serif"
+
+  - id: 25
+    name: "Pixel Nostalgia"
+    vibe: "8-Bit Retro"
+    heading: "Sixty Four / Press Start 2P"
+    body: "Chakra Petch / Chivo Mono"
+    fontFamily: "'Press Start 2P', monospace"
+
+  - id: 26
+    name: "Autopsy Report"
+    vibe: "Psycho Horror"
+    heading: "IBM Plex Looped / Special Elite"
+    body: "Sarabun / Courier"
+    fontFamily: "'Special Elite', cursive"
+
+  - id: 27
+    name: "Serial Killer Journal"
+    vibe: "Cursed"
+    heading: "Mali (Bold) / Creepster"
+    body: "IBM Plex Sans / Averia Libre"
+    fontFamily: "'Creepster', cursive"
+
+  - id: 28
+    name: "Cold Case File"
+    vibe: "Thriller"
+    heading: "Sarabun / Stint Ultra Expanded"
+    body: "Sarabun / PT Mono"
+    fontFamily: "'Stint Ultra Expanded', serif"
+
+  - id: 29
+    name: "Redacted Truth"
+    vibe: "Distorted"
+    heading: "Kanit (Black) / Nosifer"
+    body: "IBM Plex Sans / Special Elite"
+    fontFamily: "'Nosifer', cursive"
+
+  - id: 30
+    name: "Rainy Noir Detective"
+    vibe: "Crime"
+    heading: "Taviraj / Arvo"
+    body: "Anuphan / Spline Sans Mono"
+    fontFamily: "'Arvo', serif"
+
+  - id: 31
+    name: "Starlight Epic"
+    vibe: "Cosmic Mythos"
+    heading: "Thasadith / Federo"
+    body: "Anuphan / Gudea"
+    fontFamily: "'Federo', sans-serif"
+
+  - id: 32
+    name: "Tribal Shaman"
+    vibe: "Eldritch Ritual"
+    heading: "Srisakdi / Macondo"
+    body: "Bai Jamjuree / Muli"
+    fontFamily: "'Macondo', cursive"
+
+  - id: 33
+    name: "Celtic Lore"
+    vibe: "Folk Tale"
+    heading: "Chonburi / MedievalSharp"
+    body: "Sarabun / Cinzel"
+    fontFamily: "'MedievalSharp', cursive"
+
+  - id: 34
+    name: "Astral Realm"
+    vibe: "Ethereal Magic"
+    heading: "K2D (Thin) / Megrim"
+    body: "Prompt / Comfortaa"
+    fontFamily: "'Megrim', sans-serif"
+
+  - id: 35
+    name: "Elven Whisper"
+    vibe: "Dream Star"
+    heading: "Thasadith / Eagle Lake"
+    body: "Anuphan / Alegreya"
+    fontFamily: "'Eagle Lake', cursive"
+
+  - id: 36
+    name: "Brass Machinery"
+    vibe: "Steampunk"
+    heading: "Pridi (Bold) / Rye"
+    body: "Sarabun / Vollkorn"
+    fontFamily: "'Rye', cursive"
+
+  - id: 37
+    name: "Coal Factory"
+    vibe: "Industrial"
+    heading: "Kanit (Black) / Teko"
+    body: "IBM Plex Sans / Barlow"
+    fontFamily: "'Teko', sans-serif"
+
+  - id: 38
+    name: "Clockwork Heart"
+    vibe: "Victorian Tech"
+    heading: "Taviraj / Federant"
+    body: "Anuphan / Gelasio"
+    fontFamily: "'Federant', copperplate"
+
+  - id: 39
+    name: "Iron Zeppelin"
+    vibe: "Dieselpunk"
+    heading: "Chakra Petch / Wallpoet"
+    body: "Kanit / Ubuntu Mono"
+    fontFamily: "'Wallpoet', sans-serif"
+
+  - id: 40
+    name: "Smokey London"
+    vibe: "Old Smog Vibe"
+    heading: "Chonburi / Bree Serif"
+    body: "Sarabun / Bitter"
+    fontFamily: "'Bree Serif', serif"
+
+  - id: 41
+    name: "A24 Vibe"
+    vibe: "Indie Cinema"
+    heading: "Anuphan (Bold) / DM Serif Display"
+    body: "Anuphan / Inter (Light)"
+    fontFamily: "'DM Serif Display', serif"
+
+  - id: 42
+    name: "Polaroid Memory"
+    vibe: "Bitter-Sweet"
+    heading: "Itim / Caveat"
+    body: "Prompt / Assistant"
+    fontFamily: "'Caveat', handwriting"
+
+  - id: 43
+    name: "Rainy Bookshop"
+    vibe: "Melancholy"
+    heading: "Taviraj / Fauna One"
+    body: "Sarabun / Crimson Text"
+    fontFamily: "'Fauna One', serif"
+
+  - id: 44
+    name: "Indie Pop Vinyl"
+    vibe: "Retro Album"
+    heading: "Mitr / BioRhyme"
+    body: "IBM Plex Sans / Karla"
+    fontFamily: "'BioRhyme', serif"
+
+  - id: 45
+    name: "Suburban Melancholy"
+    vibe: "Film Cut"
+    heading: "LINE Seed TH / Heebo"
+    body: "LINE Seed TH / Work Sans"
+    fontFamily: "'Heebo', sans-serif"
+
+  - id: 46
+    name: "Bunker Command"
+    vibe: "Tactical"
+    heading: "Kanit (Black) / Black Ops One"
+    body: "Kanit / Chivo Mono"
+    fontFamily: "'Black Ops One', cursive"
+
+  - id: 47
+    name: "Tactical Radar"
+    vibe: "Military Info"
+    heading: "Chakra Petch / Quantico"
+    body: "IBM Plex Sans / Share Tech"
+    fontFamily: "'Quantico', sans-serif"
+
+  - id: 48
+    name: "Concrete Brutalism"
+    vibe: "Raw Block"
+    heading: "Pridi (Black) / Anton"
+    body: "Prompt / Archivo"
+    fontFamily: "'Anton', sans-serif"
+
+  - id: 49
+    name: "High Security Defcon"
+    vibe: "War Core"
+    heading: "Mitr (Bold) / Saira Stencil One"
+    body: "Sarabun / Oswald"
+    fontFamily: "'Saira Stencil One', cursive"
+
+  - id: 50
+    name: "Fortress Code"
+    vibe: "Iron Grid"
+    heading: "Kanit (Bold) / Syncopate"
+    body: "IBM Plex Sans / DM Mono"
+    fontFamily: "'Syncopate', sans-serif"
