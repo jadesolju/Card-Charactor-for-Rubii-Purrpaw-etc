@@ -118,4 +118,4 @@ Mở tệp [`tools/card_previewer.html`](tools/card_previewer.html) trên trình
 ---
 
 ## 📄 Giấy phép (License)
-Dự án được phát hành theo giấy phép mã nguồn mở [MIT License](LICENSE). Phát triển với ❤️ bởi Mojor & Cộng đồng đóng góp.
+Dự án được phát hành theo giấy phép mã nguồn mở [MIT License](LICENSE). Phát triển với ❤️ bởi Ninninmera & Cộng đồng đóng góp.

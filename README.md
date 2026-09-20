@@ -155,4 +155,4 @@ Open [`tools/card_previewer.html`](tools/card_previewer.html) in your browser to
 ---
 
 ## 📄 License
-Released under the [MIT License](LICENSE). Created with ❤️ by Mojor & Contributors.
+Released under the [MIT License](LICENSE). Created with ❤️ by Ninninmera & Contributors.

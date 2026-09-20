@@ -113,4 +113,4 @@
 ---
 
 ## 📄 ใบอนุญาต (License)
-เผยแพร่ภายใต้ใบอนุญาต [MIT License](LICENSE) พัฒนาด้วย ❤️ โดย Mojor & Contributors
+เผยแพร่ภายใต้ใบอนุญาต [MIT License](LICENSE) พัฒนาด้วย ❤️ โดย Ninninmera & Contributors
