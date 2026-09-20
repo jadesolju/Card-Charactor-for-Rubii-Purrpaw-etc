@@ -18,6 +18,11 @@
 
 </div>
 
+> [!TIP]
+> **สำหรับคนขี้เกียจ (ใช้งานได้ทันที 1 คลิก ไม่ต้องดาวน์โหลด ไม่ต้องก๊อปปี้ไฟล์):**
+> 🔗 **[กดคุยกับ AI ออกแบบการ์ดทันทีผ่าน Google Gemini Gem](https://gemini.google.com/gem/1Tek_tvjZI5r5gNlw9lRDlw0tPnqNPjTx?usp=sharing)**
+> *(คลิกลิงก์แล้วพิมพ์ `/turbo` ตามด้วยชื่อตัวละครเพื่อสร้างการ์ดได้ทันที)*
+
 ---
 
 ## 🌟 Rubii Card Architect คืออะไร?

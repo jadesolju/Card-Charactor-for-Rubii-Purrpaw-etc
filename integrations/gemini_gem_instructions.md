@@ -2,6 +2,10 @@
 
 คู่มือการนำระบบ **Rubii Card Architect v2.2.7** ไปสร้างเป็น **Gemini Gem** บน Google Gemini Advanced
 
+> [!TIP]
+> **ลิงก์ Gem สำเร็จรูป (พร้อมใช้งานทันที ไม่ต้องสร้างเอง):**
+> เข้าใช้งานได้ทันทีที่ 👉 **[Rubii Character Card Architect on Gemini](https://gemini.google.com/gem/1Tek_tvjZI5r5gNlw9lRDlw0tPnqNPjTx?usp=sharing)**
+
 ---
 
 ## 🚀 ขั้นตอนการสร้าง Gem (Step-by-Step)
