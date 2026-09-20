@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "description": "Card Anatomy Database — Layout structures, section zones, and component slots for Rubii Card Architect v2.2.7+",
+    "last_updated": "2026-09-20",
+    "usage": "Reference 'layout_id' in prompts to request a specific card structure."
+  },
+  "card_layouts": [
+    {
+      "layout_id": "L01",
+      "name": "Classic Character Profile",
+      "aspect_ratio": "3:4 or 9:16",
+      "zones": {
+        "hero_zone": "Full-bleed character image or gradient portrait background",
+        "identity_zone": "Name (large), Title/Alias (subtitle), Role badge",
+        "stat_zone": "3–5 attribute bars or meter tags",
+        "bio_zone": "Short biography paragraph (2–4 lines max)",
+        "footer_zone": "Tags, origin, alignment badge"
+      },
+      "recommended_themes": ["T01", "T07", "T12", "T16"],
+      "complexity": "beginner"
+    },
+    {
+      "layout_id": "L02",
+      "name": "Dossier / Case File",
+      "aspect_ratio": "3:4",
+      "zones": {
+        "header_zone": "Case ID stamp, classification level badge, red 'CLASSIFIED' overlay",
+        "photo_zone": "ID photo frame (passport / mugshot style)",
+        "data_zone": "Key-value pairs: DOB, Status, Threat Level, Affiliation",
+        "notes_zone": "Handwritten-style annotation text block",
+        "redaction_zone": "Black redaction bar over sensitive fields"
+      },
+      "recommended_themes": ["T06", "T10", "T15", "T14"],
+      "complexity": "intermediate"
+    },
+    {
+      "layout_id": "L03",
+      "name": "Tarot Card",
+      "aspect_ratio": "2:3 (Tarot standard)",
+      "zones": {
+        "card_number_zone": "Roman numeral at top center",
+        "illustration_zone": "Central large illustration or character portrait",
+        "title_zone": "Card name in ornate serif (bottom or top banner)",
+        "symbolism_zone": "Small icons / astrology symbols in corners",
+        "border_zone": "Ornate illustrated border with theme-specific motifs"
+      },
+      "recommended_themes": ["T03", "T08", "T18", "T02"],
+      "complexity": "intermediate"
+    },
+    {
+      "layout_id": "L04",
+      "name": "HUD / Interface Panel",
+      "aspect_ratio": "16:9 or 1:1",
+      "zones": {
+        "status_bar": "HP/MP/Status bars at top in HUD style",
+        "portrait_zone": "Corner portrait thumbnail with glow border",
+        "info_panel": "Character name, level, class in monospace font",
+        "skill_zone": "Grid of 4–6 skill icons with hotkey labels",
+        "log_zone": "Scrolling battle log or dialogue text area"
+      },
+      "recommended_themes": ["T03", "T09", "T14"],
+      "complexity": "advanced"
+    },
+    {
+      "layout_id": "L05",
+      "name": "Relationship / Affection Board",
+      "aspect_ratio": "1:1 or 4:3",
+      "zones": {
+        "center_character_zone": "Main character portrait in center",
+        "orbit_zone": "2–4 NPC thumbnails orbiting in relation web",
+        "connection_lines": "CSS border lines or flex spacers showing relationships",
+        "affection_meters": "Heart/bar meters per relationship",
+        "label_zone": "Relationship type labels: Rival, Ally, Love, Nemesis"
+      },
+      "recommended_themes": ["T05", "T16", "T01"],
+      "complexity": "advanced"
+    },
+    {
+      "layout_id": "L06",
+      "name": "Lore Timeline",
+      "aspect_ratio": "9:16 (vertical scroll) or 16:9 (horizontal)",
+      "zones": {
+        "timeline_spine": "Vertical or horizontal line as the timeline axis",
+        "event_nodes": "Circular or diamond markers at each event",
+        "event_cards": "Small cards branching from each node with date + description",
+        "era_dividers": "Bold section headers for major eras / arcs",
+        "final_node": "Present-day status indicator at timeline end"
+      },
+      "recommended_themes": ["T04", "T12", "T18", "T08"],
+      "complexity": "intermediate"
+    },
+    {
+      "layout_id": "L07",
+      "name": "Magazine Cover / Editorial",
+      "aspect_ratio": "2:3",
+      "zones": {
+        "masthead_zone": "Publication name / zine title at top",
+        "cover_story_zone": "Main headline over or beside portrait",
+        "sidebar_teasers": "3–4 short text blurbs with divider lines",
+        "portrait_zone": "Large character portrait, bleed to edges",
+        "barcode_zone": "Fake barcode or issue stamp at bottom corner"
+      },
+      "recommended_themes": ["T06", "T11", "T15", "T16"],
+      "complexity": "intermediate"
+    },
+    {
+      "layout_id": "L08",
+      "name": "Trading Card (TCG Style)",
+      "aspect_ratio": "2:3 (standard card)",
+      "zones": {
+        "card_title_zone": "Name + cost icons at top",
+        "illustration_zone": "Full-width illustration (center third)",
+        "type_bar": "Type/Class/Archetype banner below illustration",
+        "effect_text_zone": "Ability description in game-style flavor text box",
+        "power_zone": "ATK / DEF or equivalent stat numbers at bottom corners"
+      },
+      "recommended_themes": ["T03", "T07", "T10", "T12"],
+      "complexity": "intermediate"
+    },
+    {
+      "layout_id": "L09",
+      "name": "Visual Novel Dialogue Card",
+      "aspect_ratio": "16:9",
+      "zones": {
+        "scene_background": "Full-bleed scene illustration or gradient backdrop",
+        "character_sprite_zone": "Standing character sprite, centered or left/right offset",
+        "dialogue_box": "Semi-transparent box at bottom with dialogue text",
+        "speaker_nameplate": "Character name badge above dialogue box",
+        "choice_buttons": "2–4 CSS radio choice buttons at bottom"
+      },
+      "recommended_themes": ["T01", "T05", "T16", "T08"],
+      "complexity": "advanced"
+    },
+    {
+      "layout_id": "L10",
+      "name": "Altar / Shrine Card",
+      "aspect_ratio": "3:4",
+      "zones": {
+        "canopy_zone": "Decorative arch or celestial halo at top",
+        "offering_zone": "Small icon row: flowers, candles, crystals",
+        "deity_portrait_zone": "Character portrait in divine framing",
+        "prayer_text_zone": "Italic text block styled as a prayer or oath",
+        "seal_zone": "Sacred emblem or family crest at bottom center"
+      },
+      "recommended_themes": ["T07", "T02", "T12", "T17"],
+      "complexity": "intermediate"
+    }
+  ],
+  "section_components": {
+    "meters_and_gauges": [
+      "Affection Meter", "Trust Meter", "Danger Meter", "Corruption Meter",
+      "Sanity Gauge", "Obsession Level", "HP Bar", "Mana Bar",
+      "Reputation Meter", "Alignment Meter", "Trauma Index", "Mental Stability Meter"
+    ],
+    "badge_types": [
+      "Role Badge", "Classification Level Badge", "Alignment Badge",
+      "Threat Level Badge", "Archetype Badge", "Origin Badge",
+      "Relationship Type Badge", "Status Effect Badge"
+    ],
+    "texture_layers": [
+      "Old Paper Grain", "Sand Texture", "Perlin Noise", "Film Grain",
+      "Velvet Fabric", "Marble Veining", "Metal Brushed", "Frosted Glass",
+      "Crystal Facets", "Dragon Scale", "Wood Grain", "Cracked Earth"
+    ],
+    "border_styles": [
+      "Fine Line Minimal", "Ornate Filigree", "Gothic Arch", "Neon Glow Edge",
+      "Cyber Bracket Corner", "Tarot Scroll Border", "Vine and Leaf",
+      "Barbed Wire", "Crystal Shard", "Wax Seal Ring", "Scan Radar",
+      "Tribal Geometric", "Ink Splash", "Lace Trim", "Hazard Stripe"
+    ]
+  }
+}

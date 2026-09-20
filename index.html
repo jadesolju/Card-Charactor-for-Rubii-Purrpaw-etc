@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚡ Rubii Card Architect V2.2.7 — Interactive Suite & Live Previewer</title>
+  <meta name="description" content="Zero-JS Mobile-Optimized HTML/CSS Character Profile Card Generator, Live Mobile Previewer, Color Palette Explorer & Theme Architect for AI Assistants.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;600&family=Chonburi&family=Fira+Code:wght@400;500&family=Kanit:ital,wght@0,300;0,400;0,600;1,300&family=Mitr:wght@400;600&family=Orbitron:wght@600;800&family=Outfit:wght@300;400;600;800&family=Prompt:wght@300;400;600&family=Sarabun:wght@300;400;600&family=Taviraj:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #07080f;
+      --bg-panel: rgba(16, 18, 30, 0.85);
+      --bg-panel-solid: #10121e;
+      --bg-card: #151829;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-bright: rgba(0, 255, 255, 0.4);
+      --accent-cyan: #00f0ff;
+      --accent-pink: #ff007f;
+      --accent-purple: #9d4edd;
+      --accent-gold: #ffd166;
+      --text-main: #f0f4f8;
+      --text-muted: #8892b0;
+      --shadow-neon: 0 0 20px rgba(0, 240, 255, 0.25);
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Kanit', 'Outfit', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(ellipse 60% 40% at 20% -10%, rgba(157, 78, 221, 0.15), transparent),
+        radial-gradient(ellipse 50% 30% at 80% 10%, rgba(0, 240, 255, 0.12), transparent);
+    }
+
+    /* Scrollbars */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
+    ::-webkit-scrollbar-thumb { background: #252a42; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
+
+    /* Header Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 12, 22, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+    }
+    .brand-text h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #fff, var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+    .brand-text p {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      text-decoration: none;
+    }
+    .nav-btn:hover, .nav-btn.active {
+      color: #fff;
+      background: rgba(0, 240, 255, 0.12);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+    }
+    .nav-btn.github {
+      background: linear-gradient(135deg, #2b3137, #1a1e22);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .nav-btn.github:hover {
+      border-color: #fff;
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 20px;
+      width: 100%;
+    }
+
+    /* Tab Panes */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Studio Layout (Editor + Viewport) */
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      min-height: calc(100vh - 120px);
+    }
+    @media (max-width: 960px) {
+      .studio-grid { grid-template-columns: 1fr; }
+    }
+
+    .panel {
+      background: var(--bg-panel);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .panel-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    select, input[type="text"] {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    select:focus, input[type="text"]:focus {
+      border-color: var(--accent-cyan);
+    }
+
+    .btn-action {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-action:hover {
+      background: rgba(0, 240, 255, 0.1);
+      border-color: var(--accent-cyan);
+      color: #fff;
+    }
+    .btn-action.primary {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+      border: none;
+      color: #fff;
+      font-weight: 600;
+    }
+    .btn-action.primary:hover {
+      box-shadow: 0 0 12px rgba(255, 0, 127, 0.5);
+    }
+
+    /* Editor Area */
+    .editor-wrapper {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    textarea.code-editor {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      background: #090a12;
+      color: #79ffe1;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 14px;
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 12.5px;
+      line-height: 1.6;
+      resize: vertical;
+      outline: none;
+      tab-size: 2;
+    }
+    textarea.code-editor:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.1);
+    }
+
+    /* Mobile Viewport Simulation */
+    .preview-viewport-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: #05060a;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 24px 10px;
+      min-height: 540px;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 16px 16px;
+      overflow-x: auto;
+    }
+
+    .device-shell {
+      width: 100%;
+      max-width: 440px;
+      transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+    }
+    .device-notch {
+      height: 20px;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .device-speaker {
+      width: 40px;
+      height: 4px;
+      background: #222;
+      border-radius: 2px;
+    }
+    #previewFrameTarget {
+      min-height: 480px;
+      width: 100%;
+      overflow-y: auto;
+      background: transparent;
+      user-select: text !important;
+    }
+
+    /* Color Palettes Explorer */
+    .palettes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .palette-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .palette-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .palette-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .palette-name {
+      font-weight: 600;
+      font-size: 13px;
+      color: #fff;
+    }
+    .palette-category {
+      font-size: 10px;
+      color: var(--accent-cyan);
+      background: rgba(0, 240, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .color-swatches {
+      display: flex;
+      height: 44px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .swatch {
+      flex: 1;
+      height: 100%;
+      position: relative;
+      transition: flex 0.2s;
+      cursor: copy;
+    }
+    .swatch:hover {
+      flex: 1.5;
+    }
+    .palette-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Typography Explorer */
+    .font-pair-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .font-pair-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .font-sample-title {
+      font-size: 20px;
+      color: #fff;
+    }
+    .font-sample-body {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(16, 18, 30, 0.95);
+      border: 1px solid var(--accent-cyan);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6), var(--shadow-neon);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 999;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 16px 24px;
+      background: rgba(8, 9, 15, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="brand">
+      <div class="brand-icon">⚡</div>
+      <div class="brand-text">
+        <h1>RUBII CARD ARCHITECT</h1>
+        <p>V2.2.7 Express — Live Studio & Mobile Engine</p>
+      </div>
+    </a>
+
+    <nav>
+      <button class="nav-btn active" onclick="switchTab('studio')">📱 Studio Previewer</button>
+      <button class="nav-btn" onclick="switchTab('palettes')">🎨 50 Palettes</button>
+      <button class="nav-btn" onclick="switchTab('typography')">🔤 Typography</button>
+      <button class="nav-btn" onclick="switchTab('templates')">🎭 13 Themes</button>
+      <button class="nav-btn" onclick="copyStandalonePrompt()">⚡ Copy Standalone</button>
+      <a href="https://github.com/jadesolju/Card-Charactor-for-Rubii-Purrpaw-etc" target="_blank" class="nav-btn github">
+        <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        GitHub
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- TAB 1: STUDIO PREVIEWER -->
+    <section id="tab-studio" class="tab-content active">
+      <div class="studio-grid">
+        
+        <!-- Left: Code Editor -->
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title"><span>📝</span> HTML / CSS SOURCE</div>
+            <div class="toolbar">
+              <label style="font-size:11px;color:var(--text-muted);">Theme:</label>
+              <select id="themeSelect" onchange="loadThemePreset()">
+                <option value="cyber-gothic">Cyber-Gothic (Neon Crimson)</option>
+                <option value="arcane-academia">Arcane Academia (Violet Gold)</option>
+                <option value="pastel-glitch">Pastel Glitch (Synth Kawaii)</option>
+                <option value="solar-steampunk">Solar Steampunk (Emerald Brass)</option>
+                <option value="quiet-luxury">Quiet Luxury (Old Money Noir)</option>
+                <option value="sakura-noir">🌸 Sakura Noir (Bloom × French Film)</option>
+                <option value="baroque-decay">💀 Baroque Decay (Gold × Memento Mori)</option>
+                <option value="deep-sea-oracle">🌊 Deep Sea Oracle (Bioluminescent)</option>
+                <option value="idol-industry">🎤 Idol Industry (K-Pop × Stage Pop)</option>
+              </select>
+              <button class="btn-action" onclick="copyEditorCode()">📋 Copy</button>
+              <button class="btn-action primary" onclick="renderPreview()">▶ Render</button>
+            </div>
+          </div>
+          <div class="editor-wrapper">
+            <textarea id="codeEditor" class="code-editor" spellcheck="false" placeholder="Paste your generated Zero-JS HTML/CSS card code here..."></textarea>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text-muted);">
+            <span>Zero-JS Mobile Bound: 320px – 440px</span>
+            <span>⚡ Live Auto-Render enabled</span>
+          </div>
+        </div>
+
+        <!-- Right: Mobile Viewport Simulator -->
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title"><span>📱</span> MOBILE VIEWPORT SIMULATOR</div>
+            <div class="toolbar">
+              <label style="font-size:11px;color:var(--text-muted);">Device Width:</label>
+              <select id="viewportSelect" onchange="changeViewportWidth()">
+                <option value="440px">Max Bound (440px)</option>
+                <option value="390px">iPhone 14/15/16 (390px)</option>
+                <option value="375px">iPhone SE / Mini (375px)</option>
+                <option value="320px">Minimum Fluid (320px)</option>
+              </select>
+              <span id="currentWidthBadge" style="font-size:11px;color:var(--accent-cyan);background:rgba(0,240,255,0.1);padding:3px 8px;border-radius:4px;">440px</span>
+              <button class="btn-action" onclick="downloadCardHtml()">💾 Export</button>
+            </div>
+          </div>
+          
+          <div class="preview-viewport-container">
+            <div class="device-shell" id="deviceShell">
+              <div class="device-notch"><div class="device-speaker"></div></div>
+              <div id="previewFrameTarget"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 2: 50 COLOR PALETTES -->
+    <section id="tab-palettes" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title"><span>🎨</span> MASTER PALETTE VAULT (50 CURATED COLOR SYSTEMS)</div>
+          <div class="toolbar">
+            <input type="text" id="paletteSearch" placeholder="Search palette by name or category..." oninput="filterPalettes()">
+          </div>
+        </div>
+        <div class="palettes-grid" id="palettesGrid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: TYPOGRAPHY -->
+    <section id="tab-typography" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title"><span>🔤</span> DUAL-LANGUAGE TYPOGRAPHY PAIRINGS (THAI × LATIN)</div>
+          <p style="font-size:12px;color:var(--text-muted);">Optimized Google Fonts pairings for mobile character cards with zero layout shift.</p>
+        </div>
+        <div class="font-pair-grid" id="fontGrid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: THEMES -->
+    <section id="tab-templates" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title"><span>🎭</span> CROSS-OVER THEME CATALOG (13 PRESETS)</div>
+          <p style="font-size:12px;color:var(--text-muted);">Click any theme to load into the Studio Previewer immediately.</p>
+        </div>
+        <div class="palettes-grid" id="themeCatalogGrid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toastMessage">
+    <span>✨</span> <span id="toastText">Action completed</span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div>⚡ <strong>Rubii Express Theme Architect V2.2.7</strong> — Zero-JS Mobile-Optimized Engine</div>
+    <div>MIT License • Compatible with ChatGPT, Claude, Google Gemini & Custom GPTs</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Presets catalog
+    const presets = {
+      'cyber-gothic': `<style>
+@keyframes cyberGlow{0%,100%{box-shadow:0 0 14px #ff0055,inset 0 0 8px #00ffff;}50%{box-shadow:0 0 24px #00ffff,inset 0 0 14px #ff0055;}}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.3;transform:scale(0.8);}}
+.cg-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Chonburi','Kanit',serif;background:rgba(10,5,12,0.88)!important;border:2px solid #ff0055!important;border-radius:12px;padding:16px;color:#f3e8ee!important;animation:cyberGlow 4s infinite ease-in-out;user-select:text!important;}
+.cg-tag{display:inline-block;padding:2px 8px;font-size:clamp(8px,2.5vw,11px);border:1px solid #00ffff;color:#00ffff!important;border-radius:4px;text-transform:uppercase;letter-spacing:1px;}
+.cg-title{font-size:clamp(18px,5vw,26px);color:#fff!important;text-shadow:0 0 8px #ff0055;margin:8px 0 4px 0;}
+.cg-sub{font-size:clamp(9px,3vw,12px);color:#00ffff!important;letter-spacing:2px;font-family:'Kanit',sans-serif;}
+.cg-divider{height:1px;background:linear-gradient(90deg,transparent,#ff0055,#00ffff,transparent);margin:12px 0;}
+.cg-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:clamp(8px,3vw,12px);font-family:'Kanit',sans-serif;}
+.cg-key{color:#a78bfa!important;font-weight:bold;}
+.cg-val{color:#fff!important;}
+.cg-details{margin-top:10px;border:1px solid rgba(255,0,85,0.4);border-radius:6px;background:rgba(0,0,0,0.4);overflow:hidden;}
+.cg-summary{padding:8px 12px;cursor:pointer;background:rgba(255,0,85,0.15);color:#00ffff!important;font-family:'Kanit',sans-serif;list-style:none;}
+.cg-content{padding:10px 12px;font-size:clamp(8px,3.2vw,12px);line-height:1.5;color:#e2e8f0!important;font-family:'Kanit',sans-serif;max-height:150px;overflow-y:auto;}
+</style>
+<div class="cg-card">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <span class="cg-tag">[ STATUS: CLASSIFIED ]</span>
+    <span style="display:inline-block;width:8px;height:8px;background:#ff0055;border-radius:50%;box-shadow:0 0 6px #ff0055;animation:pulseDot 1.5s infinite;"></span>
+  </div>
+  <h1 class="cg-title">VALENTINA CROSS</h1>
+  <div class="cg-sub">// CYBERNETIC NOCTURNE ARCHON</div>
+  <div class="cg-divider"></div>
+  <div class="cg-grid">
+    <div><span class="cg-key">AFFILIATION:</span> <span class="cg-val">Sector 09 Blood Syndicate</span></div>
+    <div><span class="cg-key">ORIGIN:</span> <span class="cg-val">Neo-Verona Core</span></div>
+  </div>
+  <details class="cg-details" open>
+    <summary class="cg-summary">⚔️ PROFILE DOSSIER & LORE</summary>
+    <div class="cg-content">
+      • แวมไพร์สายเลือดโบราณผู้ผสานระบบอวัยวะกลจักรกลสังเคราะห์<br>
+      • ควบคุมเครือข่ายตลาดมืดและข้อมูลลับแห่ง Sector 09<br>
+      • เป้าหมาย: ปลดแอกชนชั้นใต้ดินด้วยพลังเวทไซเบอร์เนติกส์
+    </div>
+  </details>
+</div>`,
+
+      'arcane-academia': `<style>
+.aa-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Chonburi','Taviraj',serif;background:rgba(18,12,28,0.88)!important;border:2px solid #d4af37!important;border-radius:8px;padding:16px;color:#f3e8ff!important;box-shadow:0 0 16px rgba(124,58,237,0.45);user-select:text!important;}
+.aa-title{font-size:clamp(18px,4.8vw,24px);color:#ffd700!important;text-shadow:0 0 6px #c084fc;margin:8px 0 2px 0;}
+.aa-details{margin-top:8px;border:1px solid rgba(212,175,55,0.3);border-radius:4px;}
+.aa-summary{padding:8px 10px;cursor:pointer;background:rgba(212,175,55,0.15);color:#ffd700!important;font-size:clamp(10px,3.2vw,12px);font-weight:bold;}
+.aa-content{padding:8px 10px;font-size:clamp(8px,3vw,11px);line-height:1.6;color:#ddd6fe!important;font-family:'Anuphan',serif;}
+</style>
+<div class="aa-card">
+  <div style="font-size:10px;color:#d4af37;letter-spacing:1px;">📜 THE ARCHIVE OF SOLOMON</div>
+  <h1 class="aa-title">AURELIUS VANE</h1>
+  <div style="font-size:10px;color:#a78bfa;font-style:italic;">// GRAND SCHOLAR OF THE FORBIDDEN CIRCLE</div>
+  <details class="aa-details" open>
+    <summary class="aa-summary">⚡ RUNIC STATUS</summary>
+    <div class="aa-content">
+      • สังกัด: หอสมุดมนตร์ดำหลวงแห่งอาคาเดเมีย<br>
+      • พลังพิเศษ: ถอดรหัสอักษรโบราณ และเชื่อมโยงวงแหวนมิติ
+    </div>
+  </details>
+</div>`,
+
+      'pastel-glitch': `<style>
+.pg-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Kanit',sans-serif;background:rgba(20,15,30,0.88)!important;border:2px dashed #ff66c4!important;border-radius:18px;padding:16px;color:#fff!important;user-select:text!important;}
+.pg-title{font-size:clamp(18px,5vw,26px);color:#ffc6ff!important;text-shadow:0 0 8px #ff66c4;margin:10px 0 2px 0;}
+.pg-details{margin-top:10px;border:1px solid #ff66c4;border-radius:10px;background:rgba(255,102,196,0.08);}
+.pg-summary{padding:8px 12px;cursor:pointer;color:#ffc6ff!important;font-size:12px;font-weight:bold;}
+.pg-content{padding:8px 12px;font-size:11px;line-height:1.5;color:#e2e8f0!important;}
+</style>
+<div class="pg-card">
+  <span style="background:linear-gradient(45deg,#ff66c4,#66e6ff);color:#140f1e;font-size:10px;font-weight:bold;padding:3px 10px;border-radius:20px;">👾 LEVEL 99 IDOL</span>
+  <h1 class="pg-title">NANO CHIBI 01</h1>
+  <details class="pg-details" open>
+    <summary class="pg-summary">🎀 STREAM INFO</summary>
+    <div class="pg-content">• นิสัย: ร่าเริง ซน ป่วนเซิร์ฟเวอร์ด้วยไวรัสสีชมพู</div>
+  </details>
+</div>`,
+
+      'solar-steampunk': `<style>
+.ss-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Taviraj',serif;background:rgba(15,25,20,0.88)!important;border:2px solid #e1b382!important;border-radius:10px;padding:16px;color:#f0fdf4!important;box-shadow:0 0 14px rgba(57,255,20,0.35);user-select:text!important;}
+.ss-title{font-size:clamp(18px,4.8vw,24px);color:#e1b382!important;text-shadow:0 0 8px #39ff14;margin:8px 0 2px 0;}
+</style>
+<div class="ss-card">
+  <span style="font-size:10px;color:#39ff14;border:1px solid #39ff14;padding:2px 8px;border-radius:4px;">🌿 ECO-KINETIC ENGINEER</span>
+  <h1 class="ss-title">INGENIEUR STERLING</h1>
+  <div style="font-size:11px;color:#bbf7d0;margin-top:8px;">// SOLAR CLOCKWORK INVENTOR</div>
+</div>`,
+
+      'quiet-luxury': `<style>
+.ql-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Prompt',sans-serif;background:rgba(18,18,20,0.92)!important;border:1px solid rgba(223,216,200,0.4)!important;border-radius:4px;padding:20px 16px;color:#dfd8c8!important;box-shadow:0 12px 36px rgba(0,0,0,0.7);user-select:text!important;}
+.ql-title{font-size:clamp(19px,4.5vw,25px);font-weight:300;color:#fff!important;letter-spacing:2px;margin:0 0 4px 0;}
+</style>
+<div class="ql-card">
+  <div style="letter-spacing:3px;font-size:9px;color:#a39274;">THE SYNDICATE DIRECTORY</div>
+  <h1 class="ql-title">JULIAN VANDERBILT</h1>
+  <div style="font-size:10px;color:#a39274;letter-spacing:2px;font-style:italic;">// CHAIRMAN & SHADOW BENEFACTOR</div>
+</div>`,
+
+      'sakura-noir': `<style>
+.sn-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Chonburi','Prompt',serif;background:linear-gradient(160deg,#1A0A0F 0%,#301B28 60%,#1A0A0F 100%)!important;border:1px solid #C2A0A8!important;border-radius:10px;padding:20px 16px;color:#F9D0C9!important;box-shadow:inset 0 0 50px rgba(0,0,0,0.8),0 10px 30px rgba(0,0,0,0.9);user-select:text!important;}
+.sn-title{font-size:clamp(19px,5vw,26px);color:#FFF!important;letter-spacing:1px;margin:8px 0 2px 0;}
+.sn-tag{font-size:9px;color:#F9D0C9;border:1px solid #C2A0A8;padding:2px 8px;border-radius:12px;letter-spacing:1.5px;}
+</style>
+<div class="sn-card">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <span class="sn-tag">🌸 NOIR ARCHIVE</span>
+    <span style="font-size:11px;color:#C2A0A8;">PARIS 1928</span>
+  </div>
+  <h1 class="sn-title">SABLE HANAKO</h1>
+  <div style="font-size:11px;color:#C2A0A8;letter-spacing:2px;font-style:italic;">// THE SHADOW BLOSSOM</div>
+  <div style="margin-top:14px;font-size:11px;line-height:1.6;color:#E4C5CB;border-top:1px dashed #4A3545;padding-top:10px;">
+    "Every falling petal is a memory dissolving in rain."
+  </div>
+</div>`,
+
+      'baroque-decay': `<style>
+.bd-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Chonburi','Taviraj',serif;background:linear-gradient(135deg,#1A0A00 0%,#2C1500 50%,#1A0A00 100%)!important;border:2px solid #D4AF37!important;border-radius:8px;padding:20px 16px;color:#F5E6C8!important;box-shadow:0 0 25px rgba(212,175,55,0.25);user-select:text!important;}
+.bd-title{font-size:clamp(18px,4.8vw,24px);color:#D4AF37!important;text-shadow:0 0 10px rgba(212,175,55,0.5);margin:6px 0 2px 0;}
+</style>
+<div class="bd-card">
+  <div style="font-size:9px;color:#D4AF37;letter-spacing:2px;text-align:center;">❧ MEMENTO MORI ❧</div>
+  <h1 class="bd-title" style="text-align:center;">LORD DORIAN VESTINE</h1>
+  <div style="font-size:10px;color:#C4A882;text-align:center;font-style:italic;">// THE GILDED RUIN</div>
+  <div style="margin-top:12px;font-size:11px;line-height:1.6;color:#E5D6B8;border:1px solid rgba(212,175,55,0.3);padding:10px;border-radius:4px;background:rgba(0,0,0,0.3);">
+    "Splendor is sweetest at the brink of collapse."
+  </div>
+</div>`,
+
+      'deep-sea-oracle': `<style>
+.dso-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Kanit',sans-serif;background:radial-gradient(ellipse at 50% 80%,#0A3D62 0%,#020B18 70%)!important;border:1.5px solid #0097A7!important;border-radius:14px;padding:18px 16px;color:#E0F7FA!important;box-shadow:0 0 20px rgba(0,151,167,0.35);user-select:text!important;}
+.dso-title{font-size:clamp(18px,5vw,25px);color:#FFF!important;text-shadow:0 0 12px #00E5FF;margin:8px 0 2px 0;}
+</style>
+<div class="dso-card">
+  <div style="display:flex;justify-content:space-between;font-size:10px;color:#00E5FF;">
+    <span>≈ DEPTH: 7,342M</span>
+    <span>ABYSSAL ZONE</span>
+  </div>
+  <h1 class="dso-title">THYREN ABYSSAL</h1>
+  <div style="font-size:11px;color:#80DEEA;letter-spacing:1px;">// SEER OF THE TRENCH</div>
+</div>`,
+
+      'idol-industry': `<style>
+.ii-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Outfit','Kanit',sans-serif;background:linear-gradient(135deg,#1A0033 0%,#380062 50%,#FF85B3 100%)!important;border:2px solid #FF85B3!important;border-radius:16px;padding:18px 16px;color:#FFF!important;box-shadow:0 0 25px rgba(255,133,179,0.35);user-select:text!important;}
+.ii-title{font-size:clamp(20px,5.5vw,28px);font-weight:800;color:#FFF!important;text-shadow:0 0 12px #FF85B3;margin:6px 0 2px 0;}
+</style>
+<div class="ii-card">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <span style="background:#FFF;color:#1A0033;font-size:9px;font-weight:bold;padding:2px 8px;border-radius:10px;">★ WORLD TOUR 2026</span>
+    <span style="font-size:11px;color:#FFE6F0;">#01 CENTER</span>
+  </div>
+  <h1 class="ii-title">NOVA ♡</h1>
+  <div style="font-size:11px;color:#FFE6F0;letter-spacing:1.5px;">// SOLARIS 5 • MAIN VOCAL</div>
+</div>`
+    };
+
+    // Palettes Data (Sample 12 featured, dynamic fetch support)
+    const featuredPalettes = [
+      { id: 1, name: "Editorial Minimalism", cat: "Minimal", colors: ["#F0EFED", "#E4DECD", "#82716E", "#252523"] },
+      { id: 2, name: "Nordic Soft Frost", cat: "Minimal", colors: ["#F3F4F6", "#E5E7EB", "#9CA3AF", "#1F2937"] },
+      { id: 3, name: "Quiet Luxury", cat: "Luxury", colors: ["#F7F1E3", "#DCC7AA", "#6B7A8F", "#111827"] },
+      { id: 7, name: "Cyberpunk Neon 2077", cat: "Cyber & Sci-Fi", colors: ["#050505", "#1B1B2F", "#00F0FF", "#FFE600"] },
+      { id: 8, name: "Synthwave Sunset", cat: "Cyber & Sci-Fi", colors: ["#0F051D", "#2E0249", "#F806CC", "#570A57"] },
+      { id: 9, name: "Matrix Monochrome", cat: "Cyber & Sci-Fi", colors: ["#0D0208", "#003B00", "#008F11", "#00FF66"] },
+      { id: 14, name: "Sakura Blossom Noir", cat: "Pastel & Cute", colors: ["#1A0A0F", "#4A3545", "#C2A0A8", "#F9D0C9"] },
+      { id: 15, name: "Strawberry Milkshake", cat: "Pastel & Cute", colors: ["#FFE3E3", "#FFAEBC", "#FBE7C6", "#B4F8C8"] },
+      { id: 21, name: "Gothic Blood Covenant", cat: "Dark Romance", colors: ["#0B090A", "#161A1D", "#660708", "#A4161A"] },
+      { id: 25, name: "Arcane Mage Circle", cat: "Fantasy", colors: ["#0F0C20", "#24174D", "#7C3AED", "#FFD700"] },
+      { id: 31, name: "Solarpunk Bio-Haven", cat: "Nature & Earth", colors: ["#0B1D13", "#1B4332", "#40916C", "#95D5B2"] },
+      { id: 41, name: "Baroque Gold Decay", cat: "Luxury", colors: ["#1A0A00", "#8B6914", "#D4AF37", "#F5E6C8"] }
+    ];
+
+    // Typography Pairings
+    const typographyPairs = [
+      { thai: "Chonburi", latin: "Playfair Display", mood: "Royal / Luxury / Gothic Arch", desc: "หรูหรา โอ่อ่า วรรณกรรมโบราณ หรือการ์ดสายเลือดกษัตริย์" },
+      { thai: "Kanit", latin: "Orbitron / Outfit", mood: "Cyberpunk / Modern HUD", desc: "ทันสมัย คมชัด กระชับ เหมาะกับ UI ไซไฟ และการ์ดเทคโนโลยี" },
+      { thai: "Taviraj", latin: "Cinzel Decorative", mood: "Arcane / Fantasy / Grimoire", desc: "มนตร์ดำ ลึกลับ อักษรเวทมนตร์ และสมุดบันทึกนักเวท" },
+      { thai: "Prompt", latin: "Inter / Roboto", mood: "Editorial / Dossier / Clean", desc: "เอกสารราชการ แฟ้มคดี ประวัติทางการ หรือสไตล์มินิมอล" },
+      { thai: "Anuphan", latin: "DM Sans / Spectral", mood: "Light Novel / Visual Novel", desc: "นุ่มนวล อ่านง่าย อบอุ่น เหมาะกับบทสนทนาและเนื้อเรื่อง" },
+      { thai: "Mitr", latin: "Quicksand / Fredoka", mood: "Pastel / Chibi / Kawaii", desc: "น่ารัก สดใส เป็นกันเอง เหมาะกับการ์ด VTuber หรือ Mascot" }
+    ];
+
+    // Theme Catalog
+    const themeList = [
+      { id: "T01", name: "Sakura Noir", desc: "🌸 Japanese Spring Bloom × French Film Noir", key: "sakura-noir" },
+      { id: "T02", name: "Arcane Academia", desc: "📜 Dark Academia × Arcane Mage Circle", key: "arcane-academia" },
+      { id: "T03", name: "Cyber Gothic", desc: "⚡ Cyberpunk 2077 × Victorian Vampire", key: "cyber-gothic" },
+      { id: "T04", name: "Pastel Glitch", desc: "👾 Pastel Kawaii × Vaporwave Glitch", key: "pastel-glitch" },
+      { id: "T05", name: "Solar Steampunk", desc: "🌿 Solarpunk Eco × Victorian Steampunk", key: "solar-steampunk" },
+      { id: "T06", name: "Quiet Luxury", desc: "🏛️ Old Money Elegance × Film Noir", key: "quiet-luxury" },
+      { id: "T09", name: "Deep Sea Oracle", desc: "🌊 Abyssal Trench × Ancient Oracle", key: "deep-sea-oracle" },
+      { id: "T16", name: "Idol Industry", desc: "🎤 K-Pop / J-Pop × Stadium Pop Art", key: "idol-industry" },
+      { id: "T18", name: "Baroque Decay", desc: "💀 European Baroque × Memento Mori", key: "baroque-decay" }
+    ];
+
+    // Render Preview
+    function renderPreview() {
+      const code = document.getElementById('codeEditor').value;
+      document.getElementById('previewFrameTarget').innerHTML = code;
+    }
+
+    // Load Theme Preset
+    function loadThemePreset() {
+      const key = document.getElementById('themeSelect').value;
+      document.getElementById('codeEditor').value = presets[key] || '';
+      renderPreview();
+      showToast(`Loaded "${key}" theme preset!`);
+    }
+
+    // Viewport Width Change
+    function changeViewportWidth() {
+      const w = document.getElementById('viewportSelect').value;
+      document.getElementById('deviceShell').style.maxWidth = w;
+      document.getElementById('currentWidthBadge').textContent = w;
+    }
+
+    // Tab Switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+      
+      const target = document.getElementById(`tab-${tabId}`);
+      if (target) target.classList.add('active');
+      
+      const btn = event?.currentTarget;
+      if (btn) btn.classList.add('active');
+    }
+
+    // Copy editor code
+    function copyEditorCode() {
+      const code = document.getElementById('codeEditor').value;
+      navigator.clipboard.writeText(code).then(() => {
+        showToast('Source code copied to clipboard!');
+      });
+    }
+
+    // Copy Hex
+    function copyHex(hex) {
+      navigator.clipboard.writeText(hex).then(() => {
+        showToast(`Copied ${hex} to clipboard!`);
+      });
+    }
+
+    // Download Card HTML
+    function downloadCardHtml() {
+      const code = document.getElementById('codeEditor').value;
+      const blob = new Blob([`<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;600&family=Chonburi&family=Kanit:wght@300;400;600&family=Mitr:wght@400;600&family=Prompt:wght@300;400;600&family=Taviraj:wght@300;400;600&display=swap" rel="stylesheet"></head><body style="margin:0;padding:20px 10px;background:#05060a;display:flex;justify-content:center;">${code}</body></html>`], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'rubii_card.html';
+      a.click();
+      showToast('Exported rubii_card.html successfully!');
+    }
+
+    // Copy Standalone Prompt
+    function copyStandalonePrompt() {
+      fetch('standalone/rubii_architect_v2.2.7_standalone.txt')
+        .then(res => res.text())
+        .then(txt => {
+          navigator.clipboard.writeText(txt).then(() => {
+            showToast('⚡ Standalone Prompt copied! Paste into Claude/GPT/Gemini.');
+          });
+        })
+        .catch(() => {
+          showToast('Standalone prompt ready in standalone/ directory.');
+        });
+    }
+
+    // Toast
+    function showToast(msg) {
+      const t = document.getElementById('toastMessage');
+      document.getElementById('toastText').textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    // Populate Palettes
+    function renderPalettes(list) {
+      const container = document.getElementById('palettesGrid');
+      container.innerHTML = list.map(p => `
+        <div class="palette-card">
+          <div class="palette-header">
+            <span class="palette-name">#${p.id} ${p.name}</span>
+            <span class="palette-category">${p.cat}</span>
+          </div>
+          <div class="color-swatches">
+            ${p.colors.map(c => `<div class="swatch" style="background:${c};" title="Click to copy ${c}" onclick="copyHex('${c}')"></div>`).join('')}
+          </div>
+          <div class="palette-footer">
+            <span>${p.colors.join(' • ')}</span>
+            <button class="btn-action" style="padding:2px 6px;font-size:10px;" onclick="copyHex('${p.colors.join(', ')}')">Copy All</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterPalettes() {
+      const q = document.getElementById('paletteSearch').value.toLowerCase();
+      const filtered = featuredPalettes.filter(p => p.name.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q));
+      renderPalettes(filtered);
+    }
+
+    // Populate Typography
+    function renderTypography() {
+      const container = document.getElementById('fontGrid');
+      container.innerHTML = typographyPairs.map(t => `
+        <div class="font-pair-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong style="color:var(--accent-cyan);font-size:14px;">${t.thai} + ${t.latin}</strong>
+            <span style="font-size:10px;background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;">${t.mood}</span>
+          </div>
+          <div class="font-sample-title" style="font-family:'${t.thai}', serif;">ตัวอย่างหัวข้อการ์ด (Sample Heading)</div>
+          <div class="font-sample-body" style="font-family:'${t.thai}', sans-serif;">${t.desc}</div>
+          <div style="border-top:1px solid var(--border-subtle);padding-top:8px;font-size:11px;color:var(--text-muted);font-family:monospace;">
+            font-family: '${t.thai}', '${t.latin}', sans-serif;
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Populate Theme Catalog
+    function renderThemeCatalog() {
+      const container = document.getElementById('themeCatalogGrid');
+      container.innerHTML = themeList.map(t => `
+        <div class="palette-card" onclick="selectThemeFromCatalog('${t.key}')">
+          <div class="palette-header">
+            <span class="palette-name">${t.id} ${t.name}</span>
+            <span class="palette-category">Preset</span>
+          </div>
+          <p style="font-size:12px;color:var(--text-muted);">${t.desc}</p>
+          <div style="margin-top:6px;">
+            <button class="btn-action primary" style="width:100%;justify-content:center;">⚡ Load to Studio</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function selectThemeFromCatalog(key) {
+      document.getElementById('themeSelect').value = key;
+      loadThemePreset();
+      switchTab('studio');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Live typing listener
+    document.getElementById('codeEditor').addEventListener('input', () => {
+      renderPreview();
+    });
+
+    // Init
+    loadThemePreset();
+    renderPalettes(featuredPalettes);
+    renderTypography();
+    renderThemeCatalog();
+  </script>
+</body>
+</html>
