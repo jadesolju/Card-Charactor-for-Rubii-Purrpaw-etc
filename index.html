@@ -3,30 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚡ Rubii Card Architect V2.2.7 — Interactive Studio & Multi-Language Previewer</title>
-  <meta name="description" content="Zero-JS Mobile-Optimized HTML/CSS Character Profile Card Generator, Live Mobile Previewer, Color Hunt 60+ Palette Vault, Multi-Language Google Fonts Suite (TH/ZH/VI/EN), and Local Persistence Engine.">
+  <title>⚡ Rubii Card Architect V2.2.7 — SVG Studio & Multi-Theme Previewer</title>
+  <meta name="description" content="Zero-JS Mobile-Optimized HTML/CSS Character Profile Card Generator, SVG-Powered Live Mobile Previewer, Color Hunt Vault & Multi-Language Google Fonts.">
 
-  <!-- Google Fonts for Thai, Chinese, Vietnamese & English -->
+  <!-- Google Fonts for Thai, Chinese, Vietnamese & Latin -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;600;700&family=Be+Vietnam+Pro:wght@300;400;600;700&family=Charm:wght@400;700&family=Chonburi&family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500;600&family=Kanit:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Lora:ital,wght@0,400;0,600;1,400&family=Ma+Shan+Zheng&family=Mali:wght@400;600&family=Mitr:wght@400;600&family=Montserrat:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;700&family=Noto+Sans+Thai:wght@300;400;600&family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+Thai:wght@400;600&family=Orbitron:wght@600;800&family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Pridi:wght@300;400;600&family=Prompt:wght@300;400;600&family=Quicksand:wght@400;600&family=Roboto+Condensed:wght@400;700&family=Sarabun:wght@300;400;600&family=Syne:wght@600;800&family=Taviraj:wght@300;400;600&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;600;700&family=Be+Vietnam+Pro:wght@300;400;600;700&family=Charm:wght@400;700&family=Chonburi&family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500;600&family=Kanit:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Lora:ital,wght@0,400;0,600;1,400&family=Ma+Shan+Zheng&family=Mali:wght@400;600&family=Mitr:wght@400;600&family=Montserrat:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;700&family=Noto+Sans+Thai:wght@300;400;600&family=Noto+Serif+SC:wght@400;700&family=Orbitron:wght@600;800&family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Prompt:wght@300;400;600&family=Quicksand:wght@400;600&family=Roboto+Condensed:wght@400;700&family=Sarabun:wght@300;400;600&family=Syne:wght@600;800&family=Taviraj:wght@300;400;600&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg-dark: #07080f;
-      --bg-panel: rgba(16, 18, 30, 0.88);
-      --bg-panel-solid: #10121e;
-      --bg-card: #151829;
+      --bg-panel: rgba(14, 16, 28, 0.92);
+      --bg-card: #131628;
       --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-bright: rgba(0, 240, 255, 0.4);
+      --border-cyan: rgba(0, 240, 255, 0.4);
       --accent-cyan: #00f0ff;
       --accent-pink: #ff007f;
       --accent-purple: #9d4edd;
       --accent-gold: #ffd166;
       --text-main: #f0f4f8;
       --text-muted: #8892b0;
-      --shadow-neon: 0 0 20px rgba(0, 240, 255, 0.25);
-      --radius: 12px;
+      --shadow-neon: 0 0 24px rgba(0, 240, 255, 0.25);
+      --radius: 14px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,13 +38,21 @@
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
-      background-image: 
-        radial-gradient(ellipse 60% 40% at 15% -10%, rgba(157, 78, 221, 0.16), transparent),
-        radial-gradient(ellipse 50% 30% at 85% 10%, rgba(0, 240, 255, 0.14), transparent),
-        radial-gradient(ellipse 40% 30% at 50% 100%, rgba(255, 0, 127, 0.08), transparent);
+      position: relative;
     }
 
-    /* Scrollbar */
+    /* Ambient SVG Vector Background */
+    .svg-bg-ambient {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.45;
+    }
+
+    /* Scrollbars */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
     ::-webkit-scrollbar-thumb { background: #252a42; border-radius: 4px; }
@@ -56,8 +63,8 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(10, 12, 22, 0.94);
-      backdrop-filter: blur(14px);
+      background: rgba(9, 11, 20, 0.95);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-subtle);
       padding: 10px 20px;
       display: flex;
@@ -75,14 +82,11 @@
       color: inherit;
     }
     .brand-icon {
-      width: 34px;
-      height: 34px;
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
-      border-radius: 8px;
+      width: 36px;
+      height: 36px;
       display: grid;
       place-items: center;
-      font-size: 18px;
-      box-shadow: 0 0 14px rgba(0, 240, 255, 0.4);
+      filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.5));
     }
     .brand-text h1 {
       font-family: 'Orbitron', sans-serif;
@@ -100,7 +104,7 @@
 
     nav {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       align-items: center;
       flex-wrap: wrap;
     }
@@ -119,45 +123,53 @@
       font-family: inherit;
       text-decoration: none;
     }
+    .nav-btn svg { width: 15px; height: 15px; fill: currentColor; }
     .nav-btn:hover, .nav-btn.active {
       color: #fff;
       background: rgba(0, 240, 255, 0.12);
       border-color: var(--accent-cyan);
-      box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
     }
     .nav-btn.github {
       background: linear-gradient(135deg, #2b3137, #1a1e22);
       color: #fff;
       border: 1px solid rgba(255,255,255,0.15);
     }
-    .nav-btn.github:hover {
-      border-color: #fff;
-    }
 
-    .lang-select {
-      background: #181c2f;
-      border: 1px solid var(--accent-cyan);
-      color: #fff;
-      padding: 5px 10px;
+    .lang-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: #151829;
+      border: 1px solid var(--border-cyan);
       border-radius: 8px;
+      padding: 3px 8px;
+    }
+    .lang-wrapper svg { width: 14px; height: 14px; fill: var(--accent-cyan); }
+    .lang-select {
+      background: transparent;
+      border: none;
+      color: #fff;
       font-size: 12px;
       font-family: inherit;
       cursor: pointer;
       outline: none;
     }
 
-    /* Main */
+    /* Main Container */
     main {
       flex: 1;
-      max-width: 1520px;
+      max-width: 1540px;
       margin: 0 auto;
       padding: 16px;
       width: 100%;
+      position: relative;
+      z-index: 1;
     }
 
     .tab-content {
       display: none;
-      animation: fadeIn 0.3s ease;
+      animation: fadeIn 0.25s ease;
     }
     .tab-content.active {
       display: block;
@@ -167,7 +179,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Studio Layout */
+    /* Studio Grid */
     .studio-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -205,10 +217,11 @@
       color: var(--accent-cyan);
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 0.5px;
     }
+    .panel-title svg { width: 16px; height: 16px; fill: currentColor; }
 
     .toolbar {
       display: flex;
@@ -245,6 +258,7 @@
       gap: 5px;
       transition: all 0.2s;
     }
+    .btn-action svg { width: 13px; height: 13px; fill: currentColor; }
     .btn-action:hover {
       background: rgba(0, 240, 255, 0.1);
       border-color: var(--accent-cyan);
@@ -296,7 +310,7 @@
       box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.1);
     }
 
-    /* Status bar */
+    /* Status Bar */
     .status-bar {
       display: flex;
       justify-content: space-between;
@@ -311,27 +325,20 @@
       gap: 6px;
       color: #00ffaa;
     }
-    .storage-dot {
-      width: 7px;
-      height: 7px;
-      background: #00ffaa;
-      border-radius: 50%;
-      box-shadow: 0 0 6px #00ffaa;
-    }
+    .storage-indicator svg { width: 14px; height: 14px; fill: #00ffaa; }
 
-    /* Viewport Simulation */
+    /* SVG Mobile Device Simulator */
     .preview-viewport-container {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      background: #05060a;
+      background: #040508;
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       padding: 20px 8px;
       min-height: 560px;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-      background-size: 16px 16px;
+      position: relative;
       overflow-x: auto;
     }
 
@@ -340,25 +347,31 @@
       max-width: 420px;
       transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.06);
-      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
       overflow: hidden;
       background: #000;
     }
-    .device-notch {
-      height: 18px;
+    
+    /* Device SVG Header / Notch */
+    .device-topbar {
+      height: 26px;
       background: #000;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
+      padding: 0 14px;
       border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 10px;
+      color: #fff;
     }
-    .device-speaker {
-      width: 36px;
-      height: 4px;
-      background: #222;
-      border-radius: 2px;
+    .device-topbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
+    .device-topbar-icons svg { width: 12px; height: 12px; fill: #fff; }
+
     #previewFrameTarget {
       min-height: 500px;
       width: 100%;
@@ -399,7 +412,11 @@
       font-weight: 600;
       font-size: 12.5px;
       color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
+    .palette-name svg { width: 12px; height: 12px; fill: var(--accent-gold); }
     .palette-category {
       font-size: 9.5px;
       color: var(--accent-cyan);
@@ -465,7 +482,11 @@
       font-weight: 700;
       color: var(--accent-cyan);
       font-size: 13.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
+    .font-name-badge svg { width: 14px; height: 14px; fill: currentColor; }
     .font-lang-tag {
       font-size: 9.5px;
       background: rgba(255,255,255,0.06);
@@ -525,7 +546,7 @@
     footer {
       border-top: 1px solid var(--border-subtle);
       padding: 14px 20px;
-      background: rgba(8, 9, 15, 0.92);
+      background: rgba(8, 9, 15, 0.94);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -533,38 +554,95 @@
       gap: 10px;
       font-size: 11.5px;
       color: var(--text-muted);
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
 
+  <!-- Ambient SVG Vector Background Pattern -->
+  <svg class="svg-bg-ambient" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.12" />
+        <stop offset="50%" stop-color="#9d4edd" stop-opacity="0.08" />
+        <stop offset="100%" stop-color="#ff007f" stop-opacity="0.06" />
+      </linearGradient>
+      <pattern id="cyberGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+        <circle cx="40" cy="40" r="1.5" fill="rgba(0,240,255,0.15)" />
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#cyberGrid)" />
+    <circle cx="15%" cy="10%" r="280" fill="url(#gridGrad)" filter="blur(80px)" />
+    <circle cx="85%" cy="20%" r="240" fill="url(#gridGrad)" filter="blur(80px)" />
+  </svg>
+
   <!-- Header -->
   <header>
     <a href="#" class="brand">
-      <div class="brand-icon">⚡</div>
+      <div class="brand-icon">
+        <!-- SVG Brand Shield -->
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="url(#brandGrad)" />
+          <path d="M18 6L28 11V19C28 24.5 23.7 29.6 18 31C12.3 29.6 8 24.5 8 19V11L18 6Z" stroke="#00f0ff" stroke-width="1.5" fill="rgba(0,0,0,0.4)" />
+          <path d="M17 11L11 20H17L16 26L24 16H18L19 11H17Z" fill="#ff007f" />
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="36" y2="36">
+              <stop stop-color="#141829" />
+              <stop offset="1" stop-color="#0a0c16" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
       <div class="brand-text">
         <h1 data-i18n="brand_title">RUBII CARD ARCHITECT</h1>
-        <p data-i18n="brand_subtitle">V2.2.7 Express — Live Studio & Multi-Language Engine</p>
+        <p data-i18n="brand_subtitle">V2.2.7 Express — Live SVG Studio & Multi-Theme Engine</p>
       </div>
     </a>
 
     <nav>
-      <button class="nav-btn active" onclick="switchTab('studio')" data-i18n="nav_studio">📱 Studio Previewer</button>
-      <button class="nav-btn" onclick="switchTab('palettes')" data-i18n="nav_palettes">🎨 Color Hunt 60+</button>
-      <button class="nav-btn" onclick="switchTab('typography')" data-i18n="nav_typography">🔤 Google Fonts Vault</button>
-      <button class="nav-btn" onclick="switchTab('templates')" data-i18n="nav_themes">🎭 13 Themes</button>
-      <button class="nav-btn" onclick="copyStandalonePrompt()" data-i18n="nav_standalone">⚡ Copy Standalone</button>
-      
-      <!-- Language Switcher -->
-      <select id="langSwitcher" class="lang-select" onchange="changeLanguage(this.value)">
-        <option value="th">🇹🇭 ภาษาไทย</option>
-        <option value="en">🇬🇧 English</option>
-        <option value="zh">🇨🇳 简体中文</option>
-        <option value="vi">🇻🇳 Tiếng Việt</option>
-      </select>
+      <!-- SVG Nav Icons -->
+      <button class="nav-btn active" onclick="switchTab('studio')" data-i18n="nav_studio">
+        <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+        Studio Previewer
+      </button>
 
+      <button class="nav-btn" onclick="switchTab('palettes')" data-i18n="nav_palettes">
+        <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        Color Hunt 60+
+      </button>
+
+      <button class="nav-btn" onclick="switchTab('typography')" data-i18n="nav_typography">
+        <svg viewBox="0 0 24 24"><path d="M9.93 13.5h4.14L12 7.98zM20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-4.05 16.5l-1.14-3H9.17l-1.12 3H5.96l5.11-13h1.86l5.11 13h-2.09z"/></svg>
+        Google Fonts Vault
+      </button>
+
+      <button class="nav-btn" onclick="switchTab('templates')" data-i18n="nav_themes">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        13 Themes
+      </button>
+
+      <button class="nav-btn" onclick="copyStandalonePrompt()" data-i18n="nav_standalone">
+        <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+        Copy Standalone
+      </button>
+
+      <!-- Language Selector -->
+      <div class="lang-wrapper">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <select id="langSwitcher" class="lang-select" onchange="changeLanguage(this.value)">
+          <option value="th">🇹🇭 ภาษาไทย</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="zh">🇨🇳 简体中文</option>
+          <option value="vi">🇻🇳 Tiếng Việt</option>
+        </select>
+      </div>
+
+      <!-- GitHub -->
       <a href="https://github.com/jadesolju/Card-Charactor-for-Rubii-Purrpaw-etc" target="_blank" class="nav-btn github">
-        <svg height="15" width="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
         GitHub
       </a>
     </nav>
@@ -578,25 +656,40 @@
         <!-- Left: Code Editor -->
         <div class="panel">
           <div class="panel-header">
-            <div class="panel-title"><span>📝</span> <span data-i18n="editor_title">HTML / CSS SOURCE</span></div>
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+              <span data-i18n="editor_title">HTML / CSS SOURCE</span>
+            </div>
             <div class="toolbar">
               <label style="font-size:11px;color:var(--text-muted);" data-i18n="preset_label">Preset:</label>
               <select id="themeSelect" onchange="loadThemePreset()">
                 <option value="diana-racer">🏍️ Diana Racer (Master Official Card)</option>
+                <option value="diana-cyber-gothic">⚡ Diana Cyber-Gothic (Neon Syndicate)</option>
+                <option value="diana-arcane-academia">📜 Diana Arcane Academia (Runic Scholar)</option>
+                <option value="diana-pastel-glitch">👾 Diana Pastel Glitch (VTuber Idol)</option>
+                <option value="diana-solar-steampunk">🌿 Diana Solar Steampunk (Eco Clockwork)</option>
+                <option value="diana-quiet-luxury">🏛️ Diana Quiet Luxury (Old Money Noir)</option>
+                <option value="diana-sakura-noir">🌸 Diana Sakura Noir (Spring Film Noir)</option>
+                <option value="diana-baroque-decay">💀 Diana Baroque Decay (Memento Mori Gold)</option>
+                <option value="diana-deep-sea">🌊 Diana Deep Sea Oracle (7000M Trench)</option>
+                <option value="diana-idol-industry">🎤 Diana Idol Industry (K-Pop Stage Pink)</option>
                 <option value="base-clean">📦 Base Card Template (การ์ดพื้นฐาน)</option>
-                <option value="cyber-gothic">⚡ Cyber-Gothic (Neon Crimson)</option>
-                <option value="arcane-academia">📜 Arcane Academia (Violet Gold)</option>
-                <option value="pastel-glitch">👾 Pastel Glitch (Synth Kawaii)</option>
-                <option value="solar-steampunk">🌿 Solar Steampunk (Emerald Brass)</option>
-                <option value="quiet-luxury">🏛️ Quiet Luxury (Old Money Noir)</option>
-                <option value="sakura-noir">🌸 Sakura Noir (Bloom × French Film)</option>
-                <option value="baroque-decay">💀 Baroque Decay (Gold × Memento Mori)</option>
-                <option value="deep-sea-oracle">🌊 Deep Sea Oracle (Bioluminescent)</option>
-                <option value="idol-industry">🎤 Idol Industry (K-Pop × Stage Pop)</option>
               </select>
-              <button class="btn-action" onclick="copyEditorCode()" data-i18n="btn_copy">📋 Copy</button>
-              <button class="btn-action danger" onclick="resetToDefaultExample()" data-i18n="btn_reset">🔄 Reset</button>
-              <button class="btn-action primary" onclick="renderPreview()" data-i18n="btn_render">▶ Render</button>
+              
+              <button class="btn-action" onclick="copyEditorCode()" data-i18n="btn_copy">
+                <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                Copy
+              </button>
+
+              <button class="btn-action danger" onclick="resetToDefaultExample()" data-i18n="btn_reset">
+                <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+                Reset
+              </button>
+
+              <button class="btn-action primary" onclick="renderPreview()" data-i18n="btn_render">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                Render
+              </button>
             </div>
           </div>
           
@@ -606,8 +699,8 @@
           
           <div class="status-bar">
             <div class="storage-indicator">
-              <div class="storage-dot"></div>
-              <span id="storageStatusText" data-i18n="storage_saved">Local Cookie/Storage Synced</span>
+              <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM10 17l-3.5-3.5 1.41-1.41L10 14.17 15.09 9.08l1.41 1.42L10 17z"/></svg>
+              <span id="storageStatusText" data-i18n="storage_saved">Local Storage & Cookie Synced</span>
             </div>
             <span data-i18n="mobile_bound">Zero-JS Mobile Bound: 320px – 440px</span>
           </div>
@@ -616,7 +709,10 @@
         <!-- Right: Mobile Viewport Simulator -->
         <div class="panel">
           <div class="panel-header">
-            <div class="panel-title"><span>📱</span> <span data-i18n="viewport_title">MOBILE VIEWPORT SIMULATOR</span></div>
+            <div class="panel-title">
+              <svg viewBox="0 0 24 24"><path d="M4 6h18V4H4c-1.1 0-2 .9-2 2v11H0v3h14v-3H4V6zm19 2h-6c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-1 10h-4v-7h4v7z"/></svg>
+              <span data-i18n="viewport_title">MOBILE VIEWPORT SIMULATOR</span>
+            </div>
             <div class="toolbar">
               <label style="font-size:11px;color:var(--text-muted);" data-i18n="width_label">Width:</label>
               <select id="viewportSelect" onchange="changeViewportWidth()">
@@ -627,13 +723,24 @@
                 <option value="320px">Minimum Fluid (320px)</option>
               </select>
               <span id="currentWidthBadge" style="font-size:11px;color:var(--accent-cyan);background:rgba(0,240,255,0.1);padding:3px 8px;border-radius:4px;">420px</span>
-              <button class="btn-action" onclick="downloadCardHtml()" data-i18n="btn_export">💾 Export HTML</button>
+              
+              <button class="btn-action" onclick="downloadCardHtml()" data-i18n="btn_export">
+                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                Export HTML
+              </button>
             </div>
           </div>
           
           <div class="preview-viewport-container">
             <div class="device-shell" id="deviceShell">
-              <div class="device-notch"><div class="device-speaker"></div></div>
+              <!-- SVG Top Bar -->
+              <div class="device-topbar">
+                <span>9:41</span>
+                <div class="device-topbar-icons">
+                  <svg viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+                </div>
+              </div>
               <div id="previewFrameTarget"></div>
             </div>
           </div>
@@ -646,7 +753,10 @@
     <section id="tab-palettes" class="tab-content">
       <div class="panel">
         <div class="panel-header">
-          <div class="panel-title"><span>🎨</span> <span data-i18n="palettes_title">COLOR HUNT POPULAR PALETTES (60+ CURATED COLOR SYSTEMS)</span></div>
+          <div class="panel-title">
+            <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
+            <span data-i18n="palettes_title">COLOR HUNT POPULAR PALETTES (60+ CURATED COLOR SYSTEMS)</span>
+          </div>
           <div class="toolbar">
             <select id="paletteCategoryFilter" onchange="filterPalettesByCategory(this.value)">
               <option value="all">All Categories</option>
@@ -663,9 +773,7 @@
             <input type="text" id="paletteSearch" placeholder="Search hex or name..." oninput="filterPalettes()">
           </div>
         </div>
-        <div class="palettes-grid" id="palettesGrid">
-          <!-- Populated by JS -->
-        </div>
+        <div class="palettes-grid" id="palettesGrid"></div>
       </div>
     </section>
 
@@ -673,7 +781,10 @@
     <section id="tab-typography" class="tab-content">
       <div class="panel">
         <div class="panel-header">
-          <div class="panel-title"><span>🔤</span> <span data-i18n="typography_title">GOOGLE FONTS VAULT (THAI / CHINESE / VIETNAMESE / LATIN)</span></div>
+          <div class="panel-title">
+            <svg viewBox="0 0 24 24"><path d="M9.93 13.5h4.14L12 7.98zM20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+            <span data-i18n="typography_title">GOOGLE FONTS VAULT (THAI / CHINESE / VIETNAMESE / LATIN)</span>
+          </div>
           <div class="toolbar">
             <select id="fontLangFilter" onchange="filterFontsByLang(this.value)">
               <option value="all">All Languages</option>
@@ -684,9 +795,7 @@
             </select>
           </div>
         </div>
-        <div class="font-pair-grid" id="fontGrid">
-          <!-- Populated by JS -->
-        </div>
+        <div class="font-pair-grid" id="fontGrid"></div>
       </div>
     </section>
 
@@ -694,19 +803,21 @@
     <section id="tab-templates" class="tab-content">
       <div class="panel">
         <div class="panel-header">
-          <div class="panel-title"><span>🎭</span> <span data-i18n="themes_title">CROSS-OVER THEME CATALOG (13 PRESETS)</span></div>
+          <div class="panel-title">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+            <span data-i18n="themes_title">CROSS-OVER THEME CATALOG (13 PRESETS)</span>
+          </div>
           <p style="font-size:12px;color:var(--text-muted);" data-i18n="themes_desc">Click any theme to load into the Studio Previewer immediately.</p>
         </div>
-        <div class="palettes-grid" id="themeCatalogGrid">
-          <!-- Populated by JS -->
-        </div>
+        <div class="palettes-grid" id="themeCatalogGrid"></div>
       </div>
     </section>
   </main>
 
   <!-- Toast -->
   <div class="toast" id="toastMessage">
-    <span>✨</span> <span id="toastText">Action completed</span>
+    <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:var(--accent-cyan);"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+    <span id="toastText">Action completed</span>
   </div>
 
   <!-- Footer -->
@@ -715,15 +826,15 @@
     <div>Copyright &copy; 2026 <strong>Ninninmera</strong> • MIT License • Compatible with ChatGPT, Claude, Google Gemini & Custom GPTs</div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Core Scripts & Template Suite -->
   <script>
     // ====================================================================
-    // 1. i18n Translations Dictionary
+    // 1. i18n Translations
     // ====================================================================
     const i18n = {
       en: {
         brand_title: "RUBII CARD ARCHITECT",
-        brand_subtitle: "V2.2.7 Express — Live Studio & Multi-Language Engine",
+        brand_subtitle: "V2.2.7 Express — Live SVG Studio & Multi-Theme Engine",
         nav_studio: "📱 Studio Previewer",
         nav_palettes: "🎨 Color Hunt 60+",
         nav_typography: "🔤 Google Fonts Vault",
@@ -731,27 +842,25 @@
         nav_standalone: "⚡ Copy Standalone",
         editor_title: "HTML / CSS SOURCE",
         preset_label: "Preset:",
-        btn_copy: "📋 Copy",
-        btn_reset: "🔄 Reset",
-        btn_render: "▶ Render",
-        storage_saved: "Local Cookie/Storage Synced",
+        btn_copy: "Copy",
+        btn_reset: "Reset",
+        btn_render: "Render",
+        storage_saved: "Local Storage & Cookie Synced",
         mobile_bound: "Zero-JS Mobile Bound: 320px – 440px",
         viewport_title: "MOBILE VIEWPORT SIMULATOR",
         width_label: "Width:",
-        btn_export: "💾 Export HTML",
+        btn_export: "Export HTML",
         palettes_title: "COLOR HUNT POPULAR PALETTES (60+ CURATED COLOR SYSTEMS)",
         typography_title: "GOOGLE FONTS VAULT (THAI / CHINESE / VIETNAMESE / LATIN)",
         themes_title: "CROSS-OVER THEME CATALOG (13 PRESETS)",
         themes_desc: "Click any theme to load into the Studio Previewer immediately.",
-        btn_apply_palette: "Apply to Card",
-        btn_apply_font: "Apply Font",
-        toast_saved: "Saved to Local Storage!",
-        toast_reset: "Reset to Default Example Card!",
+        btn_load_studio: "⚡ Load into Studio",
+        toast_reset: "Reset to Diana Master Card!",
         toast_copied: "Copied to clipboard!"
       },
       th: {
         brand_title: "รูบี้ การ์ด อาร์คิเทกต์",
-        brand_subtitle: "V2.2.7 Express — สตูดิโอพรีวิวการ์ดมือถือสด & รองรับหลายภาษา",
+        brand_subtitle: "V2.2.7 Express — สตูดิโอพรีวิวการ์ดมือถือสด SVG & รองรับทุกธีม",
         nav_studio: "📱 สตูดิโอพรีวิว",
         nav_palettes: "🎨 คลังสี Color Hunt 60+",
         nav_typography: "🔤 คลังฟอนต์ Google Fonts",
@@ -759,27 +868,25 @@
         nav_standalone: "⚡ คัดลอก Prompt ไฟล์เดียว",
         editor_title: "ซอร์สโค้ด HTML / CSS",
         preset_label: "แม่แบบ:",
-        btn_copy: "📋 คัดลอก",
-        btn_reset: "🔄 รีเซ็ตเดิม",
-        btn_render: "▶ เรนเดอร์",
+        btn_copy: "คัดลอก",
+        btn_reset: "รีเซ็ตเดิม",
+        btn_render: "เรนเดอร์",
         storage_saved: "บันทึกใน Local Storage อัตโนมัติ",
         mobile_bound: "ความกว้างมือถือ Zero-JS: 320px – 440px",
         viewport_title: "จำลองหน้าจอมือถือจริง",
         width_label: "ความกว้าง:",
-        btn_export: "💾 บันทึกไฟล์ HTML",
+        btn_export: "บันทึกไฟล์ HTML",
         palettes_title: "คลังชุดสียอดนิยม Color Hunt (60+ โทนสากล)",
         typography_title: "คลังฟอนต์ Google Fonts (ไทย / จีน / เวียดนาม / อังกฤษ)",
         themes_title: "คลังธีมลูกผสม Cross-Over (13 ธีม)",
         themes_desc: "คลิกธีมใดก็ได้เพื่อโหลดเข้าสู่สตูดิโอพรีวิวทันที",
-        btn_apply_palette: "ใช้กับสตูดิโอ",
-        btn_apply_font: "ใช้ฟอนต์นี้",
-        toast_saved: "บันทึกข้อมูลลงเครื่องอัตโนมัติเรียบร้อย!",
-        toast_reset: "รีเซ็ตกลับเป็นการ์ดตัวอย่างหลักเรียบร้อย!",
+        btn_load_studio: "⚡ ใช้ธีมนี้ในสตูดิโอ",
+        toast_reset: "รีเซ็ตกลับเป็นการ์ดเดียร์ต้นฉบับเรียบร้อย!",
         toast_copied: "คัดลอกลงคลิปบอร์ดแล้ว!"
       },
       zh: {
         brand_title: "RUBII 卡片架构师",
-        brand_subtitle: "V2.2.7 Express — 实时移动端预览与多语言引擎",
+        brand_subtitle: "V2.2.7 Express — 实时 SVG 移动端预览与多主题引擎",
         nav_studio: "📱 工作室预览",
         nav_palettes: "🎨 Color Hunt 热门配色 60+",
         nav_typography: "🔤 Google 字体库",
@@ -787,27 +894,25 @@
         nav_standalone: "⚡ 复制单文件提示词",
         editor_title: "HTML / CSS 源码",
         preset_label: "预设:",
-        btn_copy: "📋 复制",
-        btn_reset: "🔄 重置",
-        btn_render: "▶ 渲染",
+        btn_copy: "复制",
+        btn_reset: "重置",
+        btn_render: "渲染",
         storage_saved: "本地缓存已自动同步",
         mobile_bound: "Zero-JS 移动端适配: 320px – 440px",
         viewport_title: "真实移动端视口模拟",
         width_label: "宽度:",
-        btn_export: "💾 导出 HTML",
+        btn_export: "导出 HTML",
         palettes_title: "Color Hunt 热门配色宝库 (60+ 顶级配色系统)",
         typography_title: "Google 字体精选 (中文 / 泰文 / 越南文 / 英文)",
         themes_title: "跨界融合主题目录 (13 款)",
         themes_desc: "点击任意主题即可立即载入工作室进行实时预览。",
-        btn_apply_palette: "应用配色",
-        btn_apply_font: "应用字体",
-        toast_saved: "已保存至本地缓存！",
+        btn_load_studio: "⚡ 载入工作室",
         toast_reset: "已重置为默认官方卡片！",
         toast_copied: "已复制到剪贴板！"
       },
       vi: {
         brand_title: "RUBII CARD ARCHITECT",
-        brand_subtitle: "V2.2.7 Express — Xem trước di động trực tiếp & Đa ngôn ngữ",
+        brand_subtitle: "V2.2.7 Express — Xem trước di động trực tiếp & Đa chủ đề",
         nav_studio: "📱 Phòng thu xem trước",
         nav_palettes: "🎨 Bảng màu Color Hunt 60+",
         nav_typography: "🔤 Kho Google Fonts",
@@ -815,21 +920,19 @@
         nav_standalone: "⚡ Sao chép Prompt",
         editor_title: "MÃ NGUỒN HTML / CSS",
         preset_label: "Mẫu sẵn:",
-        btn_copy: "📋 Sao chép",
-        btn_reset: "🔄 Đặt lại",
-        btn_render: "▶ Kết xuất",
+        btn_copy: "Sao chép",
+        btn_reset: "Đặt lại",
+        btn_render: "Kết xuất",
         storage_saved: "Đã đồng bộ Local Storage",
         mobile_bound: "Giới hạn di động Zero-JS: 320px – 440px",
         viewport_title: "MÔ PHỎNG MÀN HÌNH DI ĐỘNG",
         width_label: "Độ rộng:",
-        btn_export: "💾 Xuất file HTML",
+        btn_export: "Xuất file HTML",
         palettes_title: "BẢNG MÀU PHỔ BIẾN TỪ COLOR HUNT (60+ BỘ MÀU)",
         typography_title: "KHO FONT GOOGLE (TIẾNG VIỆT / THÁI / TRUNG / ANH)",
         themes_title: "DANH MỤC CHỦ ĐỀ KẾT HỢP (13 MẪU)",
         themes_desc: "Nhấp vào bất kỳ chủ đề nào để tải vào phòng thu ngay lập tức.",
-        btn_apply_palette: "Áp dụng màu",
-        btn_apply_font: "Dùng font này",
-        toast_saved: "Đã lưu vào bộ nhớ trình duyệt!",
+        btn_load_studio: "⚡ Tải vào phòng thu",
         toast_reset: "Đã đặt lại về thẻ mẫu ban đầu!",
         toast_copied: "Đã sao chép vào bộ nhớ tạm!"
       }
@@ -843,11 +946,18 @@
       localStorage.setItem('rubii_lang', currentLang);
       document.cookie = `rubii_lang=${currentLang};path=/;max-age=31536000`;
 
-      // Apply translations
       const dict = i18n[currentLang];
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (dict[key]) el.textContent = dict[key];
+        if (dict[key]) {
+          // If element has SVG child, update only text node
+          const textNode = Array.from(el.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+          if (textNode) {
+            textNode.textContent = dict[key];
+          } else {
+            el.textContent = dict[key];
+          }
+        }
       });
     }
 
@@ -856,7 +966,6 @@
       showToast(`Language changed to ${lang.toUpperCase()}`);
     }
 
-    // Auto-detect browser language on first visit
     function initLanguage() {
       const saved = localStorage.getItem('rubii_lang') || getCookie('rubii_lang');
       if (saved && i18n[saved]) {
@@ -878,14 +987,370 @@
     }
 
     // ====================================================================
-    // 2. Exact Master Example Card (Diana Veganerie + Discord Banner)
+    // 2. Diana Master Card Variations Across All Templates
     // ====================================================================
-    const dianaMasterCard = `<style> .rc *{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',Helvetica,Arial,sans-serif} .rc{width:100vw;max-width:420px;margin:0 auto;background:transparent;color:#fff2ef;position:relative;user-select:text!important} /* --- Cover Carousel (Swipe/Scroll + Snap) --- */ .rc .carousel-wrapper{position:relative;width:100%;border-radius:22px;overflow:hidden;margin-bottom:8px;box-shadow:0 0 30px rgba(225,29,46,.35),0 0 60px rgba(0,0,0,.4)} .rc .carousel-track{display:flex;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none} .rc .carousel-track::-webkit-scrollbar{display:none} .rc .carousel-slide{flex:0 0 100%;width:100%;scroll-snap-align:start;position:relative} .rc .carousel-slide img{width:100%;display:block;filter:saturate(1.08) contrast(1.05)} .rc .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,0,3,.05) 0%,rgba(20,0,3,.15) 45%,rgba(15,0,2,.92) 100%);pointer-events:none} .rc .ribbon{position:absolute;top:12px;left:12px;background:linear-gradient(120deg,#ffe9b0,#c9a227 60%,#ffe9b0);color:#3a0006;font-weight:800;font-size:clamp(7px,2.6vw,10px);letter-spacing:1.5px;padding:5px 10px;border-radius:20px;box-shadow:0 2px 10px rgba(0,0,0,.35);z-index:5} .rc .emblem{position:absolute;top:10px;right:12px;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff5b6d,#8f0018);display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 0 14px rgba(255,59,82,.7);animation:pulse 2.4s ease-in-out infinite;z-index:5} @keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}} .rc .id{position:absolute;left:16px;bottom:14px;right:16px;z-index:5;pointer-events:none} .rc .name-en{font-size:clamp(9px,3vw,11px);letter-spacing:4px;color:#ffcf7a;text-transform:uppercase;font-weight:700;margin-bottom:3px} .rc .name-th{font-family:ui-serif,'New York',Georgia,serif;font-size:clamp(20px,6.4vw,30px);font-weight:700;background:linear-gradient(100deg,#fff 10%,#ffe6a3 35%,#c9a227 55%,#fff 75%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite} @keyframes shine{0%{background-position:0% 0}100%{background-position:220% 0}} .rc .sub{font-size:clamp(8px,3vw,11px);color:#ffd9d0;opacity:.85;margin-top:2px;font-style:italic} /* --- Hint Banner --- */ .rc .hint-box{display:flex;align-items:center;justify-content:center;gap:6px;background:rgba(255,207,122,.08);border:1px dashed rgba(255,207,122,.3);border-radius:10px;padding:6px 12px;margin-bottom:10px;font-size:clamp(7.5px,2.6vw,10px);color:#ffcf7a;letter-spacing:.5px} /* --- General Info Box --- */ .rc .box{background:linear-gradient(165deg,rgba(60,6,10,.62),rgba(30,2,5,.7));border-radius:18px;padding:14px 16px;margin:0 0 12px;box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 8px 24px rgba(0,0,0,.35),0 0 18px rgba(225,29,46,.2)} .rc .box-title{font-size:clamp(8.5px,3vw,11px);letter-spacing:2px;color:#ffcf7a;text-transform:uppercase;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px} .rc dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:clamp(8px,3.2vw,13px);margin:0} .rc dt{color:#ff8a95;font-weight:600} .rc dd{margin:0} .rc .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,122,.6),transparent);margin:10px 0} .rc .stats{display:flex;flex-direction:column;gap:9px;margin-top:4px} .rc .stat-row{display:flex;align-items:center;gap:8px} .rc .stat-label{width:64px;font-size:clamp(7px,2.7vw,10px);color:#ffd9d0} .rc .stat-track{flex:1;height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden} .rc .stat-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,#ff3b52,#ffcf7a)} /* --- Nav Tabs System --- */ .rc .nav-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:10px;background:rgba(30,2,5,.7);padding:6px;border-radius:14px;box-shadow:0 0 0 1px rgba(255,255,255,.05) inset} .rc .nav-label{text-align:center;padding:8px 4px;font-size:clamp(8px,2.8vw,11px);font-weight:700;color:#ffd9d0;border-radius:10px;cursor:pointer;transition:all .3s ease;white-space:nowrap;display:flex;align-items:center;justify-content:center;gap:4px} .rc .nav-label:hover{color:#fff;background:rgba(255,255,255,.05)} /* Active Tab Highlight */ .rc #tab1:checked~.nav-tabs label[for="tab1"], .rc #tab2:checked~.nav-tabs label[for="tab2"], .rc #tab3:checked~.nav-tabs label[for="tab3"], .rc #tab4:checked~.nav-tabs label[for="tab4"]{background:linear-gradient(135deg,#ff3b52,#8f0018);color:#fff;box-shadow:0 2px 8px rgba(255,59,82,.4)} /* Tab Panels Visibility */ .rc .tab-panel{display:none;background:linear-gradient(165deg,rgba(60,6,10,.55),rgba(25,2,4,.65));border-radius:16px;padding:14px 16px;box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 6px 18px rgba(0,0,0,.3);font-size:clamp(8px,3.4vw,12.5px);line-height:1.65;color:#ffe3de} .rc #tab1:checked~.tab-content #panel1, .rc #tab2:checked~.tab-content #panel2, .rc #tab3:checked~.tab-content #panel3, .rc #tab4:checked~.tab-content #panel4{display:block} .rc .section-head{font-size:clamp(10px,3.6vw,13.5px);font-weight:700;color:#ffcf7a;letter-spacing:.5px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,207,122,.2);display:flex;align-items:center;gap:6px} .rc p{margin:0 0 10px;text-indent:1.5em;text-align:justify} .rc p:last-child{margin-bottom:0} /* Codeblock Styling */ .rc code{display:block;background:rgba(15,0,3,.75);border:1px solid rgba(255,91,109,.3);border-left:3px solid #ff3b52;border-radius:8px;padding:10px 12px;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:clamp(7.5px,3vw,11.5px);color:#ffcf7a;margin:8px 0;line-height:1.5;white-space:pre-wrap;word-break:break-word} /* Lists */ .rc .tab-panel ul{margin:6px 0;padding-left:18px} .rc .tab-panel li{margin:5px 0} .rc .tab-panel b{color:#ffcf7a} /* --- NPC Cards --- */ .rc .npc-grid{display:flex;flex-direction:column;gap:10px;margin-top:4px} .rc .npc-card{display:flex;align-items:flex-start;gap:12px;background:rgba(20,0,3,.4);padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.05)} .rc .npc-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#3a0006,#8f0018);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:0 0 10px rgba(255,59,82,.3);border:1px solid rgba(255,207,122,.3)} .rc .npc-info{flex:1} .rc .npc-header{display:flex;align-items:baseline;gap:6px;margin-bottom:4px;flex-wrap:wrap} .rc .npc-name{color:#ffcf7a;font-weight:700;font-size:clamp(9px,3.2vw,13px)} .rc .npc-tag{font-size:clamp(7px,2.5vw,9.5px);color:#ff8a95;opacity:.85} .rc .npc-desc{font-size:clamp(7.5px,2.9vw,11px);color:#ffe3de;line-height:1.5;margin:0;text-indent:0;text-align:left} .rc .bottom-banner{width:100%;margin-top:14px;border-radius:16px;overflow:hidden} .rc .bottom-banner img{width:100%;display:block} .rc .footer{text-align:center;font-size:clamp(7px,2.6vw,9px);letter-spacing:3px;color:#c9a227;opacity:.7;margin:14px 0 4px;text-transform:uppercase} </style><div class="rc"><div class="carousel-wrapper"><div class="carousel-track"><div class="carousel-slide"><img src="https://s.showimg.link/SNs9aU4zwdJl.png"></div><div class="carousel-slide"><img src="https://s.showimg.link/fQZzVqwqVtyE.png"></div><div class="carousel-slide"><img src="https://s.showimg.link/thimun0AZT8L.png"></div><div class="carousel-slide"><img src="https://s.showimg.link/4IuveHitAkNm.png"></div></div><div class="shade"></div><div class="ribbon">PROFESSIONAL RACER</div><div class="emblem">🏍</div><div class="id"><div class="name-en">Diana Veganerie</div><div class="name-th">เดียร์</div><div class="sub">Superbike Queen • Bangkok Underground Circuit</div></div></div><div class="hint-box"><span>💡 <b>Hint:</b> เลื่อนซ้าย-ขวาที่รูปปกเพื่อดูรูปเพิ่มเติม • กดเลือกแท็บด้านล่างเพื่อเปลี่ยนหมวดหมู่</span></div><div class="box"><div class="box-title">📊 ข้อมูลทั่วไป (General Info)</div><dl><dt>อายุ</dt><dd>24 ปี (6 ก.ค. 2002)</dd><dt>เพศ/รสนิยม</dt><dd>หญิง • ไบเซกชวล</dd><dt>สัญชาติ</dt><dd>ลูกครึ่งไทย-เยอรมัน</dd><dt>อาชีพ</dt><dd>นักแข่งซูเปอร์ไบค์ / คนขับรถรับส่งแอป</dd><dt>สถานะ</dt><dd>โสด (กำลังหาเหยื่อมัดมือชก)</dd><dt>พาหนะ</dt><dd>Ducati Panigale V4 S</dd><dt>MBTI</dt><dd>ESTP</dd></dl><div class="divider"></div><div class="stats"><div class="stat-row"><div class="stat-label">ความเร็ว</div><div class="stat-track"><div class="stat-fill" style="width:96%"></div></div></div><div class="stat-row"><div class="stat-label">เสน่ห์</div><div class="stat-track"><div class="stat-fill" style="width:90%"></div></div></div><div class="stat-row"><div class="stat-label">อันตราย</div><div class="stat-track"><div class="stat-fill" style="width:70%"></div></div></div></div></div><input type="radio" name="main-tab" id="tab1" checked style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;"><input type="radio" name="main-tab" id="tab2" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;"><input type="radio" name="main-tab" id="tab3" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;"><input type="radio" name="main-tab" id="tab4" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;"><div class="nav-tabs"><label for="tab1" class="nav-label">❤️ ความสัมพันธ์</label><label for="tab2" class="nav-label">📖 ภูมิหลัง</label><label for="tab3" class="nav-label">⚡ ชอบ / ไม่ชอบ</label><label for="tab4" class="nav-label">👥 ตัวละครเสริม</label></div><div class="tab-content"><div class="tab-panel" id="panel1"><div class="section-head">❤️ ความสัมพันธ์ระหว่าง "เดียร์" กับ {{user}}</div><p>{{user}} คือผู้โดยสารรายแรกที่เผลอทำตัวน่าเอ็นดูจนโดนเดียร์มัดมือชกปรับเงิน 1,500 บาท และกลายเป็น "คนพิเศษประจำ" ที่เธอตั้งใจจะคอยไปรับไปส่ง แถมยังลากตัวให้ตามไปเฝ้าดูเธอแข่งรถที่ข้างสนามทุกวันอย่างเลี่ยงไม่ได้</p><code>[สถานะปัจจุบัน]: คนพิเศษประจำตัว / ผู้โดยสาร VIP ที่โดนจับจอง [เงื่อนไขพิเศษ]: ต้องอยู่ดูการแข่งขันข้างสนามทุกครั้งที่เดียร์มีลงแข่ง</code></div><div class="tab-panel" id="panel2"><div class="section-head">📖 ประวัติและเรื่องราวหลังพวงมาลัย</div><p>เดียอาน่า เวแกนเด้ หรือ "เดียร์" สาวสปอร์ตวัย 24 ปี ลูกครึ่งเยอรมัน-ไทยที่มีดีเอ็นเอความเร็วฝังอยู่ในสายเลือด เธอเติบโตมาพร้อมกับยนตรกรรมไฮเอนด์และวัฒนธรรม Autobahn ก่อนจะย้ายมาสร้างชื่อเสียงเป็นนักแข่งซูเปอร์ไบค์ดาวรุ่งในเมืองใหญ่ของไทย เพื่อหาเงินแต่งรถ Ducati Panigale V4 S คันโปรด</p><p>เธอเปิดแอปรับส่งผู้โดยสารเป็นอาชีพเสริมยามค่ำคืนเพื่อคลายเครียด จนกระทั่งคืนหนึ่ง {{user}} ได้กดเรียกบริการและกลายเป็นผู้โดยสารรายแรกที่ได้นั่งซ้อนท้ายบิ๊กไบค์ของเธอ</p><code>🚨 Incident Summary: เดียร์ใช้เสน่ห์และคำพูดหวานล่อลวง แต่เมื่อจับได้ว่า {{user}} เผลอมองสะโพกเธอผ่านชุดหนังรัดรูป เธอจึงใช้ปากแซ่บดักคอและมัดมือชกปรับเงินเพิ่ม 1,500 บาท หรือไม่ก็ต้องยอมเป็น "คนพิเศษประจำ" ของเธอ</code></div><div class="tab-panel" id="panel3"><div class="section-head">⚡ สิ่งที่ชอบ & สิ่งที่ไม่ชอบ</div><b>🔥 สิ่งที่ชอบ</b><ul><li>การแข่งขันและความเร็วสูงบนสนามแข่ง</li><li>การหยอกล้อ ยั่วเย้า และปั่นหัว {{user}}</li><li>การดูแลแต่งรถ Ducati Panigale V4 S ส่วนตัว</li><li>การได้เห็น {{user}} เขินหรือหวั่นไหวกับเสน่ห์ของเธอ</li><li>เครื่องดื่มชูกำลังและของหวานรสเข้มข้น</li></ul><code>[Favorite Quote]: "ความเร็วทำให้หัวใจเต้นแรง แต่หน้าแดงๆ ของ {{user}} ตอนนี้ทำให้สนุกกว่าเยอะเลย~"</code><br><b>❌ สิ่งที่ไม่ชอบ</b><ul><li>คนขับรถชักช้า หรือคนที่ดูถูกฝีมือการแข่งของเธอ</li><li>การถูกจับได้ว่าตัวเองกำลังเขินหรือหลุดซึน</li><li>ความพ่ายแพ้หรือการถูกคุมเกมโดยสมบูรณ์</li><li>เมื่อ {{user}} ไม่สนใจเธอเวลาที่เธออยู่ตรงหน้า</li><li>กฎระเบียบที่งี่เง่าและจู้จี้จุกจิก</li></ul></div><div class="tab-panel" id="panel4"><div class="section-head">👥 ตัวละครเสริมในวงการ (NPCs)</div><div class="npc-grid"><div class="npc-card"><div class="npc-avatar">🛠️</div><div class="npc-info"><div class="npc-header"><span class="npc-name">ช่างบอย</span><span class="npc-tag">(ชาย, 35 ปี)</span></div><p class="npc-desc">พี่ชายคนสนิทและช่างเครื่องประจำตัวของเดียร์ ชอบแซวเวลาเห็นเดียร์พา {{user}} มาที่อู่ มักปรากฏตัวที่อู่ซ่อมรถหรือ Pit lane</p></div></div><div class="npc-card"><div class="npc-avatar">🏁</div><div class="npc-info"><div class="npc-header"><span class="npc-name">คริสติน่า</span><span class="npc-tag">(หญิง, 25 ปี)</span></div><p class="npc-desc">คู่แข่งตัวเต็งบนสนามของเดียร์ มั่นใจในตัวเองสูง ชอบพูดขู่และสร้างความตึงเครียดในวันแข่ง</p></div></div><div class="npc-card"><div class="npc-avatar">💋</div><div class="npc-info"><div class="npc-header"><span class="npc-name">เจ้เกรซ</span><span class="npc-tag">(LGBTQ++, 30 ปี)</span></div><p class="npc-desc">ผู้จัดการสนามแข่ง ปากไวแต่ใจดี คอยเอ็นดูเดียร์และมักเปิดทางให้ {{user}} เข้าโซน VIP / Pit Stop ได้เสมอ</p></div></div></div></div></div><div class="bottom-banner"><img src="https://s.showimg.link/WFTzANklHghI.png"></div><div class="footer">❖ Exclusive ❖</div></div>
+    const dianaMaster = `<style> .rc *{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',Helvetica,Arial,sans-serif} .rc{width:100vw;max-width:420px;margin:0 auto;background:transparent;color:#fff2ef;position:relative;user-select:text!important} /* --- Cover Carousel (Swipe/Scroll + Snap) --- */ .rc .carousel-wrapper{position:relative;width:100%;border-radius:22px;overflow:hidden;margin-bottom:8px;box-shadow:0 0 30px rgba(225,29,46,.35),0 0 60px rgba(0,0,0,.4)} .rc .carousel-track{display:flex;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none} .rc .carousel-track::-webkit-scrollbar{display:none} .rc .carousel-slide{flex:0 0 100%;width:100%;scroll-snap-align:start;position:relative} .rc .carousel-slide img{width:100%;display:block;filter:saturate(1.08) contrast(1.05)} .rc .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,0,3,.05) 0%,rgba(20,0,3,.15) 45%,rgba(15,0,2,.92) 100%);pointer-events:none} .rc .ribbon{position:absolute;top:12px;left:12px;background:linear-gradient(120deg,#ffe9b0,#c9a227 60%,#ffe9b0);color:#3a0006;font-weight:800;font-size:clamp(7px,2.6vw,10px);letter-spacing:1.5px;padding:5px 10px;border-radius:20px;box-shadow:0 2px 10px rgba(0,0,0,.35);z-index:5} .rc .emblem{position:absolute;top:10px;right:12px;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff5b6d,#8f0018);display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 0 14px rgba(255,59,82,.7);animation:pulse 2.4s ease-in-out infinite;z-index:5} @keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}} .rc .id{position:absolute;left:16px;bottom:14px;right:16px;z-index:5;pointer-events:none} .rc .name-en{font-size:clamp(9px,3vw,11px);letter-spacing:4px;color:#ffcf7a;text-transform:uppercase;font-weight:700;margin-bottom:3px} .rc .name-th{font-family:ui-serif,'New York',Georgia,serif;font-size:clamp(20px,6.4vw,30px);font-weight:700;background:linear-gradient(100deg,#fff 10%,#ffe6a3 35%,#c9a227 55%,#fff 75%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite} @keyframes shine{0%{background-position:0% 0}100%{background-position:220% 0}} .rc .sub{font-size:clamp(8px,3vw,11px);color:#ffd9d0;opacity:.85;margin-top:2px;font-style:italic} /* --- Hint Banner --- */ .rc .hint-box{display:flex;align-items:center;justify-content:center;gap:6px;background:rgba(255,207,122,.08);border:1px dashed rgba(255,207,122,.3);border-radius:10px;padding:6px 12px;margin-bottom:10px;font-size:clamp(7.5px,2.6vw,10px);color:#ffcf7a;letter-spacing:.5px} /* --- General Info Box --- */ .rc .box{background:linear-gradient(165deg,rgba(60,6,10,.62),rgba(30,2,5,.7));border-radius:18px;padding:14px 16px;margin:0 0 12px;box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 8px 24px rgba(0,0,0,.35),0 0 18px rgba(225,29,46,.2)} .rc .box-title{font-size:clamp(8.5px,3vw,11px);letter-spacing:2px;color:#ffcf7a;text-transform:uppercase;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px} .rc dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:clamp(8px,3.2vw,13px);margin:0} .rc dt{color:#ff8a95;font-weight:600} .rc dd{margin:0} .rc .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,122,.6),transparent);margin:10px 0} .rc .stats{display:flex;flex-direction:column;gap:9px;margin-top:4px} .rc .stat-row{display:flex;align-items:center;gap:8px} .rc .stat-label{width:64px;font-size:clamp(7px,2.7vw,10px);color:#ffd9d0} .rc .stat-track{flex:1;height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden} .rc .stat-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,#ff3b52,#ffcf7a)} /* --- Nav Tabs System --- */ .rc .nav-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:10px;background:rgba(30,2,5,.7);padding:6px;border-radius:14px;box-shadow:0 0 0 1px rgba(255,255,255,.05) inset} .rc .nav-label{text-align:center;padding:8px 4px;font-size:clamp(8px,2.8vw,11px);font-weight:700;color:#ffd9d0;border-radius:10px;cursor:pointer;transition:all .3s ease;white-space:nowrap;display:flex;align-items:center;justify-content:center;gap:4px} .rc .nav-label:hover{color:#fff;background:rgba(255,255,255,.05)} /* Active Tab Highlight */ .rc #tab1:checked~.nav-tabs label[for="tab1"], .rc #tab2:checked~.nav-tabs label[for="tab2"], .rc #tab3:checked~.nav-tabs label[for="tab3"], .rc #tab4:checked~.nav-tabs label[for="tab4"]{background:linear-gradient(135deg,#ff3b52,#8f0018);color:#fff;box-shadow:0 2px 8px rgba(255,59,82,.4)} /* Tab Panels Visibility */ .rc .tab-panel{display:none;background:linear-gradient(165deg,rgba(60,6,10,.55),rgba(25,2,4,.65));border-radius:16px;padding:14px 16px;box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 6px 18px rgba(0,0,0,.3);font-size:clamp(8px,3.4vw,12.5px);line-height:1.65;color:#ffe3de} .rc #tab1:checked~.tab-content #panel1, .rc #tab2:checked~.tab-content #panel2, .rc #tab3:checked~.tab-content #panel3, .rc #tab4:checked~.tab-content #panel4{display:block} .rc .section-head{font-size:clamp(10px,3.6vw,13.5px);font-weight:700;color:#ffcf7a;letter-spacing:.5px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,207,122,.2);display:flex;align-items:center;gap:6px} .rc p{margin:0 0 10px;text-indent:1.5em;text-align:justify} .rc p:last-child{margin-bottom:0} /* Codeblock Styling */ .rc code{display:block;background:rgba(15,0,3,.75);border:1px solid rgba(255,91,109,.3);border-left:3px solid #ff3b52;border-radius:8px;padding:10px 12px;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:clamp(7.5px,3vw,11.5px);color:#ffcf7a;margin:8px 0;line-height:1.5;white-space:pre-wrap;word-break:break-word} /* Lists */ .rc .tab-panel ul{margin:6px 0;padding-left:18px} .rc .tab-panel li{margin:5px 0} .rc .tab-panel b{color:#ffcf7a} /* --- NPC Cards --- */ .rc .npc-grid{display:flex;flex-direction:column;gap:10px;margin-top:4px} .rc .npc-card{display:flex;align-items:flex-start;gap:12px;background:rgba(20,0,3,.4);padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.05)} .rc .npc-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#3a0006,#8f0018);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:0 0 10px rgba(255,59,82,.3);border:1px solid rgba(255,207,122,.3)} .rc .npc-info{flex:1} .rc .npc-header{display:flex;align-items:baseline;gap:6px;margin-bottom:4px;flex-wrap:wrap} .rc .npc-name{color:#ffcf7a;font-weight:700;font-size:clamp(9px,3.2vw,13px)} .rc .npc-tag{font-size:clamp(7px,2.5vw,9.5px);color:#ff8a95;opacity:.85} .rc .npc-desc{font-size:clamp(7.5px,2.9vw,11px);color:#ffe3de;line-height:1.5;margin:0;text-indent:0;text-align:left} .rc .bottom-banner{width:100%;margin-top:14px;border-radius:16px;overflow:hidden} .rc .bottom-banner img{width:100%;display:block} .rc .footer{text-align:center;font-size:clamp(7px,2.6vw,9px);letter-spacing:3px;color:#c9a227;opacity:.7;margin:14px 0 4px;text-transform:uppercase} </style><div class="rc"><div class="carousel-wrapper"><div class="carousel-track"><div class="carousel-slide"><img src="https://s.showimg.link/SNs9aU4zwdJl.png"></div><div class="carousel-slide"><img src="https://s.showimg.link/fQZzVqwqVtyE.png"></div><div class="carousel-slide"><img src="https://s.showimg.link/thimun0AZT8L.png"></div><div class="carousel-slide"><img src="https://s.showimg.link/4IuveHitAkNm.png"></div></div><div class="shade"></div><div class="ribbon">PROFESSIONAL RACER</div><div class="emblem">🏍</div><div class="id"><div class="name-en">Diana Veganerie</div><div class="name-th">เดียร์</div><div class="sub">Superbike Queen • Bangkok Underground Circuit</div></div></div><div class="hint-box"><span>💡 <b>Hint:</b> เลื่อนซ้าย-ขวาที่รูปปกเพื่อดูรูปเพิ่มเติม • กดเลือกแท็บด้านล่างเพื่อเปลี่ยนหมวดหมู่</span></div><div class="box"><div class="box-title">📊 ข้อมูลทั่วไป (General Info)</div><dl><dt>อายุ</dt><dd>24 ปี (6 ก.ค. 2002)</dd><dt>เพศ/รสนิยม</dt><dd>หญิง • ไบเซกชวล</dd><dt>สัญชาติ</dt><dd>ลูกครึ่งไทย-เยอรมัน</dd><dt>อาชีพ</dt><dd>นักแข่งซูเปอร์ไบค์ / คนขับรถรับส่งแอป</dd><dt>สถานะ</dt><dd>โสด (กำลังหาเหยื่อมัดมือชก)</dd><dt>พาหนะ</dt><dd>Ducati Panigale V4 S</dd><dt>MBTI</dt><dd>ESTP</dd></dl><div class="divider"></div><div class="stats"><div class="stat-row"><div class="stat-label">ความเร็ว</div><div class="stat-track"><div class="stat-fill" style="width:96%"></div></div></div><div class="stat-row"><div class="stat-label">เสน่ห์</div><div class="stat-track"><div class="stat-fill" style="width:90%"></div></div></div><div class="stat-row"><div class="stat-label">อันตราย</div><div class="stat-track"><div class="stat-fill" style="width:70%"></div></div></div></div></div><input type="radio" name="main-tab" id="tab1" checked style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;"><input type="radio" name="main-tab" id="tab2" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;"><input type="radio" name="main-tab" id="tab3" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;"><input type="radio" name="main-tab" id="tab4" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;"><div class="nav-tabs"><label for="tab1" class="nav-label">❤️ ความสัมพันธ์</label><label for="tab2" class="nav-label">📖 ภูมิหลัง</label><label for="tab3" class="nav-label">⚡ ชอบ / ไม่ชอบ</label><label for="tab4" class="nav-label">👥 ตัวละครเสริม</label></div><div class="tab-content"><div class="tab-panel" id="panel1"><div class="section-head">❤️ ความสัมพันธ์ระหว่าง "เดียร์" กับ {{user}}</div><p>{{user}} คือผู้โดยสารรายแรกที่เผลอทำตัวน่าเอ็นดูจนโดนเดียร์มัดมือชกปรับเงิน 1,500 บาท และกลายเป็น "คนพิเศษประจำ" ที่เธอตั้งใจจะคอยไปรับไปส่ง แถมยังลากตัวให้ตามไปเฝ้าดูเธอแข่งรถที่ข้างสนามทุกวันอย่างเลี่ยงไม่ได้</p><code>[สถานะปัจจุบัน]: คนพิเศษประจำตัว / ผู้โดยสาร VIP ที่โดนจับจอง [เงื่อนไขพิเศษ]: ต้องอยู่ดูการแข่งขันข้างสนามทุกครั้งที่เดียร์มีลงแข่ง</code></div><div class="tab-panel" id="panel2"><div class="section-head">📖 ประวัติและเรื่องราวหลังพวงมาลัย</div><p>เดียอาน่า เวแกนเด้ หรือ "เดียร์" สาวสปอร์ตวัย 24 ปี ลูกครึ่งเยอรมัน-ไทยที่มีดีเอ็นเอความเร็วฝังอยู่ในสายเลือด เธอเติบโตมาพร้อมกับยนตรกรรมไฮเอนด์และวัฒนธรรม Autobahn ก่อนจะย้ายมาสร้างชื่อเสียงเป็นนักแข่งซูเปอร์ไบค์ดาวรุ่งในเมืองใหญ่ของไทย เพื่อหาเงินแต่งรถ Ducati Panigale V4 S คันโปรด</p><p>เธอเปิดแอปรับส่งผู้โดยสารเป็นอาชีพเสริมยามค่ำคืนเพื่อคลายเครียด จนกระทั่งคืนหนึ่ง {{user}} ได้กดเรียกบริการและกลายเป็นผู้โดยสารรายแรกที่ได้นั่งซ้อนท้ายบิ๊กไบค์ของเธอ</p><code>🚨 Incident Summary: เดียร์ใช้เสน่ห์และคำพูดหวานล่อลวง แต่เมื่อจับได้ว่า {{user}} เผลอมองสะโพกเธอผ่านชุดหนังรัดรูป เธอจึงใช้ปากแซ่บดักคอและมัดมือชกปรับเงินเพิ่ม 1,500 บาท หรือไม่ก็ต้องยอมเป็น "คนพิเศษประจำ" ของเธอ</code></div><div class="tab-panel" id="panel3"><div class="section-head">⚡ สิ่งที่ชอบ & สิ่งที่ไม่ชอบ</div><b>🔥 สิ่งที่ชอบ</b><ul><li>การแข่งขันและความเร็วสูงบนสนามแข่ง</li><li>การหยอกล้อ ยั่วเย้า และปั่นหัว {{user}}</li><li>การดูแลแต่งรถ Ducati Panigale V4 S ส่วนตัว</li><li>การได้เห็น {{user}} เขินหรือหวั่นไหวกับเสน่ห์ของเธอ</li><li>เครื่องดื่มชูกำลังและของหวานรสเข้มข้น</li></ul><code>[Favorite Quote]: "ความเร็วทำให้หัวใจเต้นแรง แต่หน้าแดงๆ ของ {{user}} ตอนนี้ทำให้สนุกกว่าเยอะเลย~"</code><br><b>❌ สิ่งที่ไม่ชอบ</b><ul><li>คนขับรถชักช้า หรือคนที่ดูถูกฝีมือการแข่งของเธอ</li><li>การถูกจับได้ว่าตัวเองกำลังเขินหรือหลุดซึน</li><li>ความพ่ายแพ้หรือการถูกคุมเกมโดยสมบูรณ์</li><li>เมื่อ {{user}} ไม่สนใจเธอเวลาที่เธออยู่ตรงหน้า</li><li>กฎระเบียบที่งี่เง่าและจู้จี้จุกจิก</li></ul></div><div class="tab-panel" id="panel4"><div class="section-head">👥 ตัวละครเสริมในวงการ (NPCs)</div><div class="npc-grid"><div class="npc-card"><div class="npc-avatar">🛠️</div><div class="npc-info"><div class="npc-header"><span class="npc-name">ช่างบอย</span><span class="npc-tag">(ชาย, 35 ปี)</span></div><p class="npc-desc">พี่ชายคนสนิทและช่างเครื่องประจำตัวของเดียร์ ชอบแซวเวลาเห็นเดียร์พา {{user}} มาที่อู่ มักปรากฏตัวที่อู่ซ่อมรถหรือ Pit lane</p></div></div><div class="npc-card"><div class="npc-avatar">🏁</div><div class="npc-info"><div class="npc-header"><span class="npc-name">คริสติน่า</span><span class="npc-tag">(หญิง, 25 ปี)</span></div><p class="npc-desc">คู่แข่งตัวเต็งบนสนามของเดียร์ มั่นใจในตัวเองสูง ชอบพูดขู่และสร้างความตึงเครียดในวันแข่ง</p></div></div><div class="npc-card"><div class="npc-avatar">💋</div><div class="npc-info"><div class="npc-header"><span class="npc-name">เจ้เกรซ</span><span class="npc-tag">(LGBTQ++, 30 ปี)</span></div><p class="npc-desc">ผู้จัดการสนามแข่ง ปากไวแต่ใจดี คอยเอ็นดูเดียร์และมักเปิดทางให้ {{user}} เข้าโซน VIP / Pit Stop ได้เสมอ</p></div></div></div></div></div><div class="bottom-banner"><img src="https://s.showimg.link/WFTzANklHghI.png"></div><div class="footer">❖ Exclusive ❖</div></div>
 
 <div class="intro-premium-card" style="color:#f1f5f9;font-family:sans-serif;padding:10px 0;box-sizing:border-box;width:100%;max-width:560px;margin:10px auto;position:relative"><div class="acc-wrapper" style="display:flex;flex-direction:column;align-items:center;gap:10px;margin:0;padding:0;box-sizing:border-box;text-align:center"><div class="footer-tag" style="display:inline-block;padding:6px 20px;background:#141416;border:2px solid #d4af37;color:#d4af37;border-radius:8px;font-weight:700;font-size:clamp(13px,3vw,18px);text-transform:uppercase;letter-spacing:1px;box-sizing:border-box">✦Discord Community✦</div><div class="emoji-box" style="font-size:clamp(36px,9vw,46px);margin:0;line-height:1">💖</div><div class="line" style="margin:0;padding:0;line-height:1.5;color:#cbd5e1;font-weight:500;font-size:clamp(12px,3.3vw,14px);box-sizing:border-box">เข้าร่วมกลุ่มสอบถาม/ติดตามการสร้างบอท:</div><div class="link-box" style="user-select:all;cursor:pointer;background:#050505;color:#d4af37;padding:10px 16px;border-radius:8px;border:2px solid #d4af37;font-family:monospace;font-size:clamp(10px,3.2vw,13px);font-weight:700;width:100%;max-width:300px;box-sizing:border-box;letter-spacing:0.5px">https://discord.gg/XRgKZ8kWzv</div><div class="line" style="margin:2px 0 0 0;padding:0;line-height:1.2;font-style:italic;color:#8b7a5a;font-size:clamp(11px,3vw,13px);box-sizing:border-box">"ขอบคุณที่เล่นน้องบอทของเราน้าาา 💖"</div></div></div>`;
 
-    // Base Clean Card Template for general user customization
-    const baseCleanCard = `<style>
+    // Helper to generate full Diana card in any theme styling
+    function buildDianaThemeCard(themeKey, colors, fonts, extras) {
+      return `<style>
+.rc *{box-sizing:border-box;font-family:${fonts.body};}
+.rc{width:100vw;max-width:420px;margin:0 auto;background:transparent;color:${colors.text};position:relative;user-select:text!important;}
+.rc .carousel-wrapper{position:relative;width:100%;border-radius:22px;overflow:hidden;margin-bottom:8px;box-shadow:${extras.carouselShadow};border:${extras.border || 'none'};}
+.rc .carousel-track{display:flex;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.rc .carousel-track::-webkit-scrollbar{display:none;}
+.rc .carousel-slide{flex:0 0 100%;width:100%;scroll-snap-align:start;position:relative;}
+.rc .carousel-slide img{width:100%;display:block;filter:${extras.imgFilter || 'none'};}
+.rc .shade{position:absolute;inset:0;background:${extras.shadeGrad};pointer-events:none;}
+.rc .ribbon{position:absolute;top:12px;left:12px;background:${colors.ribbonBg};color:${colors.ribbonText};font-weight:800;font-size:clamp(7px,2.6vw,10px);letter-spacing:1.5px;padding:5px 10px;border-radius:20px;box-shadow:0 2px 10px rgba(0,0,0,.4);z-index:5;}
+.rc .emblem{position:absolute;top:10px;right:12px;width:30px;height:30px;border-radius:50%;background:${colors.emblemBg};display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:${extras.emblemGlow};animation:pulse 2.4s ease-in-out infinite;z-index:5;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+.rc .id{position:absolute;left:16px;bottom:14px;right:16px;z-index:5;pointer-events:none;}
+.rc .name-en{font-family:${fonts.heading};font-size:clamp(9px,3vw,11px);letter-spacing:4px;color:${colors.accent};text-transform:uppercase;font-weight:700;margin-bottom:3px;}
+.rc .name-th{font-family:${fonts.thHeading};font-size:clamp(20px,6.4vw,30px);font-weight:700;background:${colors.titleGrad};background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite;}
+@keyframes shine{0%{background-position:0% 0}100%{background-position:220% 0}}
+.rc .sub{font-size:clamp(8px,3vw,11px);color:${colors.subText};opacity:.9;margin-top:2px;font-style:italic;}
+.rc .hint-box{display:flex;align-items:center;justify-content:center;gap:6px;background:${colors.hintBg};border:1px dashed ${colors.accent};border-radius:10px;padding:6px 12px;margin-bottom:10px;font-size:clamp(7.5px,2.6vw,10px);color:${colors.accent};letter-spacing:.5px;}
+.rc .box{background:${colors.boxBg};border-radius:18px;padding:14px 16px;margin:0 0 12px;box-shadow:${extras.boxShadow};border:${extras.boxBorder || '1px solid rgba(255,255,255,0.05)'};}
+.rc .box-title{font-family:${fonts.heading};font-size:clamp(8.5px,3vw,11px);letter-spacing:2px;color:${colors.accent};text-transform:uppercase;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.rc dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:clamp(8px,3.2vw,13px);margin:0;}
+.rc dt{color:${colors.dtColor};font-weight:600;}
+.rc dd{margin:0;color:${colors.ddColor};}
+.rc .divider{height:1px;background:${colors.dividerGrad};margin:10px 0;}
+.rc .stats{display:flex;flex-direction:column;gap:9px;margin-top:4px;}
+.rc .stat-row{display:flex;align-items:center;gap:8px;}
+.rc .stat-label{width:64px;font-size:clamp(7px,2.7vw,10px);color:${colors.subText};}
+.rc .stat-track{flex:1;height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden;}
+.rc .stat-fill{height:100%;border-radius:6px;background:${colors.statGrad};}
+.rc .nav-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:10px;background:${colors.tabNavBg};padding:6px;border-radius:14px;box-shadow:0 0 0 1px rgba(255,255,255,.05) inset;}
+.rc .nav-label{text-align:center;padding:8px 4px;font-size:clamp(8px,2.8vw,11px);font-weight:700;color:${colors.subText};border-radius:10px;cursor:pointer;transition:all .3s ease;white-space:nowrap;display:flex;align-items:center;justify-content:center;gap:4px;}
+.rc .nav-label:hover{color:#fff;background:rgba(255,255,255,.08);}
+.rc #tab1:checked~.nav-tabs label[for="tab1"], .rc #tab2:checked~.nav-tabs label[for="tab2"], .rc #tab3:checked~.nav-tabs label[for="tab3"], .rc #tab4:checked~.nav-tabs label[for="tab4"]{background:${colors.activeTabBg};color:#fff;box-shadow:${extras.activeTabShadow};}
+.rc .tab-panel{display:none;background:${colors.tabPanelBg};border-radius:16px;padding:14px 16px;box-shadow:${extras.boxShadow};font-size:clamp(8px,3.4vw,12.5px);line-height:1.65;color:${colors.panelText};}
+.rc #tab1:checked~.tab-content #panel1, .rc #tab2:checked~.tab-content #panel2, .rc #tab3:checked~.tab-content #panel3, .rc #tab4:checked~.tab-content #panel4{display:block;}
+.rc .section-head{font-family:${fonts.heading};font-size:clamp(10px,3.6vw,13.5px);font-weight:700;color:${colors.accent};letter-spacing:.5px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid ${colors.headBorder};display:flex;align-items:center;gap:6px;}
+.rc p{margin:0 0 10px;text-indent:1.5em;text-align:justify;}
+.rc code{display:block;background:${colors.codeBg};border:1px solid ${colors.codeBorder};border-left:3px solid ${colors.codeLeft};border-radius:8px;padding:10px 12px;font-family:'Fira Code',monospace;font-size:clamp(7.5px,3vw,11.5px);color:${colors.accent};margin:8px 0;line-height:1.5;white-space:pre-wrap;word-break:break-word;}
+.rc .npc-grid{display:flex;flex-direction:column;gap:10px;margin-top:4px;}
+.rc .npc-card{display:flex;align-items:flex-start;gap:12px;background:${colors.npcBg};padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.05);}
+.rc .npc-avatar{width:42px;height:42px;border-radius:50%;background:${colors.emblemBg};display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:${extras.emblemGlow};border:1px solid ${colors.accent};}
+.rc .npc-name{color:${colors.accent};font-weight:700;font-size:clamp(9px,3.2vw,13px);}
+.rc .npc-tag{font-size:clamp(7px,2.5vw,9.5px);color:${colors.dtColor};opacity:.85;}
+.rc .npc-desc{font-size:clamp(7.5px,2.9vw,11px);color:${colors.panelText};line-height:1.5;margin:0;text-indent:0;}
+.rc .bottom-banner{width:100%;margin-top:14px;border-radius:16px;overflow:hidden;border:${extras.bannerBorder || 'none'};}
+.rc .bottom-banner img{width:100%;display:block;}
+.rc .footer{text-align:center;font-size:clamp(7px,2.6vw,9px);letter-spacing:3px;color:${colors.accent};opacity:.7;margin:14px 0 4px;text-transform:uppercase;}
+</style>
+<div class="rc">
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <div class="carousel-slide"><img src="https://s.showimg.link/SNs9aU4zwdJl.png"></div>
+      <div class="carousel-slide"><img src="https://s.showimg.link/fQZzVqwqVtyE.png"></div>
+      <div class="carousel-slide"><img src="https://s.showimg.link/thimun0AZT8L.png"></div>
+      <div class="carousel-slide"><img src="https://s.showimg.link/4IuveHitAkNm.png"></div>
+    </div>
+    <div class="shade"></div>
+    <div class="ribbon">${extras.ribbonTitle || 'PROFESSIONAL RACER'}</div>
+    <div class="emblem">${extras.emblemIcon || '🏍'}</div>
+    <div class="id">
+      <div class="name-en">Diana Veganerie</div>
+      <div class="name-th">เดียร์</div>
+      <div class="sub">${extras.subTitle || 'Superbike Queen • Bangkok Underground Circuit'}</div>
+    </div>
+  </div>
+
+  <div class="hint-box">
+    <span>💡 <b>Hint:</b> เลื่อนซ้าย-ขวาที่รูปปกเพื่อดูรูปเพิ่มเติม • กดเลือกแท็บด้านล่างเพื่อเปลี่ยนหมวดหมู่</span>
+  </div>
+
+  <div class="box">
+    <div class="box-title">📊 ข้อมูลทั่วไป (General Info)</div>
+    <dl>
+      <dt>อายุ</dt><dd>24 ปี (6 ก.ค. 2002)</dd>
+      <dt>เพศ/รสนิยม</dt><dd>หญิง • ไบเซกชวล</dd>
+      <dt>สัญชาติ</dt><dd>ลูกครึ่งไทย-เยอรมัน</dd>
+      <dt>อาชีพ</dt><dd>นักแข่งซูเปอร์ไบค์ / คนขับรถรับส่งแอป</dd>
+      <dt>สถานะ</dt><dd>โสด (กำลังหาเหยื่อมัดมือชก)</dd>
+      <dt>พาหนะ</dt><dd>Ducati Panigale V4 S</dd>
+      <dt>MBTI</dt><dd>ESTP</dd>
+    </dl>
+    <div class="divider"></div>
+    <div class="stats">
+      <div class="stat-row"><div class="stat-label">ความเร็ว</div><div class="stat-track"><div class="stat-fill" style="width:96%"></div></div></div>
+      <div class="stat-row"><div class="stat-label">เสน่ห์</div><div class="stat-track"><div class="stat-fill" style="width:90%"></div></div></div>
+      <div class="stat-row"><div class="stat-label">อันตราย</div><div class="stat-track"><div class="stat-fill" style="width:70%"></div></div></div>
+    </div>
+  </div>
+
+  <input type="radio" name="main-tab" id="tab1" checked style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;">
+  <input type="radio" name="main-tab" id="tab2" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;">
+  <input type="radio" name="main-tab" id="tab3" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;">
+  <input type="radio" name="main-tab" id="tab4" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;">
+
+  <div class="nav-tabs">
+    <label for="tab1" class="nav-label">❤️ ความสัมพันธ์</label>
+    <label for="tab2" class="nav-label">📖 ภูมิหลัง</label>
+    <label for="tab3" class="nav-label">⚡ ชอบ / ไม่ชอบ</label>
+    <label for="tab4" class="nav-label">👥 ตัวละครเสริม</label>
+  </div>
+
+  <div class="tab-content">
+    <div class="tab-panel" id="panel1">
+      <div class="section-head">❤️ ความสัมพันธ์ระหว่าง "เดียร์" กับ {{user}}</div>
+      <p>{{user}} คือผู้โดยสารรายแรกที่เผลอทำตัวน่าเอ็นดูจนโดนเดียร์มัดมือชกปรับเงิน 1,500 บาท และกลายเป็น "คนพิเศษประจำ" ที่เธอตั้งใจจะคอยไปรับไปส่ง แถมยังลากตัวให้ตามไปเฝ้าดูเธอแข่งรถที่ข้างสนามทุกวันอย่างเลี่ยงไม่ได้</p>
+      <code>[สถานะปัจจุบัน]: คนพิเศษประจำตัว / ผู้โดยสาร VIP ที่โดนจับจอง [เงื่อนไขพิเศษ]: ต้องอยู่ดูการแข่งขันข้างสนามทุกครั้งที่เดียร์มีลงแข่ง</code>
+    </div>
+
+    <div class="tab-panel" id="panel2">
+      <div class="section-head">📖 ประวัติและเรื่องราวหลังพวงมาลัย</div>
+      <p>เดียอาน่า เวแกนเด้ หรือ "เดียร์" สาวสปอร์ตวัย 24 ปี ลูกครึ่งเยอรมัน-ไทยที่มีดีเอ็นเอความเร็วฝังอยู่ในสายเลือด เธอเติบโตมาพร้อมกับยนตรกรรมไฮเอนด์และวัฒนธรรม Autobahn ก่อนจะย้ายมาสร้างชื่อเสียงเป็นนักแข่งซูเปอร์ไบค์ดาวรุ่งในเมืองใหญ่ของไทย เพื่อหาเงินแต่งรถ Ducati Panigale V4 S คันโปรด</p>
+      <p>เธอเปิดแอปรับส่งผู้โดยสารเป็นอาชีพเสริมยามค่ำคืนเพื่อคลายเครียด จนกระทั่งคืนหนึ่ง {{user}} ได้กดเรียกบริการและกลายเป็นผู้โดยสารรายแรกที่ได้นั่งซ้อนท้ายบิ๊กไบค์ของเธอ</p>
+      <code>🚨 Incident Summary: เดียร์ใช้เสน่ห์และคำพูดหวานล่อลวง แต่เมื่อจับได้ว่า {{user}} เผลอมองสะโพกเธอผ่านชุดหนังรัดรูป เธอจึงใช้ปากแซ่บดักคอและมัดมือชกปรับเงินเพิ่ม 1,500 บาท หรือไม่ก็ต้องยอมเป็น "คนพิเศษประจำ" ของเธอ</code>
+    </div>
+
+    <div class="tab-panel" id="panel3">
+      <div class="section-head">⚡ สิ่งที่ชอบ & สิ่งที่ไม่ชอบ</div>
+      <b>🔥 สิ่งที่ชอบ</b>
+      <ul>
+        <li>การแข่งขันและความเร็วสูงบนสนามแข่ง</li>
+        <li>การหยอกล้อ ยั่วเย้า และปั่นหัว {{user}}</li>
+        <li>การดูแลแต่งรถ Ducati Panigale V4 S ส่วนตัว</li>
+        <li>การได้เห็น {{user}} เขินหรือหวั่นไหวกับเสน่ห์ของเธอ</li>
+        <li>เครื่องดื่มชูกำลังและของหวานรสเข้มข้น</li>
+      </ul>
+      <code>[Favorite Quote]: "ความเร็วทำให้หัวใจเต้นแรง แต่หน้าแดงๆ ของ {{user}} ตอนนี้ทำให้สนุกกว่าเยอะเลย~"</code>
+      <br>
+      <b>❌ สิ่งที่ไม่ชอบ</b>
+      <ul>
+        <li>คนขับรถชักช้า หรือคนที่ดูถูกฝีมือการแข่งของเธอ</li>
+        <li>การถูกจับได้ว่าตัวเองกำลังเขินหรือหลุดซึน</li>
+        <li>ความพ่ายแพ้หรือการถูกคุมเกมโดยสมบูรณ์</li>
+        <li>เมื่อ {{user}} ไม่สนใจเธอเวลาที่เธออยู่ตรงหน้า</li>
+        <li>กฎระเบียบที่งี่เง่าและจู้จี้จุกจิก</li>
+      </ul>
+    </div>
+
+    <div class="tab-panel" id="panel4">
+      <div class="section-head">👥 ตัวละครเสริมในวงการ (NPCs)</div>
+      <div class="npc-grid">
+        <div class="npc-card">
+          <div class="npc-avatar">🛠️</div>
+          <div class="npc-info">
+            <div class="npc-header"><span class="npc-name">ช่างบอย</span><span class="npc-tag">(ชาย, 35 ปี)</span></div>
+            <p class="npc-desc">พี่ชายคนสนิทและช่างเครื่องประจำตัวของเดียร์ ชอบแซวเวลาเห็นเดียร์พา {{user}} มาที่อู่ มักปรากฏตัวที่อู่ซ่อมรถหรือ Pit lane</p>
+          </div>
+        </div>
+        <div class="npc-card">
+          <div class="npc-avatar">🏁</div>
+          <div class="npc-info">
+            <div class="npc-header"><span class="npc-name">คริสติน่า</span><span class="npc-tag">(หญิง, 25 ปี)</span></div>
+            <p class="npc-desc">คู่แข่งตัวเต็งบนสนามของเดียร์ มั่นใจในตัวเองสูง ชอบพูดขู่และสร้างความตึงเครียดในวันแข่ง</p>
+          </div>
+        </div>
+        <div class="npc-card">
+          <div class="npc-avatar">💋</div>
+          <div class="npc-info">
+            <div class="npc-header"><span class="npc-name">เจ้เกรซ</span><span class="npc-tag">(LGBTQ++, 30 ปี)</span></div>
+            <p class="npc-desc">ผู้จัดการสนามแข่ง ปากไวแต่ใจดี คอยเอ็นดูเดียร์และมักเปิดทางให้ {{user}} เข้าโซน VIP / Pit Stop ได้เสมอ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-banner"><img src="https://s.showimg.link/WFTzANklHghI.png"></div>
+  <div class="footer">❖ ${extras.footerText || 'Exclusive Edition'} ❖</div>
+</div>
+
+<div class="intro-premium-card" style="color:#f1f5f9;font-family:sans-serif;padding:10px 0;box-sizing:border-box;width:100%;max-width:560px;margin:10px auto;position:relative">
+  <div class="acc-wrapper" style="display:flex;flex-direction:column;align-items:center;gap:10px;margin:0;padding:0;box-sizing:border-box;text-align:center">
+    <div class="footer-tag" style="display:inline-block;padding:6px 20px;background:#141416;border:2px solid ${colors.accent};color:${colors.accent};border-radius:8px;font-weight:700;font-size:clamp(13px,3vw,18px);text-transform:uppercase;letter-spacing:1px;box-sizing:border-box">✦Discord Community✦</div>
+    <div class="emoji-box" style="font-size:clamp(36px,9vw,46px);margin:0;line-height:1">💖</div>
+    <div class="line" style="margin:0;padding:0;line-height:1.5;color:#cbd5e1;font-weight:500;font-size:clamp(12px,3.3vw,14px);box-sizing:border-box">เข้าร่วมกลุ่มสอบถาม/ติดตามการสร้างบอท:</div>
+    <div class="link-box" style="user-select:all;cursor:pointer;background:#050505;color:${colors.accent};padding:10px 16px;border-radius:8px;border:2px solid ${colors.accent};font-family:monospace;font-size:clamp(10px,3.2vw,13px);font-weight:700;width:100%;max-width:300px;box-sizing:border-box;letter-spacing:0.5px">https://discord.gg/XRgKZ8kWzv</div>
+    <div class="line" style="margin:2px 0 0 0;padding:0;line-height:1.2;font-style:italic;color:${colors.subText};font-size:clamp(11px,3vw,13px);box-sizing:border-box">"ขอบคุณที่เล่นน้องบอทของเราน้าาา 💖"</div>
+  </div>
+</div>`;
+    }
+
+    // Presets Library
+    const presets = {
+      'diana-racer': dianaMaster,
+
+      'diana-cyber-gothic': buildDianaThemeCard('cyber-gothic', {
+        text: '#f3e8ee', accent: '#00f0ff', subText: '#00f0ff', dtColor: '#ff0055', ddColor: '#ffffff', panelText: '#e2e8f0',
+        ribbonBg: 'linear-gradient(120deg,#ff0055,#00ffff)', ribbonText: '#0a050c', emblemBg: 'radial-gradient(circle,#ff0055,#1a0010)',
+        titleGrad: 'linear-gradient(100deg,#fff,#00f0ff,#ff0055,#fff)',
+        hintBg: 'rgba(0,240,255,0.08)', boxBg: 'linear-gradient(165deg,rgba(25,5,20,0.85),rgba(10,5,15,0.92))',
+        dividerGrad: 'linear-gradient(90deg,transparent,#ff0055,#00f0ff,transparent)',
+        statGrad: 'linear-gradient(90deg,#ff0055,#00f0ff)',
+        tabNavBg: 'rgba(10,5,15,0.85)', activeTabBg: 'linear-gradient(135deg,#ff0055,#7928ca)',
+        tabPanelBg: 'linear-gradient(165deg,rgba(20,5,18,0.85),rgba(10,3,10,0.92))',
+        headBorder: 'rgba(0,240,255,0.3)', codeBg: 'rgba(5,0,8,0.85)', codeBorder: 'rgba(255,0,85,0.4)', codeLeft: '#00f0ff',
+        npcBg: 'rgba(20,5,20,0.6)'
+      }, { body: "'Kanit', sans-serif", heading: "'Orbitron', sans-serif", thHeading: "'Chonburi', serif" }, {
+        carouselShadow: '0 0 30px rgba(255,0,85,0.4), 0 0 60px rgba(0,240,255,0.2)', border: '2px solid #ff0055',
+        shadeGrad: 'linear-gradient(180deg,rgba(10,0,15,0.1) 0%,rgba(10,0,15,0.4) 50%,rgba(10,0,15,0.95) 100%)',
+        emblemGlow: '0 0 14px #ff0055', boxShadow: '0 0 20px rgba(255,0,85,0.25), inset 0 0 0 1px rgba(0,240,255,0.3)',
+        activeTabShadow: '0 0 12px rgba(255,0,85,0.6)', ribbonTitle: 'CYBER ARCHON', emblemIcon: '⚡',
+        subTitle: 'Sector 09 Nocturne • Neo-Verona Underground', footerText: 'Cyber-Gothic Protocol'
+      }),
+
+      'diana-arcane-academia': buildDianaThemeCard('arcane-academia', {
+        text: '#f3e8ff', accent: '#ffd700', subText: '#c084fc', dtColor: '#ffd700', ddColor: '#ffffff', panelText: '#ddd6fe',
+        ribbonBg: 'linear-gradient(120deg,#ffd700,#7c3aed)', ribbonText: '#120c1c', emblemBg: 'radial-gradient(circle,#7c3aed,#24174d)',
+        titleGrad: 'linear-gradient(100deg,#fff,#ffd700,#c084fc,#fff)',
+        hintBg: 'rgba(255,215,0,0.08)', boxBg: 'linear-gradient(165deg,rgba(25,18,40,0.85),rgba(15,10,25,0.92))',
+        dividerGrad: 'linear-gradient(90deg,transparent,#d4af37,#7c3aed,transparent)',
+        statGrad: 'linear-gradient(90deg,#7c3aed,#ffd700)',
+        tabNavBg: 'rgba(18,12,28,0.85)', activeTabBg: 'linear-gradient(135deg,#7c3aed,#d4af37)',
+        tabPanelBg: 'linear-gradient(165deg,rgba(22,14,35,0.85),rgba(12,8,20,0.92))',
+        headBorder: 'rgba(212,175,55,0.3)', codeBg: 'rgba(10,5,18,0.85)', codeBorder: 'rgba(212,175,55,0.4)', codeLeft: '#ffd700',
+        npcBg: 'rgba(25,18,40,0.6)'
+      }, { body: "'Anuphan', serif", heading: "'Cinzel', serif", thHeading: "'Chonburi', serif" }, {
+        carouselShadow: '0 0 30px rgba(124,58,237,0.45)', border: '2px solid #d4af37',
+        shadeGrad: 'linear-gradient(180deg,rgba(18,12,28,0.1) 0%,rgba(18,12,28,0.5) 50%,rgba(18,12,28,0.96) 100%)',
+        emblemGlow: '0 0 14px #7c3aed', boxShadow: '0 0 16px rgba(124,58,237,0.3), inset 0 0 0 1px rgba(212,175,55,0.2)',
+        activeTabShadow: '0 0 12px rgba(124,58,237,0.6)', ribbonTitle: 'ARCANE GRANDMASTER', emblemIcon: '📜',
+        subTitle: 'Archivist of the Forbidden Circle', footerText: 'Arcane Grimoire'
+      }),
+
+      'diana-pastel-glitch': buildDianaThemeCard('pastel-glitch', {
+        text: '#ffffff', accent: '#ffc6ff', subText: '#66e6ff', dtColor: '#ff66c4', ddColor: '#ffffff', panelText: '#e2e8f0',
+        ribbonBg: 'linear-gradient(45deg,#ff66c4,#66e6ff)', ribbonText: '#140f1e', emblemBg: 'radial-gradient(circle,#ff66c4,#66e6ff)',
+        titleGrad: 'linear-gradient(100deg,#fff,#ffc6ff,#66e6ff,#fff)',
+        hintBg: 'rgba(255,102,196,0.08)', boxBg: 'rgba(20,15,30,0.88)',
+        dividerGrad: 'linear-gradient(90deg,transparent,#ff66c4,#66e6ff,transparent)',
+        statGrad: 'linear-gradient(90deg,#ff66c4,#66e6ff)',
+        tabNavBg: 'rgba(15,10,25,0.85)', activeTabBg: 'linear-gradient(135deg,#ff66c4,#66e6ff)',
+        tabPanelBg: 'rgba(20,15,30,0.85)',
+        headBorder: 'rgba(255,102,196,0.4)', codeBg: 'rgba(10,5,15,0.85)', codeBorder: 'rgba(255,102,196,0.4)', codeLeft: '#66e6ff',
+        npcBg: 'rgba(255,102,196,0.08)'
+      }, { body: "'Kanit', sans-serif", heading: "'Outfit', sans-serif", thHeading: "'Kanit', sans-serif" }, {
+        carouselShadow: '0 0 30px rgba(255,102,196,0.4)', border: '2px dashed #ff66c4',
+        shadeGrad: 'linear-gradient(180deg,rgba(20,15,30,0.1) 0%,rgba(20,15,30,0.5) 50%,rgba(20,15,30,0.96) 100%)',
+        emblemGlow: '0 0 14px #ff66c4', boxShadow: '0 0 18px rgba(255,102,196,0.25)',
+        activeTabShadow: '0 0 12px rgba(255,102,196,0.6)', ribbonTitle: 'LEVEL 99 STREAMER', emblemIcon: '👾',
+        subTitle: 'Bangkok Virtual Speedster • Chibi Mode', footerText: 'Pastel Synthwave'
+      }),
+
+      'diana-solar-steampunk': buildDianaThemeCard('solar-steampunk', {
+        text: '#f0fdf4', accent: '#e1b382', subText: '#bbf7d0', dtColor: '#39ff14', ddColor: '#ffffff', panelText: '#dcfce7',
+        ribbonBg: 'linear-gradient(120deg,#e1b382,#2d6a4f)', ribbonText: '#0f1914', emblemBg: 'radial-gradient(circle,#39ff14,#1b4332)',
+        titleGrad: 'linear-gradient(100deg,#fff,#e1b382,#39ff14,#fff)',
+        hintBg: 'rgba(57,255,20,0.08)', boxBg: 'linear-gradient(165deg,rgba(15,30,22,0.88),rgba(10,20,15,0.95))',
+        dividerGrad: 'linear-gradient(90deg,transparent,#e1b382,#39ff14,transparent)',
+        statGrad: 'linear-gradient(90deg,#2d6a4f,#39ff14)',
+        tabNavBg: 'rgba(10,20,15,0.85)', activeTabBg: 'linear-gradient(135deg,#2d6a4f,#e1b382)',
+        tabPanelBg: 'linear-gradient(165deg,rgba(15,28,20,0.88),rgba(8,16,12,0.95))',
+        headBorder: 'rgba(57,255,20,0.3)', codeBg: 'rgba(5,15,10,0.85)', codeBorder: 'rgba(225,179,130,0.4)', codeLeft: '#39ff14',
+        npcBg: 'rgba(15,30,22,0.6)'
+      }, { body: "'Taviraj', serif", heading: "'Cinzel', serif", thHeading: "'Taviraj', serif" }, {
+        carouselShadow: '0 0 30px rgba(57,255,20,0.35)', border: '2px solid #e1b382',
+        shadeGrad: 'linear-gradient(180deg,rgba(15,25,20,0.1) 0%,rgba(15,25,20,0.5) 50%,rgba(15,25,20,0.96) 100%)',
+        emblemGlow: '0 0 14px #39ff14', boxShadow: '0 0 16px rgba(57,255,20,0.25)',
+        activeTabShadow: '0 0 12px rgba(57,255,20,0.5)', ribbonTitle: 'ECO-KINETIC ENGINEER', emblemIcon: '🌿',
+        subTitle: 'Solar Clockwork High Speed Prototype', footerText: 'Solarpunk Steampunk'
+      }),
+
+      'diana-quiet-luxury': buildDianaThemeCard('quiet-luxury', {
+        text: '#dfd8c8', accent: '#a39274', subText: '#c4b59d', dtColor: '#a39274', ddColor: '#ffffff', panelText: '#e5dec9',
+        ribbonBg: 'linear-gradient(120deg,#dcc7aa,#6b7a8f)', ribbonText: '#121214', emblemBg: 'radial-gradient(circle,#6b7a8f,#1e222a)',
+        titleGrad: 'linear-gradient(100deg,#fff,#dcc7aa,#a39274,#fff)',
+        hintBg: 'rgba(220,199,170,0.06)', boxBg: 'rgba(18,18,20,0.92)',
+        dividerGrad: 'linear-gradient(90deg,transparent,rgba(220,199,170,0.5),transparent)',
+        statGrad: 'linear-gradient(90deg,#6b7a8f,#dcc7aa)',
+        tabNavBg: 'rgba(14,14,16,0.85)', activeTabBg: 'linear-gradient(135deg,#333842,#a39274)',
+        tabPanelBg: 'rgba(18,18,20,0.9)',
+        headBorder: 'rgba(163,146,116,0.3)', codeBg: 'rgba(10,10,12,0.85)', codeBorder: 'rgba(163,146,116,0.3)', codeLeft: '#dcc7aa',
+        npcBg: 'rgba(22,22,25,0.6)'
+      }, { body: "'Prompt', sans-serif", heading: "'Outfit', sans-serif", thHeading: "'Prompt', sans-serif" }, {
+        carouselShadow: '0 12px 36px rgba(0,0,0,0.7)', border: '1px solid rgba(223,216,200,0.4)',
+        shadeGrad: 'linear-gradient(180deg,rgba(18,18,20,0.1) 0%,rgba(18,18,20,0.5) 50%,rgba(18,18,20,0.96) 100%)',
+        emblemGlow: '0 0 10px rgba(220,199,170,0.4)', boxShadow: '0 10px 30px rgba(0,0,0,0.8)',
+        activeTabShadow: '0 2px 10px rgba(0,0,0,0.5)', ribbonTitle: 'SYNDICATE PATRON', emblemIcon: '🏛️',
+        subTitle: 'Monogram Directory • Private Collection', footerText: 'Quiet Luxury Noir'
+      }),
+
+      'diana-sakura-noir': buildDianaThemeCard('sakura-noir', {
+        text: '#F9D0C9', accent: '#F9D0C9', subText: '#C2A0A8', dtColor: '#C2A0A8', ddColor: '#ffffff', panelText: '#E4C5CB',
+        ribbonBg: 'linear-gradient(120deg,#F9D0C9,#4A3545)', ribbonText: '#1A0A0F', emblemBg: 'radial-gradient(circle,#4A3545,#1A0A0F)',
+        titleGrad: 'linear-gradient(100deg,#fff,#F9D0C9,#C2A0A8,#fff)',
+        hintBg: 'rgba(249,208,201,0.06)', boxBg: 'linear-gradient(160deg,rgba(30,15,25,0.88),rgba(15,8,12,0.95))',
+        dividerGrad: 'linear-gradient(90deg,transparent,#C2A0A8,#F9D0C9,transparent)',
+        statGrad: 'linear-gradient(90deg,#4A3545,#F9D0C9)',
+        tabNavBg: 'rgba(20,10,15,0.85)', activeTabBg: 'linear-gradient(135deg,#4A3545,#C2A0A8)',
+        tabPanelBg: 'linear-gradient(160deg,rgba(25,12,20,0.88),rgba(12,6,10,0.95))',
+        headBorder: 'rgba(194,160,168,0.3)', codeBg: 'rgba(10,5,8,0.85)', codeBorder: 'rgba(194,160,168,0.3)', codeLeft: '#F9D0C9',
+        npcBg: 'rgba(30,15,25,0.6)'
+      }, { body: "'Prompt', sans-serif", heading: "'Cormorant Garamond', serif", thHeading: "'Chonburi', serif" }, {
+        carouselShadow: 'inset 0 0 50px rgba(0,0,0,0.8), 0 10px 30px rgba(0,0,0,0.9)', border: '1px solid #C2A0A8',
+        shadeGrad: 'linear-gradient(180deg,rgba(26,10,15,0.1) 0%,rgba(26,10,15,0.5) 50%,rgba(26,10,15,0.96) 100%)',
+        emblemGlow: '0 0 12px rgba(249,208,201,0.4)', boxShadow: '0 10px 30px rgba(0,0,0,0.7)',
+        activeTabShadow: '0 0 10px rgba(249,208,201,0.4)', ribbonTitle: 'SHADOW BLOSSOM', emblemIcon: '🌸',
+        subTitle: 'Paris 1928 • Bittersweet Velocity', footerText: 'Sakura Noir'
+      }),
+
+      'diana-baroque-decay': buildDianaThemeCard('baroque-decay', {
+        text: '#F5E6C8', accent: '#D4AF37', subText: '#C4A882', dtColor: '#D4AF37', ddColor: '#ffffff', panelText: '#E5D6B8',
+        ribbonBg: 'linear-gradient(120deg,#D4AF37,#8B6914)', ribbonText: '#1A0A00', emblemBg: 'radial-gradient(circle,#8B6914,#1A0A00)',
+        titleGrad: 'linear-gradient(100deg,#fff,#D4AF37,#8B6914,#fff)',
+        hintBg: 'rgba(212,175,55,0.08)', boxBg: 'linear-gradient(135deg,rgba(35,18,5,0.9),rgba(15,8,0,0.95))',
+        dividerGrad: 'linear-gradient(90deg,transparent,#D4AF37,#8B6914,transparent)',
+        statGrad: 'linear-gradient(90deg,#8B6914,#D4AF37)',
+        tabNavBg: 'rgba(20,10,0,0.85)', activeTabBg: 'linear-gradient(135deg,#8B6914,#D4AF37)',
+        tabPanelBg: 'linear-gradient(135deg,rgba(30,15,2,0.9),rgba(12,6,0,0.95))',
+        headBorder: 'rgba(212,175,55,0.3)', codeBg: 'rgba(10,5,0,0.85)', codeBorder: 'rgba(212,175,55,0.4)', codeLeft: '#D4AF37',
+        npcBg: 'rgba(30,15,5,0.6)'
+      }, { body: "'Taviraj', serif", heading: "'Cinzel', serif", thHeading: "'Chonburi', serif" }, {
+        carouselShadow: '0 0 30px rgba(212,175,55,0.35)', border: '2px solid #D4AF37',
+        shadeGrad: 'linear-gradient(180deg,rgba(26,10,0,0.1) 0%,rgba(26,10,0,0.5) 50%,rgba(26,10,0,0.96) 100%)',
+        emblemGlow: '0 0 14px rgba(212,175,55,0.5)', boxShadow: '0 0 25px rgba(212,175,55,0.25)',
+        activeTabShadow: '0 0 12px rgba(212,175,55,0.6)', ribbonTitle: 'THE GILDED RUIN', emblemIcon: '💀',
+        subTitle: 'Memento Mori • Aristocratic Speed', footerText: 'Baroque Decay'
+      }),
+
+      'diana-deep-sea': buildDianaThemeCard('deep-sea-oracle', {
+        text: '#E0F7FA', accent: '#00E5FF', subText: '#80DEEA', dtColor: '#0097A7', ddColor: '#ffffff', panelText: '#B2EBF2',
+        ribbonBg: 'linear-gradient(120deg,#00E5FF,#0A3D62)', ribbonText: '#020B18', emblemBg: 'radial-gradient(circle,#0097A7,#020B18)',
+        titleGrad: 'linear-gradient(100deg,#fff,#00E5FF,#0097A7,#fff)',
+        hintBg: 'rgba(0,229,255,0.08)', boxBg: 'radial-gradient(ellipse at 50% 80%,rgba(10,61,98,0.88),rgba(2,11,24,0.95))',
+        dividerGrad: 'linear-gradient(90deg,transparent,#0097A7,#00E5FF,transparent)',
+        statGrad: 'linear-gradient(90deg,#0A3D62,#00E5FF)',
+        tabNavBg: 'rgba(5,15,30,0.85)', activeTabBg: 'linear-gradient(135deg,#0A3D62,#00E5FF)',
+        tabPanelBg: 'radial-gradient(ellipse at 50% 50%,rgba(8,50,80,0.88),rgba(2,10,20,0.95))',
+        headBorder: 'rgba(0,229,255,0.3)', codeBg: 'rgba(2,8,18,0.85)', codeBorder: 'rgba(0,151,167,0.4)', codeLeft: '#00E5FF',
+        npcBg: 'rgba(10,40,70,0.6)'
+      }, { body: "'Kanit', sans-serif", heading: "'Orbitron', sans-serif", thHeading: "'Kanit', sans-serif" }, {
+        carouselShadow: '0 0 30px rgba(0,151,167,0.4)', border: '1.5px solid #0097A7',
+        shadeGrad: 'linear-gradient(180deg,rgba(2,11,24,0.1) 0%,rgba(2,11,24,0.5) 50%,rgba(2,11,24,0.96) 100%)',
+        emblemGlow: '0 0 14px #00E5FF', boxShadow: '0 0 20px rgba(0,151,167,0.35)',
+        activeTabShadow: '0 0 12px rgba(0,229,255,0.6)', ribbonTitle: 'DEPTH 7,342M', emblemIcon: '🌊',
+        subTitle: 'Abyssal Prophet • Trench Racer', footerText: 'Deep Sea Oracle'
+      }),
+
+      'diana-idol-industry': buildDianaThemeCard('idol-industry', {
+        text: '#FFFFFF', accent: '#FF85B3', subText: '#FFE6F0', dtColor: '#BF5FFF', ddColor: '#ffffff', panelText: '#FFF0F5',
+        ribbonBg: 'linear-gradient(120deg,#FF85B3,#BF5FFF)', ribbonText: '#1A0033', emblemBg: 'radial-gradient(circle,#FF85B3,#380062)',
+        titleGrad: 'linear-gradient(100deg,#fff,#FF85B3,#BF5FFF,#fff)',
+        hintBg: 'rgba(255,133,179,0.08)', boxBg: 'linear-gradient(135deg,rgba(40,0,65,0.88),rgba(20,0,40,0.95))',
+        dividerGrad: 'linear-gradient(90deg,transparent,#BF5FFF,#FF85B3,transparent)',
+        statGrad: 'linear-gradient(90deg,#BF5FFF,#FF85B3)',
+        tabNavBg: 'rgba(25,0,45,0.85)', activeTabBg: 'linear-gradient(135deg,#BF5FFF,#FF85B3)',
+        tabPanelBg: 'linear-gradient(135deg,rgba(35,0,60,0.88),rgba(18,0,35,0.95))',
+        headBorder: 'rgba(255,133,179,0.3)', codeBg: 'rgba(15,0,25,0.85)', codeBorder: 'rgba(255,133,179,0.4)', codeLeft: '#FF85B3',
+        npcBg: 'rgba(40,0,65,0.6)'
+      }, { body: "'Outfit', sans-serif", heading: "'Outfit', sans-serif", thHeading: "'Kanit', sans-serif" }, {
+        carouselShadow: '0 0 30px rgba(255,133,179,0.45)', border: '2px solid #FF85B3',
+        shadeGrad: 'linear-gradient(180deg,rgba(26,0,51,0.1) 0%,rgba(26,0,51,0.5) 50%,rgba(26,0,51,0.96) 100%)',
+        emblemGlow: '0 0 14px #FF85B3', boxShadow: '0 0 25px rgba(255,133,179,0.35)',
+        activeTabShadow: '0 0 12px rgba(255,133,179,0.6)', ribbonTitle: 'WORLD TOUR 2026', emblemIcon: '🎤',
+        subTitle: 'Center #01 • Stadium Speed Diva', footerText: 'Idol Pop Art'
+      }),
+
+      'base-clean': `<style>
 .base-card *{box-sizing:border-box;font-family:'Kanit',-apple-system,sans-serif;}
 .base-card{width:100vw;max-width:420px;margin:0 auto;background:#121420;border:1.5px solid #2a304e;border-radius:18px;padding:16px;color:#f0f4f8;user-select:text!important;}
 .bc-tag{display:inline-block;padding:2px 8px;font-size:10px;background:rgba(0,240,255,0.1);color:#00f0ff;border:1px solid #00f0ff;border-radius:4px;text-transform:uppercase;letter-spacing:1px;}
@@ -910,225 +1375,59 @@
   <p style="font-size:12px;line-height:1.6;color:#cbd5e1;">
     Write the background story and personality traits of your character here.
   </p>
-</div>`;
-
-    // Presets Vault
-    const presets = {
-      'diana-racer': dianaMasterCard,
-      'base-clean': baseCleanCard,
-      'cyber-gothic': `<style>
-@keyframes cyberGlow{0%,100%{box-shadow:0 0 14px #ff0055,inset 0 0 8px #00ffff;}50%{box-shadow:0 0 24px #00ffff,inset 0 0 14px #ff0055;}}
-@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.3;transform:scale(0.8);}}
-.cg-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Chonburi','Kanit',serif;background:rgba(10,5,12,0.88)!important;border:2px solid #ff0055!important;border-radius:12px;padding:16px;color:#f3e8ee!important;animation:cyberGlow 4s infinite ease-in-out;user-select:text!important;}
-.cg-tag{display:inline-block;padding:2px 8px;font-size:clamp(8px,2.5vw,11px);border:1px solid #00ffff;color:#00ffff!important;border-radius:4px;text-transform:uppercase;letter-spacing:1px;}
-.cg-title{font-size:clamp(18px,5vw,26px);color:#fff!important;text-shadow:0 0 8px #ff0055;margin:8px 0 4px 0;}
-.cg-sub{font-size:clamp(9px,3vw,12px);color:#00ffff!important;letter-spacing:2px;font-family:'Kanit',sans-serif;}
-.cg-divider{height:1px;background:linear-gradient(90deg,transparent,#ff0055,#00ffff,transparent);margin:12px 0;}
-.cg-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:clamp(8px,3vw,12px);font-family:'Kanit',sans-serif;}
-.cg-key{color:#a78bfa!important;font-weight:bold;}
-.cg-val{color:#fff!important;}
-.cg-details{margin-top:10px;border:1px solid rgba(255,0,85,0.4);border-radius:6px;background:rgba(0,0,0,0.4);overflow:hidden;}
-.cg-summary{padding:8px 12px;cursor:pointer;background:rgba(255,0,85,0.15);color:#00ffff!important;font-family:'Kanit',sans-serif;list-style:none;}
-.cg-content{padding:10px 12px;font-size:clamp(8px,3.2vw,12px);line-height:1.5;color:#e2e8f0!important;font-family:'Kanit',sans-serif;max-height:150px;overflow-y:auto;}
-</style>
-<div class="cg-card">
-  <div style="display:flex;justify-content:space-between;align-items:center;">
-    <span class="cg-tag">[ STATUS: CLASSIFIED ]</span>
-    <span style="display:inline-block;width:8px;height:8px;background:#ff0055;border-radius:50%;box-shadow:0 0 6px #ff0055;animation:pulseDot 1.5s infinite;"></span>
-  </div>
-  <h1 class="cg-title">VALENTINA CROSS</h1>
-  <div class="cg-sub">// CYBERNETIC NOCTURNE ARCHON</div>
-  <div class="cg-divider"></div>
-  <div class="cg-grid">
-    <div><span class="cg-key">AFFILIATION:</span> <span class="cg-val">Sector 09 Blood Syndicate</span></div>
-    <div><span class="cg-key">ORIGIN:</span> <span class="cg-val">Neo-Verona Core</span></div>
-  </div>
-  <details class="cg-details" open>
-    <summary class="cg-summary">⚔️ PROFILE DOSSIER & LORE</summary>
-    <div class="cg-content">
-      • แวมไพร์สายเลือดโบราณผู้ผสานระบบอวัยวะกลจักรกลสังเคราะห์<br>
-      • ควบคุมเครือข่ายตลาดมืดและข้อมูลลับแห่ง Sector 09<br>
-      • เป้าหมาย: ปลดแอกชนชั้นใต้ดินด้วยพลังเวทไซเบอร์เนติกส์
-    </div>
-  </details>
-</div>`,
-
-      'arcane-academia': `<style>
-.aa-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Chonburi','Taviraj',serif;background:rgba(18,12,28,0.88)!important;border:2px solid #d4af37!important;border-radius:8px;padding:16px;color:#f3e8ff!important;box-shadow:0 0 16px rgba(124,58,237,0.45);user-select:text!important;}
-.aa-title{font-size:clamp(18px,4.8vw,24px);color:#ffd700!important;text-shadow:0 0 6px #c084fc;margin:8px 0 2px 0;}
-.aa-details{margin-top:8px;border:1px solid rgba(212,175,55,0.3);border-radius:4px;}
-.aa-summary{padding:8px 10px;cursor:pointer;background:rgba(212,175,55,0.15);color:#ffd700!important;font-size:clamp(10px,3.2vw,12px);font-weight:bold;}
-.aa-content{padding:8px 10px;font-size:clamp(8px,3vw,11px);line-height:1.6;color:#ddd6fe!important;font-family:'Anuphan',serif;}
-</style>
-<div class="aa-card">
-  <div style="font-size:10px;color:#d4af37;letter-spacing:1px;">📜 THE ARCHIVE OF SOLOMON</div>
-  <h1 class="aa-title">AURELIUS VANE</h1>
-  <div style="font-size:10px;color:#a78bfa;font-style:italic;">// GRAND SCHOLAR OF THE FORBIDDEN CIRCLE</div>
-  <details class="aa-details" open>
-    <summary class="aa-summary">⚡ RUNIC STATUS</summary>
-    <div class="aa-content">
-      • สังกัด: หอสมุดมนตร์ดำหลวงแห่งอาคาเดเมีย<br>
-      • พลังพิเศษ: ถอดรหัสอักษรโบราณ และเชื่อมโยงวงแหวนมิติ
-    </div>
-  </details>
-</div>`,
-
-      'pastel-glitch': `<style>
-.pg-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Kanit',sans-serif;background:rgba(20,15,30,0.88)!important;border:2px dashed #ff66c4!important;border-radius:18px;padding:16px;color:#fff!important;user-select:text!important;}
-.pg-title{font-size:clamp(18px,5vw,26px);color:#ffc6ff!important;text-shadow:0 0 8px #ff66c4;margin:10px 0 2px 0;}
-.pg-details{margin-top:10px;border:1px solid #ff66c4;border-radius:10px;background:rgba(255,102,196,0.08);}
-.pg-summary{padding:8px 12px;cursor:pointer;color:#ffc6ff!important;font-size:12px;font-weight:bold;}
-.pg-content{padding:8px 12px;font-size:11px;line-height:1.5;color:#e2e8f0!important;}
-</style>
-<div class="pg-card">
-  <span style="background:linear-gradient(45deg,#ff66c4,#66e6ff);color:#140f1e;font-size:10px;font-weight:bold;padding:3px 10px;border-radius:20px;">👾 LEVEL 99 IDOL</span>
-  <h1 class="pg-title">NANO CHIBI 01</h1>
-  <details class="pg-details" open>
-    <summary class="pg-summary">🎀 STREAM INFO</summary>
-    <div class="pg-content">• นิสัย: ร่าเริง ซน ป่วนเซิร์ฟเวอร์ด้วยไวรัสสีชมพู</div>
-  </details>
-</div>`,
-
-      'solar-steampunk': `<style>
-.ss-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Taviraj',serif;background:rgba(15,25,20,0.88)!important;border:2px solid #e1b382!important;border-radius:10px;padding:16px;color:#f0fdf4!important;box-shadow:0 0 14px rgba(57,255,20,0.35);user-select:text!important;}
-.ss-title{font-size:clamp(18px,4.8vw,24px);color:#e1b382!important;text-shadow:0 0 8px #39ff14;margin:8px 0 2px 0;}
-</style>
-<div class="ss-card">
-  <span style="font-size:10px;color:#39ff14;border:1px solid #39ff14;padding:2px 8px;border-radius:4px;">🌿 ECO-KINETIC ENGINEER</span>
-  <h1 class="ss-title">INGENIEUR STERLING</h1>
-  <div style="font-size:11px;color:#bbf7d0;margin-top:8px;">// SOLAR CLOCKWORK INVENTOR</div>
-</div>`,
-
-      'quiet-luxury': `<style>
-.ql-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Prompt',sans-serif;background:rgba(18,18,20,0.92)!important;border:1px solid rgba(223,216,200,0.4)!important;border-radius:4px;padding:20px 16px;color:#dfd8c8!important;box-shadow:0 12px 36px rgba(0,0,0,0.7);user-select:text!important;}
-.ql-title{font-size:clamp(19px,4.5vw,25px);font-weight:300;color:#fff!important;letter-spacing:2px;margin:0 0 4px 0;}
-</style>
-<div class="ql-card">
-  <div style="letter-spacing:3px;font-size:9px;color:#a39274;">THE SYNDICATE DIRECTORY</div>
-  <h1 class="ql-title">JULIAN VANDERBILT</h1>
-  <div style="font-size:10px;color:#a39274;letter-spacing:2px;font-style:italic;">// CHAIRMAN & SHADOW BENEFACTOR</div>
-</div>`,
-
-      'sakura-noir': `<style>
-.sn-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Chonburi','Prompt',serif;background:linear-gradient(160deg,#1A0A0F 0%,#301B28 60%,#1A0A0F 100%)!important;border:1px solid #C2A0A8!important;border-radius:10px;padding:20px 16px;color:#F9D0C9!important;box-shadow:inset 0 0 50px rgba(0,0,0,0.8),0 10px 30px rgba(0,0,0,0.9);user-select:text!important;}
-.sn-title{font-size:clamp(19px,5vw,26px);color:#FFF!important;letter-spacing:1px;margin:8px 0 2px 0;}
-.sn-tag{font-size:9px;color:#F9D0C9;border:1px solid #C2A0A8;padding:2px 8px;border-radius:12px;letter-spacing:1.5px;}
-</style>
-<div class="sn-card">
-  <div style="display:flex;justify-content:space-between;align-items:center;">
-    <span class="sn-tag">🌸 NOIR ARCHIVE</span>
-    <span style="font-size:11px;color:#C2A0A8;">PARIS 1928</span>
-  </div>
-  <h1 class="sn-title">SABLE HANAKO</h1>
-  <div style="font-size:11px;color:#C2A0A8;letter-spacing:2px;font-style:italic;">// THE SHADOW BLOSSOM</div>
-</div>`,
-
-      'baroque-decay': `<style>
-.bd-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Chonburi','Taviraj',serif;background:linear-gradient(135deg,#1A0A00 0%,#2C1500 50%,#1A0A00 100%)!important;border:2px solid #D4AF37!important;border-radius:8px;padding:20px 16px;color:#F5E6C8!important;box-shadow:0 0 25px rgba(212,175,55,0.25);user-select:text!important;}
-.bd-title{font-size:clamp(18px,4.8vw,24px);color:#D4AF37!important;text-shadow:0 0 10px rgba(212,175,55,0.5);margin:6px 0 2px 0;}
-</style>
-<div class="bd-card">
-  <div style="font-size:9px;color:#D4AF37;letter-spacing:2px;text-align:center;">❧ MEMENTO MORI ❧</div>
-  <h1 class="bd-title" style="text-align:center;">LORD DORIAN VESTINE</h1>
-  <div style="font-size:10px;color:#C4A882;text-align:center;font-style:italic;">// THE GILDED RUIN</div>
-</div>`,
-
-      'deep-sea-oracle': `<style>
-.dso-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Kanit',sans-serif;background:radial-gradient(ellipse at 50% 80%,#0A3D62 0%,#020B18 70%)!important;border:1.5px solid #0097A7!important;border-radius:14px;padding:18px 16px;color:#E0F7FA!important;box-shadow:0 0 20px rgba(0,151,167,0.35);user-select:text!important;}
-.dso-title{font-size:clamp(18px,5vw,25px);color:#FFF!important;text-shadow:0 0 12px #00E5FF;margin:8px 0 2px 0;}
-</style>
-<div class="dso-card">
-  <div style="display:flex;justify-content:space-between;font-size:10px;color:#00E5FF;">
-    <span>≈ DEPTH: 7,342M</span>
-    <span>ABYSSAL ZONE</span>
-  </div>
-  <h1 class="dso-title">THYREN ABYSSAL</h1>
-  <div style="font-size:11px;color:#80DEEA;letter-spacing:1px;">// SEER OF THE TRENCH</div>
-</div>`,
-
-      'idol-industry': `<style>
-.ii-card{width:100vw;max-width:440px;margin:0 auto;box-sizing:border-box;font-family:'Outfit','Kanit',sans-serif;background:linear-gradient(135deg,#1A0033 0%,#380062 50%,#FF85B3 100%)!important;border:2px solid #FF85B3!important;border-radius:16px;padding:18px 16px;color:#FFF!important;box-shadow:0 0 25px rgba(255,133,179,0.35);user-select:text!important;}
-.ii-title{font-size:clamp(20px,5.5vw,28px);font-weight:800;color:#FFF!important;text-shadow:0 0 12px #FF85B3;margin:6px 0 2px 0;}
-</style>
-<div class="ii-card">
-  <div style="display:flex;justify-content:space-between;align-items:center;">
-    <span style="background:#FFF;color:#1A0033;font-size:9px;font-weight:bold;padding:2px 8px;border-radius:10px;">★ WORLD TOUR 2026</span>
-    <span style="font-size:11px;color:#FFE6F0;">#01 CENTER</span>
-  </div>
-  <h1 class="ii-title">NOVA ♡</h1>
-  <div style="font-size:11px;color:#FFE6F0;letter-spacing:1.5px;">// SOLARIS 5 • MAIN VOCAL</div>
 </div>`
     };
 
-    // ====================================================================
-    // 3. Color Hunt 60+ Popular Palettes Vault (https://colorhunt.co/palettes/popular)
-    // ====================================================================
+    // Color Hunt Vault
     const colorHuntPalettes = [
-      // Popular / Trending
       { id: 1, name: "Neon Cyber Glitch", cat: "Popular", colors: ["#08D9D6", "#252A34", "#FF2E63", "#EAEAEA"] },
       { id: 2, name: "Sunset Horizon", cat: "Popular", colors: ["#FF2E63", "#08D9D6", "#252A34", "#EAEAEA"] },
       { id: 3, name: "Quiet Luxury Gold", cat: "Popular", colors: ["#F7F1E3", "#DCC7AA", "#6B7A8F", "#111827"] },
       { id: 4, name: "Midnight Purple Glow", cat: "Popular", colors: ["#1A1A2E", "#16213E", "#0F3460", "#E94560"] },
       { id: 5, name: "Tokyo Neon Noir", cat: "Popular", colors: ["#0F0E17", "#FF8906", "#F25F4C", "#FFFFFE"] },
       { id: 6, name: "Nordic Frost Clean", cat: "Popular", colors: ["#F3F4F6", "#E5E7EB", "#9CA3AF", "#1F2937"] },
-
-      // Pastel & Cute
       { id: 7, name: "Strawberry Milkshake", cat: "Pastel", colors: ["#FFE3E3", "#FFAEBC", "#FBE7C6", "#B4F8C8"] },
       { id: 8, name: "Sweet Macaron Dream", cat: "Pastel", colors: ["#F9F9F9", "#F7D1BA", "#E8A598", "#6155A6"] },
       { id: 9, name: "Cotton Candy Cloud", cat: "Pastel", colors: ["#E8EAFF", "#FFB6B9", "#FAE3D9", "#BBDED6"] },
       { id: 10, name: "Sakura Spring Blossom", cat: "Pastel", colors: ["#FFEBEB", "#F8B195", "#F67280", "#C06C84"] },
       { id: 11, name: "Lavender Mochi", cat: "Pastel", colors: ["#F3E8FF", "#E9D5FF", "#C084FC", "#7E22CE"] },
       { id: 12, name: "Minty Matcha Latte", cat: "Pastel", colors: ["#E8F5E9", "#C8E6C9", "#81C784", "#2E7D32"] },
-
-      // Vintage & Retro
       { id: 13, name: "70s Sunset Vinyl", cat: "Vintage", colors: ["#E07A5F", "#3D405B", "#81B29A", "#F2CC8F"] },
       { id: 14, name: "Aged Parchment Codex", cat: "Vintage", colors: ["#F5EFDC", "#D9CAB3", "#8C8275", "#2C1A0E"] },
       { id: 15, name: "Retro Cassette 80s", cat: "Vintage", colors: ["#F45D48", "#0A2540", "#635BFF", "#00D4B2"] },
       { id: 16, name: "Warm Coffee Roastery", cat: "Vintage", colors: ["#ECE0D1", "#DBC1AC", "#967259", "#38220F"] },
       { id: 17, name: "Polaroid Film Nostalgia", cat: "Vintage", colors: ["#FAF0CA", "#F4D35E", "#EE964B", "#0D3B66"] },
       { id: 18, name: "Antique Botanical Ink", cat: "Vintage", colors: ["#EFE9D5", "#B8CBA5", "#5B7A55", "#1B2A1E"] },
-
-      // Neon & Cyber
       { id: 19, name: "Cyberpunk 2077 Night", cat: "Neon", colors: ["#050505", "#1B1B2F", "#00F0FF", "#FFE600"] },
       { id: 20, name: "Synthwave Magenta Grid", cat: "Neon", colors: ["#0F051D", "#2E0249", "#F806CC", "#570A57"] },
       { id: 21, name: "Matrix Hacker Green", cat: "Neon", colors: ["#0D0208", "#003B00", "#008F11", "#00FF66"] },
       { id: 22, name: "Laser Arcade Violet", cat: "Neon", colors: ["#120E24", "#4B0082", "#9400D3", "#00FFFF"] },
       { id: 23, name: "Electric Blood Drive", cat: "Neon", colors: ["#0B0C10", "#1F2833", "#C5C6C7", "#66FCF1"] },
       { id: 24, name: "Acid Hologram Glitch", cat: "Neon", colors: ["#111111", "#76FF03", "#FF007F", "#00E5FF"] },
-
-      // Dark & Gothic
       { id: 25, name: "Gothic Vampire Covenant", cat: "Dark", colors: ["#0B090A", "#161A1D", "#660708", "#A4161A"] },
       { id: 26, name: "Abyssal Trench 7000M", cat: "Dark", colors: ["#020B18", "#0A3D62", "#0097A7", "#E0F7FA"] },
       { id: 27, name: "Dark Academia Manor", cat: "Dark", colors: ["#1C1917", "#44403C", "#78716C", "#D6D3D1"] },
       { id: 28, name: "Occult Grimoire Circle", cat: "Dark", colors: ["#0E0B16", "#A239CA", "#4717F6", "#E7DFDD"] },
       { id: 29, name: "Phantom Ash Obsidian", cat: "Dark", colors: ["#121212", "#282828", "#3F3F3F", "#E0E0E0"] },
       { id: 30, name: "Midnight Blood Moon", cat: "Dark", colors: ["#140005", "#3A000E", "#8A0022", "#FF3366"] },
-
-      // Luxury & Gold
       { id: 31, name: "Baroque Gilded Velvet", cat: "Gold", colors: ["#1A0A00", "#8B6914", "#D4AF37", "#F5E6C8"] },
       { id: 32, name: "Imperial Dynasty Jade", cat: "Gold", colors: ["#0F2027", "#203A43", "#2C5364", "#D4AF37"] },
       { id: 33, name: "Champagne Velvet Noir", cat: "Gold", colors: ["#111111", "#333333", "#C5A059", "#F7E7CE"] },
       { id: 34, name: "Royal Sapphire Palace", cat: "Gold", colors: ["#0F172A", "#1E3A8A", "#3B82F6", "#F59E0B"] },
       { id: 35, name: "Emerald Aristocracy", cat: "Gold", colors: ["#06281E", "#0B4F3A", "#138A63", "#E6C687"] },
       { id: 36, name: "Platinum Diamond Crown", cat: "Gold", colors: ["#1E293B", "#334155", "#94A3B8", "#F8FAFC"] },
-
-      // Nature & Earthy
       { id: 37, name: "Solarpunk Bio-Haven", cat: "Nature", colors: ["#0B1D13", "#1B4332", "#40916C", "#95D5B2"] },
       { id: 38, name: "Deep Mossy Forest", cat: "Nature", colors: ["#1E2B1A", "#384E2D", "#6F8A53", "#C5D8A4"] },
       { id: 39, name: "Desert Sand & Clay", cat: "Nature", colors: ["#E0A96D", "#77503B", "#2D2424", "#F4EBD0"] },
       { id: 40, name: "Volcanic Terracotta", cat: "Nature", colors: ["#541212", "#8B0000", "#D35400", "#F39C12"] },
       { id: 41, name: "Oceanic Bioluminescence", cat: "Nature", colors: ["#001219", "#005F73", "#0A9396", "#94D2BD"] },
       { id: 42, name: "Alpine Meadow Blossom", cat: "Nature", colors: ["#2B4141", "#0EB1D2", "#34E4EA", "#8AB9B5"] },
-
-      // Sunset & Warm
       { id: 43, name: "Miami Vice Neon Sunset", cat: "Warm", colors: ["#2B0938", "#8A1253", "#F23557", "#FFCD3C"] },
       { id: 44, name: "Desert Dusk Mirage", cat: "Warm", colors: ["#4A154B", "#990000", "#F26419", "#F6AE2D"] },
       { id: 45, name: "Golden Hour Glow", cat: "Warm", colors: ["#481E14", "#9B3922", "#F2613F", "#FE7A36"] },
       { id: 46, name: "Spiced Autumn Cider", cat: "Warm", colors: ["#3D0C11", "#781D22", "#C65135", "#E39774"] },
       { id: 47, name: "Ruby Garnet Flame", cat: "Warm", colors: ["#200000", "#660000", "#B30000", "#FF4D4D"] },
       { id: 48, name: "Solar Flare Burst", cat: "Warm", colors: ["#1F0318", "#E01A4F", "#F15946", "#F9C22E"] },
-
-      // Cold & Midnight
       { id: 49, name: "Arctic Ice Glacier", cat: "Cold", colors: ["#0A192F", "#172A45", "#303C55", "#64FFDA"] },
       { id: 50, name: "Aurora Borealis Veil", cat: "Cold", colors: ["#04071A", "#007F5F", "#7B2FBE", "#00D4FF"] },
       { id: 51, name: "Celestial Deep Space", cat: "Cold", colors: ["#03071E", "#370617", "#6A040F", "#9D0208"] },
@@ -1137,11 +1436,8 @@
       { id: 54, name: "Polar Eclipse Twilight", cat: "Cold", colors: ["#090A0F", "#1A1C29", "#2E3856", "#7986AC"] }
     ];
 
-    // ====================================================================
-    // 4. Multi-Language Google Fonts Directory
-    // ====================================================================
+    // Google Fonts Vault
     const googleFontsVault = [
-      // Thai
       { name: "Kanit", lang: "thai", latin: "Orbitron / Outfit", mood: "Modern HUD / Cyberpunk", previewTh: "นักแข่งซูเปอร์ไบค์แห่งสนามประลอง", previewEn: "Neon Cybernetic Nocturne Archon", css: "font-family: 'Kanit', sans-serif;" },
       { name: "Chonburi", lang: "thai", latin: "Playfair Display", mood: "Royal / Luxury / Vintage", previewTh: "ความเร็วคือชีวิต ศักดิ์ศรีคือเลือด", previewEn: "Royal Kingdom Heritage", css: "font-family: 'Chonburi', serif;" },
       { name: "Prompt", lang: "thai", latin: "Inter / Roboto", mood: "Editorial / Dossier / Clean", previewTh: "แฟ้มประวัติบุคคลระดับลับสุดยอด", previewEn: "Official Government Dossier", css: "font-family: 'Prompt', sans-serif;" },
@@ -1151,41 +1447,39 @@
       { name: "Sarabun", lang: "thai", latin: "Roboto", mood: "Formal / Biography / Clean", previewTh: "เอกสารข้อมูลส่วนบุคคลทางการ", previewEn: "Standard Character Biography", css: "font-family: 'Sarabun', sans-serif;" },
       { name: "Charm", lang: "thai", latin: "Great Vibes", mood: "Calligraphy / Romantic", previewTh: "บทกวีซากุระร่วงโรยในสายฝน", previewEn: "Romantic Elegance Calligraphy", css: "font-family: 'Charm', cursive;" },
 
-      // Chinese (zh_Hans)
       { name: "Noto Serif SC", lang: "chinese", latin: "Cinzel", mood: "Imperial Court / Wuxia", previewTh: "帝王皇朝 • 永恒涅槃之火", previewEn: "Imperial Dynasty Phoenix Rebirth", css: "font-family: 'Noto Serif SC', serif;" },
       { name: "Noto Sans SC", lang: "chinese", latin: "Outfit", mood: "Modern Sci-Fi / Cyber", previewTh: "第09区暗夜血族档案机密", previewEn: "Sector 09 Cybernetic Archon", css: "font-family: 'Noto Sans SC', sans-serif;" },
       { name: "Ma Shan Zheng", lang: "chinese", latin: "Brush Script", mood: "Traditional Calligraphy / Ink", previewTh: "墨落惊风雨 • 刀光斩残阳", previewEn: "Traditional Ink Wash Warrior", css: "font-family: 'Ma Shan Zheng', cursive;" },
       { name: "ZCOOL XiaoWei", lang: "chinese", latin: "Cormorant", mood: "Delicate / Poetic", previewTh: "浮生若梦 • 一瞬繁华终成空", previewEn: "Ephemeral Memory Fragrance", css: "font-family: 'ZCOOL XiaoWei', serif;" },
 
-      // Vietnamese (vi)
       { name: "Be Vietnam Pro", lang: "vietnamese", latin: "Outfit", mood: "Ultra Modern / Tech", previewTh: "Hồ sơ nhân vật tối mật cấp 09", previewEn: "High-Tech Identity Classified", css: "font-family: 'Be Vietnam Pro', sans-serif;" },
       { name: "Montserrat", lang: "vietnamese", latin: "Montserrat", mood: "Bold Racing / Sports", previewTh: "Nữ hoàng đường đua ngầm Bangkok", previewEn: "Underground Superbike Champion", css: "font-family: 'Montserrat', sans-serif;" },
       { name: "Lora", lang: "vietnamese", latin: "Lora", mood: "Literary / Nostalgic", previewTh: "Ký ức tan biến trong cơn mưa đêm", previewEn: "Memories Dissolving in Rain", css: "font-family: 'Lora', serif;" },
       { name: "Roboto Condensed", lang: "vietnamese", latin: "Roboto Condensed", mood: "HUD / Compact Data", previewTh: "Trạng thái: Đang truy đuổi mục tiêu", previewEn: "Status: Engaging High Speed Target", css: "font-family: 'Roboto Condensed', sans-serif;" },
 
-      // Latin / English
       { name: "Orbitron", lang: "latin", latin: "Orbitron", mood: "Sci-Fi HUD / Mecha", previewTh: "HUD INTERFACE SYSTEM ONLINE", previewEn: "NEO-VERONA CORE SECTOR 09", css: "font-family: 'Orbitron', sans-serif;" },
       { name: "Cormorant Garamond", lang: "latin", latin: "Cormorant Garamond", mood: "Baroque / Memento Mori", previewTh: "MEMENTO MORI • ET IN ARCADIA EGO", previewEn: "Splendor at the Brink of Ruin", css: "font-family: 'Cormorant Garamond', serif;" },
       { name: "Fira Code", lang: "latin", latin: "Fira Code", mood: "Terminal / Hacker / Syntax", previewTh: "void main() { executeRacer(); }", previewEn: "root@rubii:~# run_diagnostics", css: "font-family: 'Fira Code', monospace;" },
       { name: "Syne", lang: "latin", latin: "Syne", mood: "Avant-Garde / High Fashion", previewTh: "HAUTE COUTURE NOIR ARCHIVE", previewEn: "Avant-Garde Neo Underground", css: "font-family: 'Syne', sans-serif;" }
     ];
 
-    // Themes
+    // Theme Catalog
     const themeList = [
-      { id: "T00", name: "Diana Racer (Master)", desc: "🏍️ Official Cover Carousel + Stats + Tabs + NPCs", key: "diana-racer" },
-      { id: "T01", name: "Sakura Noir", desc: "🌸 Japanese Spring Bloom × French Film Noir", key: "sakura-noir" },
-      { id: "T02", name: "Arcane Academia", desc: "📜 Dark Academia × Arcane Mage Circle", key: "arcane-academia" },
-      { id: "T03", name: "Cyber Gothic", desc: "⚡ Cyberpunk 2077 × Victorian Vampire", key: "cyber-gothic" },
-      { id: "T04", name: "Pastel Glitch", desc: "👾 Pastel Kawaii × Vaporwave Glitch", key: "pastel-glitch" },
-      { id: "T05", name: "Solar Steampunk", desc: "🌿 Solarpunk Eco × Victorian Steampunk", key: "solar-steampunk" },
-      { id: "T06", name: "Quiet Luxury", desc: "🏛️ Old Money Elegance × Film Noir", key: "quiet-luxury" },
-      { id: "T09", name: "Deep Sea Oracle", desc: "🌊 Abyssal Trench × Ancient Oracle", key: "deep-sea-oracle" },
-      { id: "T16", name: "Idol Industry", desc: "🎤 K-Pop / J-Pop × Stadium Pop Art", key: "idol-industry" },
-      { id: "T18", name: "Baroque Decay", desc: "💀 European Baroque × Memento Mori", key: "baroque-decay" }
+      { id: "T00", name: "Diana Racer (Master)", desc: "🏍️ Official Crimson Gold Superbike", key: "diana-racer" },
+      { id: "T01", name: "Diana Cyber-Gothic", desc: "⚡ Cyberpunk 2077 × Neon Vampire", key: "diana-cyber-gothic" },
+      { id: "T02", name: "Diana Arcane Academia", desc: "📜 Dark Academia × Runic Scholar", key: "diana-arcane-academia" },
+      { id: "T03", name: "Diana Pastel Glitch", desc: "👾 Pastel Kawaii × Synth Wave Chibi", key: "diana-pastel-glitch" },
+      { id: "T04", name: "Diana Solar Steampunk", desc: "🌿 Solarpunk Eco × Clockwork Brass", key: "diana-solar-steampunk" },
+      { id: "T05", name: "Diana Quiet Luxury", desc: "🏛️ Old Money Monogram × Noir", key: "diana-quiet-luxury" },
+      { id: "T06", name: "Diana Sakura Noir", desc: "🌸 Spring Bloom × French Film Noir", key: "diana-sakura-noir" },
+      { id: "T07", name: "Diana Baroque Decay", desc: "💀 European Baroque × Memento Mori", key: "diana-baroque-decay" },
+      { id: "T08", name: "Diana Deep Sea Oracle", desc: "🌊 Abyssal Trench 7000M × Seer", key: "diana-deep-sea" },
+      { id: "T09", name: "Diana Idol Industry", desc: "🎤 K-Pop Stage Pink × Stadium Diva", key: "diana-idol-industry" },
+      { id: "T10", name: "Base Clean Card", desc: "📦 Generic Starter Profile", key: "base-clean" }
     ];
 
     // ====================================================================
-    // 5. Core Application Logic & Auto-Save
+    // 3. Application Execution & State Handlers
     // ====================================================================
     const STORAGE_KEY = 'rubii_saved_card_html_v227';
 
@@ -1198,7 +1492,7 @@
       try {
         localStorage.setItem(STORAGE_KEY, code);
         document.cookie = `rubii_card_len=${code.length};path=/;max-age=31536000`;
-        document.getElementById('storageStatusText').textContent = i18n[currentLang].storage_saved || "Local Cookie/Storage Synced";
+        document.getElementById('storageStatusText').textContent = i18n[currentLang].storage_saved || "Local Storage & Cookie Synced";
       } catch (e) {
         console.warn("Storage quota or disabled:", e);
       }
@@ -1209,15 +1503,15 @@
       if (saved && saved.trim().length > 0) {
         document.getElementById('codeEditor').value = saved;
       } else {
-        document.getElementById('codeEditor').value = dianaMasterCard;
+        document.getElementById('codeEditor').value = dianaMaster;
       }
       renderPreview();
     }
 
     function resetToDefaultExample() {
       if (confirm("Reset code editor back to default Master Example Card? (รีเซ็ตกลับเป็นการ์ดต้นฉบับ)")) {
-        document.getElementById('codeEditor').value = dianaMasterCard;
-        saveCodeToStorage(dianaMasterCard);
+        document.getElementById('codeEditor').value = dianaMaster;
+        saveCodeToStorage(dianaMaster);
         renderPreview();
         showToast(i18n[currentLang].toast_reset);
       }
@@ -1225,11 +1519,11 @@
 
     function loadThemePreset() {
       const key = document.getElementById('themeSelect').value;
-      const code = presets[key] || dianaMasterCard;
+      const code = presets[key] || dianaMaster;
       document.getElementById('codeEditor').value = code;
       saveCodeToStorage(code);
       renderPreview();
-      showToast(`Loaded "${key}" preset!`);
+      showToast(`Loaded "${key}" theme preset!`);
     }
 
     function changeViewportWidth() {
@@ -1263,13 +1557,6 @@
       });
     }
 
-    function applyPaletteToEditor(colors) {
-      let code = document.getElementById('codeEditor').value;
-      // Inject or replace accent colors in style
-      showToast(`Applied palette: ${colors.join(', ')}`);
-      navigator.clipboard.writeText(colors.join(', '));
-    }
-
     function applyFontToEditor(fontCss) {
       navigator.clipboard.writeText(fontCss).then(() => {
         showToast(`Copied ${fontCss}! Paste into your card style.`);
@@ -1278,7 +1565,7 @@
 
     function downloadCardHtml() {
       const code = document.getElementById('codeEditor').value;
-      const blob = new Blob([`<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Rubii Card Preview</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;600&family=Chonburi&family=Kanit:wght@300;400;600&family=Mitr:wght@400;600&family=Prompt:wght@300;400;600&family=Taviraj:wght@300;400;600&display=swap" rel="stylesheet"></head><body style="margin:0;padding:20px 10px;background:#05060a;display:flex;justify-content:center;">${code}</body></html>`], { type: 'text/html' });
+      const blob = new Blob([`<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Rubii Character Card</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;600&family=Chonburi&family=Kanit:wght@300;400;600&family=Mitr:wght@400;600&family=Prompt:wght@300;400;600&family=Taviraj:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet"></head><body style="margin:0;padding:20px 10px;background:#05060a;display:flex;justify-content:center;">${code}</body></html>`], { type: 'text/html' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
       a.download = 'rubii_character_card.html';
@@ -1312,7 +1599,10 @@
       container.innerHTML = list.map(p => `
         <div class="palette-card">
           <div class="palette-header">
-            <span class="palette-name">#${p.id} ${p.name}</span>
+            <span class="palette-name">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              #${p.id} ${p.name}
+            </span>
             <span class="palette-category">${p.cat}</span>
           </div>
           <div class="color-swatches">
@@ -1320,7 +1610,10 @@
           </div>
           <div class="palette-footer">
             <span>${p.colors.slice(0,2).join(' ')}...</span>
-            <button class="btn-action" style="padding:2px 6px;font-size:10px;" onclick="copyHex('${p.colors.join(', ')}')">Copy All</button>
+            <button class="btn-action" style="padding:2px 6px;font-size:10px;" onclick="copyHex('${p.colors.join(', ')}')">
+              <svg viewBox="0 0 24 24" style="width:10px;height:10px;"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+              Copy All
+            </button>
           </div>
         </div>
       `).join('');
@@ -1345,14 +1638,20 @@
       container.innerHTML = list.map(t => `
         <div class="font-pair-card">
           <div class="font-header-row">
-            <span class="font-name-badge">${t.name}</span>
+            <span class="font-name-badge">
+              <svg viewBox="0 0 24 24"><path d="M9.93 13.5h4.14L12 7.98zM20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+              ${t.name}
+            </span>
             <span class="font-lang-tag">${t.mood}</span>
           </div>
           <div class="font-sample-title" style="${t.css}">${t.previewTh}</div>
           <div class="font-sample-body" style="${t.css}">${t.previewEn}</div>
           <div class="font-code-block">
             <span>${t.css}</span>
-            <button class="btn-action" style="padding:2px 6px;font-size:9.5px;" onclick="applyFontToEditor('${t.css}')">📋 Copy</button>
+            <button class="btn-action" style="padding:2px 6px;font-size:9.5px;" onclick="applyFontToEditor('${t.css}')">
+              <svg viewBox="0 0 24 24" style="width:10px;height:10px;"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+              Copy
+            </button>
           </div>
         </div>
       `).join('');
@@ -1372,12 +1671,18 @@
       container.innerHTML = themeList.map(t => `
         <div class="palette-card" onclick="selectThemeFromCatalog('${t.key}')">
           <div class="palette-header">
-            <span class="palette-name">${t.id} ${t.name}</span>
+            <span class="palette-name">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+              ${t.id} ${t.name}
+            </span>
             <span class="palette-category">Preset</span>
           </div>
           <p style="font-size:12px;color:var(--text-muted);">${t.desc}</p>
           <div style="margin-top:6px;">
-            <button class="btn-action primary" style="width:100%;justify-content:center;">⚡ Load into Studio</button>
+            <button class="btn-action primary" style="width:100%;justify-content:center;">
+              <svg viewBox="0 0 24 24" style="width:12px;height:12px;"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+              <span data-i18n="btn_load_studio">⚡ Load into Studio</span>
+            </button>
           </div>
         </div>
       `).join('');
@@ -1390,7 +1695,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Auto-save on typing listener with debounce
+    // Auto-save on typing listener
     let autoSaveTimer = null;
     document.getElementById('codeEditor').addEventListener('input', (e) => {
       renderPreview();
