@@ -54,39 +54,38 @@
 
 ---
 
-## 💻 วิธีติดตั้งและรันด้วย PowerShell (PowerShell Quickstart)
+## 💻 คู่มือติดตั้ง PowerShell CLI และคำสั่งลัดเชื่อมต่อ AI Agent
 
-สำหรับผู้ใช้งาน Windows และ PowerShell สามารถโคลนโปรเจกต์ เปิดหน้าเว็บ Studio และทดสอบการ์ดได้ทันทีด้วยชุดคำสั่งต่อไปนี้:
+Rubii Card Architect มาพร้อมกับเครื่องมือ CLI บน PowerShell (`tools/rubii.ps1`) สำหรับคัดลอก Prompt สั่งการพรีวิว และเชื่อมต่อกับ AI Coding Agent ได้โดยตรงจาก Terminal:
 
-### 1. โคลน Repository และเข้าสู่โฟลเดอร์
+### 1. ติดตั้งคำสั่ง `rubii` ลงใน PowerShell Profile
 ```powershell
-git clone https://github.com/jadesolju/Card-Charactor-for-Rubii-Purrpaw-etc.git
-cd Card-Charactor-for-Rubii-Purrpaw-etc
+# รันตัวติดตั้งอัตโนมัติเพื่อเปิดใช้คำสั่ง 'rubii' จากทุกโฟลเดอร์
+.\tools\install_cli.ps1
+
+# โหลด PowerShell Profile ใหม่
+. $PROFILE
 ```
 
-### 2. เปิดหน้าเว็บ Studio และเครื่องมือพรีวิวการ์ด
+### 2. คำสั่งลัด CLI สำหรับใช้งานทั่วไปและ Agent
 ```powershell
-# เปิดหน้าเว็บ Web Studio หลักในเบราว์เซอร์
-Start-Process index.html
+# คัดลอก System Prompt V2.2.7 เข้า Clipboard ทันทีสำหรับวางในแชต AI
+rubii --copy
 
-# หรือเปิดเครื่องมือพรีวิวหน้าจอมือถือจำลอง
-Start-Process tools/card_previewer.html
+# เตรียม Prompt พร้อมพารามิเตอร์คำสั่ง /turbo
+rubii /turbo Valentina Cross, Cyber-Gothic Vampire, Neon Crimson
+
+# เปิดเครื่องมือพรีวิวการ์ดมือถือ (Live Mobile Previewer)
+rubii --preview
+
+# เปิดหน้าเว็บ Web Studio หลัก
+rubii --studio
+
+# ตรวจสอบความถูกต้องของคลังข้อมูลและไฟล์ในโปรเจกต์
+rubii --check
 ```
 
-### 3. คัดลอก System Prompt V2.2.7 เข้า Clipboard ทันที (One-Liner)
-```powershell
-Get-Content -Raw .\standalone\rubii_architect_v2.2.7_standalone.txt | Set-Clipboard
-Write-Host "[OK] คัดลอก Prompt V2.2.7 ลง Clipboard เรียบร้อยแล้ว!" -ForegroundColor Cyan
-```
-
-### 4. ทางเลือกเสริม: รัน Local HTTP Server
-```powershell
-# ผ่าน Python:
-python -m http.server 8080
-
-# ผ่าน Node.js (npx):
-npx serve .
-```
+📖 **คู่มือการเชื่อมต่อ Agent อย่างละเอียด:** ดูขั้นตอนติดตั้งสำหรับ **Antigravity CLI (`agy`)**, **Claude Code CLI**, และ **Google Gemini** ได้ที่ [docs/CLI_AGENT_GUIDE.md](docs/CLI_AGENT_GUIDE.md)
 
 ---
 

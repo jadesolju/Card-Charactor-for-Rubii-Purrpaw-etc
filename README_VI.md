@@ -54,39 +54,38 @@ Không cần cài đặt môi trường hay viết mã, chỉ cần tải tệp 
 
 ---
 
-## 💻 Hướng dẫn cài đặt & chạy bằng PowerShell (PowerShell Quickstart)
+## 💻 Hướng dẫn PowerShell CLI & Phím tắt kết nối AI Agent
 
-Người dùng Windows và PowerShell có thể tải dự án, mở Web Studio và xem trước thẻ trực tiếp bằng các lệnh sau:
+Rubii Card Architect tích hợp công cụ PowerShell CLI gốc (`tools/rubii.ps1`) hỗ trợ sao chép Prompt, mở trình xem trước và kết nối trực tiếp với AI Coding Agent từ Terminal:
 
-### 1. Sao chép kho lưu trữ và chuyển vào thư mục
+### 1. Cài đặt phím tắt toàn cục `rubii`
 ```powershell
-git clone https://github.com/jadesolju/Card-Charactor-for-Rubii-Purrpaw-etc.git
-cd Card-Charactor-for-Rubii-Purrpaw-etc
+# Chạy trình cài đặt 1 bước để đăng ký lệnh 'rubii' vào Terminal
+.\tools\install_cli.ps1
+
+# Tải lại cấu hình PowerShell
+. $PROFILE
 ```
 
-### 2. Mở Web Studio và công cụ xem trước trên di động
+### 2. Các lệnh CLI và Agent thông dụng
 ```powershell
-# Mở Web Studio trên trình duyệt mặc định
-Start-Process index.html
+# Sao chép System Prompt V2.2.7 vào Clipboard để dán vào khung chat AI
+rubii --copy
 
-# Mở trình xem trước mô phỏng giao diện di động
-Start-Process tools/card_previewer.html
+# Chuẩn bị Prompt với thông số /turbo điền sẵn
+rubii /turbo Valentina Cross, Cyber-Gothic Vampire, Neon Crimson
+
+# Mở trình xem trước thẻ mô phỏng di động
+rubii --preview
+
+# Mở Web Studio SVG đầy đủ
+rubii --studio
+
+# Kiểm tra tính toàn vẹn của tệp và cơ sở dữ liệu
+rubii --check
 ```
 
-### 3. Sao chép System Prompt V2.2.7 vào bộ nhớ tạm ngay lập tức (PowerShell One-Liner)
-```powershell
-Get-Content -Raw .\standalone\rubii_architect_v2.2.7_standalone.txt | Set-Clipboard
-Write-Host "[OK] Đã sao chép prompt V2.2.7 vào Clipboard!" -ForegroundColor Cyan
-```
-
-### 4. Tùy chọn: Chạy máy chủ HTTP cục bộ
-```powershell
-# Sử dụng Python:
-python -m http.server 8080
-
-# Sử dụng Node.js (npx):
-npx serve .
-```
+📖 **Tài liệu kết nối Agent chi tiết:** Xem [docs/CLI_AGENT_GUIDE.md](docs/CLI_AGENT_GUIDE.md) để cấu hình cho **Antigravity CLI (`agy`)**, **Claude Code CLI**, và **Google Gemini**.
 
 ---
 

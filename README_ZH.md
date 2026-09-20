@@ -54,39 +54,38 @@
 
 ---
 
-## 💻 PowerShell 安装与本地运行指南 (PowerShell Quickstart)
+## 💻 PowerShell CLI 与 Agent 快捷接入指南
 
-Windows 与 PowerShell 用户可以通过以下命令快速克隆项目并在本地启动 Studio 和实时预览器：
+Rubii Card Architect 内置了原生 PowerShell CLI 工具（`tools/rubii.ps1`），支持直接从终端一键复制 Prompt、调起实时预览并与 AI Agent 协同工作：
 
-### 1. 克隆仓库并进入目录
+### 1. 安装全局 `rubii` CLI 快捷命令
 ```powershell
-git clone https://github.com/jadesolju/Card-Charactor-for-Rubii-Purrpaw-etc.git
-cd Card-Charactor-for-Rubii-Purrpaw-etc
+# 运行一键安装脚本，在全局终端注册 'rubii' 命令
+.\tools\install_cli.ps1
+
+# 重载 PowerShell 配置文件
+. $PROFILE
 ```
 
-### 2. 启动本地 Web Studio 与手机预览器
+### 2. CLI 常用指令与 Agent 命令
 ```powershell
-# 在默认浏览器中直接打开 Web Studio
-Start-Process index.html
+# 一键复制 V2.2.7 主系统提示词到剪贴板
+rubii --copy
 
-# 打开移动端模拟实时预览器
-Start-Process tools/card_previewer.html
+# 自动拼接 /turbo 指令与角色背景
+rubii /turbo Valentina Cross, Cyber-Gothic Vampire, Neon Crimson
+
+# 调起移动端实时卡片预览器
+rubii --preview
+
+# 调起完整 SVG Web Studio
+rubii --studio
+
+# 运行数据库与提示词完整性体检
+rubii --check
 ```
 
-### 3. 一键复制 V2.2.7 系统提示词到剪贴板 (PowerShell One-Liner)
-```powershell
-Get-Content -Raw .\standalone\rubii_architect_v2.2.7_standalone.txt | Set-Clipboard
-Write-Host "[OK] 已成功复制 V2.2.7 提示词到剪贴板！" -ForegroundColor Cyan
-```
-
-### 4. 可选：启动本地 HTTP 服务器
-```powershell
-# 使用 Python:
-python -m http.server 8080
-
-# 使用 Node.js (npx):
-npx serve .
-```
+📖 **详细 Agent 接入文档：** 请参阅 [docs/CLI_AGENT_GUIDE.md](docs/CLI_AGENT_GUIDE.md) 查看 **Antigravity CLI (`agy`)**、**Claude Code CLI** 与 **Google Gemini** 的集成配置。
 
 ---
 

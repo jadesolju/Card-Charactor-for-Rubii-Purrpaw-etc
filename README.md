@@ -51,39 +51,38 @@ No coding or repository setup required! Just grab the standalone file:
 
 ---
 
-## 💻 PowerShell Installation & Local Execution Guide
+## 💻 PowerShell CLI & Agent Shortcuts Guide
 
-For Windows and PowerShell users, you can clone the repository, launch the local Web Studio, and preview cards directly with these native commands:
+Rubii Card Architect includes a native PowerShell CLI tool (`tools/rubii.ps1`) to copy prompts, launch previews, and connect to AI Coding Agents directly from your terminal.
 
-### 1. Clone & Navigate to Repository
+### 1. Install Global `rubii` CLI Shortcut
 ```powershell
-git clone https://github.com/jadesolju/Card-Charactor-for-Rubii-Purrpaw-etc.git
-cd Card-Charactor-for-Rubii-Purrpaw-etc
+# Run the 1-step installer to enable 'rubii' command in your terminal
+.\tools\install_cli.ps1
+
+# Reload your PowerShell profile
+. $PROFILE
 ```
 
-### 2. Launch Local Web Studio & Live Previewer
+### 2. Direct CLI & Agent Commands
 ```powershell
-# Open Web Studio directly in default browser
-Start-Process index.html
+# Copy v2.2.7 Master Prompt to clipboard for any AI Chat
+rubii --copy
 
-# Open Live Mobile Viewport Previewer
-Start-Process tools/card_previewer.html
+# Prepare prompt with pre-filled /turbo parameters
+rubii /turbo Valentina Cross, Cyber-Gothic Vampire, Neon Crimson
+
+# Launch Live Mobile Card Previewer
+rubii --preview
+
+# Launch Full SVG Web Studio
+rubii --studio
+
+# Run diagnostics check across all databases and prompts
+rubii --check
 ```
 
-### 3. Copy Standalone Prompt Directly to Clipboard (PowerShell One-Liner)
-```powershell
-Get-Content -Raw .\standalone\rubii_architect_v2.2.7_standalone.txt | Set-Clipboard
-Write-Host "[OK] Rubii Architect V2.2.7 Prompt copied to clipboard!" -ForegroundColor Cyan
-```
-
-### 4. Optional: Run Local HTTP Server
-```powershell
-# Using Python:
-python -m http.server 8080
-
-# Using Node.js (npx):
-npx serve .
-```
+📖 **Detailed Agent Integration Guide:** See [docs/CLI_AGENT_GUIDE.md](docs/CLI_AGENT_GUIDE.md) for **Antigravity CLI (`agy`)**, **Claude Code CLI**, and **Gemini/Custom GPT** workflows.
 
 ---
 
