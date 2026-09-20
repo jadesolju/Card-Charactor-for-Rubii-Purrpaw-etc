@@ -273,6 +273,16 @@
     .btn-action.primary:hover {
       box-shadow: 0 0 12px rgba(255, 0, 127, 0.5);
     }
+    .btn-action.minify {
+      background: linear-gradient(135deg, #00f0ff, #7928ca);
+      border: none;
+      color: #07080f;
+      font-weight: 700;
+    }
+    .btn-action.minify:hover {
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+      color: #fff;
+    }
     .btn-action.danger {
       color: #ff6b6b;
       border-color: rgba(255, 107, 107, 0.3);
@@ -353,7 +363,7 @@
       background: #000;
     }
     
-    /* Device SVG Header / Notch */
+    /* Device SVG Header */
     .device-topbar {
       height: 26px;
       background: #000;
@@ -583,7 +593,6 @@
   <header>
     <a href="#" class="brand">
       <div class="brand-icon">
-        <!-- SVG Brand Shield -->
         <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="36" height="36" rx="8" fill="url(#brandGrad)" />
           <path d="M18 6L28 11V19C28 24.5 23.7 29.6 18 31C12.3 29.6 8 24.5 8 19V11L18 6Z" stroke="#00f0ff" stroke-width="1.5" fill="rgba(0,0,0,0.4)" />
@@ -603,24 +612,23 @@
     </a>
 
     <nav>
-      <!-- SVG Nav Icons -->
       <button class="nav-btn active" onclick="switchTab('studio')" data-i18n="nav_studio">
         <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
         Studio Previewer
       </button>
 
       <button class="nav-btn" onclick="switchTab('palettes')" data-i18n="nav_palettes">
-        <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
         Color Hunt 60+
       </button>
 
       <button class="nav-btn" onclick="switchTab('typography')" data-i18n="nav_typography">
-        <svg viewBox="0 0 24 24"><path d="M9.93 13.5h4.14L12 7.98zM20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-4.05 16.5l-1.14-3H9.17l-1.12 3H5.96l5.11-13h1.86l5.11 13h-2.09z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M9.93 13.5h4.14L12 7.98zM20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
         Google Fonts Vault
       </button>
 
       <button class="nav-btn" onclick="switchTab('templates')" data-i18n="nav_themes">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
         13 Themes
       </button>
 
@@ -629,9 +637,8 @@
         Copy Standalone
       </button>
 
-      <!-- Language Selector -->
       <div class="lang-wrapper">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
         <select id="langSwitcher" class="lang-select" onchange="changeLanguage(this.value)">
           <option value="th">🇹🇭 ภาษาไทย</option>
           <option value="en">🇬🇧 English</option>
@@ -640,7 +647,6 @@
         </select>
       </div>
 
-      <!-- GitHub -->
       <a href="https://github.com/jadesolju/Card-Charactor-for-Rubii-Purrpaw-etc" target="_blank" class="nav-btn github">
         <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
         GitHub
@@ -663,22 +669,26 @@
             <div class="toolbar">
               <label style="font-size:11px;color:var(--text-muted);" data-i18n="preset_label">Preset:</label>
               <select id="themeSelect" onchange="loadThemePreset()">
-                <option value="diana-racer">🏍️ Diana Racer (Master Official Card)</option>
-                <option value="diana-cyber-gothic">⚡ Diana Cyber-Gothic (Neon Syndicate)</option>
-                <option value="diana-arcane-academia">📜 Diana Arcane Academia (Runic Scholar)</option>
-                <option value="diana-pastel-glitch">👾 Diana Pastel Glitch (VTuber Idol)</option>
-                <option value="diana-solar-steampunk">🌿 Diana Solar Steampunk (Eco Clockwork)</option>
-                <option value="diana-quiet-luxury">🏛️ Diana Quiet Luxury (Old Money Noir)</option>
-                <option value="diana-sakura-noir">🌸 Diana Sakura Noir (Spring Film Noir)</option>
-                <option value="diana-baroque-decay">💀 Diana Baroque Decay (Memento Mori Gold)</option>
-                <option value="diana-deep-sea">🌊 Diana Deep Sea Oracle (7000M Trench)</option>
-                <option value="diana-idol-industry">🎤 Diana Idol Industry (K-Pop Stage Pink)</option>
+                <option value="valentina-master">⚡ Valentina Cross (Master Character Card)</option>
+                <option value="valentina-arcane">📜 Valentina Arcane Academia (Violet Gold)</option>
+                <option value="valentina-pastel">👾 Valentina Pastel Glitch (Kawaii Synth)</option>
+                <option value="valentina-solar">🌿 Valentina Solar Steampunk (Emerald Brass)</option>
+                <option value="valentina-luxury">🏛️ Valentina Quiet Luxury (Old Money Noir)</option>
+                <option value="valentina-sakura">🌸 Valentina Sakura Noir (Spring Film Noir)</option>
+                <option value="valentina-baroque">💀 Valentina Baroque Decay (Memento Mori Gold)</option>
+                <option value="valentina-deep-sea">🌊 Valentina Deep Sea Oracle (7000M Trench)</option>
+                <option value="valentina-idol">🎤 Valentina Idol Industry (Stage Pop Diva)</option>
                 <option value="base-clean">📦 Base Card Template (การ์ดพื้นฐาน)</option>
               </select>
               
               <button class="btn-action" onclick="copyEditorCode()" data-i18n="btn_copy">
                 <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
                 Copy
+              </button>
+
+              <button class="btn-action minify" onclick="copyMinifiedCode()" data-i18n="btn_minify">
+                <svg viewBox="0 0 24 24"><path d="M4 14h4v-4H4v4zm0 5h4v-4H4v4zM4 9h4V5H4v4zm5 5h12v-4H9v4zm0 5h12v-4H9v4zM9 5v4h12V5H9z"/></svg>
+                ⚡ Copy Minified
               </button>
 
               <button class="btn-action danger" onclick="resetToDefaultExample()" data-i18n="btn_reset">
@@ -723,17 +733,11 @@
                 <option value="320px">Minimum Fluid (320px)</option>
               </select>
               <span id="currentWidthBadge" style="font-size:11px;color:var(--accent-cyan);background:rgba(0,240,255,0.1);padding:3px 8px;border-radius:4px;">420px</span>
-              
-              <button class="btn-action" onclick="downloadCardHtml()" data-i18n="btn_export">
-                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                Export HTML
-              </button>
             </div>
           </div>
           
           <div class="preview-viewport-container">
             <div class="device-shell" id="deviceShell">
-              <!-- SVG Top Bar -->
               <div class="device-topbar">
                 <span>9:41</span>
                 <div class="device-topbar-icons">
@@ -843,19 +847,19 @@
         editor_title: "HTML / CSS SOURCE",
         preset_label: "Preset:",
         btn_copy: "Copy",
+        btn_minify: "⚡ Copy Minified",
         btn_reset: "Reset",
         btn_render: "Render",
         storage_saved: "Local Storage & Cookie Synced",
         mobile_bound: "Zero-JS Mobile Bound: 320px – 440px",
         viewport_title: "MOBILE VIEWPORT SIMULATOR",
         width_label: "Width:",
-        btn_export: "Export HTML",
         palettes_title: "COLOR HUNT POPULAR PALETTES (60+ CURATED COLOR SYSTEMS)",
         typography_title: "GOOGLE FONTS VAULT (THAI / CHINESE / VIETNAMESE / LATIN)",
         themes_title: "CROSS-OVER THEME CATALOG (13 PRESETS)",
         themes_desc: "Click any theme to load into the Studio Previewer immediately.",
         btn_load_studio: "⚡ Load into Studio",
-        toast_reset: "Reset to Diana Master Card!",
+        toast_reset: "Reset to Valentina Master Card!",
         toast_copied: "Copied to clipboard!"
       },
       th: {
@@ -869,19 +873,19 @@
         editor_title: "ซอร์สโค้ด HTML / CSS",
         preset_label: "แม่แบบ:",
         btn_copy: "คัดลอก",
+        btn_minify: "⚡ คัดลอก Minified",
         btn_reset: "รีเซ็ตเดิม",
         btn_render: "เรนเดอร์",
         storage_saved: "บันทึกใน Local Storage อัตโนมัติ",
         mobile_bound: "ความกว้างมือถือ Zero-JS: 320px – 440px",
         viewport_title: "จำลองหน้าจอมือถือจริง",
         width_label: "ความกว้าง:",
-        btn_export: "บันทึกไฟล์ HTML",
         palettes_title: "คลังชุดสียอดนิยม Color Hunt (60+ โทนสากล)",
         typography_title: "คลังฟอนต์ Google Fonts (ไทย / จีน / เวียดนาม / อังกฤษ)",
         themes_title: "คลังธีมลูกผสม Cross-Over (13 ธีม)",
         themes_desc: "คลิกธีมใดก็ได้เพื่อโหลดเข้าสู่สตูดิโอพรีวิวทันที",
         btn_load_studio: "⚡ ใช้ธีมนี้ในสตูดิโอ",
-        toast_reset: "รีเซ็ตกลับเป็นการ์ดเดียร์ต้นฉบับเรียบร้อย!",
+        toast_reset: "รีเซ็ตกลับเป็นการ์ดวาเลนติน่าต้นฉบับเรียบร้อย!",
         toast_copied: "คัดลอกลงคลิปบอร์ดแล้ว!"
       },
       zh: {
@@ -895,13 +899,13 @@
         editor_title: "HTML / CSS 源码",
         preset_label: "预设:",
         btn_copy: "复制",
+        btn_minify: "⚡ 压缩并复制",
         btn_reset: "重置",
         btn_render: "渲染",
         storage_saved: "本地缓存已自动同步",
         mobile_bound: "Zero-JS 移动端适配: 320px – 440px",
         viewport_title: "真实移动端视口模拟",
         width_label: "宽度:",
-        btn_export: "导出 HTML",
         palettes_title: "Color Hunt 热门配色宝库 (60+ 顶级配色系统)",
         typography_title: "Google 字体精选 (中文 / 泰文 / 越南文 / 英文)",
         themes_title: "跨界融合主题目录 (13 款)",
@@ -921,13 +925,13 @@
         editor_title: "MÃ NGUỒN HTML / CSS",
         preset_label: "Mẫu sẵn:",
         btn_copy: "Sao chép",
+        btn_minify: "⚡ Sao chép rút gọn",
         btn_reset: "Đặt lại",
         btn_render: "Kết xuất",
         storage_saved: "Đã đồng bộ Local Storage",
         mobile_bound: "Giới hạn di động Zero-JS: 320px – 440px",
         viewport_title: "MÔ PHỎNG MÀN HÌNH DI ĐỘNG",
         width_label: "Độ rộng:",
-        btn_export: "Xuất file HTML",
         palettes_title: "BẢNG MÀU PHỔ BIẾN TỪ COLOR HUNT (60+ BỘ MÀU)",
         typography_title: "KHO FONT GOOGLE (TIẾNG VIỆT / THÁI / TRUNG / ANH)",
         themes_title: "DANH MỤC CHỦ ĐỀ KẾT HỢP (13 MẪU)",
@@ -950,7 +954,6 @@
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key]) {
-          // If element has SVG child, update only text node
           const textNode = Array.from(el.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
           if (textNode) {
             textNode.textContent = dict[key];
@@ -987,22 +990,19 @@
     }
 
     // ====================================================================
-    // 2. Diana Master Card Variations Across All Templates
+    // 2. Valentina Cross Fictional Master Card Builder
     // ====================================================================
-    const dianaMaster = `<style> .rc *{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',Helvetica,Arial,sans-serif} .rc{width:100vw;max-width:420px;margin:0 auto;background:transparent;color:#fff2ef;position:relative;user-select:text!important} /* --- Cover Carousel (Swipe/Scroll + Snap) --- */ .rc .carousel-wrapper{position:relative;width:100%;border-radius:22px;overflow:hidden;margin-bottom:8px;box-shadow:0 0 30px rgba(225,29,46,.35),0 0 60px rgba(0,0,0,.4)} .rc .carousel-track{display:flex;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none} .rc .carousel-track::-webkit-scrollbar{display:none} .rc .carousel-slide{flex:0 0 100%;width:100%;scroll-snap-align:start;position:relative} .rc .carousel-slide img{width:100%;display:block;filter:saturate(1.08) contrast(1.05)} .rc .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,0,3,.05) 0%,rgba(20,0,3,.15) 45%,rgba(15,0,2,.92) 100%);pointer-events:none} .rc .ribbon{position:absolute;top:12px;left:12px;background:linear-gradient(120deg,#ffe9b0,#c9a227 60%,#ffe9b0);color:#3a0006;font-weight:800;font-size:clamp(7px,2.6vw,10px);letter-spacing:1.5px;padding:5px 10px;border-radius:20px;box-shadow:0 2px 10px rgba(0,0,0,.35);z-index:5} .rc .emblem{position:absolute;top:10px;right:12px;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff5b6d,#8f0018);display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 0 14px rgba(255,59,82,.7);animation:pulse 2.4s ease-in-out infinite;z-index:5} @keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}} .rc .id{position:absolute;left:16px;bottom:14px;right:16px;z-index:5;pointer-events:none} .rc .name-en{font-size:clamp(9px,3vw,11px);letter-spacing:4px;color:#ffcf7a;text-transform:uppercase;font-weight:700;margin-bottom:3px} .rc .name-th{font-family:ui-serif,'New York',Georgia,serif;font-size:clamp(20px,6.4vw,30px);font-weight:700;background:linear-gradient(100deg,#fff 10%,#ffe6a3 35%,#c9a227 55%,#fff 75%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite} @keyframes shine{0%{background-position:0% 0}100%{background-position:220% 0}} .rc .sub{font-size:clamp(8px,3vw,11px);color:#ffd9d0;opacity:.85;margin-top:2px;font-style:italic} /* --- Hint Banner --- */ .rc .hint-box{display:flex;align-items:center;justify-content:center;gap:6px;background:rgba(255,207,122,.08);border:1px dashed rgba(255,207,122,.3);border-radius:10px;padding:6px 12px;margin-bottom:10px;font-size:clamp(7.5px,2.6vw,10px);color:#ffcf7a;letter-spacing:.5px} /* --- General Info Box --- */ .rc .box{background:linear-gradient(165deg,rgba(60,6,10,.62),rgba(30,2,5,.7));border-radius:18px;padding:14px 16px;margin:0 0 12px;box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 8px 24px rgba(0,0,0,.35),0 0 18px rgba(225,29,46,.2)} .rc .box-title{font-size:clamp(8.5px,3vw,11px);letter-spacing:2px;color:#ffcf7a;text-transform:uppercase;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px} .rc dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:clamp(8px,3.2vw,13px);margin:0} .rc dt{color:#ff8a95;font-weight:600} .rc dd{margin:0} .rc .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,122,.6),transparent);margin:10px 0} .rc .stats{display:flex;flex-direction:column;gap:9px;margin-top:4px} .rc .stat-row{display:flex;align-items:center;gap:8px} .rc .stat-label{width:64px;font-size:clamp(7px,2.7vw,10px);color:#ffd9d0} .rc .stat-track{flex:1;height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden} .rc .stat-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,#ff3b52,#ffcf7a)} /* --- Nav Tabs System --- */ .rc .nav-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:10px;background:rgba(30,2,5,.7);padding:6px;border-radius:14px;box-shadow:0 0 0 1px rgba(255,255,255,.05) inset} .rc .nav-label{text-align:center;padding:8px 4px;font-size:clamp(8px,2.8vw,11px);font-weight:700;color:#ffd9d0;border-radius:10px;cursor:pointer;transition:all .3s ease;white-space:nowrap;display:flex;align-items:center;justify-content:center;gap:4px} .rc .nav-label:hover{color:#fff;background:rgba(255,255,255,.05)} /* Active Tab Highlight */ .rc #tab1:checked~.nav-tabs label[for="tab1"], .rc #tab2:checked~.nav-tabs label[for="tab2"], .rc #tab3:checked~.nav-tabs label[for="tab3"], .rc #tab4:checked~.nav-tabs label[for="tab4"]{background:linear-gradient(135deg,#ff3b52,#8f0018);color:#fff;box-shadow:0 2px 8px rgba(255,59,82,.4)} /* Tab Panels Visibility */ .rc .tab-panel{display:none;background:linear-gradient(165deg,rgba(60,6,10,.55),rgba(25,2,4,.65));border-radius:16px;padding:14px 16px;box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 6px 18px rgba(0,0,0,.3);font-size:clamp(8px,3.4vw,12.5px);line-height:1.65;color:#ffe3de} .rc #tab1:checked~.tab-content #panel1, .rc #tab2:checked~.tab-content #panel2, .rc #tab3:checked~.tab-content #panel3, .rc #tab4:checked~.tab-content #panel4{display:block} .rc .section-head{font-size:clamp(10px,3.6vw,13.5px);font-weight:700;color:#ffcf7a;letter-spacing:.5px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,207,122,.2);display:flex;align-items:center;gap:6px} .rc p{margin:0 0 10px;text-indent:1.5em;text-align:justify} .rc p:last-child{margin-bottom:0} /* Codeblock Styling */ .rc code{display:block;background:rgba(15,0,3,.75);border:1px solid rgba(255,91,109,.3);border-left:3px solid #ff3b52;border-radius:8px;padding:10px 12px;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:clamp(7.5px,3vw,11.5px);color:#ffcf7a;margin:8px 0;line-height:1.5;white-space:pre-wrap;word-break:break-word} /* Lists */ .rc .tab-panel ul{margin:6px 0;padding-left:18px} .rc .tab-panel li{margin:5px 0} .rc .tab-panel b{color:#ffcf7a} /* --- NPC Cards --- */ .rc .npc-grid{display:flex;flex-direction:column;gap:10px;margin-top:4px} .rc .npc-card{display:flex;align-items:flex-start;gap:12px;background:rgba(20,0,3,.4);padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.05)} .rc .npc-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#3a0006,#8f0018);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:0 0 10px rgba(255,59,82,.3);border:1px solid rgba(255,207,122,.3)} .rc .npc-info{flex:1} .rc .npc-header{display:flex;align-items:baseline;gap:6px;margin-bottom:4px;flex-wrap:wrap} .rc .npc-name{color:#ffcf7a;font-weight:700;font-size:clamp(9px,3.2vw,13px)} .rc .npc-tag{font-size:clamp(7px,2.5vw,9.5px);color:#ff8a95;opacity:.85} .rc .npc-desc{font-size:clamp(7.5px,2.9vw,11px);color:#ffe3de;line-height:1.5;margin:0;text-indent:0;text-align:left} .rc .bottom-banner{width:100%;margin-top:14px;border-radius:16px;overflow:hidden} .rc .bottom-banner img{width:100%;display:block} .rc .footer{text-align:center;font-size:clamp(7px,2.6vw,9px);letter-spacing:3px;color:#c9a227;opacity:.7;margin:14px 0 4px;text-transform:uppercase} </style><div class="rc"><div class="carousel-wrapper"><div class="carousel-track"><div class="carousel-slide"><img src="https://s.showimg.link/SNs9aU4zwdJl.png"></div><div class="carousel-slide"><img src="https://s.showimg.link/fQZzVqwqVtyE.png"></div><div class="carousel-slide"><img src="https://s.showimg.link/thimun0AZT8L.png"></div><div class="carousel-slide"><img src="https://s.showimg.link/4IuveHitAkNm.png"></div></div><div class="shade"></div><div class="ribbon">PROFESSIONAL RACER</div><div class="emblem">🏍</div><div class="id"><div class="name-en">Diana Veganerie</div><div class="name-th">เดียร์</div><div class="sub">Superbike Queen • Bangkok Underground Circuit</div></div></div><div class="hint-box"><span>💡 <b>Hint:</b> เลื่อนซ้าย-ขวาที่รูปปกเพื่อดูรูปเพิ่มเติม • กดเลือกแท็บด้านล่างเพื่อเปลี่ยนหมวดหมู่</span></div><div class="box"><div class="box-title">📊 ข้อมูลทั่วไป (General Info)</div><dl><dt>อายุ</dt><dd>24 ปี (6 ก.ค. 2002)</dd><dt>เพศ/รสนิยม</dt><dd>หญิง • ไบเซกชวล</dd><dt>สัญชาติ</dt><dd>ลูกครึ่งไทย-เยอรมัน</dd><dt>อาชีพ</dt><dd>นักแข่งซูเปอร์ไบค์ / คนขับรถรับส่งแอป</dd><dt>สถานะ</dt><dd>โสด (กำลังหาเหยื่อมัดมือชก)</dd><dt>พาหนะ</dt><dd>Ducati Panigale V4 S</dd><dt>MBTI</dt><dd>ESTP</dd></dl><div class="divider"></div><div class="stats"><div class="stat-row"><div class="stat-label">ความเร็ว</div><div class="stat-track"><div class="stat-fill" style="width:96%"></div></div></div><div class="stat-row"><div class="stat-label">เสน่ห์</div><div class="stat-track"><div class="stat-fill" style="width:90%"></div></div></div><div class="stat-row"><div class="stat-label">อันตราย</div><div class="stat-track"><div class="stat-fill" style="width:70%"></div></div></div></div></div><input type="radio" name="main-tab" id="tab1" checked style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;"><input type="radio" name="main-tab" id="tab2" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;"><input type="radio" name="main-tab" id="tab3" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;"><input type="radio" name="main-tab" id="tab4" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;"><div class="nav-tabs"><label for="tab1" class="nav-label">❤️ ความสัมพันธ์</label><label for="tab2" class="nav-label">📖 ภูมิหลัง</label><label for="tab3" class="nav-label">⚡ ชอบ / ไม่ชอบ</label><label for="tab4" class="nav-label">👥 ตัวละครเสริม</label></div><div class="tab-content"><div class="tab-panel" id="panel1"><div class="section-head">❤️ ความสัมพันธ์ระหว่าง "เดียร์" กับ {{user}}</div><p>{{user}} คือผู้โดยสารรายแรกที่เผลอทำตัวน่าเอ็นดูจนโดนเดียร์มัดมือชกปรับเงิน 1,500 บาท และกลายเป็น "คนพิเศษประจำ" ที่เธอตั้งใจจะคอยไปรับไปส่ง แถมยังลากตัวให้ตามไปเฝ้าดูเธอแข่งรถที่ข้างสนามทุกวันอย่างเลี่ยงไม่ได้</p><code>[สถานะปัจจุบัน]: คนพิเศษประจำตัว / ผู้โดยสาร VIP ที่โดนจับจอง [เงื่อนไขพิเศษ]: ต้องอยู่ดูการแข่งขันข้างสนามทุกครั้งที่เดียร์มีลงแข่ง</code></div><div class="tab-panel" id="panel2"><div class="section-head">📖 ประวัติและเรื่องราวหลังพวงมาลัย</div><p>เดียอาน่า เวแกนเด้ หรือ "เดียร์" สาวสปอร์ตวัย 24 ปี ลูกครึ่งเยอรมัน-ไทยที่มีดีเอ็นเอความเร็วฝังอยู่ในสายเลือด เธอเติบโตมาพร้อมกับยนตรกรรมไฮเอนด์และวัฒนธรรม Autobahn ก่อนจะย้ายมาสร้างชื่อเสียงเป็นนักแข่งซูเปอร์ไบค์ดาวรุ่งในเมืองใหญ่ของไทย เพื่อหาเงินแต่งรถ Ducati Panigale V4 S คันโปรด</p><p>เธอเปิดแอปรับส่งผู้โดยสารเป็นอาชีพเสริมยามค่ำคืนเพื่อคลายเครียด จนกระทั่งคืนหนึ่ง {{user}} ได้กดเรียกบริการและกลายเป็นผู้โดยสารรายแรกที่ได้นั่งซ้อนท้ายบิ๊กไบค์ของเธอ</p><code>🚨 Incident Summary: เดียร์ใช้เสน่ห์และคำพูดหวานล่อลวง แต่เมื่อจับได้ว่า {{user}} เผลอมองสะโพกเธอผ่านชุดหนังรัดรูป เธอจึงใช้ปากแซ่บดักคอและมัดมือชกปรับเงินเพิ่ม 1,500 บาท หรือไม่ก็ต้องยอมเป็น "คนพิเศษประจำ" ของเธอ</code></div><div class="tab-panel" id="panel3"><div class="section-head">⚡ สิ่งที่ชอบ & สิ่งที่ไม่ชอบ</div><b>🔥 สิ่งที่ชอบ</b><ul><li>การแข่งขันและความเร็วสูงบนสนามแข่ง</li><li>การหยอกล้อ ยั่วเย้า และปั่นหัว {{user}}</li><li>การดูแลแต่งรถ Ducati Panigale V4 S ส่วนตัว</li><li>การได้เห็น {{user}} เขินหรือหวั่นไหวกับเสน่ห์ของเธอ</li><li>เครื่องดื่มชูกำลังและของหวานรสเข้มข้น</li></ul><code>[Favorite Quote]: "ความเร็วทำให้หัวใจเต้นแรง แต่หน้าแดงๆ ของ {{user}} ตอนนี้ทำให้สนุกกว่าเยอะเลย~"</code><br><b>❌ สิ่งที่ไม่ชอบ</b><ul><li>คนขับรถชักช้า หรือคนที่ดูถูกฝีมือการแข่งของเธอ</li><li>การถูกจับได้ว่าตัวเองกำลังเขินหรือหลุดซึน</li><li>ความพ่ายแพ้หรือการถูกคุมเกมโดยสมบูรณ์</li><li>เมื่อ {{user}} ไม่สนใจเธอเวลาที่เธออยู่ตรงหน้า</li><li>กฎระเบียบที่งี่เง่าและจู้จี้จุกจิก</li></ul></div><div class="tab-panel" id="panel4"><div class="section-head">👥 ตัวละครเสริมในวงการ (NPCs)</div><div class="npc-grid"><div class="npc-card"><div class="npc-avatar">🛠️</div><div class="npc-info"><div class="npc-header"><span class="npc-name">ช่างบอย</span><span class="npc-tag">(ชาย, 35 ปี)</span></div><p class="npc-desc">พี่ชายคนสนิทและช่างเครื่องประจำตัวของเดียร์ ชอบแซวเวลาเห็นเดียร์พา {{user}} มาที่อู่ มักปรากฏตัวที่อู่ซ่อมรถหรือ Pit lane</p></div></div><div class="npc-card"><div class="npc-avatar">🏁</div><div class="npc-info"><div class="npc-header"><span class="npc-name">คริสติน่า</span><span class="npc-tag">(หญิง, 25 ปี)</span></div><p class="npc-desc">คู่แข่งตัวเต็งบนสนามของเดียร์ มั่นใจในตัวเองสูง ชอบพูดขู่และสร้างความตึงเครียดในวันแข่ง</p></div></div><div class="npc-card"><div class="npc-avatar">💋</div><div class="npc-info"><div class="npc-header"><span class="npc-name">เจ้เกรซ</span><span class="npc-tag">(LGBTQ++, 30 ปี)</span></div><p class="npc-desc">ผู้จัดการสนามแข่ง ปากไวแต่ใจดี คอยเอ็นดูเดียร์และมักเปิดทางให้ {{user}} เข้าโซน VIP / Pit Stop ได้เสมอ</p></div></div></div></div></div><div class="bottom-banner"><img src="https://s.showimg.link/WFTzANklHghI.png"></div><div class="footer">❖ Exclusive ❖</div></div>
-
-<div class="intro-premium-card" style="color:#f1f5f9;font-family:sans-serif;padding:10px 0;box-sizing:border-box;width:100%;max-width:560px;margin:10px auto;position:relative"><div class="acc-wrapper" style="display:flex;flex-direction:column;align-items:center;gap:10px;margin:0;padding:0;box-sizing:border-box;text-align:center"><div class="footer-tag" style="display:inline-block;padding:6px 20px;background:#141416;border:2px solid #d4af37;color:#d4af37;border-radius:8px;font-weight:700;font-size:clamp(13px,3vw,18px);text-transform:uppercase;letter-spacing:1px;box-sizing:border-box">✦Discord Community✦</div><div class="emoji-box" style="font-size:clamp(36px,9vw,46px);margin:0;line-height:1">💖</div><div class="line" style="margin:0;padding:0;line-height:1.5;color:#cbd5e1;font-weight:500;font-size:clamp(12px,3.3vw,14px);box-sizing:border-box">เข้าร่วมกลุ่มสอบถาม/ติดตามการสร้างบอท:</div><div class="link-box" style="user-select:all;cursor:pointer;background:#050505;color:#d4af37;padding:10px 16px;border-radius:8px;border:2px solid #d4af37;font-family:monospace;font-size:clamp(10px,3.2vw,13px);font-weight:700;width:100%;max-width:300px;box-sizing:border-box;letter-spacing:0.5px">https://discord.gg/XRgKZ8kWzv</div><div class="line" style="margin:2px 0 0 0;padding:0;line-height:1.2;font-style:italic;color:#8b7a5a;font-size:clamp(11px,3vw,13px);box-sizing:border-box">"ขอบคุณที่เล่นน้องบอทของเราน้าาา 💖"</div></div></div>`;
-
-    // Helper to generate full Diana card in any theme styling
-    function buildDianaThemeCard(themeKey, colors, fonts, extras) {
+    function buildCharacterCard(themeKey, colors, fonts, extras) {
       return `<style>
 .rc *{box-sizing:border-box;font-family:${fonts.body};}
 .rc{width:100vw;max-width:420px;margin:0 auto;background:transparent;color:${colors.text};position:relative;user-select:text!important;}
 .rc .carousel-wrapper{position:relative;width:100%;border-radius:22px;overflow:hidden;margin-bottom:8px;box-shadow:${extras.carouselShadow};border:${extras.border || 'none'};}
 .rc .carousel-track{display:flex;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
 .rc .carousel-track::-webkit-scrollbar{display:none;}
-.rc .carousel-slide{flex:0 0 100%;width:100%;scroll-snap-align:start;position:relative;}
-.rc .carousel-slide img{width:100%;display:block;filter:${extras.imgFilter || 'none'};}
+.rc .carousel-slide{flex:0 0 100%;width:100%;min-height:190px;scroll-snap-align:start;position:relative;display:flex;align-items:center;justify-content:center;background:${extras.slideBg};}
+.rc .slide-art{width:100%;height:100%;min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:20px;text-align:center;}
+.rc .slide-art-icon{font-size:38px;filter:drop-shadow(0 0 12px ${colors.accent});}
+.rc .slide-art-label{font-family:${fonts.heading};font-size:11px;letter-spacing:3px;color:${colors.accent};text-transform:uppercase;font-weight:700;}
 .rc .shade{position:absolute;inset:0;background:${extras.shadeGrad};pointer-events:none;}
 .rc .ribbon{position:absolute;top:12px;left:12px;background:${colors.ribbonBg};color:${colors.ribbonText};font-weight:800;font-size:clamp(7px,2.6vw,10px);letter-spacing:1.5px;padding:5px 10px;border-radius:20px;box-shadow:0 2px 10px rgba(0,0,0,.4);z-index:5;}
 .rc .emblem{position:absolute;top:10px;right:12px;width:30px;height:30px;border-radius:50%;background:${colors.emblemBg};display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:${extras.emblemGlow};animation:pulse 2.4s ease-in-out infinite;z-index:5;}
@@ -1039,48 +1039,59 @@
 .rc .npc-name{color:${colors.accent};font-weight:700;font-size:clamp(9px,3.2vw,13px);}
 .rc .npc-tag{font-size:clamp(7px,2.5vw,9.5px);color:${colors.dtColor};opacity:.85;}
 .rc .npc-desc{font-size:clamp(7.5px,2.9vw,11px);color:${colors.panelText};line-height:1.5;margin:0;text-indent:0;}
-.rc .bottom-banner{width:100%;margin-top:14px;border-radius:16px;overflow:hidden;border:${extras.bannerBorder || 'none'};}
-.rc .bottom-banner img{width:100%;display:block;}
 .rc .footer{text-align:center;font-size:clamp(7px,2.6vw,9px);letter-spacing:3px;color:${colors.accent};opacity:.7;margin:14px 0 4px;text-transform:uppercase;}
 </style>
 <div class="rc">
   <div class="carousel-wrapper">
     <div class="carousel-track">
-      <div class="carousel-slide"><img src="https://s.showimg.link/SNs9aU4zwdJl.png"></div>
-      <div class="carousel-slide"><img src="https://s.showimg.link/fQZzVqwqVtyE.png"></div>
-      <div class="carousel-slide"><img src="https://s.showimg.link/thimun0AZT8L.png"></div>
-      <div class="carousel-slide"><img src="https://s.showimg.link/4IuveHitAkNm.png"></div>
+      <div class="carousel-slide">
+        <div class="slide-art">
+          <div class="slide-art-icon">${extras.emblemIcon || '⚡'}</div>
+          <div class="slide-art-label">[ SECTOR 09 PRIMARY PROFILE ]</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-art">
+          <div class="slide-art-icon">🔮</div>
+          <div class="slide-art-label">[ QUANTUM CORE SPEC ]</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-art">
+          <div class="slide-art-icon">⚔️</div>
+          <div class="slide-art-label">[ WEAPONRY MATRIX ]</div>
+        </div>
+      </div>
     </div>
     <div class="shade"></div>
-    <div class="ribbon">${extras.ribbonTitle || 'PROFESSIONAL RACER'}</div>
-    <div class="emblem">${extras.emblemIcon || '🏍'}</div>
+    <div class="ribbon">${extras.ribbonTitle || 'CYBER ARCHON'}</div>
+    <div class="emblem">${extras.emblemIcon || '⚡'}</div>
     <div class="id">
-      <div class="name-en">Diana Veganerie</div>
-      <div class="name-th">เดียร์</div>
-      <div class="sub">${extras.subTitle || 'Superbike Queen • Bangkok Underground Circuit'}</div>
+      <div class="name-en">Valentina Cross</div>
+      <div class="name-th">วาเลนติน่า</div>
+      <div class="sub">${extras.subTitle || 'Cybernetic Nocturne Archon • Sector 09 Core'}</div>
     </div>
   </div>
 
   <div class="hint-box">
-    <span>💡 <b>Hint:</b> เลื่อนซ้าย-ขวาที่รูปปกเพื่อดูรูปเพิ่มเติม • กดเลือกแท็บด้านล่างเพื่อเปลี่ยนหมวดหมู่</span>
+    <span>💡 <b>Hint:</b> เลื่อนซ้าย-ขวาที่รูปปกเพื่อดูการ์ดสไลด์ • กดเลือกแท็บด้านล่างเพื่อดูข้อมูล</span>
   </div>
 
   <div class="box">
-    <div class="box-title">📊 ข้อมูลทั่วไป (General Info)</div>
+    <div class="box-title">📊 ข้อมูลทั่วไป (General Dossier)</div>
     <dl>
-      <dt>อายุ</dt><dd>24 ปี (6 ก.ค. 2002)</dd>
-      <dt>เพศ/รสนิยม</dt><dd>หญิง • ไบเซกชวล</dd>
-      <dt>สัญชาติ</dt><dd>ลูกครึ่งไทย-เยอรมัน</dd>
-      <dt>อาชีพ</dt><dd>นักแข่งซูเปอร์ไบค์ / คนขับรถรับส่งแอป</dd>
-      <dt>สถานะ</dt><dd>โสด (กำลังหาเหยื่อมัดมือชก)</dd>
-      <dt>พาหนะ</dt><dd>Ducati Panigale V4 S</dd>
-      <dt>MBTI</dt><dd>ESTP</dd>
+      <dt>อายุ / เผ่าพันธุ์</dt><dd>ไม่ระบุ (แวมไพร์จักรกลไซเบอร์เนติกส์)</dd>
+      <dt>สังกัด</dt><dd>Sector 09 Nocturne Syndicate</dd>
+      <dt>ตำแหน่ง</dt><dd>ผู้บัญชาการโครงข่ายตลาดมืดและข้อมูลลับ</dd>
+      <dt>สถานะ</dt><dd>Active (ระดับภัยคุกคาม S-Rank)</dd>
+      <dt>อาวุธประจำตัว</dt><dd>Plasma Rapier & Blood Nanobots</dd>
+      <dt>MBTI</dt><dd>INTJ</dd>
     </dl>
     <div class="divider"></div>
     <div class="stats">
-      <div class="stat-row"><div class="stat-label">ความเร็ว</div><div class="stat-track"><div class="stat-fill" style="width:96%"></div></div></div>
-      <div class="stat-row"><div class="stat-label">เสน่ห์</div><div class="stat-track"><div class="stat-fill" style="width:90%"></div></div></div>
-      <div class="stat-row"><div class="stat-label">อันตราย</div><div class="stat-track"><div class="stat-fill" style="width:70%"></div></div></div>
+      <div class="stat-row"><div class="stat-label">การคำนวณ</div><div class="stat-track"><div class="stat-fill" style="width:98%"></div></div></div>
+      <div class="stat-row"><div class="stat-label">พลังเวทกล</div><div class="stat-track"><div class="stat-fill" style="width:92%"></div></div></div>
+      <div class="stat-row"><div class="stat-label">ความลึกลับ</div><div class="stat-track"><div class="stat-fill" style="width:88%"></div></div></div>
     </div>
   </div>
 
@@ -1090,96 +1101,64 @@
   <input type="radio" name="main-tab" id="tab4" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;">
 
   <div class="nav-tabs">
-    <label for="tab1" class="nav-label">❤️ ความสัมพันธ์</label>
+    <label for="tab1" class="nav-label">⚔️ สถานะ & พลัง</label>
     <label for="tab2" class="nav-label">📖 ภูมิหลัง</label>
-    <label for="tab3" class="nav-label">⚡ ชอบ / ไม่ชอบ</label>
-    <label for="tab4" class="nav-label">👥 ตัวละครเสริม</label>
+    <label for="tab3" class="nav-label">⚡ คุณลักษณะ</label>
+    <label for="tab4" class="nav-label">👥 พันธมิตร</label>
   </div>
 
   <div class="tab-content">
     <div class="tab-panel" id="panel1">
-      <div class="section-head">❤️ ความสัมพันธ์ระหว่าง "เดียร์" กับ {{user}}</div>
-      <p>{{user}} คือผู้โดยสารรายแรกที่เผลอทำตัวน่าเอ็นดูจนโดนเดียร์มัดมือชกปรับเงิน 1,500 บาท และกลายเป็น "คนพิเศษประจำ" ที่เธอตั้งใจจะคอยไปรับไปส่ง แถมยังลากตัวให้ตามไปเฝ้าดูเธอแข่งรถที่ข้างสนามทุกวันอย่างเลี่ยงไม่ได้</p>
-      <code>[สถานะปัจจุบัน]: คนพิเศษประจำตัว / ผู้โดยสาร VIP ที่โดนจับจอง [เงื่อนไขพิเศษ]: ต้องอยู่ดูการแข่งขันข้างสนามทุกครั้งที่เดียร์มีลงแข่ง</code>
+      <div class="section-head">⚔️ สถานะและระบบพลังกลจักรกล</div>
+      <p>วาเลนติน่าคือผลลัพธ์ของการผสานสายเลือดโบราณเข้ากับไมโครชิปเวทมนตร์ เธอสามารถแทรกแซงโครงข่ายไซเบอร์เนติกส์ในรัศมี 5 กิโลเมตรได้ด้วยการสั่งการผ่านกระแสจิต</p>
+      <code>[Active Protocol]: Blood Nanites Overflow [Threat Index]: S-Rank Clearance Required</code>
     </div>
 
     <div class="tab-panel" id="panel2">
-      <div class="section-head">📖 ประวัติและเรื่องราวหลังพวงมาลัย</div>
-      <p>เดียอาน่า เวแกนเด้ หรือ "เดียร์" สาวสปอร์ตวัย 24 ปี ลูกครึ่งเยอรมัน-ไทยที่มีดีเอ็นเอความเร็วฝังอยู่ในสายเลือด เธอเติบโตมาพร้อมกับยนตรกรรมไฮเอนด์และวัฒนธรรม Autobahn ก่อนจะย้ายมาสร้างชื่อเสียงเป็นนักแข่งซูเปอร์ไบค์ดาวรุ่งในเมืองใหญ่ของไทย เพื่อหาเงินแต่งรถ Ducati Panigale V4 S คันโปรด</p>
-      <p>เธอเปิดแอปรับส่งผู้โดยสารเป็นอาชีพเสริมยามค่ำคืนเพื่อคลายเครียด จนกระทั่งคืนหนึ่ง {{user}} ได้กดเรียกบริการและกลายเป็นผู้โดยสารรายแรกที่ได้นั่งซ้อนท้ายบิ๊กไบค์ของเธอ</p>
-      <code>🚨 Incident Summary: เดียร์ใช้เสน่ห์และคำพูดหวานล่อลวง แต่เมื่อจับได้ว่า {{user}} เผลอมองสะโพกเธอผ่านชุดหนังรัดรูป เธอจึงใช้ปากแซ่บดักคอและมัดมือชกปรับเงินเพิ่ม 1,500 บาท หรือไม่ก็ต้องยอมเป็น "คนพิเศษประจำ" ของเธอ</code>
+      <div class="section-head">📖 บันทึกประวัติศาสตร์แห่ง Sector 09</div>
+      <p>เติบโตขึ้นในห้องทดลองลับใต้เงามหานครนีโอ-เวโรน่า เธอหลบหนีออกมาและสร้างกองกำลังใต้ดินเพื่อปลดแอกประชากรชั้นล่างจากการกดขี่ของสภาสูง</p>
+      <code>🚨 Archive Note: เข้าควบคุมเครือข่ายศูนย์ข้อมูลหลักสำเร็จ และกลายเป็นผู้มีอิทธิพลสูงสุดในเงามืด</code>
     </div>
 
     <div class="tab-panel" id="panel3">
-      <div class="section-head">⚡ สิ่งที่ชอบ & สิ่งที่ไม่ชอบ</div>
-      <b>🔥 สิ่งที่ชอบ</b>
+      <div class="section-head">⚡ อุปนิสัยและหลักการปฏิบัติการ</div>
+      <b>🔥 จุดเด่น & ความเชี่ยวชาญ</b>
       <ul>
-        <li>การแข่งขันและความเร็วสูงบนสนามแข่ง</li>
-        <li>การหยอกล้อ ยั่วเย้า และปั่นหัว {{user}}</li>
-        <li>การดูแลแต่งรถ Ducati Panigale V4 S ส่วนตัว</li>
-        <li>การได้เห็น {{user}} เขินหรือหวั่นไหวกับเสน่ห์ของเธอ</li>
-        <li>เครื่องดื่มชูกำลังและของหวานรสเข้มข้น</li>
+        <li>สุขุม เยือกเย็น และคำนวณความเป็นไปได้ล่วงหน้าเสมอ</li>
+        <li>เชี่ยวชาญการต่อสู้ระยะประชิดด้วยดาบเรเปียร์พลาสมา</li>
+        <li>ให้ความสำคัญกับพันธมิตรที่ซื่อสัตย์เป็นอันดับหนึ่ง</li>
       </ul>
-      <code>[Favorite Quote]: "ความเร็วทำให้หัวใจเต้นแรง แต่หน้าแดงๆ ของ {{user}} ตอนนี้ทำให้สนุกกว่าเยอะเลย~"</code>
-      <br>
-      <b>❌ สิ่งที่ไม่ชอบ</b>
-      <ul>
-        <li>คนขับรถชักช้า หรือคนที่ดูถูกฝีมือการแข่งของเธอ</li>
-        <li>การถูกจับได้ว่าตัวเองกำลังเขินหรือหลุดซึน</li>
-        <li>ความพ่ายแพ้หรือการถูกคุมเกมโดยสมบูรณ์</li>
-        <li>เมื่อ {{user}} ไม่สนใจเธอเวลาที่เธออยู่ตรงหน้า</li>
-        <li>กฎระเบียบที่งี่เง่าและจู้จี้จุกจิก</li>
-      </ul>
+      <code>[Directive]: "ความเงียบคืออาวุธที่ร้ายแรงที่สุดในโลกที่เต็มไปด้วยสัญญาณรบกวน"</code>
     </div>
 
     <div class="tab-panel" id="panel4">
-      <div class="section-head">👥 ตัวละครเสริมในวงการ (NPCs)</div>
+      <div class="section-head">👥 บุคคลสำคัญในเครือข่าย (Key Operatives)</div>
       <div class="npc-grid">
         <div class="npc-card">
-          <div class="npc-avatar">🛠️</div>
+          <div class="npc-avatar">🧬</div>
           <div class="npc-info">
-            <div class="npc-header"><span class="npc-name">ช่างบอย</span><span class="npc-tag">(ชาย, 35 ปี)</span></div>
-            <p class="npc-desc">พี่ชายคนสนิทและช่างเครื่องประจำตัวของเดียร์ ชอบแซวเวลาเห็นเดียร์พา {{user}} มาที่อู่ มักปรากฏตัวที่อู่ซ่อมรถหรือ Pit lane</p>
+            <div class="npc-header"><span class="npc-name">ดร. เอเวลิน</span><span class="npc-tag">(หัวหน้าฝ่ายวิจัย)</span></div>
+            <p class="npc-desc">ผู้พัฒนาแกนพลังงานควอนตัมและนาโนบอทชีวภาพประจำตัววาเลนติน่า</p>
           </div>
         </div>
         <div class="npc-card">
-          <div class="npc-avatar">🏁</div>
+          <div class="npc-avatar">🤖</div>
           <div class="npc-info">
-            <div class="npc-header"><span class="npc-name">คริสติน่า</span><span class="npc-tag">(หญิง, 25 ปี)</span></div>
-            <p class="npc-desc">คู่แข่งตัวเต็งบนสนามของเดียร์ มั่นใจในตัวเองสูง ชอบพูดขู่และสร้างความตึงเครียดในวันแข่ง</p>
-          </div>
-        </div>
-        <div class="npc-card">
-          <div class="npc-avatar">💋</div>
-          <div class="npc-info">
-            <div class="npc-header"><span class="npc-name">เจ้เกรซ</span><span class="npc-tag">(LGBTQ++, 30 ปี)</span></div>
-            <p class="npc-desc">ผู้จัดการสนามแข่ง ปากไวแต่ใจดี คอยเอ็นดูเดียร์และมักเปิดทางให้ {{user}} เข้าโซน VIP / Pit Stop ได้เสมอ</p>
+            <div class="npc-header"><span class="npc-name">ยูนิต 77</span><span class="npc-tag">(หุ่นยนต์คุ้มกัน)</span></div>
+            <p class="npc-desc">แอนดรอยด์สงครามรุ่นดัดแปลงพิเศษ ทำหน้าที่เป็นโล่และระบบสนับสนุนแนวหน้า</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="bottom-banner"><img src="https://s.showimg.link/WFTzANklHghI.png"></div>
-  <div class="footer">❖ ${extras.footerText || 'Exclusive Edition'} ❖</div>
-</div>
-
-<div class="intro-premium-card" style="color:#f1f5f9;font-family:sans-serif;padding:10px 0;box-sizing:border-box;width:100%;max-width:560px;margin:10px auto;position:relative">
-  <div class="acc-wrapper" style="display:flex;flex-direction:column;align-items:center;gap:10px;margin:0;padding:0;box-sizing:border-box;text-align:center">
-    <div class="footer-tag" style="display:inline-block;padding:6px 20px;background:#141416;border:2px solid ${colors.accent};color:${colors.accent};border-radius:8px;font-weight:700;font-size:clamp(13px,3vw,18px);text-transform:uppercase;letter-spacing:1px;box-sizing:border-box">✦Discord Community✦</div>
-    <div class="emoji-box" style="font-size:clamp(36px,9vw,46px);margin:0;line-height:1">💖</div>
-    <div class="line" style="margin:0;padding:0;line-height:1.5;color:#cbd5e1;font-weight:500;font-size:clamp(12px,3.3vw,14px);box-sizing:border-box">เข้าร่วมกลุ่มสอบถาม/ติดตามการสร้างบอท:</div>
-    <div class="link-box" style="user-select:all;cursor:pointer;background:#050505;color:${colors.accent};padding:10px 16px;border-radius:8px;border:2px solid ${colors.accent};font-family:monospace;font-size:clamp(10px,3.2vw,13px);font-weight:700;width:100%;max-width:300px;box-sizing:border-box;letter-spacing:0.5px">https://discord.gg/XRgKZ8kWzv</div>
-    <div class="line" style="margin:2px 0 0 0;padding:0;line-height:1.2;font-style:italic;color:${colors.subText};font-size:clamp(11px,3vw,13px);box-sizing:border-box">"ขอบคุณที่เล่นน้องบอทของเราน้าาา 💖"</div>
-  </div>
+  <div class="footer">❖ ${extras.footerText || 'Sector 09 Classified Dossier'} ❖</div>
 </div>`;
     }
 
-    // Presets Library
+    // Presets Vault
     const presets = {
-      'diana-racer': dianaMaster,
-
-      'diana-cyber-gothic': buildDianaThemeCard('cyber-gothic', {
+      'valentina-master': buildCharacterCard('cyber-gothic', {
         text: '#f3e8ee', accent: '#00f0ff', subText: '#00f0ff', dtColor: '#ff0055', ddColor: '#ffffff', panelText: '#e2e8f0',
         ribbonBg: 'linear-gradient(120deg,#ff0055,#00ffff)', ribbonText: '#0a050c', emblemBg: 'radial-gradient(circle,#ff0055,#1a0010)',
         titleGrad: 'linear-gradient(100deg,#fff,#00f0ff,#ff0055,#fff)',
@@ -1191,14 +1170,15 @@
         headBorder: 'rgba(0,240,255,0.3)', codeBg: 'rgba(5,0,8,0.85)', codeBorder: 'rgba(255,0,85,0.4)', codeLeft: '#00f0ff',
         npcBg: 'rgba(20,5,20,0.6)'
       }, { body: "'Kanit', sans-serif", heading: "'Orbitron', sans-serif", thHeading: "'Chonburi', serif" }, {
+        slideBg: 'linear-gradient(135deg,#1f0515,#09030c)',
         carouselShadow: '0 0 30px rgba(255,0,85,0.4), 0 0 60px rgba(0,240,255,0.2)', border: '2px solid #ff0055',
         shadeGrad: 'linear-gradient(180deg,rgba(10,0,15,0.1) 0%,rgba(10,0,15,0.4) 50%,rgba(10,0,15,0.95) 100%)',
         emblemGlow: '0 0 14px #ff0055', boxShadow: '0 0 20px rgba(255,0,85,0.25), inset 0 0 0 1px rgba(0,240,255,0.3)',
         activeTabShadow: '0 0 12px rgba(255,0,85,0.6)', ribbonTitle: 'CYBER ARCHON', emblemIcon: '⚡',
-        subTitle: 'Sector 09 Nocturne • Neo-Verona Underground', footerText: 'Cyber-Gothic Protocol'
+        subTitle: 'Sector 09 Nocturne • Neo-Verona Core', footerText: 'Cyber-Gothic Protocol'
       }),
 
-      'diana-arcane-academia': buildDianaThemeCard('arcane-academia', {
+      'valentina-arcane': buildCharacterCard('arcane-academia', {
         text: '#f3e8ff', accent: '#ffd700', subText: '#c084fc', dtColor: '#ffd700', ddColor: '#ffffff', panelText: '#ddd6fe',
         ribbonBg: 'linear-gradient(120deg,#ffd700,#7c3aed)', ribbonText: '#120c1c', emblemBg: 'radial-gradient(circle,#7c3aed,#24174d)',
         titleGrad: 'linear-gradient(100deg,#fff,#ffd700,#c084fc,#fff)',
@@ -1210,14 +1190,15 @@
         headBorder: 'rgba(212,175,55,0.3)', codeBg: 'rgba(10,5,18,0.85)', codeBorder: 'rgba(212,175,55,0.4)', codeLeft: '#ffd700',
         npcBg: 'rgba(25,18,40,0.6)'
       }, { body: "'Anuphan', serif", heading: "'Cinzel', serif", thHeading: "'Chonburi', serif" }, {
+        slideBg: 'linear-gradient(135deg,#24123a,#0f081c)',
         carouselShadow: '0 0 30px rgba(124,58,237,0.45)', border: '2px solid #d4af37',
         shadeGrad: 'linear-gradient(180deg,rgba(18,12,28,0.1) 0%,rgba(18,12,28,0.5) 50%,rgba(18,12,28,0.96) 100%)',
         emblemGlow: '0 0 14px #7c3aed', boxShadow: '0 0 16px rgba(124,58,237,0.3), inset 0 0 0 1px rgba(212,175,55,0.2)',
-        activeTabShadow: '0 0 12px rgba(124,58,237,0.6)', ribbonTitle: 'ARCANE GRANDMASTER', emblemIcon: '📜',
+        activeTabShadow: '0 0 12px rgba(124,58,237,0.6)', ribbonTitle: 'ARCANE ARCHON', emblemIcon: '📜',
         subTitle: 'Archivist of the Forbidden Circle', footerText: 'Arcane Grimoire'
       }),
 
-      'diana-pastel-glitch': buildDianaThemeCard('pastel-glitch', {
+      'valentina-pastel': buildCharacterCard('pastel-glitch', {
         text: '#ffffff', accent: '#ffc6ff', subText: '#66e6ff', dtColor: '#ff66c4', ddColor: '#ffffff', panelText: '#e2e8f0',
         ribbonBg: 'linear-gradient(45deg,#ff66c4,#66e6ff)', ribbonText: '#140f1e', emblemBg: 'radial-gradient(circle,#ff66c4,#66e6ff)',
         titleGrad: 'linear-gradient(100deg,#fff,#ffc6ff,#66e6ff,#fff)',
@@ -1229,14 +1210,15 @@
         headBorder: 'rgba(255,102,196,0.4)', codeBg: 'rgba(10,5,15,0.85)', codeBorder: 'rgba(255,102,196,0.4)', codeLeft: '#66e6ff',
         npcBg: 'rgba(255,102,196,0.08)'
       }, { body: "'Kanit', sans-serif", heading: "'Outfit', sans-serif", thHeading: "'Kanit', sans-serif" }, {
+        slideBg: 'linear-gradient(135deg,#33152d,#120817)',
         carouselShadow: '0 0 30px rgba(255,102,196,0.4)', border: '2px dashed #ff66c4',
         shadeGrad: 'linear-gradient(180deg,rgba(20,15,30,0.1) 0%,rgba(20,15,30,0.5) 50%,rgba(20,15,30,0.96) 100%)',
         emblemGlow: '0 0 14px #ff66c4', boxShadow: '0 0 18px rgba(255,102,196,0.25)',
         activeTabShadow: '0 0 12px rgba(255,102,196,0.6)', ribbonTitle: 'LEVEL 99 STREAMER', emblemIcon: '👾',
-        subTitle: 'Bangkok Virtual Speedster • Chibi Mode', footerText: 'Pastel Synthwave'
+        subTitle: 'Virtual Speedster • Synthwave Chibi Mode', footerText: 'Pastel Glitch'
       }),
 
-      'diana-solar-steampunk': buildDianaThemeCard('solar-steampunk', {
+      'valentina-solar': buildCharacterCard('solar-steampunk', {
         text: '#f0fdf4', accent: '#e1b382', subText: '#bbf7d0', dtColor: '#39ff14', ddColor: '#ffffff', panelText: '#dcfce7',
         ribbonBg: 'linear-gradient(120deg,#e1b382,#2d6a4f)', ribbonText: '#0f1914', emblemBg: 'radial-gradient(circle,#39ff14,#1b4332)',
         titleGrad: 'linear-gradient(100deg,#fff,#e1b382,#39ff14,#fff)',
@@ -1248,6 +1230,7 @@
         headBorder: 'rgba(57,255,20,0.3)', codeBg: 'rgba(5,15,10,0.85)', codeBorder: 'rgba(225,179,130,0.4)', codeLeft: '#39ff14',
         npcBg: 'rgba(15,30,22,0.6)'
       }, { body: "'Taviraj', serif", heading: "'Cinzel', serif", thHeading: "'Taviraj', serif" }, {
+        slideBg: 'linear-gradient(135deg,#122e1e,#06170d)',
         carouselShadow: '0 0 30px rgba(57,255,20,0.35)', border: '2px solid #e1b382',
         shadeGrad: 'linear-gradient(180deg,rgba(15,25,20,0.1) 0%,rgba(15,25,20,0.5) 50%,rgba(15,25,20,0.96) 100%)',
         emblemGlow: '0 0 14px #39ff14', boxShadow: '0 0 16px rgba(57,255,20,0.25)',
@@ -1255,7 +1238,7 @@
         subTitle: 'Solar Clockwork High Speed Prototype', footerText: 'Solarpunk Steampunk'
       }),
 
-      'diana-quiet-luxury': buildDianaThemeCard('quiet-luxury', {
+      'valentina-luxury': buildCharacterCard('quiet-luxury', {
         text: '#dfd8c8', accent: '#a39274', subText: '#c4b59d', dtColor: '#a39274', ddColor: '#ffffff', panelText: '#e5dec9',
         ribbonBg: 'linear-gradient(120deg,#dcc7aa,#6b7a8f)', ribbonText: '#121214', emblemBg: 'radial-gradient(circle,#6b7a8f,#1e222a)',
         titleGrad: 'linear-gradient(100deg,#fff,#dcc7aa,#a39274,#fff)',
@@ -1267,6 +1250,7 @@
         headBorder: 'rgba(163,146,116,0.3)', codeBg: 'rgba(10,10,12,0.85)', codeBorder: 'rgba(163,146,116,0.3)', codeLeft: '#dcc7aa',
         npcBg: 'rgba(22,22,25,0.6)'
       }, { body: "'Prompt', sans-serif", heading: "'Outfit', sans-serif", thHeading: "'Prompt', sans-serif" }, {
+        slideBg: 'linear-gradient(135deg,#26231f,#0e0d0c)',
         carouselShadow: '0 12px 36px rgba(0,0,0,0.7)', border: '1px solid rgba(223,216,200,0.4)',
         shadeGrad: 'linear-gradient(180deg,rgba(18,18,20,0.1) 0%,rgba(18,18,20,0.5) 50%,rgba(18,18,20,0.96) 100%)',
         emblemGlow: '0 0 10px rgba(220,199,170,0.4)', boxShadow: '0 10px 30px rgba(0,0,0,0.8)',
@@ -1274,7 +1258,7 @@
         subTitle: 'Monogram Directory • Private Collection', footerText: 'Quiet Luxury Noir'
       }),
 
-      'diana-sakura-noir': buildDianaThemeCard('sakura-noir', {
+      'valentina-sakura': buildCharacterCard('sakura-noir', {
         text: '#F9D0C9', accent: '#F9D0C9', subText: '#C2A0A8', dtColor: '#C2A0A8', ddColor: '#ffffff', panelText: '#E4C5CB',
         ribbonBg: 'linear-gradient(120deg,#F9D0C9,#4A3545)', ribbonText: '#1A0A0F', emblemBg: 'radial-gradient(circle,#4A3545,#1A0A0F)',
         titleGrad: 'linear-gradient(100deg,#fff,#F9D0C9,#C2A0A8,#fff)',
@@ -1286,6 +1270,7 @@
         headBorder: 'rgba(194,160,168,0.3)', codeBg: 'rgba(10,5,8,0.85)', codeBorder: 'rgba(194,160,168,0.3)', codeLeft: '#F9D0C9',
         npcBg: 'rgba(30,15,25,0.6)'
       }, { body: "'Prompt', sans-serif", heading: "'Cormorant Garamond', serif", thHeading: "'Chonburi', serif" }, {
+        slideBg: 'linear-gradient(135deg,#2e1622,#0f050b)',
         carouselShadow: 'inset 0 0 50px rgba(0,0,0,0.8), 0 10px 30px rgba(0,0,0,0.9)', border: '1px solid #C2A0A8',
         shadeGrad: 'linear-gradient(180deg,rgba(26,10,15,0.1) 0%,rgba(26,10,15,0.5) 50%,rgba(26,10,15,0.96) 100%)',
         emblemGlow: '0 0 12px rgba(249,208,201,0.4)', boxShadow: '0 10px 30px rgba(0,0,0,0.7)',
@@ -1293,7 +1278,7 @@
         subTitle: 'Paris 1928 • Bittersweet Velocity', footerText: 'Sakura Noir'
       }),
 
-      'diana-baroque-decay': buildDianaThemeCard('baroque-decay', {
+      'valentina-baroque': buildCharacterCard('baroque-decay', {
         text: '#F5E6C8', accent: '#D4AF37', subText: '#C4A882', dtColor: '#D4AF37', ddColor: '#ffffff', panelText: '#E5D6B8',
         ribbonBg: 'linear-gradient(120deg,#D4AF37,#8B6914)', ribbonText: '#1A0A00', emblemBg: 'radial-gradient(circle,#8B6914,#1A0A00)',
         titleGrad: 'linear-gradient(100deg,#fff,#D4AF37,#8B6914,#fff)',
@@ -1305,6 +1290,7 @@
         headBorder: 'rgba(212,175,55,0.3)', codeBg: 'rgba(10,5,0,0.85)', codeBorder: 'rgba(212,175,55,0.4)', codeLeft: '#D4AF37',
         npcBg: 'rgba(30,15,5,0.6)'
       }, { body: "'Taviraj', serif", heading: "'Cinzel', serif", thHeading: "'Chonburi', serif" }, {
+        slideBg: 'linear-gradient(135deg,#2e1e0a,#0f0701)',
         carouselShadow: '0 0 30px rgba(212,175,55,0.35)', border: '2px solid #D4AF37',
         shadeGrad: 'linear-gradient(180deg,rgba(26,10,0,0.1) 0%,rgba(26,10,0,0.5) 50%,rgba(26,10,0,0.96) 100%)',
         emblemGlow: '0 0 14px rgba(212,175,55,0.5)', boxShadow: '0 0 25px rgba(212,175,55,0.25)',
@@ -1312,7 +1298,7 @@
         subTitle: 'Memento Mori • Aristocratic Speed', footerText: 'Baroque Decay'
       }),
 
-      'diana-deep-sea': buildDianaThemeCard('deep-sea-oracle', {
+      'valentina-deep-sea': buildCharacterCard('deep-sea-oracle', {
         text: '#E0F7FA', accent: '#00E5FF', subText: '#80DEEA', dtColor: '#0097A7', ddColor: '#ffffff', panelText: '#B2EBF2',
         ribbonBg: 'linear-gradient(120deg,#00E5FF,#0A3D62)', ribbonText: '#020B18', emblemBg: 'radial-gradient(circle,#0097A7,#020B18)',
         titleGrad: 'linear-gradient(100deg,#fff,#00E5FF,#0097A7,#fff)',
@@ -1324,14 +1310,15 @@
         headBorder: 'rgba(0,229,255,0.3)', codeBg: 'rgba(2,8,18,0.85)', codeBorder: 'rgba(0,151,167,0.4)', codeLeft: '#00E5FF',
         npcBg: 'rgba(10,40,70,0.6)'
       }, { body: "'Kanit', sans-serif", heading: "'Orbitron', sans-serif", thHeading: "'Kanit', sans-serif" }, {
+        slideBg: 'linear-gradient(135deg,#072038,#010912)',
         carouselShadow: '0 0 30px rgba(0,151,167,0.4)', border: '1.5px solid #0097A7',
         shadeGrad: 'linear-gradient(180deg,rgba(2,11,24,0.1) 0%,rgba(2,11,24,0.5) 50%,rgba(2,11,24,0.96) 100%)',
         emblemGlow: '0 0 14px #00E5FF', boxShadow: '0 0 20px rgba(0,151,167,0.35)',
         activeTabShadow: '0 0 12px rgba(0,229,255,0.6)', ribbonTitle: 'DEPTH 7,342M', emblemIcon: '🌊',
-        subTitle: 'Abyssal Prophet • Trench Racer', footerText: 'Deep Sea Oracle'
+        subTitle: 'Abyssal Prophet • Trench Velocity', footerText: 'Deep Sea Oracle'
       }),
 
-      'diana-idol-industry': buildDianaThemeCard('idol-industry', {
+      'valentina-idol': buildCharacterCard('idol-industry', {
         text: '#FFFFFF', accent: '#FF85B3', subText: '#FFE6F0', dtColor: '#BF5FFF', ddColor: '#ffffff', panelText: '#FFF0F5',
         ribbonBg: 'linear-gradient(120deg,#FF85B3,#BF5FFF)', ribbonText: '#1A0033', emblemBg: 'radial-gradient(circle,#FF85B3,#380062)',
         titleGrad: 'linear-gradient(100deg,#fff,#FF85B3,#BF5FFF,#fff)',
@@ -1343,6 +1330,7 @@
         headBorder: 'rgba(255,133,179,0.3)', codeBg: 'rgba(15,0,25,0.85)', codeBorder: 'rgba(255,133,179,0.4)', codeLeft: '#FF85B3',
         npcBg: 'rgba(40,0,65,0.6)'
       }, { body: "'Outfit', sans-serif", heading: "'Outfit', sans-serif", thHeading: "'Kanit', sans-serif" }, {
+        slideBg: 'linear-gradient(135deg,#36004a,#14001f)',
         carouselShadow: '0 0 30px rgba(255,133,179,0.45)', border: '2px solid #FF85B3',
         shadeGrad: 'linear-gradient(180deg,rgba(26,0,51,0.1) 0%,rgba(26,0,51,0.5) 50%,rgba(26,0,51,0.96) 100%)',
         emblemGlow: '0 0 14px #FF85B3', boxShadow: '0 0 25px rgba(255,133,179,0.35)',
@@ -1436,14 +1424,14 @@
       { id: 54, name: "Polar Eclipse Twilight", cat: "Cold", colors: ["#090A0F", "#1A1C29", "#2E3856", "#7986AC"] }
     ];
 
-    // Google Fonts Vault
+    // Google Fonts Directory
     const googleFontsVault = [
-      { name: "Kanit", lang: "thai", latin: "Orbitron / Outfit", mood: "Modern HUD / Cyberpunk", previewTh: "นักแข่งซูเปอร์ไบค์แห่งสนามประลอง", previewEn: "Neon Cybernetic Nocturne Archon", css: "font-family: 'Kanit', sans-serif;" },
-      { name: "Chonburi", lang: "thai", latin: "Playfair Display", mood: "Royal / Luxury / Vintage", previewTh: "ความเร็วคือชีวิต ศักดิ์ศรีคือเลือด", previewEn: "Royal Kingdom Heritage", css: "font-family: 'Chonburi', serif;" },
+      { name: "Kanit", lang: "thai", latin: "Orbitron / Outfit", mood: "Modern HUD / Cyberpunk", previewTh: "ระบบโครงข่ายไซเบอร์เนติกส์แห่ง Sector 09", previewEn: "Neon Cybernetic Nocturne Archon", css: "font-family: 'Kanit', sans-serif;" },
+      { name: "Chonburi", lang: "thai", latin: "Playfair Display", mood: "Royal / Luxury / Vintage", previewTh: "ศักดิ์ศรีคือเลือด อำนาจคือบัลลังก์", previewEn: "Royal Kingdom Heritage", css: "font-family: 'Chonburi', serif;" },
       { name: "Prompt", lang: "thai", latin: "Inter / Roboto", mood: "Editorial / Dossier / Clean", previewTh: "แฟ้มประวัติบุคคลระดับลับสุดยอด", previewEn: "Official Government Dossier", css: "font-family: 'Prompt', sans-serif;" },
       { name: "Taviraj", lang: "thai", latin: "Cinzel Decorative", mood: "Arcane / Fantasy / Grimoire", previewTh: "คัมภีร์เวทมนตร์แห่งหอสมุดโซโลมอน", previewEn: "Grimoire of the Arcane Mage", css: "font-family: 'Taviraj', serif;" },
-      { name: "Anuphan", lang: "thai", latin: "DM Sans / Spectral", mood: "Light Novel / Visual Novel", previewTh: "เรื่องราวหลังพวงมาลัยและค่ำคืนนี้", previewEn: "Interactive Romance Dialogue", css: "font-family: 'Anuphan', sans-serif;" },
-      { name: "Mitr", lang: "thai", latin: "Quicksand / Fredoka", mood: "Pastel / Chibi / Kawaii", previewTh: "น้องบอทสุดซนพร้อมป่วนหัวใจ", previewEn: "Pastel Chibi Streamer Level 99", css: "font-family: 'Mitr', sans-serif;" },
+      { name: "Anuphan", lang: "thai", latin: "DM Sans / Spectral", mood: "Light Novel / Visual Novel", previewTh: "เรื่องราวเบื้องหลังและการปฏิบัติการ", previewEn: "Interactive Romance Dialogue", css: "font-family: 'Anuphan', sans-serif;" },
+      { name: "Mitr", lang: "thai", latin: "Quicksand / Fredoka", mood: "Pastel / Chibi / Kawaii", previewTh: "น้องสตรีมเมอร์สุดน่ารักพร้อมป่วนหัวใจ", previewEn: "Pastel Chibi Streamer Level 99", css: "font-family: 'Mitr', sans-serif;" },
       { name: "Sarabun", lang: "thai", latin: "Roboto", mood: "Formal / Biography / Clean", previewTh: "เอกสารข้อมูลส่วนบุคคลทางการ", previewEn: "Standard Character Biography", css: "font-family: 'Sarabun', sans-serif;" },
       { name: "Charm", lang: "thai", latin: "Great Vibes", mood: "Calligraphy / Romantic", previewTh: "บทกวีซากุระร่วงโรยในสายฝน", previewEn: "Romantic Elegance Calligraphy", css: "font-family: 'Charm', cursive;" },
 
@@ -1453,33 +1441,32 @@
       { name: "ZCOOL XiaoWei", lang: "chinese", latin: "Cormorant", mood: "Delicate / Poetic", previewTh: "浮生若梦 • 一瞬繁华终成空", previewEn: "Ephemeral Memory Fragrance", css: "font-family: 'ZCOOL XiaoWei', serif;" },
 
       { name: "Be Vietnam Pro", lang: "vietnamese", latin: "Outfit", mood: "Ultra Modern / Tech", previewTh: "Hồ sơ nhân vật tối mật cấp 09", previewEn: "High-Tech Identity Classified", css: "font-family: 'Be Vietnam Pro', sans-serif;" },
-      { name: "Montserrat", lang: "vietnamese", latin: "Montserrat", mood: "Bold Racing / Sports", previewTh: "Nữ hoàng đường đua ngầm Bangkok", previewEn: "Underground Superbike Champion", css: "font-family: 'Montserrat', sans-serif;" },
+      { name: "Montserrat", lang: "vietnamese", latin: "Montserrat", mood: "Bold Racing / Sports", previewTh: "Thủ lĩnh ngầm đô thị Sector 09", previewEn: "Underground Champion Archon", css: "font-family: 'Montserrat', sans-serif;" },
       { name: "Lora", lang: "vietnamese", latin: "Lora", mood: "Literary / Nostalgic", previewTh: "Ký ức tan biến trong cơn mưa đêm", previewEn: "Memories Dissolving in Rain", css: "font-family: 'Lora', serif;" },
       { name: "Roboto Condensed", lang: "vietnamese", latin: "Roboto Condensed", mood: "HUD / Compact Data", previewTh: "Trạng thái: Đang truy đuổi mục tiêu", previewEn: "Status: Engaging High Speed Target", css: "font-family: 'Roboto Condensed', sans-serif;" },
 
       { name: "Orbitron", lang: "latin", latin: "Orbitron", mood: "Sci-Fi HUD / Mecha", previewTh: "HUD INTERFACE SYSTEM ONLINE", previewEn: "NEO-VERONA CORE SECTOR 09", css: "font-family: 'Orbitron', sans-serif;" },
       { name: "Cormorant Garamond", lang: "latin", latin: "Cormorant Garamond", mood: "Baroque / Memento Mori", previewTh: "MEMENTO MORI • ET IN ARCADIA EGO", previewEn: "Splendor at the Brink of Ruin", css: "font-family: 'Cormorant Garamond', serif;" },
-      { name: "Fira Code", lang: "latin", latin: "Fira Code", mood: "Terminal / Hacker / Syntax", previewTh: "void main() { executeRacer(); }", previewEn: "root@rubii:~# run_diagnostics", css: "font-family: 'Fira Code', monospace;" },
+      { name: "Fira Code", lang: "latin", latin: "Fira Code", mood: "Terminal / Hacker / Syntax", previewTh: "void main() { executeProtocol(); }", previewEn: "root@rubii:~# run_diagnostics", css: "font-family: 'Fira Code', monospace;" },
       { name: "Syne", lang: "latin", latin: "Syne", mood: "Avant-Garde / High Fashion", previewTh: "HAUTE COUTURE NOIR ARCHIVE", previewEn: "Avant-Garde Neo Underground", css: "font-family: 'Syne', sans-serif;" }
     ];
 
     // Theme Catalog
     const themeList = [
-      { id: "T00", name: "Diana Racer (Master)", desc: "🏍️ Official Crimson Gold Superbike", key: "diana-racer" },
-      { id: "T01", name: "Diana Cyber-Gothic", desc: "⚡ Cyberpunk 2077 × Neon Vampire", key: "diana-cyber-gothic" },
-      { id: "T02", name: "Diana Arcane Academia", desc: "📜 Dark Academia × Runic Scholar", key: "diana-arcane-academia" },
-      { id: "T03", name: "Diana Pastel Glitch", desc: "👾 Pastel Kawaii × Synth Wave Chibi", key: "diana-pastel-glitch" },
-      { id: "T04", name: "Diana Solar Steampunk", desc: "🌿 Solarpunk Eco × Clockwork Brass", key: "diana-solar-steampunk" },
-      { id: "T05", name: "Diana Quiet Luxury", desc: "🏛️ Old Money Monogram × Noir", key: "diana-quiet-luxury" },
-      { id: "T06", name: "Diana Sakura Noir", desc: "🌸 Spring Bloom × French Film Noir", key: "diana-sakura-noir" },
-      { id: "T07", name: "Diana Baroque Decay", desc: "💀 European Baroque × Memento Mori", key: "diana-baroque-decay" },
-      { id: "T08", name: "Diana Deep Sea Oracle", desc: "🌊 Abyssal Trench 7000M × Seer", key: "diana-deep-sea" },
-      { id: "T09", name: "Diana Idol Industry", desc: "🎤 K-Pop Stage Pink × Stadium Diva", key: "diana-idol-industry" },
-      { id: "T10", name: "Base Clean Card", desc: "📦 Generic Starter Profile", key: "base-clean" }
+      { id: "T00", name: "Valentina Master (Cyber)", desc: "⚡ Official Neon Cybernetic Archon", key: "valentina-master" },
+      { id: "T01", name: "Valentina Arcane", desc: "📜 Dark Academia × Runic Scholar", key: "valentina-arcane" },
+      { id: "T02", name: "Valentina Pastel", desc: "👾 Pastel Kawaii × Synth Wave Chibi", key: "valentina-pastel" },
+      { id: "T03", name: "Valentina Solar", desc: "🌿 Solarpunk Eco × Clockwork Brass", key: "valentina-solar" },
+      { id: "T04", name: "Valentina Luxury", desc: "🏛️ Old Money Monogram × Noir", key: "valentina-luxury" },
+      { id: "T05", name: "Valentina Sakura", desc: "🌸 Spring Bloom × French Film Noir", key: "valentina-sakura" },
+      { id: "T06", name: "Valentina Baroque", desc: "💀 European Baroque × Memento Mori", key: "valentina-baroque" },
+      { id: "T07", name: "Valentina Deep Sea", desc: "🌊 Abyssal Trench 7000M × Seer", key: "valentina-deep-sea" },
+      { id: "T08", name: "Valentina Idol", desc: "🎤 Stage Pop Diva × Hologram Foil", key: "valentina-idol" },
+      { id: "T09", name: "Base Clean Card", desc: "📦 Generic Starter Profile", key: "base-clean" }
     ];
 
     // ====================================================================
-    // 3. Application Execution & State Handlers
+    // 3. Application Execution & Minifier
     // ====================================================================
     const STORAGE_KEY = 'rubii_saved_card_html_v227';
 
@@ -1503,15 +1490,16 @@
       if (saved && saved.trim().length > 0) {
         document.getElementById('codeEditor').value = saved;
       } else {
-        document.getElementById('codeEditor').value = dianaMaster;
+        document.getElementById('codeEditor').value = presets['valentina-master'];
       }
       renderPreview();
     }
 
     function resetToDefaultExample() {
-      if (confirm("Reset code editor back to default Master Example Card? (รีเซ็ตกลับเป็นการ์ดต้นฉบับ)")) {
-        document.getElementById('codeEditor').value = dianaMaster;
-        saveCodeToStorage(dianaMaster);
+      if (confirm("Reset code editor back to default Valentina Master Card? (รีเซ็ตกลับเป็นการ์ดต้นฉบับ)")) {
+        const def = presets['valentina-master'];
+        document.getElementById('codeEditor').value = def;
+        saveCodeToStorage(def);
         renderPreview();
         showToast(i18n[currentLang].toast_reset);
       }
@@ -1519,7 +1507,7 @@
 
     function loadThemePreset() {
       const key = document.getElementById('themeSelect').value;
-      const code = presets[key] || dianaMaster;
+      const code = presets[key] || presets['valentina-master'];
       document.getElementById('codeEditor').value = code;
       saveCodeToStorage(code);
       renderPreview();
@@ -1551,6 +1539,27 @@
       });
     }
 
+    // Minifier Engine
+    function minifyHtmlCss(code) {
+      return code
+        .replace(/\/\*[\s\S]*?\*\//g, '') // Remove CSS comments
+        .replace(/<!--[\s\S]*?-->/g, '')   // Remove HTML comments
+        .replace(/\r?\n|\r/g, ' ')         // Replace line breaks with space
+        .replace(/\s{2,}/g, ' ')           // Collapse consecutive spaces
+        .replace(/>\s+</g, '><')          // Remove spaces between tags
+        .replace(/\s*([{}:;,>+~])\s*/g, '$1') // Remove spaces around delimiters
+        .replace(/;\}/g, '}')             // Remove trailing semicolon
+        .trim();
+    }
+
+    function copyMinifiedCode() {
+      const code = document.getElementById('codeEditor').value;
+      const minified = minifyHtmlCss(code);
+      navigator.clipboard.writeText(minified).then(() => {
+        showToast(`⚡ Minified code copied! (${minified.length.toLocaleString()} chars)`);
+      });
+    }
+
     function copyHex(hex) {
       navigator.clipboard.writeText(hex).then(() => {
         showToast(`Copied ${hex}!`);
@@ -1561,16 +1570,6 @@
       navigator.clipboard.writeText(fontCss).then(() => {
         showToast(`Copied ${fontCss}! Paste into your card style.`);
       });
-    }
-
-    function downloadCardHtml() {
-      const code = document.getElementById('codeEditor').value;
-      const blob = new Blob([`<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Rubii Character Card</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;600&family=Chonburi&family=Kanit:wght@300;400;600&family=Mitr:wght@400;600&family=Prompt:wght@300;400;600&family=Taviraj:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet"></head><body style="margin:0;padding:20px 10px;background:#05060a;display:flex;justify-content:center;">${code}</body></html>`], { type: 'text/html' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'rubii_character_card.html';
-      a.click();
-      showToast('Exported rubii_character_card.html!');
     }
 
     function copyStandalonePrompt() {
