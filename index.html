@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚡ Rubii Card Architect V2.2.7 — SVG Studio & Multi-Theme Previewer</title>
+  <title>Rubii Card Architect V2.2.7 — SVG Studio & Multi-Theme Previewer</title>
   <meta name="description" content="Zero-JS Mobile-Optimized HTML/CSS Character Profile Card Generator, SVG-Powered Live Mobile Previewer, Color Hunt Vault & Multi-Language Google Fonts.">
 
   <!-- Google Fonts for Thai, Chinese, Vietnamese & Latin -->
@@ -669,10 +669,10 @@
       <div class="lang-wrapper">
         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
         <select id="langSwitcher" class="lang-select" onchange="changeLanguage(this.value)">
-          <option value="th">🇹🇭 ภาษาไทย</option>
-          <option value="en">🇬🇧 English</option>
-          <option value="zh">🇨🇳 简体中文</option>
-          <option value="vi">🇻🇳 Tiếng Việt</option>
+          <option value="th">ภาษาไทย (TH)</option>
+          <option value="en">English (EN)</option>
+          <option value="zh">简体中文 (ZH)</option>
+          <option value="vi">Tiếng Việt (VI)</option>
         </select>
       </div>
 
@@ -698,16 +698,16 @@
             <div class="toolbar">
               <label style="font-size:11px;color:var(--text-muted);" data-i18n="preset_label">Preset:</label>
               <select id="themeSelect" onchange="loadThemePreset()">
-                <option value="valentina-master">⚡ Valentina Cross (Master Character Card)</option>
-                <option value="valentina-arcane">📜 Valentina Arcane Academia (Violet Gold)</option>
-                <option value="valentina-pastel">👾 Valentina Pastel Glitch (Kawaii Synth)</option>
-                <option value="valentina-solar">🌿 Valentina Solar Steampunk (Emerald Brass)</option>
-                <option value="valentina-luxury">🏛️ Valentina Quiet Luxury (Old Money Noir)</option>
-                <option value="valentina-sakura">🌸 Valentina Sakura Noir (Spring Film Noir)</option>
-                <option value="valentina-baroque">💀 Valentina Baroque Decay (Memento Mori Gold)</option>
-                <option value="valentina-deep-sea">🌊 Valentina Deep Sea Oracle (7000M Trench)</option>
-                <option value="valentina-idol">🎤 Valentina Idol Industry (Stage Pop Diva)</option>
-                <option value="base-clean">📦 Base Card Template (การ์ดพื้นฐาน)</option>
+                <option value="valentina-master">[Master] Valentina Cross (Cybernetic Archon)</option>
+                <option value="valentina-arcane">[Arcane] Valentina Arcane Academia (Violet Gold)</option>
+                <option value="valentina-pastel">[Pastel] Valentina Pastel Glitch (Kawaii Synth)</option>
+                <option value="valentina-solar">[Solar] Valentina Solar Steampunk (Emerald Brass)</option>
+                <option value="valentina-luxury">[Luxury] Valentina Quiet Luxury (Old Money Noir)</option>
+                <option value="valentina-sakura">[Sakura] Valentina Sakura Noir (Spring Film Noir)</option>
+                <option value="valentina-baroque">[Baroque] Valentina Baroque Decay (Memento Mori Gold)</option>
+                <option value="valentina-deep-sea">[Deep Sea] Valentina Deep Sea Oracle (7000M Trench)</option>
+                <option value="valentina-idol">[Idol] Valentina Idol Industry (Stage Pop Diva)</option>
+                <option value="base-clean">[Base] Base Card Template (การ์ดพื้นฐาน)</option>
               </select>
               
               <button class="btn-action" onclick="copyEditorCode()" data-i18n="btn_copy">
@@ -717,7 +717,7 @@
 
               <button class="btn-action minify" onclick="copyMinifiedCode()" data-i18n="btn_minify">
                 <svg viewBox="0 0 24 24"><path d="M4 14h4v-4H4v4zm0 5h4v-4H4v4zM4 9h4V5H4v4zm5 5h12v-4H9v4zm0 5h12v-4H9v4zM9 5v4h12V5H9z"/></svg>
-                ⚡ Copy Minified
+                Copy Minified
               </button>
 
               <button class="btn-action danger" onclick="resetToDefaultExample()" data-i18n="btn_reset">
@@ -792,8 +792,8 @@
           </div>
           <div class="toolbar">
             <select id="paletteCategoryFilter" onchange="filterPalettesByCategory(this.value)">
-              <option value="all">🌟 All Categories & Tags (ทั้งหมด)</option>
-              <optgroup label="🔥 Color Hunt Collections">
+              <option value="all">All Categories & Tags (ทั้งหมด)</option>
+              <optgroup label="Color Hunt Collections">
                 <option value="popular">Popular / Trending (ยอดนิยม)</option>
                 <option value="pastel">Pastel & Cute (พาสเทล)</option>
                 <option value="vintage">Vintage & Retro (วินเทจ)</option>
@@ -827,7 +827,7 @@
                 <option value="christmas">Christmas (คริสต์มาส)</option>
                 <option value="halloween">Halloween (ฮาโลวีน)</option>
               </optgroup>
-              <optgroup label="🎨 Single Color Tags">
+              <optgroup label="Single Color Tags">
                 <option value="blue">Blue (น้ำเงิน/ฟ้า)</option>
                 <option value="teal">Teal (เขียวอมฟ้า)</option>
                 <option value="mint">Mint (มิ้นต์)</option>
@@ -866,10 +866,10 @@
           <div class="toolbar">
             <select id="fontLangFilter" onchange="filterFontsByLang(this.value)">
               <option value="all">All Languages</option>
-              <option value="thai">🇹🇭 Thai (ไทย)</option>
-              <option value="chinese">🇨🇳 Chinese (简体中文)</option>
-              <option value="vietnamese">🇻🇳 Vietnamese (Tiếng Việt)</option>
-              <option value="latin">🇬🇧 Latin / English</option>
+              <option value="thai">Thai (ไทย)</option>
+              <option value="chinese">Chinese (简体中文)</option>
+              <option value="vietnamese">Vietnamese (Tiếng Việt)</option>
+              <option value="latin">Latin / English</option>
             </select>
           </div>
         </div>
@@ -900,7 +900,7 @@
 
   <!-- Footer -->
   <footer>
-    <div>⚡ <strong>Rubii Express Theme Architect V2.2.7</strong> — Zero-JS Mobile-Optimized Engine</div>
+    <div><strong>Rubii Express Theme Architect V2.2.7</strong> — Zero-JS Mobile-Optimized Engine</div>
     <div>Copyright &copy; 2026 <strong>Ninninmera</strong> • MIT License • Compatible with ChatGPT, Claude, Google Gemini & Custom GPTs</div>
   </footer>
 
@@ -913,15 +913,15 @@
       en: {
         brand_title: "RUBII CARD ARCHITECT",
         brand_subtitle: "V2.2.7 Express — Live SVG Studio & Multi-Theme Engine",
-        nav_studio: "📱 Studio Previewer",
-        nav_palettes: "🎨 Color Hunt 60+",
-        nav_typography: "🔤 Google Fonts Vault",
-        nav_themes: "🎭 13 Themes",
-        nav_standalone: "⚡ Copy Standalone",
+        nav_studio: "Studio Previewer",
+        nav_palettes: "Color Hunt 60+",
+        nav_typography: "Google Fonts Vault",
+        nav_themes: "13 Themes",
+        nav_standalone: "Copy Standalone",
         editor_title: "HTML / CSS SOURCE",
         preset_label: "Preset:",
         btn_copy: "Copy",
-        btn_minify: "⚡ Copy Minified",
+        btn_minify: "Copy Minified",
         btn_reset: "Reset",
         btn_render: "Render",
         storage_saved: "Local Storage & Cookie Synced",
@@ -932,22 +932,22 @@
         typography_title: "GOOGLE FONTS VAULT (THAI / CHINESE / VIETNAMESE / LATIN)",
         themes_title: "CROSS-OVER THEME CATALOG (13 PRESETS)",
         themes_desc: "Click any theme to load into the Studio Previewer immediately.",
-        btn_load_studio: "⚡ Load into Studio",
+        btn_load_studio: "Load into Studio",
         toast_reset: "Reset to Valentina Master Card!",
         toast_copied: "Copied to clipboard!"
       },
       th: {
         brand_title: "การ์ดตัวละคร",
         brand_subtitle: "V2.2.7 Express — สตูดิโอพรีวิวการ์ดมือถือสด SVG & รองรับทุกธีม",
-        nav_studio: "📱 สตูดิโอพรีวิว",
-        nav_palettes: "🎨 คลังสี Color Hunt 60+",
-        nav_typography: "🔤 คลังฟอนต์ Google Fonts",
-        nav_themes: "🎭 13 ธีมสำเร็จรูป",
-        nav_standalone: "⚡ คัดลอก Prompt ไฟล์เดียว",
+        nav_studio: "สตูดิโอพรีวิว",
+        nav_palettes: "คลังสี Color Hunt 60+",
+        nav_typography: "คลังฟอนต์ Google Fonts",
+        nav_themes: "13 ธีมสำเร็จรูป",
+        nav_standalone: "คัดลอก Prompt ไฟล์เดียว",
         editor_title: "ซอร์สโค้ด HTML / CSS",
         preset_label: "แม่แบบ:",
         btn_copy: "คัดลอก",
-        btn_minify: "⚡ คัดลอก Minified",
+        btn_minify: "คัดลอก Minified",
         btn_reset: "รีเซ็ตเดิม",
         btn_render: "เรนเดอร์",
         storage_saved: "บันทึกใน Local Storage อัตโนมัติ",
@@ -958,22 +958,22 @@
         typography_title: "คลังฟอนต์ Google Fonts (ไทย / จีน / เวียดนาม / อังกฤษ)",
         themes_title: "คลังธีมลูกผสม Cross-Over (13 ธีม)",
         themes_desc: "คลิกธีมใดก็ได้เพื่อโหลดเข้าสู่สตูดิโอพรีวิวทันที",
-        btn_load_studio: "⚡ ใช้ธีมนี้ในสตูดิโอ",
+        btn_load_studio: "ใช้ธีมนี้ในสตูดิโอ",
         toast_reset: "รีเซ็ตกลับเป็นการ์ดวาเลนติน่าต้นฉบับเรียบร้อย!",
         toast_copied: "คัดลอกลงคลิปบอร์ดแล้ว!"
       },
       zh: {
         brand_title: "RUBII 卡片架构师",
         brand_subtitle: "V2.2.7 Express — 实时 SVG 移动端预览与多主题引擎",
-        nav_studio: "📱 工作室预览",
-        nav_palettes: "🎨 Color Hunt 热门配色 60+",
-        nav_typography: "🔤 Google 字体库",
-        nav_themes: "🎭 13 款主题",
-        nav_standalone: "⚡ 复制单文件提示词",
+        nav_studio: "工作室预览",
+        nav_palettes: "Color Hunt 热门配色 60+",
+        nav_typography: "Google 字体库",
+        nav_themes: "13 款主题",
+        nav_standalone: "复制单文件提示词",
         editor_title: "HTML / CSS 源码",
         preset_label: "预设:",
         btn_copy: "复制",
-        btn_minify: "⚡ 压缩并复制",
+        btn_minify: "压缩并复制",
         btn_reset: "重置",
         btn_render: "渲染",
         storage_saved: "本地缓存已自动同步",
@@ -984,22 +984,22 @@
         typography_title: "Google 字体精选 (中文 / 泰文 / 越南文 / 英文)",
         themes_title: "跨界融合主题目录 (13 款)",
         themes_desc: "点击任意主题即可立即载入工作室进行实时预览。",
-        btn_load_studio: "⚡ 载入工作室",
+        btn_load_studio: "载入工作室",
         toast_reset: "已重置为默认官方卡片！",
         toast_copied: "已复制到剪贴板！"
       },
       vi: {
         brand_title: "RUBII CARD ARCHITECT",
         brand_subtitle: "V2.2.7 Express — Xem trước di động trực tiếp & Đa chủ đề",
-        nav_studio: "📱 Phòng thu xem trước",
-        nav_palettes: "🎨 Bảng màu Color Hunt 60+",
-        nav_typography: "🔤 Kho Google Fonts",
-        nav_themes: "🎭 13 Chủ đề",
-        nav_standalone: "⚡ Sao chép Prompt",
+        nav_studio: "Phòng thu xem trước",
+        nav_palettes: "Bảng màu Color Hunt 60+",
+        nav_typography: "Kho Google Fonts",
+        nav_themes: "13 Chủ đề",
+        nav_standalone: "Sao chép Prompt",
         editor_title: "MÃ NGUỒN HTML / CSS",
         preset_label: "Mẫu sẵn:",
         btn_copy: "Sao chép",
-        btn_minify: "⚡ Sao chép rút gọn",
+        btn_minify: "Sao chép rút gọn",
         btn_reset: "Đặt lại",
         btn_render: "Kết xuất",
         storage_saved: "Đã đồng bộ Local Storage",
@@ -1010,7 +1010,7 @@
         typography_title: "KHO FONT GOOGLE (TIẾNG VIỆT / THÁI / TRUNG / ANH)",
         themes_title: "DANH MỤC CHỦ ĐỀ KẾT HỢP (13 MẪU)",
         themes_desc: "Nhấp vào bất kỳ chủ đề nào để tải vào phòng thu ngay lập tức.",
-        btn_load_studio: "⚡ Tải vào phòng thu",
+        btn_load_studio: "Tải vào phòng thu",
         toast_reset: "Đã đặt lại về thẻ mẫu ban đầu!",
         toast_copied: "Đã sao chép vào bộ nhớ tạm!"
       }
@@ -1120,26 +1120,26 @@
     <div class="carousel-track">
       <div class="carousel-slide">
         <div class="slide-art">
-          <div class="slide-art-icon">${extras.emblemIcon || '⚡'}</div>
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="${colors.accent}" stroke-width="1.6"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <div class="slide-art-label">[ SECTOR 09 PRIMARY PROFILE ]</div>
         </div>
       </div>
       <div class="carousel-slide">
         <div class="slide-art">
-          <div class="slide-art-icon">🔮</div>
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="${colors.accent}" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           <div class="slide-art-label">[ QUANTUM CORE SPEC ]</div>
         </div>
       </div>
       <div class="carousel-slide">
         <div class="slide-art">
-          <div class="slide-art-icon">⚔️</div>
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="${colors.accent}" stroke-width="1.6"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/></svg>
           <div class="slide-art-label">[ WEAPONRY MATRIX ]</div>
         </div>
       </div>
     </div>
     <div class="shade"></div>
     <div class="ribbon">${extras.ribbonTitle || 'CYBER ARCHON'}</div>
-    <div class="emblem">${extras.emblemIcon || '⚡'}</div>
+    <div class="emblem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
     <div class="id">
       <div class="name-en">Valentina Cross</div>
       <div class="name-th">วาเลนติน่า</div>
@@ -1148,11 +1148,11 @@
   </div>
 
   <div class="hint-box">
-    <span>💡 <b>Hint:</b> เลื่อนซ้าย-ขวาที่รูปปกเพื่อดูการ์ดสไลด์ • กดเลือกแท็บด้านล่างเพื่อดูข้อมูล</span>
+    <span>[HINT] เลื่อนซ้าย-ขวาที่รูปปกเพื่อดูการ์ดสไลด์ • กดเลือกแท็บด้านล่างเพื่อดูข้อมูล</span>
   </div>
 
   <div class="box">
-    <div class="box-title">📊 ข้อมูลทั่วไป (General Dossier)</div>
+    <div class="box-title">ข้อมูลทั่วไป (General Dossier)</div>
     <dl>
       <dt>อายุ / เผ่าพันธุ์</dt><dd>ไม่ระบุ (แวมไพร์จักรกลไซเบอร์เนติกส์)</dd>
       <dt>สังกัด</dt><dd>Sector 09 Nocturne Syndicate</dd>
@@ -1175,28 +1175,28 @@
   <input type="radio" name="main-tab" id="tab4" style="position:absolute; opacity:0; pointer-events:none; width:0; height:0; margin:0; padding:0; overflow:hidden;">
 
   <div class="nav-tabs">
-    <label for="tab1" class="nav-label">⚔️ สถานะ & พลัง</label>
-    <label for="tab2" class="nav-label">📖 ภูมิหลัง</label>
-    <label for="tab3" class="nav-label">⚡ คุณลักษณะ</label>
-    <label for="tab4" class="nav-label">👥 พันธมิตร</label>
+    <label for="tab1" class="nav-label">สถานะ & พลัง</label>
+    <label for="tab2" class="nav-label">ภูมิหลัง</label>
+    <label for="tab3" class="nav-label">คุณลักษณะ</label>
+    <label for="tab4" class="nav-label">พันธมิตร</label>
   </div>
 
   <div class="tab-content">
     <div class="tab-panel" id="panel1">
-      <div class="section-head">⚔️ สถานะและระบบพลังกลจักรกล</div>
+      <div class="section-head">สถานะและระบบพลังกลจักรกล</div>
       <p>วาเลนติน่าคือผลลัพธ์ของการผสานสายเลือดโบราณเข้ากับไมโครชิปเวทมนตร์ เธอสามารถแทรกแซงโครงข่ายไซเบอร์เนติกส์ในรัศมี 5 กิโลเมตรได้ด้วยการสั่งการผ่านกระแสจิต</p>
       <code>[Active Protocol]: Blood Nanites Overflow [Threat Index]: S-Rank Clearance Required</code>
     </div>
 
     <div class="tab-panel" id="panel2">
-      <div class="section-head">📖 บันทึกประวัติศาสตร์แห่ง Sector 09</div>
+      <div class="section-head">บันทึกประวัติศาสตร์แห่ง Sector 09</div>
       <p>เติบโตขึ้นในห้องทดลองลับใต้เงามหานครนีโอ-เวโรน่า เธอหลบหนีออกมาและสร้างกองกำลังใต้ดินเพื่อปลดแอกประชากรชั้นล่างจากการกดขี่ของสภาสูง</p>
-      <code>🚨 Archive Note: เข้าควบคุมเครือข่ายศูนย์ข้อมูลหลักสำเร็จ และกลายเป็นผู้มีอิทธิพลสูงสุดในเงามืด</code>
+      <code>[Archive Note]: เข้าควบคุมเครือข่ายศูนย์ข้อมูลหลักสำเร็จ และกลายเป็นผู้มีอิทธิพลสูงสุดในเงามืด</code>
     </div>
 
     <div class="tab-panel" id="panel3">
-      <div class="section-head">⚡ อุปนิสัยและหลักการปฏิบัติการ</div>
-      <b>🔥 จุดเด่น & ความเชี่ยวชาญ</b>
+      <div class="section-head">อุปนิสัยและหลักการปฏิบัติการ</div>
+      <b>จุดเด่น & ความเชี่ยวชาญ</b>
       <ul>
         <li>สุขุม เยือกเย็น และคำนวณความเป็นไปได้ล่วงหน้าเสมอ</li>
         <li>เชี่ยวชาญการต่อสู้ระยะประชิดด้วยดาบเรเปียร์พลาสมา</li>
@@ -1206,17 +1206,17 @@
     </div>
 
     <div class="tab-panel" id="panel4">
-      <div class="section-head">👥 บุคคลสำคัญในเครือข่าย (Key Operatives)</div>
+      <div class="section-head">บุคคลสำคัญในเครือข่าย (Key Operatives)</div>
       <div class="npc-grid">
         <div class="npc-card">
-          <div class="npc-avatar">🧬</div>
+          <div class="npc-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${colors.accent}" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
           <div class="npc-info">
             <div class="npc-header"><span class="npc-name">ดร. เอเวลิน</span><span class="npc-tag">(หัวหน้าฝ่ายวิจัย)</span></div>
             <p class="npc-desc">ผู้พัฒนาแกนพลังงานควอนตัมและนาโนบอทชีวภาพประจำตัววาเลนติน่า</p>
           </div>
         </div>
         <div class="npc-card">
-          <div class="npc-avatar">🤖</div>
+          <div class="npc-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${colors.accent}" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
           <div class="npc-info">
             <div class="npc-header"><span class="npc-name">ยูนิต 77</span><span class="npc-tag">(หุ่นยนต์คุ้มกัน)</span></div>
             <p class="npc-desc">แอนดรอยด์สงครามรุ่นดัดแปลงพิเศษ ทำหน้าที่เป็นโล่และระบบสนับสนุนแนวหน้า</p>
@@ -1248,7 +1248,7 @@
         carouselShadow: '0 0 30px rgba(255,0,85,0.4), 0 0 60px rgba(0,240,255,0.2)', border: '2px solid #ff0055',
         shadeGrad: 'linear-gradient(180deg,rgba(10,0,15,0.1) 0%,rgba(10,0,15,0.4) 50%,rgba(10,0,15,0.95) 100%)',
         emblemGlow: '0 0 14px #ff0055', boxShadow: '0 0 20px rgba(255,0,85,0.25), inset 0 0 0 1px rgba(0,240,255,0.3)',
-        activeTabShadow: '0 0 12px rgba(255,0,85,0.6)', ribbonTitle: 'CYBER ARCHON', emblemIcon: '⚡',
+        activeTabShadow: '0 0 12px rgba(255,0,85,0.6)', ribbonTitle: 'CYBER ARCHON',
         subTitle: 'Sector 09 Nocturne • Neo-Verona Core', footerText: 'Cyber-Gothic Protocol'
       }),
 
@@ -1268,7 +1268,7 @@
         carouselShadow: '0 0 30px rgba(124,58,237,0.45)', border: '2px solid #d4af37',
         shadeGrad: 'linear-gradient(180deg,rgba(18,12,28,0.1) 0%,rgba(18,12,28,0.5) 50%,rgba(18,12,28,0.96) 100%)',
         emblemGlow: '0 0 14px #7c3aed', boxShadow: '0 0 16px rgba(124,58,237,0.3), inset 0 0 0 1px rgba(212,175,55,0.2)',
-        activeTabShadow: '0 0 12px rgba(124,58,237,0.6)', ribbonTitle: 'ARCANE ARCHON', emblemIcon: '📜',
+        activeTabShadow: '0 0 12px rgba(124,58,237,0.6)', ribbonTitle: 'ARCANE ARCHON',
         subTitle: 'Archivist of the Forbidden Circle', footerText: 'Arcane Grimoire'
       }),
 
@@ -1288,7 +1288,7 @@
         carouselShadow: '0 0 30px rgba(255,102,196,0.4)', border: '2px dashed #ff66c4',
         shadeGrad: 'linear-gradient(180deg,rgba(20,15,30,0.1) 0%,rgba(20,15,30,0.5) 50%,rgba(20,15,30,0.96) 100%)',
         emblemGlow: '0 0 14px #ff66c4', boxShadow: '0 0 18px rgba(255,102,196,0.25)',
-        activeTabShadow: '0 0 12px rgba(255,102,196,0.6)', ribbonTitle: 'LEVEL 99 STREAMER', emblemIcon: '👾',
+        activeTabShadow: '0 0 12px rgba(255,102,196,0.6)', ribbonTitle: 'LEVEL 99 STREAMER',
         subTitle: 'Virtual Speedster • Synthwave Chibi Mode', footerText: 'Pastel Glitch'
       }),
 
@@ -1308,7 +1308,7 @@
         carouselShadow: '0 0 30px rgba(57,255,20,0.35)', border: '2px solid #e1b382',
         shadeGrad: 'linear-gradient(180deg,rgba(15,25,20,0.1) 0%,rgba(15,25,20,0.5) 50%,rgba(15,25,20,0.96) 100%)',
         emblemGlow: '0 0 14px #39ff14', boxShadow: '0 0 16px rgba(57,255,20,0.25)',
-        activeTabShadow: '0 0 12px rgba(57,255,20,0.5)', ribbonTitle: 'ECO-KINETIC ENGINEER', emblemIcon: '🌿',
+        activeTabShadow: '0 0 12px rgba(57,255,20,0.5)', ribbonTitle: 'ECO-KINETIC ENGINEER',
         subTitle: 'Solar Clockwork High Speed Prototype', footerText: 'Solarpunk Steampunk'
       }),
 
@@ -1328,7 +1328,7 @@
         carouselShadow: '0 12px 36px rgba(0,0,0,0.7)', border: '1px solid rgba(223,216,200,0.4)',
         shadeGrad: 'linear-gradient(180deg,rgba(18,18,20,0.1) 0%,rgba(18,18,20,0.5) 50%,rgba(18,18,20,0.96) 100%)',
         emblemGlow: '0 0 10px rgba(220,199,170,0.4)', boxShadow: '0 10px 30px rgba(0,0,0,0.8)',
-        activeTabShadow: '0 2px 10px rgba(0,0,0,0.5)', ribbonTitle: 'SYNDICATE PATRON', emblemIcon: '🏛️',
+        activeTabShadow: '0 2px 10px rgba(0,0,0,0.5)', ribbonTitle: 'SYNDICATE PATRON',
         subTitle: 'Monogram Directory • Private Collection', footerText: 'Quiet Luxury Noir'
       }),
 
@@ -1348,7 +1348,7 @@
         carouselShadow: 'inset 0 0 50px rgba(0,0,0,0.8), 0 10px 30px rgba(0,0,0,0.9)', border: '1px solid #C2A0A8',
         shadeGrad: 'linear-gradient(180deg,rgba(26,10,15,0.1) 0%,rgba(26,10,15,0.5) 50%,rgba(26,10,15,0.96) 100%)',
         emblemGlow: '0 0 12px rgba(249,208,201,0.4)', boxShadow: '0 10px 30px rgba(0,0,0,0.7)',
-        activeTabShadow: '0 0 10px rgba(249,208,201,0.4)', ribbonTitle: 'SHADOW BLOSSOM', emblemIcon: '🌸',
+        activeTabShadow: '0 0 10px rgba(249,208,201,0.4)', ribbonTitle: 'SHADOW BLOSSOM',
         subTitle: 'Paris 1928 • Bittersweet Velocity', footerText: 'Sakura Noir'
       }),
 
@@ -1368,7 +1368,7 @@
         carouselShadow: '0 0 30px rgba(212,175,55,0.35)', border: '2px solid #D4AF37',
         shadeGrad: 'linear-gradient(180deg,rgba(26,10,0,0.1) 0%,rgba(26,10,0,0.5) 50%,rgba(26,10,0,0.96) 100%)',
         emblemGlow: '0 0 14px rgba(212,175,55,0.5)', boxShadow: '0 0 25px rgba(212,175,55,0.25)',
-        activeTabShadow: '0 0 12px rgba(212,175,55,0.6)', ribbonTitle: 'THE GILDED RUIN', emblemIcon: '💀',
+        activeTabShadow: '0 0 12px rgba(212,175,55,0.6)', ribbonTitle: 'THE GILDED RUIN',
         subTitle: 'Memento Mori • Aristocratic Speed', footerText: 'Baroque Decay'
       }),
 
@@ -1388,7 +1388,7 @@
         carouselShadow: '0 0 30px rgba(0,151,167,0.4)', border: '1.5px solid #0097A7',
         shadeGrad: 'linear-gradient(180deg,rgba(2,11,24,0.1) 0%,rgba(2,11,24,0.5) 50%,rgba(2,11,24,0.96) 100%)',
         emblemGlow: '0 0 14px #00E5FF', boxShadow: '0 0 20px rgba(0,151,167,0.35)',
-        activeTabShadow: '0 0 12px rgba(0,229,255,0.6)', ribbonTitle: 'DEPTH 7,342M', emblemIcon: '🌊',
+        activeTabShadow: '0 0 12px rgba(0,229,255,0.6)', ribbonTitle: 'DEPTH 7,342M',
         subTitle: 'Abyssal Prophet • Trench Velocity', footerText: 'Deep Sea Oracle'
       }),
 
@@ -1408,7 +1408,7 @@
         carouselShadow: '0 0 30px rgba(255,133,179,0.45)', border: '2px solid #FF85B3',
         shadeGrad: 'linear-gradient(180deg,rgba(26,0,51,0.1) 0%,rgba(26,0,51,0.5) 50%,rgba(26,0,51,0.96) 100%)',
         emblemGlow: '0 0 14px #FF85B3', boxShadow: '0 0 25px rgba(255,133,179,0.35)',
-        activeTabShadow: '0 0 12px rgba(255,133,179,0.6)', ribbonTitle: 'WORLD TOUR 2026', emblemIcon: '🎤',
+        activeTabShadow: '0 0 12px rgba(255,133,179,0.6)', ribbonTitle: 'WORLD TOUR 2026',
         subTitle: 'Center #01 • Stadium Speed Diva', footerText: 'Idol Pop Art'
       }),
 
@@ -1563,16 +1563,16 @@
 
     // Theme Catalog
     const themeList = [
-      { id: "T00", name: "Valentina Master (Cyber)", desc: "⚡ Official Neon Cybernetic Archon", key: "valentina-master" },
-      { id: "T01", name: "Valentina Arcane", desc: "📜 Dark Academia × Runic Scholar", key: "valentina-arcane" },
-      { id: "T02", name: "Valentina Pastel", desc: "👾 Pastel Kawaii × Synth Wave Chibi", key: "valentina-pastel" },
-      { id: "T03", name: "Valentina Solar", desc: "🌿 Solarpunk Eco × Clockwork Brass", key: "valentina-solar" },
-      { id: "T04", name: "Valentina Luxury", desc: "🏛️ Old Money Monogram × Noir", key: "valentina-luxury" },
-      { id: "T05", name: "Valentina Sakura", desc: "🌸 Spring Bloom × French Film Noir", key: "valentina-sakura" },
-      { id: "T06", name: "Valentina Baroque", desc: "💀 European Baroque × Memento Mori", key: "valentina-baroque" },
-      { id: "T07", name: "Valentina Deep Sea", desc: "🌊 Abyssal Trench 7000M × Seer", key: "valentina-deep-sea" },
-      { id: "T08", name: "Valentina Idol", desc: "🎤 Stage Pop Diva × Hologram Foil", key: "valentina-idol" },
-      { id: "T09", name: "Base Clean Card", desc: "📦 Generic Starter Profile", key: "base-clean" }
+      { id: "T00", name: "Valentina Master (Cyber)", desc: "Official Neon Cybernetic Archon", key: "valentina-master" },
+      { id: "T01", name: "Valentina Arcane", desc: "Dark Academia × Runic Scholar", key: "valentina-arcane" },
+      { id: "T02", name: "Valentina Pastel", desc: "Pastel Kawaii × Synth Wave Chibi", key: "valentina-pastel" },
+      { id: "T03", name: "Valentina Solar", desc: "Solarpunk Eco × Clockwork Brass", key: "valentina-solar" },
+      { id: "T04", name: "Valentina Luxury", desc: "Old Money Monogram × Noir", key: "valentina-luxury" },
+      { id: "T05", name: "Valentina Sakura", desc: "Spring Bloom × French Film Noir", key: "valentina-sakura" },
+      { id: "T06", name: "Valentina Baroque", desc: "European Baroque × Memento Mori", key: "valentina-baroque" },
+      { id: "T07", name: "Valentina Deep Sea", desc: "Abyssal Trench 7000M × Seer", key: "valentina-deep-sea" },
+      { id: "T08", name: "Valentina Idol", desc: "Stage Pop Diva × Hologram Foil", key: "valentina-idol" },
+      { id: "T09", name: "Base Clean Card", desc: "Generic Starter Profile", key: "base-clean" }
     ];
 
     // ====================================================================
@@ -1666,7 +1666,7 @@
       const code = document.getElementById('codeEditor').value;
       const minified = minifyHtmlCss(code);
       navigator.clipboard.writeText(minified).then(() => {
-        showToast(`⚡ Minified code copied! (${minified.length.toLocaleString()} chars)`);
+        showToast(`Minified code copied! (${minified.length.toLocaleString()} chars)`);
       });
     }
 
@@ -1687,7 +1687,7 @@
         .then(res => res.text())
         .then(txt => {
           navigator.clipboard.writeText(txt).then(() => {
-            showToast('⚡ Standalone Prompt copied! Paste into Claude/GPT/Gemini.');
+            showToast('Standalone Prompt copied! Paste into Claude/GPT/Gemini.');
           });
         })
         .catch(() => {
@@ -1713,7 +1713,7 @@
               #${p.id} ${p.name}
             </span>
             <div style="display:flex;gap:4px;align-items:center;">
-              ${p.likes ? `<span style="font-size:9.5px;color:#ff66c4;background:rgba(255,102,196,0.1);padding:2px 6px;border-radius:4px;">❤️ ${(p.likes >= 1000 ? (p.likes/1000).toFixed(1) + 'k' : p.likes)}</span>` : ''}
+              ${p.likes ? `<span style="font-size:9.5px;color:#ff66c4;background:rgba(255,102,196,0.1);padding:2px 6px;border-radius:4px;display:inline-flex;align-items:center;gap:3px;"><svg viewBox="0 0 24 24" style="width:10px;height:10px;fill:#ff66c4;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>${(p.likes >= 1000 ? (p.likes/1000).toFixed(1) + 'k' : p.likes)}</span>` : ''}
               <span class="palette-category">${p.cat}</span>
             </div>
           </div>
@@ -1816,7 +1816,7 @@
           <div style="margin-top:6px;">
             <button class="btn-action primary" style="width:100%;justify-content:center;">
               <svg viewBox="0 0 24 24" style="width:12px;height:12px;"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
-              <span data-i18n="btn_load_studio">⚡ Load into Studio</span>
+              <span data-i18n="btn_load_studio">Load into Studio</span>
             </button>
           </div>
         </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚡ Rubii Card Architect - Live Mobile Previewer</title>
+  <title>Rubii Card Architect - Live Mobile Previewer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;600&family=Chonburi&family=Kanit:ital,wght@0,300;0,400;0,600;1,300&family=Mitr:wght@400;600&family=Prompt:wght@300;400;600&family=Sarabun:wght@300;400;600&family=Taviraj:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -153,18 +153,28 @@
 <body>
   <header>
     <div class="brand">
-      <span>🐱</span> Rubii Card Architect V2.2.7 — Live Tester
+      <svg width="22" height="22" viewBox="0 0 40 40" fill="none" style="vertical-align:middle;display:inline-block;margin-right:2px;">
+        <circle cx="20" cy="20" r="19" fill="#120c1c" stroke="#ff0055" stroke-width="2"/>
+        <polygon points="10,18 7,7 18,12" fill="#ff0055"/>
+        <polygon points="30,18 33,7 22,12" fill="#ff0055"/>
+        <circle cx="20" cy="22" r="12" fill="#1f1128" stroke="#00ffff" stroke-width="1.5"/>
+        <ellipse cx="16" cy="21" rx="2.2" ry="3.5" fill="#00ffff"/>
+        <ellipse cx="24" cy="21" rx="2.2" ry="3.5" fill="#00ffff"/>
+        <polygon points="20,25 18.5,27 21.5,27" fill="#ff66c4"/>
+        <path d="M18.5,27 Q20,29 20,28 Q20,29 21.5,27" stroke="#ff66c4" stroke-width="1.2" fill="none"/>
+      </svg>
+      Rubii Card Architect V2.2.7 — Live Tester
     </div>
     <div class="controls">
       <label style="font-size:11px;color:#8892b0;">Preset:</label>
       <select id="presetSelect" onchange="loadPreset()">
-        <option value="valentina-master">⚡ Valentina Cross (Master Character Card)</option>
-        <option value="base-clean">📦 Base Card Template (การ์ดพื้นฐาน)</option>
-        <option value="cyber-gothic">⚡ Cyber-Gothic (Neon Crimson)</option>
-        <option value="arcane-academia">📜 Arcane Academia (Violet Gold)</option>
-        <option value="pastel-glitch">👾 Pastel Glitch (Cute Synthwave)</option>
-        <option value="solar-steampunk">🌿 Solar Steampunk (Emerald Brass)</option>
-        <option value="quiet-luxury">🏛️ Quiet Luxury (Old Money Noir)</option>
+        <option value="valentina-master">Valentina Cross (Master Character Card)</option>
+        <option value="base-clean">Base Card Template (การ์ดพื้นฐาน)</option>
+        <option value="cyber-gothic">Cyber-Gothic (Neon Crimson)</option>
+        <option value="arcane-academia">Arcane Academia (Violet Gold)</option>
+        <option value="pastel-glitch">Pastel Glitch (Cute Synthwave)</option>
+        <option value="solar-steampunk">Solar Steampunk (Emerald Brass)</option>
+        <option value="quiet-luxury">Quiet Luxury (Old Money Noir)</option>
       </select>
 
       <label style="font-size:11px;color:#8892b0;margin-left:6px;">Width:</label>
@@ -175,29 +185,44 @@
         <option value="375px">iPhone SE / Mini (375px)</option>
         <option value="320px">Minimum Fluid (320px)</option>
       </select>
-      <button class="primary" onclick="renderPreview()">▶ Render Live</button>
+      <button class="primary" onclick="renderPreview()">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px;margin-right:2px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Render Live
+      </button>
     </div>
   </header>
 
   <div class="main-container">
     <div class="panel">
       <div class="panel-header">
-        <span>📝 HTML / CSS Source Code</span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          HTML / CSS Source Code
+        </span>
         <div class="panel-actions">
-          <button onclick="copyCode()">📋 Copy</button>
-          <button class="minify-btn" onclick="copyMinifiedCode()">⚡ Copy Minified</button>
+          <button onclick="copyCode()">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-1px;margin-right:2px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+          <button class="minify-btn" onclick="copyMinifiedCode()">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px;margin-right:2px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Copy Minified
+          </button>
         </div>
       </div>
       <textarea id="codeEditor" spellcheck="false" placeholder="Paste your generated Rubii HTML/CSS card code here..."></textarea>
       <div style="font-size:11px;color:#8892b0;display:flex;justify-content:space-between;">
-        <span>💾 Auto-saves to LocalStorage</span>
-        <span onclick="resetCode()" style="cursor:pointer;color:#00ffff;">🔄 Reset to Master Preset</span>
+        <span>Auto-saves to LocalStorage</span>
+        <span onclick="resetCode()" style="cursor:pointer;color:#00ffff;">Reset to Master Preset</span>
       </div>
     </div>
 
     <div class="panel">
       <div class="panel-header">
-        <span>📱 Mobile Viewport Simulation</span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          Mobile Viewport Simulation
+        </span>
         <span id="dimensionLabel" style="font-size:11px;color:#8892b0;">420px</span>
       </div>
       <div class="preview-viewport-wrapper">
@@ -293,7 +318,7 @@
     </div>
     <div class="shade"></div>
     <div class="ribbon">CYBER SECURITY ARCHON</div>
-    <div class="emblem">⚡</div>
+    <div class="emblem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
     <div class="id">
       <div class="name-en">VALENTINA CROSS</div>
       <div class="name-th">วาเลนติน่า คลอส</div>
@@ -302,11 +327,11 @@
   </div>
 
   <div class="hint-box">
-    <span>💡 <b>Hint:</b> เลื่อนซ้าย-ขวาที่รูปปกเพื่อดูสไลด์เพิ่มเติม • กดเลือกแท็บด้านล่างเพื่อเปลี่ยนหมวดหมู่</span>
+    <span><b>[HINT]</b> เลื่อนซ้าย-ขวาที่รูปปกเพื่อดูสไลด์เพิ่มเติม • กดเลือกแท็บด้านล่างเพื่อเปลี่ยนหมวดหมู่</span>
   </div>
 
   <div class="box">
-    <div class="box-title">📊 ข้อมูลทั่วไป (General Info)</div>
+    <div class="box-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2" style="vertical-align:middle;margin-right:4px;"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/></svg>ข้อมูลทั่วไป (General Info)</div>
     <dl>
       <dt>อายุ</dt><dd>24 ปี (14 กุมภาพันธ์)</dd>
       <dt>เพศ/รสนิยม</dt><dd>หญิง • โทนมั่นใจในตัวเอง</dd>
@@ -330,28 +355,28 @@
   <input type="radio" name="mt" id="t4" style="position:absolute;opacity:0;pointer-events:none;width:0;height:0;margin:0;padding:0;overflow:hidden;">
 
   <div class="nav-tabs">
-    <label for="t1" class="nav-label">❤️ ความสัมพันธ์</label>
-    <label for="t2" class="nav-label">📖 ภูมิหลัง</label>
-    <label for="t3" class="nav-label">⚡ ความชอบ</label>
-    <label for="t4" class="nav-label">👥 พันธมิตร</label>
+    <label for="t1" class="nav-label"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px;margin-right:3px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>ความสัมพันธ์</label>
+    <label for="t2" class="nav-label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-1px;margin-right:3px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>ภูมิหลัง</label>
+    <label for="t3" class="nav-label"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px;margin-right:3px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>ความชอบ</label>
+    <label for="t4" class="nav-label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-1px;margin-right:3px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>พันธมิตร</label>
   </div>
 
   <div class="tab-content">
     <div class="tab-panel" id="p1">
-      <div class="section-head">❤️ ความสัมพันธ์ระหว่าง "วาเลนติน่า" กับ {{user}}</div>
+      <div class="section-head"><svg width="14" height="14" viewBox="0 0 24 24" fill="#00f0ff" style="vertical-align:-2px;margin-right:4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>ความสัมพันธ์ระหว่าง "วาเลนติน่า" กับ {{user}}</div>
       <p>{{user}} คือผู้ประสานงานพิเศษที่วาเลนติน่าให้ความไว้วางใจสูงสุด แม้ภายนอกเธอจะดูสุขุมและเคร่งขรึม แต่เมื่ออยู่ต่อหน้า {{user}} เธอมักจะเผยรอยยิ้มมุมปากและคำท้าทายที่มีเสน่ห์</p>
       <code>[สถานะความสัมพันธ์]: คู่หูภาคสนามคนสำคัญ / ผู้ถือครองกุญแจความลับ [เงื่อนไขเฉพาะ]: พร้อมสแตนด์บายเคียงข้างในทุกภารกิจฉุกเฉิน</code>
     </div>
 
     <div class="tab-panel" id="p2">
-      <div class="section-head">📖 ภูมิหลังและเรื่องราวในอดีต</div>
+      <div class="section-head"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>ภูมิหลังและเรื่องราวในอดีต</div>
       <p>วาเลนติน่า คลอส เติบโตขึ้นมาในใจกลางย่านเทคโนโลยีชั้นนำของ Neo-Verona เธอศึกษาโครงข่ายข้อมูลและระบบเครื่องยนต์ความเร็วสูงตั้งแต่วัยเยาว์ จนก้าวขึ้นเป็นหัวหน้าวิศวกรและผู้คุ้มกันความปลอดภัยชั้นนำ</p>
-      <code>🚨 Mission Log: ปฏิบัติการร่วมกับ {{user}} ลุล่วงด้วยประสิทธิภาพ 99.8% และยังคงคอยดูแลระบบสนับสนุนส่วนตัวตลอด 24 ชั่วโมง</code>
+      <code>[Mission Log]: ปฏิบัติการร่วมกับ {{user}} ลุล่วงด้วยประสิทธิภาพ 99.8% และยังคงคอยดูแลระบบสนับสนุนส่วนตัวตลอด 24 ชั่วโมง</code>
     </div>
 
     <div class="tab-panel" id="p3">
-      <div class="section-head">⚡ สิ่งที่ชอบ & อุปนิสัย</div>
-      <b>🔥 สิ่งที่โปรดปราน</b>
+      <div class="section-head"><svg width="14" height="14" viewBox="0 0 24 24" fill="#00f0ff" style="vertical-align:-2px;margin-right:4px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>สิ่งที่ชอบ & อุปนิสัย</div>
+      <b>สิ่งที่โปรดปราน</b>
       <ul>
         <li>การปรับแต่งระบบส่งกำลังและโครงข่ายความปลอดภัยความเร็วสูง</li>
         <li>การดื่มชาสูตรพิเศษยามค่ำคืนขณะตรวจสอบบันทึกภารกิจ</li>
@@ -361,17 +386,17 @@
     </div>
 
     <div class="tab-panel" id="p4">
-      <div class="section-head">👥 บุคคลและพันธมิตรในเครือข่าย</div>
+      <div class="section-head"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>บุคคลและพันธมิตรในเครือข่าย</div>
       <div class="npc-grid">
         <div class="npc-card">
-          <div class="npc-avatar">⚙️</div>
+          <div class="npc-avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
           <div class="npc-info">
             <div class="npc-header"><span class="npc-name">ไซรัส</span><span class="npc-tag">(หัวหน้าวิศวกร)</span></div>
             <p class="npc-desc">ผู้เชี่ยวชาญการสร้างฮาร์ดแวร์ต้นแบบและระบบขับเคลื่อนความเร็วสูง</p>
           </div>
         </div>
         <div class="npc-card">
-          <div class="npc-avatar">📡</div>
+          <div class="npc-avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"/></svg></div>
           <div class="npc-info">
             <div class="npc-header"><span class="npc-name">เอลิน่า</span><span class="npc-tag">(เจ้าหน้าที่สื่อสาร)</span></div>
             <p class="npc-desc">ผู้ดูแลช่องสัญญาณเข้ารหัสและตรวจจับความผิดปกติในรัศมี 100 กิโลเมตร</p>
@@ -485,7 +510,7 @@
       const code = document.getElementById('codeEditor').value;
       const minified = minifyHtmlCss(code);
       navigator.clipboard.writeText(minified).then(() => {
-        alert(`⚡ Minified code copied! (${minified.length.toLocaleString()} chars)`);
+        alert(`Minified code copied! (${minified.length.toLocaleString()} chars)`);
       });
     }
 
