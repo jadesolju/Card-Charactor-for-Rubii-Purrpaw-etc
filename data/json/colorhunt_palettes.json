@@ -1,0 +1,569 @@
+[
+  {
+    "id": "ch-01",
+    "code": "08d9d6252a34ff2e63eaeaea",
+    "name": "Neon Cyber Glitch",
+    "category": "Popular",
+    "tags": ["popular", "neon", "cyan", "blue", "dark", "pink"],
+    "colors": ["#08D9D6", "#252A34", "#FF2E63", "#EAEAEA"],
+    "likes": 54200
+  },
+  {
+    "id": "ch-02",
+    "code": "ff2e6308d9d6252a34eaeaea",
+    "name": "Sunset Cyber Horizon",
+    "category": "Popular",
+    "tags": ["popular", "sunset", "neon", "warm", "pink", "blue"],
+    "colors": ["#FF2E63", "#08D9D6", "#252A34", "#EAEAEA"],
+    "likes": 48100
+  },
+  {
+    "id": "ch-03",
+    "code": "f7f1e3dcc7aa6b7a8f111827",
+    "name": "Quiet Luxury Gold",
+    "category": "Popular",
+    "tags": ["popular", "gold", "vintage", "cream", "luxury", "dark"],
+    "colors": ["#F7F1E3", "#DCC7AA", "#6B7A8F", "#111827"],
+    "likes": 42300
+  },
+  {
+    "id": "ch-04",
+    "code": "1a1a2e16213e0f3460e94560",
+    "name": "Midnight Purple Glow",
+    "category": "Popular",
+    "tags": ["popular", "night", "dark", "navy", "purple", "neon"],
+    "colors": ["#1A1A2E", "#16213E", "#0F3460", "#E94560"],
+    "likes": 39800
+  },
+  {
+    "id": "ch-05",
+    "code": "0f0e17ff8906f25f4cfffffe",
+    "name": "Tokyo Neon Noir",
+    "category": "Popular",
+    "tags": ["popular", "orange", "dark", "warm", "neon", "white"],
+    "colors": ["#0F0E17", "#FF8906", "#F25F4C", "#FFFFFE"],
+    "likes": 36700
+  },
+  {
+    "id": "ch-06",
+    "code": "f3f4f6e5e7eb9ca3af1f2937",
+    "name": "Nordic Frost Clean",
+    "category": "Popular",
+    "tags": ["popular", "light", "grey", "cold", "minimal", "dark"],
+    "colors": ["#F3F4F6", "#E5E7EB", "#9CA3AF", "#1F2937"],
+    "likes": 35200
+  },
+  {
+    "id": "ch-07",
+    "code": "ffe3e3ffaebcfbe7c6b4f8c8",
+    "name": "Strawberry Milkshake",
+    "category": "Pastel",
+    "tags": ["pastel", "pink", "peach", "cream", "mint", "happy", "sweet"],
+    "colors": ["#FFE3E3", "#FFAEBC", "#FBE7C6", "#B4F8C8"],
+    "likes": 31900
+  },
+  {
+    "id": "ch-08",
+    "code": "f9f9f9f7d1bae8a5986155a6",
+    "name": "Sweet Macaron Dream",
+    "category": "Pastel",
+    "tags": ["pastel", "purple", "peach", "cream", "vintage", "cute"],
+    "colors": ["#F9F9F9", "#F7D1BA", "#E8A598", "#6155A6"],
+    "likes": 28400
+  },
+  {
+    "id": "ch-09",
+    "code": "e8eaffffb6b9fae3d9bbded6",
+    "name": "Cotton Candy Cloud",
+    "category": "Pastel",
+    "tags": ["pastel", "pink", "sky", "mint", "light", "kids", "soft"],
+    "colors": ["#E8EAFF", "#FFB6B9", "#FAE3D9", "#BBDED6"],
+    "likes": 27600
+  },
+  {
+    "id": "ch-10",
+    "code": "ffebebf8b195f67280c06c84",
+    "name": "Sakura Spring Blossom",
+    "category": "Pastel",
+    "tags": ["pastel", "spring", "pink", "maroon", "peach", "warm"],
+    "colors": ["#FFEBEB", "#F8B195", "#F67280", "#C06C84"],
+    "likes": 26900
+  },
+  {
+    "id": "ch-11",
+    "code": "f3e8ffe9d5ffc084fc7e22ce",
+    "name": "Lavender Mochi",
+    "category": "Pastel",
+    "tags": ["pastel", "purple", "light", "wedding", "sweet"],
+    "colors": ["#F3E8FF", "#E9D5FF", "#C084FC", "#7E22CE"],
+    "likes": 25400
+  },
+  {
+    "id": "ch-12",
+    "code": "e8f5e9c8e6c981c7842e7d32",
+    "name": "Minty Matcha Latte",
+    "category": "Pastel",
+    "tags": ["pastel", "green", "mint", "sage", "nature", "tea"],
+    "colors": ["#E8F5E9", "#C8E6C9", "#81C784", "#2E7D32"],
+    "likes": 24800
+  },
+  {
+    "id": "ch-13",
+    "code": "e07a5f3d405b81b99af2cc8f",
+    "name": "70s Sunset Vinyl",
+    "category": "Vintage",
+    "tags": ["vintage", "retro", "warm", "navy", "orange", "sage"],
+    "colors": ["#E07A5F", "#3D405B", "#81B29A", "#F2CC8F"],
+    "likes": 29800
+  },
+  {
+    "id": "ch-14",
+    "code": "f5efdcd9cab38c82752c1a0e",
+    "name": "Aged Parchment Codex",
+    "category": "Vintage",
+    "tags": ["vintage", "brown", "beige", "dark", "earth", "coffee"],
+    "colors": ["#F5EFDC", "#D9CAB3", "#8C8275", "#2C1A0E"],
+    "likes": 27100
+  },
+  {
+    "id": "ch-15",
+    "code": "f45d480a2540635bff00d4b2",
+    "name": "Retro Cassette 80s",
+    "category": "Vintage",
+    "tags": ["vintage", "retro", "neon", "navy", "teal", "orange"],
+    "colors": ["#F45D48", "#0A2540", "#635BFF", "#00D4B2"],
+    "likes": 25900
+  },
+  {
+    "id": "ch-16",
+    "code": "ece0d1dbc1ac96725938220f",
+    "name": "Warm Coffee Roastery",
+    "category": "Vintage",
+    "tags": ["vintage", "coffee", "brown", "beige", "cream", "earth"],
+    "colors": ["#ECE0D1", "#DBC1AC", "#967259", "#38220F"],
+    "likes": 24300
+  },
+  {
+    "id": "ch-17",
+    "code": "faf0caf4d35eee964b0d3b66",
+    "name": "Polaroid Film Nostalgia",
+    "category": "Vintage",
+    "tags": ["vintage", "retro", "yellow", "orange", "navy", "summer"],
+    "colors": ["#FAF0CA", "#F4D35E", "#EE964B", "#0D3B66"],
+    "likes": 23500
+  },
+  {
+    "id": "ch-18",
+    "code": "efe9d5b8cba55b7a551b2a1e",
+    "name": "Antique Botanical Ink",
+    "category": "Vintage",
+    "tags": ["vintage", "green", "sage", "nature", "earth", "dark"],
+    "colors": ["#EFE9D5", "#B8CBA5", "#5B7A55", "#1B2A1E"],
+    "likes": 22400
+  },
+  {
+    "id": "ch-19",
+    "code": "0505051b1b2f00f0ffffe600",
+    "name": "Cyberpunk 2077 Night",
+    "category": "Neon",
+    "tags": ["neon", "space", "night", "dark", "cyan", "yellow"],
+    "colors": ["#050505", "#1B1B2F", "#00F0FF", "#FFE600"],
+    "likes": 38900
+  },
+  {
+    "id": "ch-20",
+    "code": "0f051d2e0249f806cc570a57",
+    "name": "Synthwave Magenta Grid",
+    "category": "Neon",
+    "tags": ["neon", "retro", "purple", "pink", "dark", "space"],
+    "colors": ["#0F051D", "#2E0249", "#F806CC", "#570A57"],
+    "likes": 34100
+  },
+  {
+    "id": "ch-21",
+    "code": "0d0208003b00008f1100ff66",
+    "name": "Matrix Hacker Green",
+    "category": "Neon",
+    "tags": ["neon", "dark", "green", "night", "tech", "black"],
+    "colors": ["#0D0208", "#003B00", "#008F11", "#00FF66"],
+    "likes": 32800
+  },
+  {
+    "id": "ch-22",
+    "code": "120e244b00829400d300ffff",
+    "name": "Laser Arcade Violet",
+    "category": "Neon",
+    "tags": ["neon", "purple", "cyan", "dark", "space", "gaming"],
+    "colors": ["#120E24", "#4B0082", "#9400D3", "#00FFFF"],
+    "likes": 29600
+  },
+  {
+    "id": "ch-23",
+    "code": "0b0c101f2833c5c6c766fcf1",
+    "name": "Electric Blood Drive",
+    "category": "Neon",
+    "tags": ["neon", "dark", "teal", "grey", "cold", "tech"],
+    "colors": ["#0B0C10", "#1F2833", "#C5C6C7", "#66FCF1"],
+    "likes": 27900
+  },
+  {
+    "id": "ch-24",
+    "code": "11111176ff03ff007f00e5ff",
+    "name": "Acid Hologram Glitch",
+    "category": "Neon",
+    "tags": ["neon", "dark", "pink", "cyan", "green", "happy"],
+    "colors": ["#111111", "#76FF03", "#FF007F", "#00E5FF"],
+    "likes": 26800
+  },
+  {
+    "id": "ch-25",
+    "code": "0b090a161a1d660708a4161a",
+    "name": "Gothic Vampire Covenant",
+    "category": "Dark",
+    "tags": ["dark", "red", "maroon", "black", "halloween", "night"],
+    "colors": ["#0B090A", "#161A1D", "#660708", "#A4161A"],
+    "likes": 37200
+  },
+  {
+    "id": "ch-26",
+    "code": "020b180a3d620097a7e0f7fa",
+    "name": "Abyssal Trench 7000M",
+    "category": "Dark",
+    "tags": ["dark", "sea", "cold", "blue", "teal", "navy"],
+    "colors": ["#020B18", "#0A3D62", "#0097A7", "#E0F7FA"],
+    "likes": 33400
+  },
+  {
+    "id": "ch-27",
+    "code": "1c191744403c78716cd6d3d1",
+    "name": "Dark Academia Manor",
+    "category": "Dark",
+    "tags": ["dark", "vintage", "grey", "brown", "earth", "quiet"],
+    "colors": ["#1C1917", "#44403C", "#78716C", "#D6D3D1"],
+    "likes": 31100
+  },
+  {
+    "id": "ch-28",
+    "code": "0e0b16a239ca4717f6e7dfdd",
+    "name": "Occult Grimoire Circle",
+    "category": "Dark",
+    "tags": ["dark", "purple", "space", "magic", "night", "white"],
+    "colors": ["#0E0B16", "#A239CA", "#4717F6", "#E7DFDD"],
+    "likes": 28900
+  },
+  {
+    "id": "ch-29",
+    "code": "1212122828283f3f3fe0e0e0",
+    "name": "Phantom Ash Obsidian",
+    "category": "Dark",
+    "tags": ["dark", "black", "grey", "gradient", "minimal"],
+    "colors": ["#121212", "#282828", "#3F3F3F", "#E0E0E0"],
+    "likes": 26500
+  },
+  {
+    "id": "ch-30",
+    "code": "1400053a000e8a0022ff3366",
+    "name": "Midnight Blood Moon",
+    "category": "Dark",
+    "tags": ["dark", "night", "red", "pink", "maroon", "halloween"],
+    "colors": ["#140005", "#3A000E", "#8A0022", "#FF3366"],
+    "likes": 25100
+  },
+  {
+    "id": "ch-31",
+    "code": "1a0a008b6914d4af37f5e6c8",
+    "name": "Baroque Gilded Velvet",
+    "category": "Gold",
+    "tags": ["gold", "vintage", "yellow", "cream", "luxury", "dark"],
+    "colors": ["#1A0A00", "#8B6914", "#D4AF37", "#F5E6C8"],
+    "likes": 35800
+  },
+  {
+    "id": "ch-32",
+    "code": "0f2027203a432c5364d4af37",
+    "name": "Imperial Dynasty Jade",
+    "category": "Gold",
+    "tags": ["gold", "dark", "sea", "teal", "navy", "luxury"],
+    "colors": ["#0F2027", "#203A43", "#2C5364", "#D4AF37"],
+    "likes": 31200
+  },
+  {
+    "id": "ch-33",
+    "code": "111111333333c5a059f7e7ce",
+    "name": "Champagne Velvet Noir",
+    "category": "Gold",
+    "tags": ["gold", "dark", "cream", "black", "wedding", "luxury"],
+    "colors": ["#111111", "#333333", "#C5A059", "#F7E7CE"],
+    "likes": 28400
+  },
+  {
+    "id": "ch-34",
+    "code": "0f172a1e3a8a3b82f6f59e0b",
+    "name": "Royal Sapphire Palace",
+    "category": "Gold",
+    "tags": ["gold", "blue", "navy", "yellow", "royal", "dark"],
+    "colors": ["#0F172A", "#1E3A8A", "#3B82F6", "#F59E0B"],
+    "likes": 26900
+  },
+  {
+    "id": "ch-35",
+    "code": "06281e0b4f3a138a63e6c687",
+    "name": "Emerald Aristocracy",
+    "category": "Gold",
+    "tags": ["gold", "green", "mint", "dark", "luxury", "nature"],
+    "colors": ["#06281E", "#0B4F3A", "#138A63", "#E6C687"],
+    "likes": 25200
+  },
+  {
+    "id": "ch-36",
+    "code": "1e293b33415594a3b8f8fafc",
+    "name": "Platinum Diamond Crown",
+    "category": "Gold",
+    "tags": ["gold", "light", "white", "grey", "cold", "minimal"],
+    "colors": ["#1E293B", "#334155", "#94A3B8", "#F8FAFC"],
+    "likes": 24100
+  },
+  {
+    "id": "ch-37",
+    "code": "0b1d131b433240916c95d5b2",
+    "name": "Solarpunk Bio-Haven",
+    "category": "Nature",
+    "tags": ["nature", "green", "mint", "earth", "dark", "summer"],
+    "colors": ["#0B1D13", "#1B4332", "#40916C", "#95D5B2"],
+    "likes": 30400
+  },
+  {
+    "id": "ch-38",
+    "code": "1e2b1a384e2d6f8a53c5d8a4",
+    "name": "Deep Mossy Forest",
+    "category": "Nature",
+    "tags": ["nature", "green", "sage", "earth", "fall", "wood"],
+    "colors": ["#1E2B1A", "#384E2D", "#6F8A53", "#C5D8A4"],
+    "likes": 27600
+  },
+  {
+    "id": "ch-39",
+    "code": "e0a96d77503b2d2424f4ebd0",
+    "name": "Desert Sand & Clay",
+    "category": "Nature",
+    "tags": ["nature", "earth", "brown", "beige", "warm", "coffee"],
+    "colors": ["#E0A96D", "#77503B", "#2D2424", "#F4EBD0"],
+    "likes": 26100
+  },
+  {
+    "id": "ch-40",
+    "code": "5412128b0000d35400f39c12",
+    "name": "Volcanic Terracotta",
+    "category": "Nature",
+    "tags": ["nature", "warm", "orange", "red", "fall", "earth"],
+    "colors": ["#541212", "#8B0000", "#D35400", "#F39C12"],
+    "likes": 24900
+  },
+  {
+    "id": "ch-41",
+    "code": "001219005f730a939694d2bd",
+    "name": "Oceanic Bioluminescence",
+    "category": "Nature",
+    "tags": ["nature", "sea", "teal", "mint", "dark", "cold"],
+    "colors": ["#001219", "#005F73", "#0A9396", "#94D2BD"],
+    "likes": 23800
+  },
+  {
+    "id": "ch-42",
+    "code": "2b41410eb1d234e4ea8ab9b5",
+    "name": "Alpine Meadow Blossom",
+    "category": "Nature",
+    "tags": ["nature", "sky", "blue", "teal", "spring", "light"],
+    "colors": ["#2B4141", "#0EB1D2", "#34E4EA", "#8AB9B5"],
+    "likes": 22600
+  },
+  {
+    "id": "ch-43",
+    "code": "2b09388a1253f23557ffcd3c",
+    "name": "Miami Vice Neon Sunset",
+    "category": "Warm",
+    "tags": ["warm", "sunset", "neon", "purple", "pink", "yellow"],
+    "colors": ["#2B0938", "#8A1253", "#F23557", "#FFCD3C"],
+    "likes": 33100
+  },
+  {
+    "id": "ch-44",
+    "code": "4a154b990000f26419f6ae2d",
+    "name": "Desert Dusk Mirage",
+    "category": "Warm",
+    "tags": ["warm", "sunset", "orange", "red", "yellow", "purple"],
+    "colors": ["#4A154B", "#990000", "#F26419", "#F6AE2D"],
+    "likes": 29400
+  },
+  {
+    "id": "ch-45",
+    "code": "481e149b3922f2613ffe7a36",
+    "name": "Golden Hour Glow",
+    "category": "Warm",
+    "tags": ["warm", "orange", "brown", "sunset", "summer", "fall"],
+    "colors": ["#481E14", "#9B3922", "#F2613F", "#FE7A36"],
+    "likes": 28100
+  },
+  {
+    "id": "ch-46",
+    "code": "3d0c11781d22c65135e39774",
+    "name": "Spiced Autumn Cider",
+    "category": "Warm",
+    "tags": ["warm", "fall", "brown", "maroon", "peach", "coffee"],
+    "colors": ["#3D0C11", "#781D22", "#C65135", "#E39774"],
+    "likes": 25900
+  },
+  {
+    "id": "ch-47",
+    "code": "200000660000b30000ff4d4d",
+    "name": "Ruby Garnet Flame",
+    "category": "Warm",
+    "tags": ["warm", "red", "maroon", "dark", "gradient", "energy"],
+    "colors": ["#200000", "#660000", "#B30000", "#FF4D4D"],
+    "likes": 24700
+  },
+  {
+    "id": "ch-48",
+    "code": "1f0318e01a4ff15946f9c22e",
+    "name": "Solar Flare Burst",
+    "category": "Warm",
+    "tags": ["warm", "summer", "pink", "orange", "yellow", "happy"],
+    "colors": ["#1F0318", "#E01A4F", "#F15946", "#F9C22E"],
+    "likes": 23500
+  },
+  {
+    "id": "ch-49",
+    "code": "0a192f172a45303c5564ffda",
+    "name": "Arctic Ice Glacier",
+    "category": "Cold",
+    "tags": ["cold", "winter", "navy", "teal", "mint", "dark"],
+    "colors": ["#0A192F", "#172A45", "#303C55", "#64FFDA"],
+    "likes": 32600
+  },
+  {
+    "id": "ch-50",
+    "code": "04071a007f5f7b2fbe00d4ff",
+    "name": "Aurora Borealis Veil",
+    "category": "Cold",
+    "tags": ["cold", "space", "night", "teal", "purple", "cyan"],
+    "colors": ["#04071A", "#007F5F", "#7B2FBE", "#00D4FF"],
+    "likes": 29800
+  },
+  {
+    "id": "ch-51",
+    "code": "dbe2ef3f72af112d4e041c32",
+    "name": "Corporate Oceanic Slate",
+    "category": "Cold",
+    "tags": ["cold", "blue", "navy", "light", "business", "minimal"],
+    "colors": ["#DBE2EF", "#3F72AF", "#112D4E", "#041C32"],
+    "likes": 28700
+  },
+  {
+    "id": "ch-52",
+    "code": "e0f4ff87c4ff39a7ff0078aa",
+    "name": "Crystal Clear Lagoon",
+    "category": "Cold",
+    "tags": ["cold", "sky", "sea", "blue", "summer", "light"],
+    "colors": ["#E0F4FF", "#87C4FF", "#39A7FF", "#0078AA"],
+    "likes": 26400
+  },
+  {
+    "id": "ch-53",
+    "code": "f7d060ff6d6098d8aaffffff",
+    "name": "Tropical Fruit Smoothie",
+    "category": "Happy",
+    "tags": ["happy", "summer", "yellow", "orange", "mint", "white", "kids"],
+    "colors": ["#F7D060", "#FF6D60", "#98D8AA", "#FFFFFF"],
+    "likes": 31500
+  },
+  {
+    "id": "ch-54",
+    "code": "ffe15dff9379f3818aff5f7e",
+    "name": "Carnival Sunset Pop",
+    "category": "Happy",
+    "tags": ["happy", "kids", "pink", "yellow", "peach", "rainbow"],
+    "colors": ["#FFE15D", "#FF9379", "#F3818A", "#FF5F7E"],
+    "likes": 28300
+  },
+  {
+    "id": "ch-55",
+    "code": "e8d5c4ffb7b2ff9aa2e2f0d9",
+    "name": "Cozy Autumn Knitwear",
+    "category": "Fall",
+    "tags": ["fall", "vintage", "peach", "cream", "sage", "warm"],
+    "colors": ["#E8D5C4", "#FFB7B2", "#FF9AA2", "#E2F0D9"],
+    "likes": 27200
+  },
+  {
+    "id": "ch-56",
+    "code": "2c3e50e74c3cec8072ecf0f1",
+    "name": "Winter Frostbite & Berry",
+    "category": "Winter",
+    "tags": ["winter", "cold", "navy", "red", "peach", "white"],
+    "colors": ["#2C3E50", "#E74C3C", "#EC8072", "#ECF0F1"],
+    "likes": 26100
+  },
+  {
+    "id": "ch-57",
+    "code": "fdffabf7c815b8e99478e08f",
+    "name": "Spring Meadow Pollen",
+    "category": "Spring",
+    "tags": ["spring", "nature", "yellow", "green", "light", "happy"],
+    "colors": ["#FDFFAB", "#F7C815", "#B8E994", "#78E08F"],
+    "likes": 25400
+  },
+  {
+    "id": "ch-58",
+    "code": "d0e1fd7286d3443c68201a35",
+    "name": "Deep Space Nebula",
+    "category": "Space",
+    "tags": ["space", "night", "dark", "purple", "blue", "light"],
+    "colors": ["#D0E1FD", "#7286D3", "#443C68", "#201A35"],
+    "likes": 29800
+  },
+  {
+    "id": "ch-59",
+    "code": "ff4b4b2e86de54a0ff5f27cd",
+    "name": "RGB Rainbow Prism",
+    "category": "Rainbow",
+    "tags": ["rainbow", "neon", "gradient", "red", "blue", "purple"],
+    "colors": ["#FF4B4B", "#2E86DE", "#54A0FF", "#5F27CD"],
+    "likes": 27900
+  },
+  {
+    "id": "ch-60",
+    "code": "4e342e6d4c418d6e63d7ccc8",
+    "name": "Espresso Cream Cafe",
+    "category": "Coffee",
+    "tags": ["coffee", "brown", "cream", "vintage", "earth", "dark"],
+    "colors": ["#4E342E", "#6D4C41", "#8D6E63", "#D7CCC8"],
+    "likes": 28600
+  },
+  {
+    "id": "ch-61",
+    "code": "f8f4e6e6dfd8d4a3733d2b1f",
+    "name": "Alabaster Silk & Mahogany",
+    "category": "Wedding",
+    "tags": ["wedding", "gold", "cream", "white", "brown", "luxury"],
+    "colors": ["#F8F4E6", "#E6DFD8", "#D4A373", "#3D2B1F"],
+    "likes": 29100
+  },
+  {
+    "id": "ch-62",
+    "code": "1b43322d6a4fc1121fe76f51",
+    "name": "Evergreen Noel Christmas",
+    "category": "Christmas",
+    "tags": ["christmas", "winter", "green", "red", "orange", "holiday"],
+    "colors": ["#1B4332", "#2D6A4F", "#C1121F", "#E76F51"],
+    "likes": 30200
+  },
+  {
+    "id": "ch-63",
+    "code": "0d0d0dff6f00ff8f001a1a1a",
+    "name": "Jack-O'-Lantern Spooky",
+    "category": "Halloween",
+    "tags": ["halloween", "dark", "orange", "black", "night", "warm"],
+    "colors": ["#0D0D0D", "#FF6F00", "#FF8F00", "#1A1A1A"],
+    "likes": 31400
+  }
+]

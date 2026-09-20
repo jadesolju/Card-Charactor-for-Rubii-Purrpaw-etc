@@ -86,3 +86,12 @@
 | 48 | **Mustard & Indigo Retro** | ![#E8A87C](https://img.shields.io/badge/-E8A87C-E8A87C?style=flat-square) ![#C38D9E](https://img.shields.io/badge/-C38D9E-C38D9E?style=flat-square) ![#E27D60](https://img.shields.io/badge/-E27D60-E27D60?style=flat-square) ![#41B3A3](https://img.shields.io/badge/-41B3A3-41B3A3?style=flat-square) | `#E8A87C` `#C38D9E` `#E27D60` `#41B3A3` | 1970s warm retro illustration vibe |
 | 49 | **Emerald & Gold** | ![#064E3B](https://img.shields.io/badge/-064E3B-064E3B?style=flat-square) ![#F59E0B](https://img.shields.io/badge/-F59E0B-F59E0B?style=flat-square) ![#F3F4F6](https://img.shields.io/badge/-F3F4F6-F3F4F6?style=flat-square) ![#111827](https://img.shields.io/badge/-111827-111827?style=flat-square) | `#064E3B` `#F59E0B` `#F3F4F6` `#111827` | High-end boutique, luxury jewelry |
 | 50 | **Vintage Matcha Café** | ![#FFF5D7](https://img.shields.io/badge/-FFF5D7-FFF5D7?style=flat-square) ![#A7F3D0](https://img.shields.io/badge/-A7F3D0-A7F3D0?style=flat-square) ![#065F46](https://img.shields.io/badge/-065F46-065F46?style=flat-square) ![#781A44](https://img.shields.io/badge/-781A44-781A44?style=flat-square) | `#FFF5D7` `#A7F3D0` `#065F46` `#781A44` | Aesthetic match-cafe, trendy editorial |
+
+---
+
+## 💾 Color Hunt JSON Database & Live Loading
+คลังข้อมูลชุดสีทั้งหมดถูกจัดเก็บไว้ในรูปแบบ JSON เพื่อให้ AI และ Web Application สามารถโหลดใช้งานได้แบบ Dynamic:
+- [colorhunt_palettes.json](file:///c:/Users/Mojor/Documents/สำหรับเริ่มต้นสร้างการ์ด/data/json/colorhunt_palettes.json): รวบรวมชุดสียอดนิยมกว่า 63+ ชุดสี พร้อมรหัส 24-character code, หมวดหมู่ Color Hunt Collection และจำนวน Likes
+- [colorhunt_tags.json](file:///c:/Users/Mojor/Documents/สำหรับเริ่มต้นสร้างการ์ด/data/json/colorhunt_tags.json): รวบรวมแท็กสีหลัก 18 สี และแท็กคอลเลกชัน 32 หมวดหมู่ พร้อม Alternative Search Keywords สำหรับระบบค้นหา
+- โหลดเข้า [index.html](file:///c:/Users/Mojor/Documents/สำหรับเริ่มต้นสร้างการ์ด/index.html) อัตโนมัติผ่าน `loadColorHuntJson()` พร้อมระบบ Fallback
+
