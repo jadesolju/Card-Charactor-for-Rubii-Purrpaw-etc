@@ -54,6 +54,42 @@
 
 ---
 
+## 💻 วิธีติดตั้งและรันด้วย PowerShell (PowerShell Quickstart)
+
+สำหรับผู้ใช้งาน Windows และ PowerShell สามารถโคลนโปรเจกต์ เปิดหน้าเว็บ Studio และทดสอบการ์ดได้ทันทีด้วยชุดคำสั่งต่อไปนี้:
+
+### 1. โคลน Repository และเข้าสู่โฟลเดอร์
+```powershell
+git clone https://github.com/jadesolju/Card-Charactor-for-Rubii-Purrpaw-etc.git
+cd Card-Charactor-for-Rubii-Purrpaw-etc
+```
+
+### 2. เปิดหน้าเว็บ Studio และเครื่องมือพรีวิวการ์ด
+```powershell
+# เปิดหน้าเว็บ Web Studio หลักในเบราว์เซอร์
+Start-Process index.html
+
+# หรือเปิดเครื่องมือพรีวิวหน้าจอมือถือจำลอง
+Start-Process tools/card_previewer.html
+```
+
+### 3. คัดลอก System Prompt V2.2.7 เข้า Clipboard ทันที (One-Liner)
+```powershell
+Get-Content -Raw .\standalone\rubii_architect_v2.2.7_standalone.txt | Set-Clipboard
+Write-Host "[OK] คัดลอก Prompt V2.2.7 ลง Clipboard เรียบร้อยแล้ว!" -ForegroundColor Cyan
+```
+
+### 4. ทางเลือกเสริม: รัน Local HTTP Server
+```powershell
+# ผ่าน Python:
+python -m http.server 8080
+
+# ผ่าน Node.js (npx):
+npx serve .
+```
+
+---
+
 ## 🕹️ ตารางคำสั่งลัดควบคุม AI (Slash Commands)
 
 | คำสั่ง | ผลลัพธ์และการทำงาน |

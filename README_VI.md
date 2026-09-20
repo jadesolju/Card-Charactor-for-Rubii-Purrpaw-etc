@@ -54,6 +54,42 @@ Không cần cài đặt môi trường hay viết mã, chỉ cần tải tệp 
 
 ---
 
+## 💻 Hướng dẫn cài đặt & chạy bằng PowerShell (PowerShell Quickstart)
+
+Người dùng Windows và PowerShell có thể tải dự án, mở Web Studio và xem trước thẻ trực tiếp bằng các lệnh sau:
+
+### 1. Sao chép kho lưu trữ và chuyển vào thư mục
+```powershell
+git clone https://github.com/jadesolju/Card-Charactor-for-Rubii-Purrpaw-etc.git
+cd Card-Charactor-for-Rubii-Purrpaw-etc
+```
+
+### 2. Mở Web Studio và công cụ xem trước trên di động
+```powershell
+# Mở Web Studio trên trình duyệt mặc định
+Start-Process index.html
+
+# Mở trình xem trước mô phỏng giao diện di động
+Start-Process tools/card_previewer.html
+```
+
+### 3. Sao chép System Prompt V2.2.7 vào bộ nhớ tạm ngay lập tức (PowerShell One-Liner)
+```powershell
+Get-Content -Raw .\standalone\rubii_architect_v2.2.7_standalone.txt | Set-Clipboard
+Write-Host "[OK] Đã sao chép prompt V2.2.7 vào Clipboard!" -ForegroundColor Cyan
+```
+
+### 4. Tùy chọn: Chạy máy chủ HTTP cục bộ
+```powershell
+# Sử dụng Python:
+python -m http.server 8080
+
+# Sử dụng Node.js (npx):
+npx serve .
+```
+
+---
+
 ## 🕹️ Bảng lệnh điều khiển AI (Slash Commands)
 
 | Lệnh | Chức năng và cách thức hoạt động |

@@ -54,6 +54,42 @@
 
 ---
 
+## 💻 PowerShell 安装与本地运行指南 (PowerShell Quickstart)
+
+Windows 与 PowerShell 用户可以通过以下命令快速克隆项目并在本地启动 Studio 和实时预览器：
+
+### 1. 克隆仓库并进入目录
+```powershell
+git clone https://github.com/jadesolju/Card-Charactor-for-Rubii-Purrpaw-etc.git
+cd Card-Charactor-for-Rubii-Purrpaw-etc
+```
+
+### 2. 启动本地 Web Studio 与手机预览器
+```powershell
+# 在默认浏览器中直接打开 Web Studio
+Start-Process index.html
+
+# 打开移动端模拟实时预览器
+Start-Process tools/card_previewer.html
+```
+
+### 3. 一键复制 V2.2.7 系统提示词到剪贴板 (PowerShell One-Liner)
+```powershell
+Get-Content -Raw .\standalone\rubii_architect_v2.2.7_standalone.txt | Set-Clipboard
+Write-Host "[OK] 已成功复制 V2.2.7 提示词到剪贴板！" -ForegroundColor Cyan
+```
+
+### 4. 可选：启动本地 HTTP 服务器
+```powershell
+# 使用 Python:
+python -m http.server 8080
+
+# 使用 Node.js (npx):
+npx serve .
+```
+
+---
+
 ## 🕹️ 斜杠控制指令 (Slash Commands)
 
 | 指令 | 功能与运行机制 |

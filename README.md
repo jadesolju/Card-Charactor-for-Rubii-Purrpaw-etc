@@ -51,6 +51,42 @@ No coding or repository setup required! Just grab the standalone file:
 
 ---
 
+## 💻 PowerShell Installation & Local Execution Guide
+
+For Windows and PowerShell users, you can clone the repository, launch the local Web Studio, and preview cards directly with these native commands:
+
+### 1. Clone & Navigate to Repository
+```powershell
+git clone https://github.com/jadesolju/Card-Charactor-for-Rubii-Purrpaw-etc.git
+cd Card-Charactor-for-Rubii-Purrpaw-etc
+```
+
+### 2. Launch Local Web Studio & Live Previewer
+```powershell
+# Open Web Studio directly in default browser
+Start-Process index.html
+
+# Open Live Mobile Viewport Previewer
+Start-Process tools/card_previewer.html
+```
+
+### 3. Copy Standalone Prompt Directly to Clipboard (PowerShell One-Liner)
+```powershell
+Get-Content -Raw .\standalone\rubii_architect_v2.2.7_standalone.txt | Set-Clipboard
+Write-Host "[OK] Rubii Architect V2.2.7 Prompt copied to clipboard!" -ForegroundColor Cyan
+```
+
+### 4. Optional: Run Local HTTP Server
+```powershell
+# Using Python:
+python -m http.server 8080
+
+# Using Node.js (npx):
+npx serve .
+```
+
+---
+
 ## 🕹️ Slash Commands Gateways
 
 Control the AI's behavior dynamically with slash commands:
