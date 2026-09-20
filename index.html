@@ -594,13 +594,42 @@
     <a href="#" class="brand">
       <div class="brand-icon">
         <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="36" height="36" rx="8" fill="url(#brandGrad)" />
-          <path d="M18 6L28 11V19C28 24.5 23.7 29.6 18 31C12.3 29.6 8 24.5 8 19V11L18 6Z" stroke="#00f0ff" stroke-width="1.5" fill="rgba(0,0,0,0.4)" />
-          <path d="M17 11L11 20H17L16 26L24 16H18L19 11H17Z" fill="#ff007f" />
+          <rect width="36" height="36" rx="10" fill="url(#catBgGrad)" />
+          <!-- Cat Ears -->
+          <polygon points="8,17 12,6 18,13" fill="url(#catEarGrad)" />
+          <polygon points="28,17 24,6 18,13" fill="url(#catEarGrad)" />
+          <!-- Inner Ears -->
+          <polygon points="10,15 13,8 16,13" fill="#ff79c6" opacity="0.85" />
+          <polygon points="26,15 23,8 20,13" fill="#ff79c6" opacity="0.85" />
+          <!-- Cat Head Base -->
+          <ellipse cx="18" cy="21" rx="11.5" ry="9.5" fill="url(#catHeadGrad)" stroke="#00f0ff" stroke-width="1.2" />
+          <!-- Cat Eyes -->
+          <ellipse cx="13.5" cy="19.5" rx="2" ry="2.6" fill="#00f0ff" />
+          <circle cx="14.2" cy="18.5" r="0.9" fill="#ffffff" />
+          <ellipse cx="22.5" cy="19.5" rx="2" ry="2.6" fill="#00f0ff" />
+          <circle cx="23.2" cy="18.5" r="0.9" fill="#ffffff" />
+          <!-- Cat Nose -->
+          <polygon points="18,22.5 16.8,21.2 19.2,21.2" fill="#ff79c6" />
+          <!-- Cat Mouth -->
+          <path d="M16.2 23.5 C16.8 24.5, 18 24.5, 18 23.5 C18 24.5, 19.2 24.5, 19.8 23.5" stroke="#ff79c6" stroke-width="1.2" stroke-linecap="round" fill="none" />
+          <!-- Cat Whiskers -->
+          <line x1="6.5" y1="20" x2="11.5" y2="21" stroke="#00f0ff" stroke-width="1.1" stroke-linecap="round" opacity="0.85" />
+          <line x1="5.5" y1="23" x2="11.5" y2="23" stroke="#00f0ff" stroke-width="1.1" stroke-linecap="round" opacity="0.85" />
+          <line x1="29.5" y1="20" x2="24.5" y2="21" stroke="#00f0ff" stroke-width="1.1" stroke-linecap="round" opacity="0.85" />
+          <line x1="30.5" y1="23" x2="24.5" y2="23" stroke="#00f0ff" stroke-width="1.1" stroke-linecap="round" opacity="0.85" />
+          <!-- Gradients -->
           <defs>
-            <linearGradient id="brandGrad" x1="0" y1="0" x2="36" y2="36">
-              <stop stop-color="#141829" />
-              <stop offset="1" stop-color="#0a0c16" />
+            <linearGradient id="catBgGrad" x1="0" y1="0" x2="36" y2="36">
+              <stop stop-color="#1b1434" />
+              <stop offset="1" stop-color="#0b0818" />
+            </linearGradient>
+            <linearGradient id="catEarGrad" x1="8" y1="6" x2="28" y2="17">
+              <stop stop-color="#ff007f" />
+              <stop offset="1" stop-color="#7928ca" />
+            </linearGradient>
+            <linearGradient id="catHeadGrad" x1="6.5" y1="11.5" x2="29.5" y2="30.5">
+              <stop stop-color="#241944" />
+              <stop offset="1" stop-color="#120c24" />
             </linearGradient>
           </defs>
         </svg>
@@ -908,7 +937,7 @@
         toast_copied: "Copied to clipboard!"
       },
       th: {
-        brand_title: "รูบี้ การ์ด อาร์คิเทกต์",
+        brand_title: "การ์ดตัวละคร",
         brand_subtitle: "V2.2.7 Express — สตูดิโอพรีวิวการ์ดมือถือสด SVG & รองรับทุกธีม",
         nav_studio: "📱 สตูดิโอพรีวิว",
         nav_palettes: "🎨 คลังสี Color Hunt 60+",
