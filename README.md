@@ -18,6 +18,11 @@
 
 </div>
 
+> [!TIP]
+> **1-Click Instant Run (No downloads or file copying needed):**
+> 🔗 **[Chat directly with the AI Card Architect via Google Gemini Gem](https://gemini.google.com/gem/1Tek_tvjZI5r5gNlw9lRDlw0tPnqNPjTx?usp=sharing)**
+> *(Click the link and type `/turbo` followed by your character concept to generate a card instantly)*
+
 ---
 
 ## 🌟 Highlights & What is Rubii Card Architect?
@@ -37,7 +42,7 @@ By simply inputting a character's story, personality, and vibe, the AI instantly
 ### For Standard Users (ChatGPT / Claude / Gemini)
 No coding or repository setup required! Just grab the standalone file:
 
-1. Download [`standalone/rubii_architect_v2.2.7_standalone.md`](standalone/rubii_architect_v2.2.7_standalone.md).
+1. Download [`standalone/rubii_architect_v2.2.7_standalone_en.md`](standalone/rubii_architect_v2.2.7_standalone_en.md) (or [🇹🇭 Thai Edition](standalone/rubii_architect_v2.2.7_standalone.md)).
 2. Attach or copy-paste its entire contents into your chat window (or Custom GPT / Gemini Gem / Claude Project system instructions).
 3. Type:
    ```text

@@ -30,6 +30,7 @@
 **Rubii Card Architect v2.2.7** คือระบบ System Prompt และเอนจิน Prompt Engineering ขั้นสูง ที่เปลี่ยนโมเดล AI ชั้นนำ (**Google Gemini, OpenAI ChatGPT / Custom GPTs, Anthropic Claude, DeepSeek**) ให้กลายเป็นนักออกแบบ UI/UX ระดับมือโปรสำหรับหน้าจอมือถือ
 
 เพียงแค่คุณป้อนพล็อตเรื่อง ข้อมูลตัวละคร หรืออารมณ์ของเรื่อง AI จะทำการวิเคราะห์และส่งมอบ:
+
 1. **Character Dossier:** สรุปย่อข้อมูลตัวละครแบบกระชับ (คุมสัดส่วนไม่เกิน 3 บรรทัดต่อส่วน)
 2. **Design Blueprint:** พิมพ์เขียวชุดสีนีออน ฟอนต์ และเอฟเฟกต์
 3. **Production Code:** ซอร์สโค้ด HTML/CSS แบบ Zero-JS ฉบับบีบอัด (Minified) พร้อมคัดลอกไปแปะในแอป Rubii ทันที
@@ -43,11 +44,13 @@
 ## 🚀 วิธีใช้งานด่วนแบบไฟล์เดียวจบ (Single-File Drop-in)
 
 ### สำหรับผู้ใช้งานทั่วไป (ChatGPT / Claude / Gemini)
+
 ไม่ต้องเขียนโค้ด ไม่ต้องติดตั้งโปรแกรม เพียงดาวน์โหลดไฟล์สำเร็จรูป:
 
-1. ดาวน์โหลดไฟล์ [`standalone/rubii_architect_v2.2.7_standalone.md`](standalone/rubii_architect_v2.2.7_standalone.md)
+1. ดาวน์โหลดไฟล์ [`standalone/rubii_architect_v2.2.7_standalone.md`](standalone/rubii_architect_v2.2.7_standalone.md) (หรือ [🇬🇧 Global English Edition](standalone/rubii_architect_v2.2.7_standalone_en.md))
 2. ลากไฟล์ไปวางในหน้าต่างแชต หรือคัดลอกเนื้อหาทั้งหมดไปวางในช่อง System Instructions (หรือ Custom GPT / Gemini Gem / Claude Project)
 3. พิมพ์สั่งงานได้ทันที เช่น:
+
    ```text
    /turbo
    ชื่อตัวละคร: Valentina Cross
@@ -55,6 +58,7 @@
    นิสัย: สุขุม เยือกเย็น ควบคุมตลาดมืด Sector 09
    สีที่ชอบ: ดำ นีออนชมพู (#ff0055) และนีออนไซแอน (#00ffff)
    ```
+
 4. AI จะคายโค้ด HTML/CSS พร้อมพิมพ์เขียวออกมาให้คุณทันทีใน 1 ข้อความ!
 
 ---
@@ -64,6 +68,7 @@
 Rubii Card Architect มาพร้อมกับเครื่องมือ CLI บน PowerShell (`tools/rubii.ps1`) สำหรับคัดลอก Prompt สั่งการพรีวิว และเชื่อมต่อกับ AI Coding Agent ได้โดยตรงจาก Terminal:
 
 ### 1. ติดตั้งคำสั่ง `rubii` ลงใน PowerShell Profile
+
 ```powershell
 # รันตัวติดตั้งอัตโนมัติเพื่อเปิดใช้คำสั่ง 'rubii' จากทุกโฟลเดอร์
 .\tools\install_cli.ps1
@@ -73,6 +78,7 @@ Rubii Card Architect มาพร้อมกับเครื่องมื�
 ```
 
 ### 2. คำสั่งลัด CLI สำหรับใช้งานทั่วไปและ Agent
+
 ```powershell
 # คัดลอก System Prompt V2.2.7 เข้า Clipboard ทันทีสำหรับวางในแชต AI
 rubii --copy
@@ -122,20 +128,20 @@ rubii --check
 ## 📦 คลังข้อมูล Master Data และพรีเซ็ต Cross-Over
 
 * **JSON Data (`data/json/`):**
-  - [`color_palettes_50.json`](data/json/color_palettes_50.json) — คลัง 50 ชุดสี Hex Codes
-  - [`typography_50.json`](data/json/typography_50.json) — คลัง 50 คู่ฟอนต์ไทย/อังกฤษ
-  - [`theme_components.json`](data/json/theme_components.json) — คลังเอฟเฟกต์และคอมโพเนนต์
+  * [`color_palettes_50.json`](data/json/color_palettes_50.json) — คลัง 50 ชุดสี Hex Codes
+  * [`typography_50.json`](data/json/typography_50.json) — คลัง 50 คู่ฟอนต์ไทย/อังกฤษ
+  * [`theme_components.json`](data/json/theme_components.json) — คลังเอฟเฟกต์และคอมโพเนนต์
 * **YAML Data (`data/yaml/`):**
-  - [`color_palettes_50.yaml`](data/yaml/color_palettes_50.yaml)
-  - [`typography_50.yaml`](data/yaml/typography_50.yaml)
-  - [`gem_plugin_config.yaml`](data/yaml/gem_plugin_config.yaml) — คอนฟิกสำหรับ Gem / Custom Agent
+  * [`color_palettes_50.yaml`](data/yaml/color_palettes_50.yaml)
+  * [`typography_50.yaml`](data/yaml/typography_50.yaml)
+  * [`gem_plugin_config.yaml`](data/yaml/gem_plugin_config.yaml) — คอนฟิกสำหรับ Gem / Custom Agent
 * **Cross-Over Templates (`templates/`):**
-  - [`template_cyber_gothic.md`](templates/template_cyber_gothic.md) *(Cyberpunk × Gothic Victorian)*
-  - [`template_arcane_academia.md`](templates/template_arcane_academia.md) *(Dark Academia × Arcane Mage)*
-  - [`template_pastel_glitch.md`](templates/template_pastel_glitch.md) *(Pastel Kawaii × Vaporwave Glitch)*
-  - [`template_solar_steampunk.md`](templates/template_solar_steampunk.md) *(Solarpunk × Victorian Steampunk)*
-  - [`template_divine_occult.md`](templates/template_divine_occult.md) *(Celestial Light × Occult Manuscript)*
-  - [`template_quiet_luxury_noir.md`](templates/template_quiet_luxury_noir.md) *(Quiet Wealth × Film Noir)*
+  * [`template_cyber_gothic.md`](templates/template_cyber_gothic.md) *(Cyberpunk × Gothic Victorian)*
+  * [`template_arcane_academia.md`](templates/template_arcane_academia.md) *(Dark Academia × Arcane Mage)*
+  * [`template_pastel_glitch.md`](templates/template_pastel_glitch.md) *(Pastel Kawaii × Vaporwave Glitch)*
+  * [`template_solar_steampunk.md`](templates/template_solar_steampunk.md) *(Solarpunk × Victorian Steampunk)*
+  * [`template_divine_occult.md`](templates/template_divine_occult.md) *(Celestial Light × Occult Manuscript)*
+  * [`template_quiet_luxury_noir.md`](templates/template_quiet_luxury_noir.md) *(Quiet Wealth × Film Noir)*
 
 ---
 
@@ -146,6 +152,7 @@ rubii --check
 ---
 
 ## 🔌 คู่มือการติดตั้งบนแพลตฟอร์ม AI
+
 * [คู่มือสร้าง Google Gemini Gem](integrations/gemini_gem_instructions.md)
 * [คู่มือสร้าง OpenAI Custom GPT](integrations/chatgpt_custom_gpt.md)
 * [คู่มือสร้าง Anthropic Claude Project](integrations/claude_project_setup.md)
@@ -153,4 +160,5 @@ rubii --check
 ---
 
 ## 📄 ใบอนุญาต (License)
+
 เผยแพร่ภายใต้ใบอนุญาต [MIT License](LICENSE) พัฒนาด้วย ❤️ โดย Ninninmera & Contributors

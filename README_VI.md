@@ -18,6 +18,11 @@
 
 </div>
 
+> [!TIP]
+> **Trải nghiệm ngay trong 1 cú nhấp chuột (Không cần tải xuống hay sao chép tệp):**
+> 🔗 **[Trò chuyện trực tiếp với AI Card Architect qua Google Gemini Gem](https://gemini.google.com/gem/1Tek_tvjZI5r5gNlw9lRDlw0tPnqNPjTx?usp=sharing)**
+> *(Nhấp vào liên kết và gõ `/turbo` cùng ý tưởng nhân vật để tạo thẻ ngay lập tức)*
+
 ---
 
 ## 🌟 Giới thiệu Rubii Card Architect là gì?
@@ -40,7 +45,7 @@ Chỉ cần nhập cốt truyện, tính cách và bối cảnh của nhân vậ
 ### Dành cho người dùng phổ thông (ChatGPT / Claude / Gemini)
 Không cần cài đặt môi trường hay viết mã, chỉ cần tải tệp độc lập:
 
-1. Tải tệp [`standalone/rubii_architect_v2.2.7_standalone.md`](standalone/rubii_architect_v2.2.7_standalone.md).
+1. Tải tệp [`standalone/rubii_architect_v2.2.7_standalone_en.md`](standalone/rubii_architect_v2.2.7_standalone_en.md) (Bản tiếng Anh quốc tế) hoặc [`standalone/rubii_architect_v2.2.7_standalone.md`](standalone/rubii_architect_v2.2.7_standalone.md) (Bản gốc tiếng Thái).
 2. Kéo thả tệp vào khung chat AI hoặc sao chép toàn bộ nội dung vào mục System Instructions (hoặc Custom GPT / Gemini Gem / Claude Project).
 3. Gõ lệnh:
    ```text

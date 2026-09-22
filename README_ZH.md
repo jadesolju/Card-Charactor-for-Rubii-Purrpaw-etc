@@ -18,6 +18,11 @@
 
 </div>
 
+> [!TIP]
+> **一键极速体验（无需下载，无需复制代码）：**
+> 🔗 **[直接通过 Google Gemini Gem 在线体验 AI 角色卡片架构师](https://gemini.google.com/gem/1Tek_tvjZI5r5gNlw9lRDlw0tPnqNPjTx?usp=sharing)**
+> *(点击链接后输入 `/turbo` 及角色设定即可秒速生成卡片)*
+
 ---
 
 ## 🌟 项目简介 (What is Rubii Card Architect?)
@@ -40,7 +45,7 @@
 ### 普通用户（ChatGPT / Claude / Gemini）
 无需任何编程基础与环境配置，只需下载单文件：
 
-1. 下载 [`standalone/rubii_architect_v2.2.7_standalone.md`](standalone/rubii_architect_v2.2.7_standalone.md)。
+1. 下载 [`standalone/rubii_architect_v2.2.7_standalone_en.md`](standalone/rubii_architect_v2.2.7_standalone_en.md)（国际英文版）或 [`standalone/rubii_architect_v2.2.7_standalone.md`](standalone/rubii_architect_v2.2.7_standalone.md)（泰语原版）。
 2. 将文件直接拖入 AI 对话框，或将全部内容复制到 Custom GPT / Gemini Gem / Claude Project 的系统提示词中。
 3. 发送指令：
    ```text
