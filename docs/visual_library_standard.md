@@ -4,10 +4,11 @@
 
 ## ขอบเขตข้อมูล
 
-- **Palette** กำหนดชุดสีและบทบาทของแต่ละสี อยู่ใน `data/json/color_palettes_50.json`
+- **Palette** กำหนดชุดสีและบทบาทของแต่ละสี อยู่ใน `data/json/color_palettes_100.json`
 - **Typography** กำหนดคู่ฟอนต์และอารมณ์การใช้งาน อยู่ใน `data/json/typography_50.json`
 - **Themeplate** กำหนดทิศทางภาพรวมและตัวอย่างโครงหน้า อยู่ใน `data/json/theme_extended.json` และ `templates/`
 - **Compound** กำหนดหน่วยตกแต่งหรือปฏิสัมพันธ์ที่นำไปประกอบ Themeplate ได้ อยู่ใน `data/json/compound_catalog_v1.json`
+- **Component Reference Index** รวมไอเดียชิ้นส่วนการ์ด 100 รายการ อยู่ใน `data/json/compound_catalog_100.json` และ `data/markdown/compounds_100_database.md` ใช้ค้นหาแนวทางเบื้องต้น ไม่ใช่ Compound record ตาม schema
 - **Themeplate Skeleton** สำหรับเริ่มชุดใหม่โดยใช้ placeholder อยู่ใน `templates/themeplate_compound_skeleton.md`
 
 Themeplate อ้างอิงรายการด้วย ID ไม่คัดลอกข้อมูลส่วนตัวหรือข้อมูลตัวละครลงในคลังกลาง ตัวอย่างเนื้อหาทุกชิ้นใช้ช่องแทน เช่น `{{character_name}}`, `{{short_bio}}` และ `{{profile_slot}}`
@@ -15,6 +16,8 @@ Themeplate อ้างอิงรายการด้วย ID ไม่ค�
 ## รูปแบบ Compound
 
 แต่ละ Compound ต้องมี ID ที่ไม่เปลี่ยนตามชื่อแสดงผล เช่น `frame.neon-corner-brackets` และชื่อเรียกใช้ที่คัดลอกได้ เช่น `@compound/frame/neon-corner-brackets` ทุก record ต้องระบุหมวด, สรุปการใช้งาน, slot เป้าหมาย, recipe, token สีที่ต้องใช้, ระดับ motion/performance และ SVG preview ภายในโปรเจกต์
+
+ปัจจุบัน `compound_catalog_v1.json` มี Compound ที่ทำตามสัญญาข้อมูลและ SVG preview ครบ 50 รายการ ส่วน `compound_catalog_100.json` เป็นดัชนีอ้างอิงชิ้นส่วน 100 รายการซึ่งมีคำอธิบาย, slot และ tag แต่ยังไม่มี recipe, token contract, motion/performance และ SVG symbol ครบตามรูปแบบ Compound จึงนับแยกจากคลัง canonical จนกว่าจะย้ายและตรวจแต่ละ record ตาม schema
 
 SVG preview ใช้ symbol จาก `data/svg/compound_preview_sprite.svg` โดย `svgSymbol` ต้องตรงกับ ID ในไฟล์นั้น ห้ามอ้างรูปจาก URL ภายนอก และห้ามใส่รูปหรือข้อมูลจากการ์ดตัวอย่างส่วนตัวใน Themeplate หรือ fixture
 
@@ -29,8 +32,8 @@ SVG preview ใช้ symbol จาก `data/svg/compound_preview_sprite.svg` �
 
 ## รอบเพิ่มข้อมูล
 
-1. รุ่นตั้งต้น: 50 Compound ใน 6 หมวด เพื่อให้มีชิ้นส่วนพื้นฐานสำหรับ Themeplate หลากหลายแนว
-2. รอบถัดไป: 100 Compound หลังตรวจซ้ำเรื่องชื่อ, ความหมาย, token และการซ้อนเอฟเฟกต์
+1. รุ่นตั้งต้น: 50 Compound ใน 6 หมวด เพื่อให้มีชิ้นส่วนพื้นฐานสำหรับ Themeplate หลากหลายแนว (เสร็จแล้ว)
+2. รอบถัดไป: เพิ่มเป็น 100 Compound หลังย้ายรายการจาก Component Reference Index และตรวจ schema, token, SVG preview และการซ้อนเอฟเฟกต์
 3. รอบขยาย: 250 Compound เพิ่มตระกูลย่อยและ variant ที่มีความแตกต่างในการใช้งานจริง
 4. ระยะยาว: 500+ Compound พร้อมตัวกรอง, ข้อมูล compatibility และการระบุระดับประสิทธิภาพ
 

@@ -416,7 +416,8 @@
     .palette-header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      gap: 6px;
     }
     .palette-name {
       font-weight: 600;
@@ -425,6 +426,8 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
     .palette-name svg { width: 12px; height: 12px; fill: var(--accent-gold); }
     .palette-category {
@@ -459,6 +462,7 @@
     .swatch:hover {
       flex: 1.6;
     }
+    .color-swatches.dense .swatch { font-size: 0; }
     .palette-footer {
       display: flex;
       justify-content: space-between;
@@ -648,7 +652,7 @@
 
       <button class="nav-btn" onclick="switchTab('palettes')" data-i18n="nav_palettes">
         <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
-        Color Hunt 60+
+        Palette Library 100
       </button>
 
       <button class="nav-btn" onclick="switchTab('typography')" data-i18n="nav_typography">
@@ -788,12 +792,23 @@
         <div class="panel-header">
           <div class="panel-title">
             <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
-            <span data-i18n="palettes_title">COLOR HUNT POPULAR PALETTES (60+ CURATED COLOR SYSTEMS)</span>
+            <span data-i18n="palettes_title">PALETTE LIBRARY (100 COLOR SYSTEMS)</span>
           </div>
           <div class="toolbar">
+            <select id="paletteSourceFilter" onchange="filterPalettesBySource(this.value)" aria-label="Palette collection">
+              <option value="master">Master 100 (Coolors Trending + Original)</option>
+              <option value="colorhunt">Color Hunt 63</option>
+            </select>
             <select id="paletteCategoryFilter" onchange="filterPalettesByCategory(this.value)">
               <option value="all">All Categories & Tags (ทั้งหมด)</option>
-              <optgroup label="Color Hunt Collections">
+              <optgroup label="Master Palette Categories" id="masterPaletteCategories">
+                <option value="minimal &amp; modern">Minimal &amp; Modern</option>
+                <option value="tech, saas &amp; corporate">Tech, SaaS &amp; Corporate</option>
+                <option value="dark mode &amp; cyberpunk">Dark Mode &amp; Cyberpunk</option>
+                <option value="pastel &amp; sweet">Pastel &amp; Sweet</option>
+                <option value="bold, earthy &amp; retro">Bold, Earthy &amp; Retro</option>
+              </optgroup>
+              <optgroup label="Color Hunt Collections" id="colorHuntCategories" disabled>
                 <option value="popular">Popular / Trending (ยอดนิยม)</option>
                 <option value="pastel">Pastel & Cute (พาสเทล)</option>
                 <option value="vintage">Vintage & Retro (วินเทจ)</option>
@@ -914,7 +929,7 @@
         brand_title: "RUBII CARD ARCHITECT",
         brand_subtitle: "V2.2.7 Express — Live SVG Studio & Multi-Theme Engine",
         nav_studio: "Studio Previewer",
-        nav_palettes: "Color Hunt 60+",
+        nav_palettes: "Palette Library 100",
         nav_typography: "Google Fonts Vault",
         nav_themes: "13 Themes",
         nav_standalone: "Copy Standalone",
@@ -928,7 +943,7 @@
         mobile_bound: "Zero-JS Mobile Bound: 320px – 440px",
         viewport_title: "MOBILE VIEWPORT SIMULATOR",
         width_label: "Width:",
-        palettes_title: "COLOR HUNT POPULAR PALETTES (60+ CURATED COLOR SYSTEMS)",
+        palettes_title: "PALETTE LIBRARY (100 COLOR SYSTEMS)",
         typography_title: "GOOGLE FONTS VAULT (THAI / CHINESE / VIETNAMESE / LATIN)",
         themes_title: "CROSS-OVER THEME CATALOG (13 PRESETS)",
         themes_desc: "Click any theme to load into the Studio Previewer immediately.",
@@ -940,7 +955,7 @@
         brand_title: "การ์ดตัวละคร",
         brand_subtitle: "V2.2.7 Express — สตูดิโอพรีวิวการ์ดมือถือสด SVG & รองรับทุกธีม",
         nav_studio: "สตูดิโอพรีวิว",
-        nav_palettes: "คลังสี Color Hunt 60+",
+        nav_palettes: "คลังชุดสี 100",
         nav_typography: "คลังฟอนต์ Google Fonts",
         nav_themes: "13 ธีมสำเร็จรูป",
         nav_standalone: "คัดลอก Prompt ไฟล์เดียว",
@@ -954,7 +969,7 @@
         mobile_bound: "ความกว้างมือถือ Zero-JS: 320px – 440px",
         viewport_title: "จำลองหน้าจอมือถือจริง",
         width_label: "ความกว้าง:",
-        palettes_title: "คลังชุดสียอดนิยม Color Hunt (60+ โทนสากล)",
+        palettes_title: "คลังชุดสี 100 รายการ (รวม Coolors Trending)",
         typography_title: "คลังฟอนต์ Google Fonts (ไทย / จีน / เวียดนาม / อังกฤษ)",
         themes_title: "คลังธีมลูกผสม Cross-Over (13 ธีม)",
         themes_desc: "คลิกธีมใดก็ได้เพื่อโหลดเข้าสู่สตูดิโอพรีวิวทันที",
@@ -966,7 +981,7 @@
         brand_title: "RUBII 卡片架构师",
         brand_subtitle: "V2.2.7 Express — 实时 SVG 移动端预览与多主题引擎",
         nav_studio: "工作室预览",
-        nav_palettes: "Color Hunt 热门配色 60+",
+        nav_palettes: "配色库 100",
         nav_typography: "Google 字体库",
         nav_themes: "13 款主题",
         nav_standalone: "复制单文件提示词",
@@ -980,7 +995,7 @@
         mobile_bound: "Zero-JS 移动端适配: 320px – 440px",
         viewport_title: "真实移动端视口模拟",
         width_label: "宽度:",
-        palettes_title: "Color Hunt 热门配色宝库 (60+ 顶级配色系统)",
+        palettes_title: "配色库（100 套配色）",
         typography_title: "Google 字体精选 (中文 / 泰文 / 越南文 / 英文)",
         themes_title: "跨界融合主题目录 (13 款)",
         themes_desc: "点击任意主题即可立即载入工作室进行实时预览。",
@@ -992,7 +1007,7 @@
         brand_title: "RUBII CARD ARCHITECT",
         brand_subtitle: "V2.2.7 Express — Xem trước di động trực tiếp & Đa chủ đề",
         nav_studio: "Phòng thu xem trước",
-        nav_palettes: "Bảng màu Color Hunt 60+",
+        nav_palettes: "Bảng màu 100",
         nav_typography: "Kho Google Fonts",
         nav_themes: "13 Chủ đề",
         nav_standalone: "Sao chép Prompt",
@@ -1006,7 +1021,7 @@
         mobile_bound: "Giới hạn di động Zero-JS: 320px – 440px",
         viewport_title: "MÔ PHỎNG MÀN HÌNH DI ĐỘNG",
         width_label: "Độ rộng:",
-        palettes_title: "BẢNG MÀU PHỔ BIẾN TỪ COLOR HUNT (60+ BỘ MÀU)",
+        palettes_title: "THƯ VIỆN MÀU (100 BỘ MÀU)",
         typography_title: "KHO FONT GOOGLE (TIẾNG VIỆT / THÁI / TRUNG / ANH)",
         themes_title: "DANH MỤC CHỦ ĐỀ KẾT HỢP (13 MẪU)",
         themes_desc: "Nhấp vào bất kỳ chủ đề nào để tải vào phòng thu ngay lập tức.",
@@ -1440,6 +1455,112 @@
 </div>`
     };
 
+    // MASTER_PALETTES_START
+    let masterPalettes = [
+      {"id":1,"name":"Editorial Minimalism","cat":"Minimal & Modern","tags":["white","light","orange","peach","grey","dark","editorial","minimalism","minimal","modern"],"colors":["#F0EFED","#E4DECD","#82716E","#252523"],"role":"Soft White, Stone Grey, Muted Beige, Espresso","source":""},
+      {"id":2,"name":"Nordic Soft Frost","cat":"Minimal & Modern","tags":["white","light","grey","dark","blue","navy","nordic","soft","frost","minimal","modern"],"colors":["#F3F4F6","#E5E7EB","#9CA3AF","#1F2937"],"role":"Tailwind-inspired clean look","source":""},
+      {"id":3,"name":"Quiet Luxury","cat":"Minimal & Modern","tags":["light","orange","peach","blue","black","dark","quiet","luxury","minimal","modern"],"colors":["#F7F1E3","#DCC7AA","#6B7A8F","#111827"],"role":"Premium luxury lifestyle and architecture","source":""},
+      {"id":4,"name":"Warm Sand & Slate","cat":"Minimal & Modern","tags":["light","orange","peach","blue","dark","navy","warm","sand","slate","minimal","modern"],"colors":["#FCEED1","#E1B382","#4F5F76","#12343B"],"role":"Cozy portfolio or agency website","source":""},
+      {"id":5,"name":"Intellectual Vibe","cat":"Minimal & Modern","tags":["light","blue","dark","navy","intellectual","vibe","minimal","modern"],"colors":["#F5F5FA","#B6B7D5","#5A5E9A","#23263B"],"role":"Clean, academic, and professional","source":""},
+      {"id":6,"name":"Goldifox Contrast","cat":"Minimal & Modern","tags":["white","light","orange","peach","black","dark","goldifox","contrast","minimal","modern"],"colors":["#FFFFFF","#DFD8C8","#A39274","#1A1A1A"],"role":"Pure White, Soft Wheat, Golden Wheat, Dark Gray","source":""},
+      {"id":7,"name":"Sage Minimalist","cat":"Minimal & Modern","tags":["light","yellow","beige","grey","dark","black","sage","minimalist","minimal","modern"],"colors":["#F9F8F3","#A5A78F","#4C4643","#000000"],"role":"Wellness, interior design, lifestyle","source":""},
+      {"id":8,"name":"Concrete & Coffee","cat":"Minimal & Modern","tags":["white","light","grey","black","dark","concrete","coffee","minimal","modern"],"colors":["#F2F2F2","#CFCFCF","#8C8C8C","#212121"],"role":"High-contrast industrial minimalism","source":""},
+      {"id":9,"name":"French Laundry Blue","cat":"Minimal & Modern","tags":["light","orange","peach","blue","navy","dark","french","laundry","minimal","modern"],"colors":["#FDFBF7","#C9AF98","#3A4660","#1D2731"],"role":"Warm beige paired with elegant navy blue","source":""},
+      {"id":10,"name":"Creamy Latte","cat":"Minimal & Modern","tags":["light","orange","peach","grey","dark","creamy","latte","minimal","modern"],"colors":["#FAF8F5","#E6DFD3","#B3A394","#4A3E3D"],"role":"Earthy coffee-shop vibes","source":""},
+      {"id":11,"name":"Electric Pulse","cat":"Tech, SaaS & Corporate","tags":["blue","teal","mint","black","dark","white","light","electric","pulse","tech","saas","corporate"],"colors":["#635BFF","#00E5E5","#111827","#FFFFFF"],"role":"Stripe-Blue vibe for fintech and AI","source":""},
+      {"id":12,"name":"Tailwind Horizon","cat":"Tech, SaaS & Corporate","tags":["light","blue","navy","tailwind","horizon","tech","saas","corporate"],"colors":["#EFF6FF","#3B82F6","#1D4ED8","#1E3A8A"],"role":"Standard Modern Corporate SaaS","source":""},
+      {"id":13,"name":"Algolia Clean Blue","cat":"Tech, SaaS & Corporate","tags":["light","blue","dark","navy","algolia","clean","tech","saas","corporate"],"colors":["#F2F3FF","#7C8AFF","#5468FF","#141D61"],"role":"Developer documentation & platform UI","source":""},
+      {"id":14,"name":"Cyan High-Velocity","cat":"Tech, SaaS & Corporate","tags":["light","blue","dark","navy","cyan","high","velocity","tech","saas","corporate"],"colors":["#E8FAFF","#2CC8F7","#009BCB","#00526C"],"role":"Hosting providers and Cloud systems","source":""},
+      {"id":15,"name":"Banking Mint","cat":"Tech, SaaS & Corporate","tags":["light","teal","mint","dark","red","banking","tech","saas","corporate"],"colors":["#EBF6F5","#5CBDB9","#2F4F4F","#FBE3E8"],"role":"Safe finance branding with a splash of pink","source":""},
+      {"id":16,"name":"Indigo Authority","cat":"Tech, SaaS & Corporate","tags":["light","blue","navy","indigo","authority","tech","saas","corporate"],"colors":["#EEF2FF","#818CF8","#4F46E5","#312E81"],"role":"Dashboard and analytics applications","source":""},
+      {"id":17,"name":"Finastra Amethyst","cat":"Tech, SaaS & Corporate","tags":["light","blue","finastra","amethyst","tech","saas","corporate"],"colors":["#D9D3F5","#8F7BE1","#694ED6","#493694"],"role":"Web3, Ethereum-vibe, security systems","source":""},
+      {"id":18,"name":"Double Trust Blue","cat":"Tech, SaaS & Corporate","tags":["blue","teal","mint","red","double","trust","tech","saas","corporate"],"colors":["#1561AD","#1C77AC","#1DBAB4","#FC5226"],"role":"Insurance & Law firm tech platforms","source":""},
+      {"id":19,"name":"Flexport Ocean","cat":"Tech, SaaS & Corporate","tags":["light","blue","dark","navy","flexport","ocean","tech","saas","corporate"],"colors":["#F7F9FD","#67768D","#326089","#0F2943"],"role":"Modern logistics and supply chain tech","source":""},
+      {"id":20,"name":"Precision Teal","cat":"Tech, SaaS & Corporate","tags":["light","teal","mint","green","dark","precision","tech","saas","corporate"],"colors":["#E6FCF3","#5FEB9E","#06B66C","#005E36"],"role":"Medical networks, healthtech, and green energy","source":""},
+      {"id":21,"name":"Carbon Mint","cat":"Dark Mode & Cyberpunk","tags":["grey","dark","teal","mint","black","white","light","carbon","mode","cyberpunk"],"colors":["#2D3436","#00FFC2","#0D1117","#FFFFFF"],"role":"Anthracite dashboard with neon mint glow","source":""},
+      {"id":22,"name":"Synth Wave","cat":"Dark Mode & Cyberpunk","tags":["black","dark","pink","purple","orange","brown","synth","wave","mode","cyberpunk"],"colors":["#080808","#FF2079","#431C5D","#E05915"],"role":"Absolute black, loud pink and toxic orange","source":""},
+      {"id":23,"name":"GitHub Primer Dark","cat":"Dark Mode & Cyberpunk","tags":["black","dark","blue","light","github","primer","mode","cyberpunk"],"colors":["#0D1117","#161B22","#58A6FF","#C9D1D9"],"role":"Official GitHub Dark developer layout","source":""},
+      {"id":24,"name":"Lava Core","cat":"Dark Mode & Cyberpunk","tags":["dark","blue","navy","red","orange","peach","lava","core","mode","cyberpunk"],"colors":["#1E293B","#4B6584","#FC5C65","#FF8928"],"role":"Urgency, e-sports, performance tracking","source":""},
+      {"id":25,"name":"Cyber Rose","cat":"Dark Mode & Cyberpunk","tags":["dark","blue","navy","red","light","pink","cyber","rose","mode","cyberpunk"],"colors":["#1F1E33","#5758BB","#EF5777","#F9A8D4"],"role":"Immersive consumer tech and streaming","source":""},
+      {"id":26,"name":"Deep Space Blue","cat":"Dark Mode & Cyberpunk","tags":["black","dark","blue","navy","teal","mint","deep","space","mode","cyberpunk"],"colors":["#0B132B","#1C2541","#3A506B","#5BC0BE"],"role":"Popular deep space sci-fi theme","source":""},
+      {"id":27,"name":"Acid Neon Forest","cat":"Dark Mode & Cyberpunk","tags":["dark","green","yellow","black","acid","neon","forest","mode","cyberpunk"],"colors":["#1A4D2E","#DFFF00","#111827","#59CE8F"],"role":"Eco-cyberpunk, provocative web design","source":""},
+      {"id":28,"name":"Futuristic Lightbrite","cat":"Dark Mode & Cyberpunk","tags":["dark","blue","navy","pink","white","light","futuristic","lightbrite","mode","cyberpunk"],"colors":["#161748","#39A0CA","#F95D9B","#FFFFFF"],"role":"Deep navy base with neon pink highlights","source":""},
+      {"id":29,"name":"Nordic Twilight","cat":"Dark Mode & Cyberpunk","tags":["black","dark","blue","navy","orange","peach","light","nordic","twilight","mode","cyberpunk"],"colors":["#111C24","#22333B","#C6AC8F","#EAE0D5"],"role":"Muted dark luxury portfolio","source":""},
+      {"id":30,"name":"Tokyo Vaporwave","cat":"Dark Mode & Cyberpunk","tags":["black","dark","teal","mint","pink","purple","tokyo","vaporwave","mode","cyberpunk"],"colors":["#1A002C","#00FFCC","#FF007F","#7B2CBF"],"role":"Game landing pages and creative agency","source":""},
+      {"id":31,"name":"Digital Peach","cat":"Pastel & Sweet","tags":["red","light","pink","blue","digital","peach","pastel","sweet"],"colors":["#FF7E5F","#FEB9E2","#3B3B98","#F2F3FF"],"role":"Human-centric apps and parenting tech","source":""},
+      {"id":32,"name":"90s Ice Cold Purple","cat":"Pastel & Sweet","tags":["light","blue","purple","90s","ice","cold","pastel","sweet"],"colors":["#A0D2EB","#E5EAF5","#D0BDF4","#8458B3"],"role":"Nostalgic aesthetic or clothing shop","source":""},
+      {"id":33,"name":"Apricot Citrus","cat":"Pastel & Sweet","tags":["orange","peach","light","blue","apricot","citrus","pastel","sweet"],"colors":["#F7882F","#F7C331","#DCC7AA","#6B7A8F"],"role":"Bakery, cafe, and energetic branding","source":""},
+      {"id":34,"name":"Easter Egg Sandwich","cat":"Pastel & Sweet","tags":["light","green","teal","mint","pink","yellow","easter","egg","sandwich","pastel","sweet"],"colors":["#8BF0BA","#94F0F1","#F2B1D8","#FFDC6A"],"role":"Cute illustrations and youth branding","source":""},
+      {"id":35,"name":"Misty Mountain Pink","cat":"Pastel & Sweet","tags":["light","red","grey","misty","mountain","pink","pastel","sweet"],"colors":["#F9C5BD","#7C677F","#96858F","#FFF5F5"],"role":"Sophisticated cosmetic and skin-care brands","source":""},
+      {"id":36,"name":"Floral & Citrus Joy","cat":"Pastel & Sweet","tags":["white","light","pink","orange","brown","black","dark","floral","citrus","joy","pastel","sweet"],"colors":["#F0EFED","#CC6482","#FABB02","#3C0227"],"role":"Playful optimism grounded with deep plum","source":""},
+      {"id":37,"name":"Soft Beach Day","cat":"Pastel & Sweet","tags":["blue","light","teal","mint","yellow","red","soft","beach","day","pastel","sweet"],"colors":["#51E2F5","#9DF9EF","#EDF756","#FFAAAB"],"role":"Highly bright, refreshing summer vibes","source":""},
+      {"id":38,"name":"Sakura Garden","cat":"Pastel & Sweet","tags":["light","red","orange","peach","green","teal","mint","sakura","garden","pastel","sweet"],"colors":["#FFB7B2","#FFDAC1","#E2F0CB","#B5EAD7"],"role":"Traditional cute pastel blocks","source":""},
+      {"id":39,"name":"Candy Shop Pop","cat":"Pastel & Sweet","tags":["light","orange","peach","blue","candy","shop","pop","pastel","sweet"],"colors":["#F3A683","#F19066","#786FA6","#574B90"],"role":"Fun interface, badges, and games","source":""},
+      {"id":40,"name":"Lilac Cream","cat":"Pastel & Sweet","tags":["light","purple","pink","grey","lilac","cream","pastel","sweet"],"colors":["#E8D7F1","#D3BCCC","#A3A3B1","#6C6A84"],"role":"Calm lavender aesthetic","source":""},
+      {"id":41,"name":"Deep Cherry & Plum","cat":"Bold, Earthy & Retro","tags":["white","light","dark","red","maroon","black","deep","cherry","plum","bold","earthy","retro"],"colors":["#F0EFED","#651714","#3C0227","#2A0D08"],"role":"Luxury, bold editorial statement design","source":""},
+      {"id":42,"name":"Mediterranean Tan","cat":"Bold, Earthy & Retro","tags":["white","light","blue","yellow","beige","orange","peach","mediterranean","tan","bold","earthy","retro"],"colors":["#F0EFED","#7091A8","#D6CFB5","#C19066"],"role":"Old money, travel, and lifestyle blogs","source":""},
+      {"id":43,"name":"Global Charity","cat":"Bold, Earthy & Retro","tags":["red","orange","peach","light","green","global","charity","bold","earthy","retro"],"colors":["#F43A09","#FFB766","#C2EDDA","#68D388"],"role":"Non-profit and environmental campaign sites","source":""},
+      {"id":44,"name":"Deep Forest Green","cat":"Bold, Earthy & Retro","tags":["black","dark","green","light","orange","peach","deep","forest","bold","earthy","retro"],"colors":["#0A2F1D","#1F5F3E","#F4EAE1","#D4A373"],"role":"Organic products, modern farm-to-table","source":""},
+      {"id":45,"name":"Bright Power Combo","cat":"Bold, Earthy & Retro","tags":["pink","blue","bright","power","combo","bold","earthy","retro"],"colors":["#FF1D58","#F75990","#00DDFF","#0049B7"],"role":"High impact marketing & conversion landing page","source":""},
+      {"id":46,"name":"Terrazzo Earth","cat":"Bold, Earthy & Retro","tags":["yellow","blue","teal","mint","red","terrazzo","earth","bold","earthy","retro"],"colors":["#EAC435","#345995","#03CEA4","#FB4D3D"],"role":"Creative agency or modern art museum","source":""},
+      {"id":47,"name":"Sunset Orange","cat":"Bold, Earthy & Retro","tags":["red","orange","peach","dark","blue","navy","sunset","bold","earthy","retro"],"colors":["#FF5E62","#FF9966","#2D545E","#12343B"],"role":"Vibrant gradient base with deep contrast slate","source":""},
+      {"id":48,"name":"Mustard & Indigo Retro","cat":"Bold, Earthy & Retro","tags":["orange","peach","pink","red","teal","mint","mustard","indigo","retro","bold","earthy"],"colors":["#E8A87C","#C38D9E","#E27D60","#41B3A3"],"role":"1970s warm retro illustration vibe","source":""},
+      {"id":49,"name":"Emerald & Gold","cat":"Bold, Earthy & Retro","tags":["dark","teal","mint","orange","peach","white","light","black","emerald","gold","bold","earthy","retro"],"colors":["#064E3B","#F59E0B","#F3F4F6","#111827"],"role":"High-end boutique, luxury jewelry","source":""},
+      {"id":50,"name":"Vintage Matcha Café","cat":"Bold, Earthy & Retro","tags":["light","yellow","green","dark","teal","mint","pink","vintage","matcha","caf","","bold","earthy","retro"],"colors":["#FFF5D7","#A7F3D0","#065F46","#781A44"],"role":"Aesthetic match-cafe, trendy editorial","source":""},
+      {"id":51,"name":"Olive Garden Feast","cat":"Bold, Earthy & Retro","tags":["green","dark","light","yellow","orange","peach","brown","olive","garden","feast","bold","earthy","retro","popular"],"colors":["#606C38","#283618","#FEFAE0","#DDA15E","#BC6C25"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":52,"name":"Fiery Ocean","cat":"Dark Mode & Cyberpunk","tags":["dark","red","maroon","light","orange","peach","blue","navy","fiery","ocean","mode","cyberpunk","popular"],"colors":["#780000","#C1121F","#FDF0D5","#003049","#669BBC"],"role":"Dark character cards with luminous accents","source":"https://coolors.co/palettes/trending"},
+      {"id":53,"name":"Deep Sea","cat":"Tech, SaaS & Corporate","tags":["black","dark","blue","navy","light","yellow","beige","deep","sea","tech","saas","corporate","popular"],"colors":["#0D1321","#1D2D44","#3E5C76","#748CAB","#F0EBD8"],"role":"Clear interface accents and information panels","source":"https://coolors.co/palettes/trending"},
+      {"id":54,"name":"Pastel Dreamland Adventure","cat":"Pastel & Sweet","tags":["light","purple","pink","blue","pastel","dreamland","adventure","sweet","popular"],"colors":["#CDB4DB","#FFC8DD","#FFAFCC","#BDE0FE","#A2D2FF"],"role":"Soft character profiles and playful details","source":"https://coolors.co/palettes/trending"},
+      {"id":55,"name":"Dark Sunset","cat":"Dark Mode & Cyberpunk","tags":["blue","navy","light","yellow","orange","peach","red","maroon","dark","sunset","mode","cyberpunk","popular"],"colors":["#335C67","#FFF3B0","#E09F3E","#9E2A2B","#540B0E"],"role":"Dark character cards with luminous accents","source":"https://coolors.co/palettes/trending"},
+      {"id":56,"name":"Warm Autumn Glow","cat":"Bold, Earthy & Retro","tags":["dark","blue","navy","red","orange","brown","peach","light","yellow","warm","autumn","glow","bold","earthy","retro","popular"],"colors":["#003049","#D62828","#F77F00","#FCBF49","#EAE2B7"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":57,"name":"Ocean Blue Serenity","cat":"Tech, SaaS & Corporate","tags":["dark","blue","navy","light","ocean","serenity","tech","saas","corporate","popular"],"colors":["#03045E","#023E8A","#0077B6","#0096C7","#00B4D8","#48CAE4","#90E0EF","#ADE8F4","#CAF0F8"],"role":"Clear interface accents and information panels","source":"https://coolors.co/palettes/trending"},
+      {"id":58,"name":"Golden Twilight","cat":"Dark Mode & Cyberpunk","tags":["black","dark","blue","navy","yellow","golden","twilight","mode","cyberpunk","popular"],"colors":["#000814","#001D3D","#003566","#FFC300","#FFD60A"],"role":"Dark character cards with luminous accents","source":"https://coolors.co/palettes/trending"},
+      {"id":59,"name":"Leafy Green Garden","cat":"Bold, Earthy & Retro","tags":["black","dark","green","light","yellow","leafy","garden","bold","earthy","retro","popular"],"colors":["#132A13","#31572C","#4F772D","#90A955","#ECF39E"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":60,"name":"Soft Pink Delight","cat":"Pastel & Sweet","tags":["light","pink","red","soft","delight","pastel","sweet","popular"],"colors":["#FFE5EC","#FFC2D1","#FFB3C6","#FF8FAB","#FB6F92"],"role":"Soft character profiles and playful details","source":"https://coolors.co/palettes/trending"},
+      {"id":61,"name":"Crimson Hues","cat":"Dark Mode & Cyberpunk","tags":["black","dark","red","maroon","crimson","hues","mode","cyberpunk","popular"],"colors":["#250902","#38040E","#640D14","#800E13","#AD2831"],"role":"Dark character cards with luminous accents","source":"https://coolors.co/palettes/trending"},
+      {"id":62,"name":"Autumn Harvest","cat":"Bold, Earthy & Retro","tags":["dark","red","maroon","orange","peach","brown","light","autumn","harvest","bold","earthy","retro","popular"],"colors":["#6F1D1B","#BB9457","#432818","#99582A","#FFE6A7"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":63,"name":"Earthy Forest Hues","cat":"Bold, Earthy & Retro","tags":["light","yellow","beige","green","sage","dark","earthy","forest","hues","bold","retro","popular"],"colors":["#DAD7CD","#A3B18A","#588157","#3A5A40","#344E41"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":64,"name":"Ocean Breeze","cat":"Tech, SaaS & Corporate","tags":["dark","blue","navy","light","ocean","breeze","tech","saas","corporate","popular"],"colors":["#03045E","#0077B6","#00B4D8","#90E0EF","#CAF0F8"],"role":"Clear interface accents and information panels","source":"https://coolors.co/palettes/trending"},
+      {"id":65,"name":"Earthy Tones","cat":"Minimal & Modern","tags":["light","yellow","green","orange","peach","brown","earthy","tones","minimal","modern","popular"],"colors":["#F0EAD2","#DDE5B6","#ADC178","#A98467","#6C584C"],"role":"Calm editorial layouts and neutral card surfaces","source":"https://coolors.co/palettes/trending"},
+      {"id":66,"name":"Fresh Greens","cat":"Bold, Earthy & Retro","tags":["green","sage","light","orange","peach","red","fresh","greens","bold","earthy","retro","popular"],"colors":["#386641","#6A994E","#A7C957","#F2E8CF","#BC4749"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":67,"name":"Rustic Charm","cat":"Minimal & Modern","tags":["light","yellow","orange","peach","grey","dark","rustic","charm","minimal","modern","popular"],"colors":["#FFFCF2","#CCC5B9","#403D39","#252422","#EB5E28"],"role":"Calm editorial layouts and neutral card surfaces","source":"https://coolors.co/palettes/trending"},
+      {"id":68,"name":"Fiery Red Sunset","cat":"Dark Mode & Cyberpunk","tags":["black","dark","red","maroon","orange","brown","peach","fiery","sunset","mode","cyberpunk","popular"],"colors":["#03071E","#370617","#6A040F","#9D0208","#D00000","#DC2F02","#E85D04","#F48C06","#FAA307","#FFBA08"],"role":"Dark character cards with luminous accents","source":"https://coolors.co/palettes/trending"},
+      {"id":69,"name":"Summer Ocean Breeze","cat":"Tech, SaaS & Corporate","tags":["red","light","green","teal","mint","blue","dark","navy","summer","ocean","breeze","tech","saas","corporate","popular"],"colors":["#E63946","#F1FAEE","#A8DADC","#457B9D","#1D3557"],"role":"Clear interface accents and information panels","source":"https://coolors.co/palettes/trending"},
+      {"id":70,"name":"Pastel Dreams","cat":"Pastel & Sweet","tags":["light","pink","yellow","green","blue","purple","pastel","dreams","sweet","popular"],"colors":["#FF99C8","#FCF6BD","#D0F4DE","#A9DEF9","#E4C1F9"],"role":"Soft character profiles and playful details","source":"https://coolors.co/palettes/trending"},
+      {"id":71,"name":"Fiery Palette","cat":"Dark Mode & Cyberpunk","tags":["dark","pink","red","maroon","orange","peach","brown","blue","navy","fiery","palette","mode","cyberpunk","popular"],"colors":["#5F0F40","#9A031E","#FB8B24","#E36414","#0F4C5C"],"role":"Dark character cards with luminous accents","source":"https://coolors.co/palettes/trending"},
+      {"id":72,"name":"Refreshing Summer Fun","cat":"Tech, SaaS & Corporate","tags":["light","blue","dark","navy","orange","peach","brown","refreshing","summer","fun","tech","saas","corporate","popular"],"colors":["#8ECAE6","#219EBC","#023047","#FFB703","#FB8500"],"role":"Clear interface accents and information panels","source":"https://coolors.co/palettes/trending"},
+      {"id":73,"name":"Bold Berry","cat":"Pastel & Sweet","tags":["light","orange","peach","red","pink","dark","bold","berry","pastel","sweet","popular"],"colors":["#F9DBBD","#FFA5AB","#DA627D","#A53860","#450920"],"role":"Soft character profiles and playful details","source":"https://coolors.co/palettes/trending"},
+      {"id":74,"name":"Ocean Sunset","cat":"Dark Mode & Cyberpunk","tags":["black","dark","blue","navy","teal","mint","light","orange","peach","brown","red","maroon","ocean","sunset","mode","cyberpunk","popular"],"colors":["#001219","#005F73","#0A9396","#94D2BD","#E9D8A6","#EE9B00","#CA6702","#BB3E03","#AE2012","#9B2226"],"role":"Dark character cards with luminous accents","source":"https://coolors.co/palettes/trending"},
+      {"id":75,"name":"Vivid Nightfall","cat":"Dark Mode & Cyberpunk","tags":["black","dark","purple","light","vivid","nightfall","mode","cyberpunk","popular"],"colors":["#10002B","#240046","#3C096C","#5A189A","#7B2CBF","#9D4EDD","#C77DFF","#E0AAFF"],"role":"Dark character cards with luminous accents","source":"https://coolors.co/palettes/trending"},
+      {"id":76,"name":"Warm Neutral Tones","cat":"Minimal & Modern","tags":["dark","orange","brown","peach","yellow","beige","light","green","sage","warm","neutral","tones","minimal","modern","popular"],"colors":["#582F0E","#7F4F24","#936639","#A68A64","#B6AD90","#C2C5AA","#A4AC86","#656D4A","#414833","#333D29"],"role":"Calm editorial layouts and neutral card surfaces","source":"https://coolors.co/palettes/trending"},
+      {"id":77,"name":"Light Steel","cat":"Minimal & Modern","tags":["white","light","blue","grey","dark","steel","minimal","modern","popular"],"colors":["#F8F9FA","#E9ECEF","#DEE2E6","#CED4DA","#ADB5BD","#6C757D","#495057","#343A40","#212529"],"role":"Calm editorial layouts and neutral card surfaces","source":"https://coolors.co/palettes/trending"},
+      {"id":78,"name":"Peach Sorbet","cat":"Pastel & Sweet","tags":["light","red","orange","peach","sorbet","pastel","sweet","popular"],"colors":["#F08080","#F4978E","#F8AD9D","#FBC4AB","#FFDAB9"],"role":"Soft character profiles and playful details","source":"https://coolors.co/palettes/trending"},
+      {"id":79,"name":"Meadow Green","cat":"Tech, SaaS & Corporate","tags":["light","green","teal","mint","blue","navy","dark","meadow","tech","saas","corporate","popular"],"colors":["#D9ED92","#B5E48C","#99D98C","#76C893","#52B69A","#34A0A4","#168AAD","#1A759F","#1E6091","#184E77"],"role":"Clear interface accents and information panels","source":"https://coolors.co/palettes/trending"},
+      {"id":80,"name":"Peachy Delight","cat":"Pastel & Sweet","tags":["light","green","sage","orange","peach","red","pink","peachy","delight","pastel","sweet","popular"],"colors":["#D8E2DC","#FFE5D9","#FFCAD4","#F4ACB7","#9D8189"],"role":"Soft character profiles and playful details","source":"https://coolors.co/palettes/trending"},
+      {"id":81,"name":"Rose Petal","cat":"Pastel & Sweet","tags":["dark","red","maroon","pink","light","blue","rose","petal","pastel","sweet","popular"],"colors":["#880D1E","#DD2D4A","#F26A8D","#F49CBB","#CBEEF3"],"role":"Soft character profiles and playful details","source":"https://coolors.co/palettes/trending"},
+      {"id":82,"name":"Vibrant Sunset","cat":"Dark Mode & Cyberpunk","tags":["orange","peach","dark","purple","vibrant","sunset","mode","cyberpunk","popular"],"colors":["#FF6D00","#FF7900","#FF8500","#FF9100","#FF9E00","#240046","#3C096C","#5A189A","#7B2CBF","#9D4EDD"],"role":"Dark character cards with luminous accents","source":"https://coolors.co/palettes/trending"},
+      {"id":83,"name":"Red Sunburst","cat":"Bold, Earthy & Retro","tags":["dark","red","maroon","pink","orange","peach","sunburst","bold","earthy","retro","popular"],"colors":["#4F000B","#720026","#CE4257","#FF7F51","#FF9B54"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":84,"name":"Golden Summer Glow","cat":"Bold, Earthy & Retro","tags":["dark","blue","navy","light","yellow","orange","peach","red","golden","summer","glow","bold","earthy","retro","popular"],"colors":["#0D3B66","#FAF0CA","#F4D35E","#EE964B","#F95738"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":85,"name":"Golden Summer Fields","cat":"Minimal & Modern","tags":["light","green","yellow","orange","peach","golden","summer","fields","minimal","modern","popular"],"colors":["#CCD5AE","#E9EDC9","#FEFAE0","#FAEDCD","#D4A373"],"role":"Calm editorial layouts and neutral card surfaces","source":"https://coolors.co/palettes/trending"},
+      {"id":86,"name":"Classic Red Palette","cat":"Dark Mode & Cyberpunk","tags":["black","dark","red","maroon","grey","light","white","classic","palette","mode","cyberpunk","popular"],"colors":["#0B090A","#161A1D","#660708","#A4161A","#BA181B","#E5383B","#B1A7A6","#D3D3D3","#F5F3F4","#FFFFFF"],"role":"Dark character cards with luminous accents","source":"https://coolors.co/palettes/trending"},
+      {"id":87,"name":"Vibrant Tones","cat":"Bold, Earthy & Retro","tags":["red","orange","peach","green","teal","mint","blue","vibrant","tones","bold","earthy","retro","popular"],"colors":["#F94144","#F3722C","#F8961E","#F9844A","#F9C74F","#90BE6D","#43AA8B","#4D908E","#577590","#277DA1"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":88,"name":"Whimsical Garden Delight","cat":"Pastel & Sweet","tags":["light","pink","grey","green","yellow","red","whimsical","garden","delight","pastel","sweet","popular"],"colors":["#DAB6C4","#7B886F","#B4DC7F","#FEFFA5","#FFA0AC"],"role":"Soft character profiles and playful details","source":"https://coolors.co/palettes/trending"},
+      {"id":89,"name":"Autumn Harvest (Sandstone)","cat":"Minimal & Modern","tags":["light","orange","peach","brown","autumn","harvest","sandstone","","minimal","modern","popular"],"colors":["#EDE0D4","#E6CCB2","#DDB892","#B08968","#7F5539","#9C6644"],"role":"Calm editorial layouts and neutral card surfaces","source":"https://coolors.co/palettes/trending"},
+      {"id":90,"name":"Midnight Sky","cat":"Dark Mode & Cyberpunk","tags":["dark","blue","navy","yellow","midnight","sky","mode","cyberpunk","popular"],"colors":["#00296B","#003F88","#00509D","#FDC500","#FFD500"],"role":"Dark character cards with luminous accents","source":"https://coolors.co/palettes/trending"},
+      {"id":91,"name":"Earthy Tones (Meadow)","cat":"Bold, Earthy & Retro","tags":["green","light","yellow","red","orange","peach","earthy","tones","meadow","","bold","retro","popular"],"colors":["#2C6E49","#4C956C","#FEFEE3","#FFC9B9","#D68C45"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":92,"name":"Coastal Vibes","cat":"Tech, SaaS & Corporate","tags":["blue","light","teal","mint","red","dark","navy","coastal","vibes","tech","saas","corporate","popular"],"colors":["#3D5A80","#98C1D9","#E0FBFC","#EE6C4D","#293241"],"role":"Clear interface accents and information panels","source":"https://coolors.co/palettes/trending"},
+      {"id":93,"name":"Gothic Romance","cat":"Dark Mode & Cyberpunk","tags":["black","dark","red","maroon","white","light","orange","peach","brown","gothic","romance","mode","cyberpunk","popular"],"colors":["#0A0908","#49111C","#F2F4F3","#A9927D","#5E503F"],"role":"Dark character cards with luminous accents","source":"https://coolors.co/palettes/trending"},
+      {"id":94,"name":"Deep Sea (Slate)","cat":"Tech, SaaS & Corporate","tags":["black","dark","blue","navy","grey","light","deep","sea","slate","","tech","saas","corporate","popular"],"colors":["#0D1B2A","#1B263B","#415A77","#778DA9","#E0E1DD"],"role":"Clear interface accents and information panels","source":"https://coolors.co/palettes/trending"},
+      {"id":95,"name":"Vibrant Color Fiesta","cat":"Bold, Earthy & Retro","tags":["orange","peach","pink","purple","blue","vibrant","color","fiesta","bold","earthy","retro","popular"],"colors":["#FFBE0B","#FB5607","#FF006E","#8338EC","#3A86FF"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":96,"name":"Sunny Beach Day","cat":"Bold, Earthy & Retro","tags":["dark","blue","navy","teal","mint","orange","peach","red","sunny","beach","day","bold","earthy","retro","popular"],"colors":["#264653","#2A9D8F","#E9C46A","#F4A261","#E76F51"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":97,"name":"Sunset Gradient","cat":"Bold, Earthy & Retro","tags":["orange","peach","yellow","sunset","gradient","bold","earthy","retro","popular"],"colors":["#FF7B00","#FF8800","#FF9500","#FFA200","#FFAA00","#FFB700","#FFC300","#FFD000","#FFDD00","#FFEA00"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":98,"name":"Fresh Greens (Mint Gradient)","cat":"Bold, Earthy & Retro","tags":["light","green","dark","black","fresh","greens","mint","gradient","","bold","earthy","retro","popular"],"colors":["#D8F3DC","#B7E4C7","#95D5B2","#74C69D","#52B788","#40916C","#2D6A4F","#1B4332","#081C15"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":99,"name":"Spicy Delight","cat":"Bold, Earthy & Retro","tags":["light","orange","peach","brown","red","maroon","dark","spicy","delight","bold","earthy","retro","popular"],"colors":["#FBBA72","#CA5310","#BB4D00","#8F250C","#691E06"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"},
+      {"id":100,"name":"Autumn Glow","cat":"Bold, Earthy & Retro","tags":["dark","red","maroon","orange","peach","autumn","glow","bold","earthy","retro","popular"],"colors":["#780116","#F7B538","#DB7C26","#D8572A","#C32F27"],"role":"Expressive covers and thematic highlights","source":"https://coolors.co/palettes/trending"}
+    ];
+        // MASTER_PALETTES_END
+    let currentPaletteSource = 'master';
+
     // Color Hunt Master Vault (Synchronized with data/json/colorhunt_palettes.json)
     let colorHuntPalettes = [
       { id: "ch-01", code: "08d9d6252a34ff2e63eaeaea", name: "Neon Cyber Glitch", cat: "Popular", tags: ["popular", "neon", "cyan", "blue", "dark", "pink"], colors: ["#08D9D6", "#252A34", "#FF2E63", "#EAEAEA"], likes: 54200 },
@@ -1717,12 +1838,13 @@
               <span class="palette-category">${p.cat}</span>
             </div>
           </div>
-          <div class="color-swatches">
+          <div class="color-swatches ${p.colors.length > 5 ? 'dense' : ''}">
             ${p.colors.map(c => `<div class="swatch" style="background:${c};" title="Click to copy ${c}" onclick="copyHex('${c}')">${c}</div>`).join('')}
           </div>
           <div class="palette-footer">
             <span style="font-family:monospace;font-size:10px;color:var(--text-muted);">${p.code ? p.code : p.colors.slice(0,2).join(' ')}</span>
             <div style="display:flex;gap:4px;">
+              ${p.source ? `<a class="btn-action" href="${p.source}" target="_blank" rel="noopener noreferrer" title="View source collection">Coolors</a>` : ''}
               ${p.code ? `
               <button class="btn-action" style="padding:2px 6px;font-size:10px;" onclick="copyHex('${p.code}')" title="Copy Color Hunt 24-char code">
                 Code
@@ -1740,7 +1862,7 @@
     function filterPalettes() {
       const q = document.getElementById('paletteSearch').value.toLowerCase().trim();
       const cat = document.getElementById('paletteCategoryFilter').value.toLowerCase();
-      let filtered = colorHuntPalettes;
+      let filtered = currentPaletteSource === 'master' ? masterPalettes : colorHuntPalettes;
       
       if (cat !== 'all') {
         filtered = filtered.filter(p => {
@@ -1756,7 +1878,8 @@
           const matchHex = p.colors && p.colors.some(c => c.toLowerCase().includes(q));
           const matchCode = p.code && p.code.toLowerCase().includes(q);
           const matchTag = Array.isArray(p.tags) && p.tags.some(t => t.toLowerCase().includes(q));
-          return matchName || matchHex || matchCode || matchTag;
+          const matchRole = p.role && p.role.toLowerCase().includes(q);
+          return matchName || matchHex || matchCode || matchTag || matchRole;
         });
       }
       
@@ -1764,6 +1887,14 @@
     }
 
     function filterPalettesByCategory(cat) {
+      filterPalettes();
+    }
+
+    function filterPalettesBySource(source) {
+      currentPaletteSource = source;
+      document.getElementById('paletteCategoryFilter').value = 'all';
+      document.getElementById('masterPaletteCategories').disabled = source !== 'master';
+      document.getElementById('colorHuntCategories').disabled = source !== 'colorhunt';
       filterPalettes();
     }
 
@@ -1850,7 +1981,7 @@
         document.getElementById('deviceShell').style.maxWidth = savedWidth;
         document.getElementById('currentWidthBadge').textContent = savedWidth;
       }
-      renderPalettes(colorHuntPalettes);
+      filterPalettes();
       loadColorHuntJson();
       renderTypography(googleFontsVault);
       renderThemeCatalog();

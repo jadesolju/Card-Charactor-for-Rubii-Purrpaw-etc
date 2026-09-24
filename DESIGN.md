@@ -14,7 +14,7 @@ Rubii Card Architect is engineered under strict constraints to guarantee 100% pl
 flowchart TD
     A[Raw Character Story & User Prompt] --> B[AI Theme Architect Engine v2.2.7]
     B --> C[Dynamic Matrix Procedural Engine]
-    C --> D1[50-Palette Spectrum & Neon Tokens]
+    C --> D1[100-Palette Spectrum & Neon Tokens]
     C --> D2[50-Typography Font Archetypes]
     C --> D3[CSS Micro-Interactions Details/Input]
     D1 & D2 & D3 --> E[Scoped Inline CSS + Scoped HTML Tree]
@@ -92,7 +92,8 @@ To eliminate repetitive UI layouts across character profiles, the engine dynamic
 
 ## 4. Master Databases Overview
 
-### 🎨 50-Palette Categorization
+### 🎨 100-Palette Categorization
+The first 50 entries remain in their original order. Entries 51–100 are a dated snapshot of named palettes shown on [Coolors Trending](https://coolors.co/palettes/trending) on 2026-09-24, grouped into the same five categories. Their full Hex arrays, including five to ten colors where provided, are preserved in the master data.
 * **1. Minimal & Modern (1–10):** Soft stone, Nordic frost, quiet luxury, editorial espresso.
 * **2. Tech, SaaS & Corporate (11–20):** Electric pulse, cyan cloud velocity, banking mint, fintech amethyst.
 * **3. Dark Mode & Cyberpunk (21–30):** Carbon mint, Tokyo vaporwave, acid neon forest, space noir.

@@ -121,20 +121,23 @@ rubii --check
 2. **Fluid Scaled Mobile UX:** รองรับจอมือถือ `320px – 440px` ตัวอักษรปรับขนาดอัตโนมัติตามหน้าจอด้วย `clamp(8px, 3.5vw, 14px)`
 3. **Transparent Canvas & Neon Glow:** พื้นหลังการ์ดโปร่งแสงเน้นเส้นขอบเรืองแสง เข้าได้กับทุกวอลเปเปอร์
 4. **Copyable Text Node:** ข้อความทั้งหมดอยู่ใน HTML Text Node (`user-select: text !important;`) สามารถลากคลุมคัดลอกบนมือถือได้จริง
-5. **คลังข้อมูล Master Data 50 Palettes & 50 Typography:** รวบรวมชุดสีและคู่ฟอนต์ไทย-อังกฤษยอดนิยมไว้ครบครันในรูปแบบ **JSON, YAML และ Markdown**
+5. **คลังข้อมูล Master Data 100 Palettes & 50 Typography:** รวบรวมชุดสีและคู่ฟอนต์ไทย-อังกฤษยอดนิยมไว้ครบครันในรูปแบบ **JSON, YAML และ Markdown**
 
 ---
 
 ## 📦 คลังข้อมูล Master Data และพรีเซ็ต Cross-Over
 
 * **JSON Data (`data/json/`):**
-  * [`color_palettes_50.json`](data/json/color_palettes_50.json) — คลัง 50 ชุดสี Hex Codes
+  * [`color_palettes_100.json`](data/json/color_palettes_100.json) — คลัง 100 ชุดสี Hex Codes รวม 50 ชุดจาก Coolors Trending
   * [`typography_50.json`](data/json/typography_50.json) — คลัง 50 คู่ฟอนต์ไทย/อังกฤษ
   * [`theme_components.json`](data/json/theme_components.json) — คลังเอฟเฟกต์และคอมโพเนนต์
+  * [`effects_100.json`](data/json/effects_100.json) — ดัชนี CSS Visual Effects 100 รายการ
+  * [`animations_100.json`](data/json/animations_100.json) — ดัชนี CSS Animations 100 รายการ
+  * [`compound_catalog_100.json`](data/json/compound_catalog_100.json) — ดัชนีไอเดีย Component 100 รายการ; Compound catalog ที่ผ่าน schema และมี SVG preview ยังมี 50 รายการใน `compound_catalog_v1.json`
   * [`compound_catalog_v1.json`](data/json/compound_catalog_v1.json) — Compound ชุดตั้งต้น 50 รายการ พร้อม ID เรียกใช้และ SVG preview ในโปรเจกต์
   * [`compound_catalog.schema.json`](data/json/compound_catalog.schema.json) — สัญญาข้อมูลสำหรับตรวจรูปแบบ Compound
 * **YAML Data (`data/yaml/`):**
-  * [`color_palettes_50.yaml`](data/yaml/color_palettes_50.yaml)
+  * [`color_palettes_100.yaml`](data/yaml/color_palettes_100.yaml)
   * [`typography_50.yaml`](data/yaml/typography_50.yaml)
   * [`gem_plugin_config.yaml`](data/yaml/gem_plugin_config.yaml) — คอนฟิกสำหรับ Gem / Custom Agent
 * **Cross-Over Templates (`templates/`):**

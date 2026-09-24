@@ -166,7 +166,7 @@ function rubii {
             @{ Name = "Previewer HTML"; Path = $PreviewHtml },
             @{ Name = "Standalone Prompt TXT"; Path = $PromptTxt },
             @{ Name = "Standalone Prompt MD"; Path = $PromptMd },
-            @{ Name = "Color Palettes JSON"; Path = (Join-Path $RootDir "data\json\color_palettes_50.json") },
+            @{ Name = "Color Palettes JSON"; Path = (Join-Path $RootDir "data\json\color_palettes_100.json") },
             @{ Name = "Color Hunt Vault JSON"; Path = (Join-Path $RootDir "data\json\colorhunt_palettes.json") },
             @{ Name = "Typography JSON"; Path = (Join-Path $RootDir "data\json\typography_50.json") }
         )

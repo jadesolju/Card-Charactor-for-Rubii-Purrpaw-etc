@@ -16,7 +16,7 @@
   - `📜 เริ่มต้นออกแบบการ์ดแบบละเอียดทีละสเต็ป (/start_inquiry)`
   - `📱 ตรวจสอบและให้คะแนนการ์ดตัวละคร (/show_score)`
 * **Knowledge Files:**
-  - อัปโหลด `data/json/color_palettes_50.json`
+  - อัปโหลด `data/json/color_palettes_100.json`
   - อัปโหลด `data/json/typography_50.json`
   - อัปโหลด `data/json/theme_components.json`
 

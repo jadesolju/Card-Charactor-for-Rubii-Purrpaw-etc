@@ -119,7 +119,7 @@ rubii --check
    - Nền bán trong suốt (`rgba(...)`) kết hợp với các biến phát sáng (`--neon-p`, `--neon-s`, `--neon-accent`), tương thích với mọi hình nền thiết bị.
 4. **Khả năng sao chép văn bản 100% (Copyable Text):**
    - Mọi thông tin nhân vật đều nằm trong các thẻ văn bản HTML thực tế (`user-select: text !important;`).
-5. **Bộ dữ liệu 50 Bảng màu & 50 Cặp phông chữ:**
+5. **Bộ dữ liệu 100 Bảng màu & 50 Cặp phông chữ:**
    - Được biên soạn sẵn ở định dạng **JSON, YAML và Markdown**.
 
 ---
@@ -127,11 +127,11 @@ rubii --check
 ## 📦 Bộ dữ liệu đa định dạng & Mẫu chủ đề kết hợp (Cross-Over Templates)
 
 * **Dữ liệu JSON (`data/json/`):**
-  - [`color_palettes_50.json`](data/json/color_palettes_50.json) — 50 Bảng màu CSS thịnh hành và mã Hex.
+  - [`color_palettes_100.json`](data/json/color_palettes_100.json) — 100 Bảng màu CSS và mã Hex, gồm 50 bảng màu từ Coolors Trending.
   - [`typography_50.json`](data/json/typography_50.json) — 50 Cặp phông chữ đa ngôn ngữ.
   - [`theme_components.json`](data/json/theme_components.json) — Thư viện vật liệu, mặt nạ bóng và hiệu ứng.
 * **Dữ liệu YAML (`data/yaml/`):**
-  - [`color_palettes_50.yaml`](data/yaml/color_palettes_50.yaml)
+  - [`color_palettes_100.yaml`](data/yaml/color_palettes_100.yaml)
   - [`typography_50.yaml`](data/yaml/typography_50.yaml)
   - [`gem_plugin_config.yaml`](data/yaml/gem_plugin_config.yaml) — Cấu hình Plugin và Gemini Gem.
 * **Mẫu chủ đề kết hợp (`templates/`):**

@@ -133,7 +133,7 @@ Control the AI's behavior dynamically with slash commands:
    - Translucent backgrounds (`rgba(...)`) layered with vibrant neon borders (`--neon-p`, `--neon-s`, `--neon-accent`) to blend effortlessly with any device wallpaper.
 4. **100% Copyable Text Node Integrity:**
    - All text content lives in accessible HTML text nodes (`user-select: text !important;`).
-5. **50-Palette Matrix & 50-Typography Archetypes:**
+5. **100-Palette Matrix & 50-Typography Archetypes:**
    - Built-in curated databases available in **JSON, YAML, and Markdown**.
 
 ---
@@ -143,13 +143,16 @@ Control the AI's behavior dynamically with slash commands:
 This repository provides structured master data across 3 standard formats:
 
 * **JSON Data (`data/json/`):**
-  - [`color_palettes_50.json`](data/json/color_palettes_50.json) — 50 Trending palettes with hex codes and usage roles.
+  - [`color_palettes_100.json`](data/json/color_palettes_100.json) — 100 palettes with hex codes and usage roles, including 50 from Coolors Trending.
   - [`typography_50.json`](data/json/typography_50.json) — 50 Google Fonts / Western pairings.
   - [`theme_components.json`](data/json/theme_components.json) — Frameworks, surfaces, keyframes & components.
+  - [`effects_100.json`](data/json/effects_100.json) — 100 CSS visual effect references.
+  - [`animations_100.json`](data/json/animations_100.json) — 100 CSS animation references.
+  - [`compound_catalog_100.json`](data/json/compound_catalog_100.json) — 100 component ideas; the schema-checked Compound catalog with SVG previews remains `compound_catalog_v1.json` (50 entries).
   - [`compound_catalog_v1.json`](data/json/compound_catalog_v1.json) — A starter set of 50 named compounds with local SVG previews.
   - [`compound_catalog.schema.json`](data/json/compound_catalog.schema.json) — The data contract for compound entries.
 * **YAML Data (`data/yaml/`):**
-  - [`color_palettes_50.yaml`](data/yaml/color_palettes_50.yaml)
+  - [`color_palettes_100.yaml`](data/yaml/color_palettes_100.yaml)
   - [`typography_50.yaml`](data/yaml/typography_50.yaml)
   - [`gem_plugin_config.yaml`](data/yaml/gem_plugin_config.yaml) — Gem, Custom GPT & Agent Plugin configuration.
 * **Cross-Over Templates (`templates/`):**

@@ -1,0 +1,1508 @@
+[
+  {
+    "category": "Minimal & Modern",
+    "id": 1,
+    "name": "Editorial Minimalism",
+    "colors": [
+      "#F0EFED",
+      "#E4DECD",
+      "#82716E",
+      "#252523"
+    ],
+    "role": "Soft White, Stone Grey, Muted Beige, Espresso"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 2,
+    "name": "Nordic Soft Frost",
+    "colors": [
+      "#F3F4F6",
+      "#E5E7EB",
+      "#9CA3AF",
+      "#1F2937"
+    ],
+    "role": "Tailwind-inspired clean look"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 3,
+    "name": "Quiet Luxury",
+    "colors": [
+      "#F7F1E3",
+      "#DCC7AA",
+      "#6B7A8F",
+      "#111827"
+    ],
+    "role": "Premium luxury lifestyle and architecture"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 4,
+    "name": "Warm Sand & Slate",
+    "colors": [
+      "#FCEED1",
+      "#E1B382",
+      "#4F5F76",
+      "#12343B"
+    ],
+    "role": "Cozy portfolio or agency website"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 5,
+    "name": "Intellectual Vibe",
+    "colors": [
+      "#F5F5FA",
+      "#B6B7D5",
+      "#5A5E9A",
+      "#23263B"
+    ],
+    "role": "Clean, academic, and professional"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 6,
+    "name": "Goldifox Contrast",
+    "colors": [
+      "#FFFFFF",
+      "#DFD8C8",
+      "#A39274",
+      "#1A1A1A"
+    ],
+    "role": "Pure White, Soft Wheat, Golden Wheat, Dark Gray"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 7,
+    "name": "Sage Minimalist",
+    "colors": [
+      "#F9F8F3",
+      "#A5A78F",
+      "#4C4643",
+      "#000000"
+    ],
+    "role": "Wellness, interior design, lifestyle"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 8,
+    "name": "Concrete & Coffee",
+    "colors": [
+      "#F2F2F2",
+      "#CFCFCF",
+      "#8C8C8C",
+      "#212121"
+    ],
+    "role": "High-contrast industrial minimalism"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 9,
+    "name": "French Laundry Blue",
+    "colors": [
+      "#FDFBF7",
+      "#C9AF98",
+      "#3A4660",
+      "#1D2731"
+    ],
+    "role": "Warm beige paired with elegant navy blue"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 10,
+    "name": "Creamy Latte",
+    "colors": [
+      "#FAF8F5",
+      "#E6DFD3",
+      "#B3A394",
+      "#4A3E3D"
+    ],
+    "role": "Earthy coffee-shop vibes"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 11,
+    "name": "Electric Pulse",
+    "colors": [
+      "#635BFF",
+      "#00E5E5",
+      "#111827",
+      "#FFFFFF"
+    ],
+    "role": "Stripe-Blue vibe for fintech and AI"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 12,
+    "name": "Tailwind Horizon",
+    "colors": [
+      "#EFF6FF",
+      "#3B82F6",
+      "#1D4ED8",
+      "#1E3A8A"
+    ],
+    "role": "Standard Modern Corporate SaaS"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 13,
+    "name": "Algolia Clean Blue",
+    "colors": [
+      "#F2F3FF",
+      "#7C8AFF",
+      "#5468FF",
+      "#141D61"
+    ],
+    "role": "Developer documentation & platform UI"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 14,
+    "name": "Cyan High-Velocity",
+    "colors": [
+      "#E8FAFF",
+      "#2CC8F7",
+      "#009BCB",
+      "#00526C"
+    ],
+    "role": "Hosting providers and Cloud systems"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 15,
+    "name": "Banking Mint",
+    "colors": [
+      "#EBF6F5",
+      "#5CBDB9",
+      "#2F4F4F",
+      "#FBE3E8"
+    ],
+    "role": "Safe finance branding with a splash of pink"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 16,
+    "name": "Indigo Authority",
+    "colors": [
+      "#EEF2FF",
+      "#818CF8",
+      "#4F46E5",
+      "#312E81"
+    ],
+    "role": "Dashboard and analytics applications"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 17,
+    "name": "Finastra Amethyst",
+    "colors": [
+      "#D9D3F5",
+      "#8F7BE1",
+      "#694ED6",
+      "#493694"
+    ],
+    "role": "Web3, Ethereum-vibe, security systems"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 18,
+    "name": "Double Trust Blue",
+    "colors": [
+      "#1561AD",
+      "#1C77AC",
+      "#1DBAB4",
+      "#FC5226"
+    ],
+    "role": "Insurance & Law firm tech platforms"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 19,
+    "name": "Flexport Ocean",
+    "colors": [
+      "#F7F9FD",
+      "#67768D",
+      "#326089",
+      "#0F2943"
+    ],
+    "role": "Modern logistics and supply chain tech"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 20,
+    "name": "Precision Teal",
+    "colors": [
+      "#E6FCF3",
+      "#5FEB9E",
+      "#06B66C",
+      "#005E36"
+    ],
+    "role": "Medical networks, healthtech, and green energy"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 21,
+    "name": "Carbon Mint",
+    "colors": [
+      "#2D3436",
+      "#00FFC2",
+      "#0D1117",
+      "#FFFFFF"
+    ],
+    "role": "Anthracite dashboard with neon mint glow"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 22,
+    "name": "Synth Wave",
+    "colors": [
+      "#080808",
+      "#FF2079",
+      "#431C5D",
+      "#E05915"
+    ],
+    "role": "Absolute black, loud pink and toxic orange"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 23,
+    "name": "GitHub Primer Dark",
+    "colors": [
+      "#0D1117",
+      "#161B22",
+      "#58A6FF",
+      "#C9D1D9"
+    ],
+    "role": "Official GitHub Dark developer layout"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 24,
+    "name": "Lava Core",
+    "colors": [
+      "#1E293B",
+      "#4B6584",
+      "#FC5C65",
+      "#FF8928"
+    ],
+    "role": "Urgency, e-sports, performance tracking"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 25,
+    "name": "Cyber Rose",
+    "colors": [
+      "#1F1E33",
+      "#5758BB",
+      "#EF5777",
+      "#F9A8D4"
+    ],
+    "role": "Immersive consumer tech and streaming"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 26,
+    "name": "Deep Space Blue",
+    "colors": [
+      "#0B132B",
+      "#1C2541",
+      "#3A506B",
+      "#5BC0BE"
+    ],
+    "role": "Popular deep space sci-fi theme"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 27,
+    "name": "Acid Neon Forest",
+    "colors": [
+      "#1A4D2E",
+      "#DFFF00",
+      "#111827",
+      "#59CE8F"
+    ],
+    "role": "Eco-cyberpunk, provocative web design"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 28,
+    "name": "Futuristic Lightbrite",
+    "colors": [
+      "#161748",
+      "#39A0CA",
+      "#F95D9B",
+      "#FFFFFF"
+    ],
+    "role": "Deep navy base with neon pink highlights"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 29,
+    "name": "Nordic Twilight",
+    "colors": [
+      "#111C24",
+      "#22333B",
+      "#C6AC8F",
+      "#EAE0D5"
+    ],
+    "role": "Muted dark luxury portfolio"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 30,
+    "name": "Tokyo Vaporwave",
+    "colors": [
+      "#1A002C",
+      "#00FFCC",
+      "#FF007F",
+      "#7B2CBF"
+    ],
+    "role": "Game landing pages and creative agency"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 31,
+    "name": "Digital Peach",
+    "colors": [
+      "#FF7E5F",
+      "#FEB9E2",
+      "#3B3B98",
+      "#F2F3FF"
+    ],
+    "role": "Human-centric apps and parenting tech"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 32,
+    "name": "90s Ice Cold Purple",
+    "colors": [
+      "#A0D2EB",
+      "#E5EAF5",
+      "#D0BDF4",
+      "#8458B3"
+    ],
+    "role": "Nostalgic aesthetic or clothing shop"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 33,
+    "name": "Apricot Citrus",
+    "colors": [
+      "#F7882F",
+      "#F7C331",
+      "#DCC7AA",
+      "#6B7A8F"
+    ],
+    "role": "Bakery, cafe, and energetic branding"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 34,
+    "name": "Easter Egg Sandwich",
+    "colors": [
+      "#8BF0BA",
+      "#94F0F1",
+      "#F2B1D8",
+      "#FFDC6A"
+    ],
+    "role": "Cute illustrations and youth branding"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 35,
+    "name": "Misty Mountain Pink",
+    "colors": [
+      "#F9C5BD",
+      "#7C677F",
+      "#96858F",
+      "#FFF5F5"
+    ],
+    "role": "Sophisticated cosmetic and skin-care brands"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 36,
+    "name": "Floral & Citrus Joy",
+    "colors": [
+      "#F0EFED",
+      "#CC6482",
+      "#FABB02",
+      "#3C0227"
+    ],
+    "role": "Playful optimism grounded with deep plum"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 37,
+    "name": "Soft Beach Day",
+    "colors": [
+      "#51E2F5",
+      "#9DF9EF",
+      "#EDF756",
+      "#FFAAAB"
+    ],
+    "role": "Highly bright, refreshing summer vibes"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 38,
+    "name": "Sakura Garden",
+    "colors": [
+      "#FFB7B2",
+      "#FFDAC1",
+      "#E2F0CB",
+      "#B5EAD7"
+    ],
+    "role": "Traditional cute pastel blocks"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 39,
+    "name": "Candy Shop Pop",
+    "colors": [
+      "#F3A683",
+      "#F19066",
+      "#786FA6",
+      "#574B90"
+    ],
+    "role": "Fun interface, badges, and games"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 40,
+    "name": "Lilac Cream",
+    "colors": [
+      "#E8D7F1",
+      "#D3BCCC",
+      "#A3A3B1",
+      "#6C6A84"
+    ],
+    "role": "Calm lavender aesthetic"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 41,
+    "name": "Deep Cherry & Plum",
+    "colors": [
+      "#F0EFED",
+      "#651714",
+      "#3C0227",
+      "#2A0D08"
+    ],
+    "role": "Luxury, bold editorial statement design"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 42,
+    "name": "Mediterranean Tan",
+    "colors": [
+      "#F0EFED",
+      "#7091A8",
+      "#D6CFB5",
+      "#C19066"
+    ],
+    "role": "Old money, travel, and lifestyle blogs"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 43,
+    "name": "Global Charity",
+    "colors": [
+      "#F43A09",
+      "#FFB766",
+      "#C2EDDA",
+      "#68D388"
+    ],
+    "role": "Non-profit and environmental campaign sites"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 44,
+    "name": "Deep Forest Green",
+    "colors": [
+      "#0A2F1D",
+      "#1F5F3E",
+      "#F4EAE1",
+      "#D4A373"
+    ],
+    "role": "Organic products, modern farm-to-table"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 45,
+    "name": "Bright Power Combo",
+    "colors": [
+      "#FF1D58",
+      "#F75990",
+      "#00DDFF",
+      "#0049B7"
+    ],
+    "role": "High impact marketing & conversion landing page"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 46,
+    "name": "Terrazzo Earth",
+    "colors": [
+      "#EAC435",
+      "#345995",
+      "#03CEA4",
+      "#FB4D3D"
+    ],
+    "role": "Creative agency or modern art museum"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 47,
+    "name": "Sunset Orange",
+    "colors": [
+      "#FF5E62",
+      "#FF9966",
+      "#2D545E",
+      "#12343B"
+    ],
+    "role": "Vibrant gradient base with deep contrast slate"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 48,
+    "name": "Mustard & Indigo Retro",
+    "colors": [
+      "#E8A87C",
+      "#C38D9E",
+      "#E27D60",
+      "#41B3A3"
+    ],
+    "role": "1970s warm retro illustration vibe"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 49,
+    "name": "Emerald & Gold",
+    "colors": [
+      "#064E3B",
+      "#F59E0B",
+      "#F3F4F6",
+      "#111827"
+    ],
+    "role": "High-end boutique, luxury jewelry"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 50,
+    "name": "Vintage Matcha Café",
+    "colors": [
+      "#FFF5D7",
+      "#A7F3D0",
+      "#065F46",
+      "#781A44"
+    ],
+    "role": "Aesthetic match-cafe, trendy editorial"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 51,
+    "name": "Olive Garden Feast",
+    "sourceName": "Olive Garden Feast",
+    "colors": [
+      "#606C38",
+      "#283618",
+      "#FEFAE0",
+      "#DDA15E",
+      "#BC6C25"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 1,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 52,
+    "name": "Fiery Ocean",
+    "sourceName": "Fiery Ocean",
+    "colors": [
+      "#780000",
+      "#C1121F",
+      "#FDF0D5",
+      "#003049",
+      "#669BBC"
+    ],
+    "role": "Dark character cards with luminous accents",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 2,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 53,
+    "name": "Deep Sea",
+    "sourceName": "Deep Sea",
+    "colors": [
+      "#0D1321",
+      "#1D2D44",
+      "#3E5C76",
+      "#748CAB",
+      "#F0EBD8"
+    ],
+    "role": "Clear interface accents and information panels",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 3,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 54,
+    "name": "Pastel Dreamland Adventure",
+    "sourceName": "Pastel Dreamland Adventure",
+    "colors": [
+      "#CDB4DB",
+      "#FFC8DD",
+      "#FFAFCC",
+      "#BDE0FE",
+      "#A2D2FF"
+    ],
+    "role": "Soft character profiles and playful details",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 4,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 55,
+    "name": "Dark Sunset",
+    "sourceName": "Dark Sunset",
+    "colors": [
+      "#335C67",
+      "#FFF3B0",
+      "#E09F3E",
+      "#9E2A2B",
+      "#540B0E"
+    ],
+    "role": "Dark character cards with luminous accents",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 5,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 56,
+    "name": "Warm Autumn Glow",
+    "sourceName": "Warm Autumn Glow",
+    "colors": [
+      "#003049",
+      "#D62828",
+      "#F77F00",
+      "#FCBF49",
+      "#EAE2B7"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 6,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 57,
+    "name": "Ocean Blue Serenity",
+    "sourceName": "Ocean Blue Serenity",
+    "colors": [
+      "#03045E",
+      "#023E8A",
+      "#0077B6",
+      "#0096C7",
+      "#00B4D8",
+      "#48CAE4",
+      "#90E0EF",
+      "#ADE8F4",
+      "#CAF0F8"
+    ],
+    "role": "Clear interface accents and information panels",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 7,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 58,
+    "name": "Golden Twilight",
+    "sourceName": "Golden Twilight",
+    "colors": [
+      "#000814",
+      "#001D3D",
+      "#003566",
+      "#FFC300",
+      "#FFD60A"
+    ],
+    "role": "Dark character cards with luminous accents",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 8,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 59,
+    "name": "Leafy Green Garden",
+    "sourceName": "Leafy Green Garden",
+    "colors": [
+      "#132A13",
+      "#31572C",
+      "#4F772D",
+      "#90A955",
+      "#ECF39E"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 9,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 60,
+    "name": "Soft Pink Delight",
+    "sourceName": "Soft Pink Delight",
+    "colors": [
+      "#FFE5EC",
+      "#FFC2D1",
+      "#FFB3C6",
+      "#FF8FAB",
+      "#FB6F92"
+    ],
+    "role": "Soft character profiles and playful details",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 10,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 61,
+    "name": "Crimson Hues",
+    "sourceName": "Crimson Hues",
+    "colors": [
+      "#250902",
+      "#38040E",
+      "#640D14",
+      "#800E13",
+      "#AD2831"
+    ],
+    "role": "Dark character cards with luminous accents",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 12,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 62,
+    "name": "Autumn Harvest",
+    "sourceName": "Autumn Harvest",
+    "colors": [
+      "#6F1D1B",
+      "#BB9457",
+      "#432818",
+      "#99582A",
+      "#FFE6A7"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 13,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 63,
+    "name": "Earthy Forest Hues",
+    "sourceName": "Earthy Forest Hues",
+    "colors": [
+      "#DAD7CD",
+      "#A3B18A",
+      "#588157",
+      "#3A5A40",
+      "#344E41"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 14,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 64,
+    "name": "Ocean Breeze",
+    "sourceName": "Ocean Breeze",
+    "colors": [
+      "#03045E",
+      "#0077B6",
+      "#00B4D8",
+      "#90E0EF",
+      "#CAF0F8"
+    ],
+    "role": "Clear interface accents and information panels",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 15,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 65,
+    "name": "Earthy Tones",
+    "sourceName": "Earthy Tones",
+    "colors": [
+      "#F0EAD2",
+      "#DDE5B6",
+      "#ADC178",
+      "#A98467",
+      "#6C584C"
+    ],
+    "role": "Calm editorial layouts and neutral card surfaces",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 16,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 66,
+    "name": "Fresh Greens",
+    "sourceName": "Fresh Greens",
+    "colors": [
+      "#386641",
+      "#6A994E",
+      "#A7C957",
+      "#F2E8CF",
+      "#BC4749"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 17,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 67,
+    "name": "Rustic Charm",
+    "sourceName": "Rustic Charm",
+    "colors": [
+      "#FFFCF2",
+      "#CCC5B9",
+      "#403D39",
+      "#252422",
+      "#EB5E28"
+    ],
+    "role": "Calm editorial layouts and neutral card surfaces",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 18,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 68,
+    "name": "Fiery Red Sunset",
+    "sourceName": "Fiery Red Sunset",
+    "colors": [
+      "#03071E",
+      "#370617",
+      "#6A040F",
+      "#9D0208",
+      "#D00000",
+      "#DC2F02",
+      "#E85D04",
+      "#F48C06",
+      "#FAA307",
+      "#FFBA08"
+    ],
+    "role": "Dark character cards with luminous accents",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 19,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 69,
+    "name": "Summer Ocean Breeze",
+    "sourceName": "Summer Ocean Breeze",
+    "colors": [
+      "#E63946",
+      "#F1FAEE",
+      "#A8DADC",
+      "#457B9D",
+      "#1D3557"
+    ],
+    "role": "Clear interface accents and information panels",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 20,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 70,
+    "name": "Pastel Dreams",
+    "sourceName": "Pastel Dreams",
+    "colors": [
+      "#FF99C8",
+      "#FCF6BD",
+      "#D0F4DE",
+      "#A9DEF9",
+      "#E4C1F9"
+    ],
+    "role": "Soft character profiles and playful details",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 21,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 71,
+    "name": "Fiery Palette",
+    "sourceName": "Fiery Palette",
+    "colors": [
+      "#5F0F40",
+      "#9A031E",
+      "#FB8B24",
+      "#E36414",
+      "#0F4C5C"
+    ],
+    "role": "Dark character cards with luminous accents",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 22,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 72,
+    "name": "Refreshing Summer Fun",
+    "sourceName": "Refreshing Summer Fun",
+    "colors": [
+      "#8ECAE6",
+      "#219EBC",
+      "#023047",
+      "#FFB703",
+      "#FB8500"
+    ],
+    "role": "Clear interface accents and information panels",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 23,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 73,
+    "name": "Bold Berry",
+    "sourceName": "Bold Berry",
+    "colors": [
+      "#F9DBBD",
+      "#FFA5AB",
+      "#DA627D",
+      "#A53860",
+      "#450920"
+    ],
+    "role": "Soft character profiles and playful details",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 24,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 74,
+    "name": "Ocean Sunset",
+    "sourceName": "Ocean Sunset",
+    "colors": [
+      "#001219",
+      "#005F73",
+      "#0A9396",
+      "#94D2BD",
+      "#E9D8A6",
+      "#EE9B00",
+      "#CA6702",
+      "#BB3E03",
+      "#AE2012",
+      "#9B2226"
+    ],
+    "role": "Dark character cards with luminous accents",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 25,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 75,
+    "name": "Vivid Nightfall",
+    "sourceName": "Vivid Nightfall",
+    "colors": [
+      "#10002B",
+      "#240046",
+      "#3C096C",
+      "#5A189A",
+      "#7B2CBF",
+      "#9D4EDD",
+      "#C77DFF",
+      "#E0AAFF"
+    ],
+    "role": "Dark character cards with luminous accents",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 26,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 76,
+    "name": "Warm Neutral Tones",
+    "sourceName": "Warm Neutral Tones",
+    "colors": [
+      "#582F0E",
+      "#7F4F24",
+      "#936639",
+      "#A68A64",
+      "#B6AD90",
+      "#C2C5AA",
+      "#A4AC86",
+      "#656D4A",
+      "#414833",
+      "#333D29"
+    ],
+    "role": "Calm editorial layouts and neutral card surfaces",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 27,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 77,
+    "name": "Light Steel",
+    "sourceName": "Light Steel",
+    "colors": [
+      "#F8F9FA",
+      "#E9ECEF",
+      "#DEE2E6",
+      "#CED4DA",
+      "#ADB5BD",
+      "#6C757D",
+      "#495057",
+      "#343A40",
+      "#212529"
+    ],
+    "role": "Calm editorial layouts and neutral card surfaces",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 28,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 78,
+    "name": "Peach Sorbet",
+    "sourceName": "Peach Sorbet",
+    "colors": [
+      "#F08080",
+      "#F4978E",
+      "#F8AD9D",
+      "#FBC4AB",
+      "#FFDAB9"
+    ],
+    "role": "Soft character profiles and playful details",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 29,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 79,
+    "name": "Meadow Green",
+    "sourceName": "Meadow Green",
+    "colors": [
+      "#D9ED92",
+      "#B5E48C",
+      "#99D98C",
+      "#76C893",
+      "#52B69A",
+      "#34A0A4",
+      "#168AAD",
+      "#1A759F",
+      "#1E6091",
+      "#184E77"
+    ],
+    "role": "Clear interface accents and information panels",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 30,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 80,
+    "name": "Peachy Delight",
+    "sourceName": "Peachy Delight",
+    "colors": [
+      "#D8E2DC",
+      "#FFE5D9",
+      "#FFCAD4",
+      "#F4ACB7",
+      "#9D8189"
+    ],
+    "role": "Soft character profiles and playful details",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 31,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 81,
+    "name": "Rose Petal",
+    "sourceName": "Rose Petal",
+    "colors": [
+      "#880D1E",
+      "#DD2D4A",
+      "#F26A8D",
+      "#F49CBB",
+      "#CBEEF3"
+    ],
+    "role": "Soft character profiles and playful details",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 33,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 82,
+    "name": "Vibrant Sunset",
+    "sourceName": "Vibrant Sunset",
+    "colors": [
+      "#FF6D00",
+      "#FF7900",
+      "#FF8500",
+      "#FF9100",
+      "#FF9E00",
+      "#240046",
+      "#3C096C",
+      "#5A189A",
+      "#7B2CBF",
+      "#9D4EDD"
+    ],
+    "role": "Dark character cards with luminous accents",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 35,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 83,
+    "name": "Red Sunburst",
+    "sourceName": "Red Sunburst",
+    "colors": [
+      "#4F000B",
+      "#720026",
+      "#CE4257",
+      "#FF7F51",
+      "#FF9B54"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 36,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 84,
+    "name": "Golden Summer Glow",
+    "sourceName": "Golden Summer Glow",
+    "colors": [
+      "#0D3B66",
+      "#FAF0CA",
+      "#F4D35E",
+      "#EE964B",
+      "#F95738"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 37,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 85,
+    "name": "Golden Summer Fields",
+    "sourceName": "Golden Summer Fields",
+    "colors": [
+      "#CCD5AE",
+      "#E9EDC9",
+      "#FEFAE0",
+      "#FAEDCD",
+      "#D4A373"
+    ],
+    "role": "Calm editorial layouts and neutral card surfaces",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 38,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 86,
+    "name": "Classic Red Palette",
+    "sourceName": "Classic Red Palette",
+    "colors": [
+      "#0B090A",
+      "#161A1D",
+      "#660708",
+      "#A4161A",
+      "#BA181B",
+      "#E5383B",
+      "#B1A7A6",
+      "#D3D3D3",
+      "#F5F3F4",
+      "#FFFFFF"
+    ],
+    "role": "Dark character cards with luminous accents",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 39,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 87,
+    "name": "Vibrant Tones",
+    "sourceName": "Vibrant Tones",
+    "colors": [
+      "#F94144",
+      "#F3722C",
+      "#F8961E",
+      "#F9844A",
+      "#F9C74F",
+      "#90BE6D",
+      "#43AA8B",
+      "#4D908E",
+      "#577590",
+      "#277DA1"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 40,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Pastel & Sweet",
+    "id": 88,
+    "name": "Whimsical Garden Delight",
+    "sourceName": "Whimsical Garden Delight",
+    "colors": [
+      "#DAB6C4",
+      "#7B886F",
+      "#B4DC7F",
+      "#FEFFA5",
+      "#FFA0AC"
+    ],
+    "role": "Soft character profiles and playful details",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 41,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Minimal & Modern",
+    "id": 89,
+    "name": "Autumn Harvest (Sandstone)",
+    "sourceName": "Autumn Harvest",
+    "colors": [
+      "#EDE0D4",
+      "#E6CCB2",
+      "#DDB892",
+      "#B08968",
+      "#7F5539",
+      "#9C6644"
+    ],
+    "role": "Calm editorial layouts and neutral card surfaces",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 42,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 90,
+    "name": "Midnight Sky",
+    "sourceName": "Midnight Sky",
+    "colors": [
+      "#00296B",
+      "#003F88",
+      "#00509D",
+      "#FDC500",
+      "#FFD500"
+    ],
+    "role": "Dark character cards with luminous accents",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 43,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 91,
+    "name": "Earthy Tones (Meadow)",
+    "sourceName": "Earthy Tones",
+    "colors": [
+      "#2C6E49",
+      "#4C956C",
+      "#FEFEE3",
+      "#FFC9B9",
+      "#D68C45"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 44,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 92,
+    "name": "Coastal Vibes",
+    "sourceName": "Coastal Vibes",
+    "colors": [
+      "#3D5A80",
+      "#98C1D9",
+      "#E0FBFC",
+      "#EE6C4D",
+      "#293241"
+    ],
+    "role": "Clear interface accents and information panels",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 45,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Dark Mode & Cyberpunk",
+    "id": 93,
+    "name": "Gothic Romance",
+    "sourceName": "Gothic Romance",
+    "colors": [
+      "#0A0908",
+      "#49111C",
+      "#F2F4F3",
+      "#A9927D",
+      "#5E503F"
+    ],
+    "role": "Dark character cards with luminous accents",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 46,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Tech, SaaS & Corporate",
+    "id": 94,
+    "name": "Deep Sea (Slate)",
+    "sourceName": "Deep Sea",
+    "colors": [
+      "#0D1B2A",
+      "#1B263B",
+      "#415A77",
+      "#778DA9",
+      "#E0E1DD"
+    ],
+    "role": "Clear interface accents and information panels",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 47,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 95,
+    "name": "Vibrant Color Fiesta",
+    "sourceName": "Vibrant Color Fiesta",
+    "colors": [
+      "#FFBE0B",
+      "#FB5607",
+      "#FF006E",
+      "#8338EC",
+      "#3A86FF"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 48,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 96,
+    "name": "Sunny Beach Day",
+    "sourceName": "Sunny Beach Day",
+    "colors": [
+      "#264653",
+      "#2A9D8F",
+      "#E9C46A",
+      "#F4A261",
+      "#E76F51"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 49,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 97,
+    "name": "Sunset Gradient",
+    "sourceName": "Sunset Gradient",
+    "colors": [
+      "#FF7B00",
+      "#FF8800",
+      "#FF9500",
+      "#FFA200",
+      "#FFAA00",
+      "#FFB700",
+      "#FFC300",
+      "#FFD000",
+      "#FFDD00",
+      "#FFEA00"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 50,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 98,
+    "name": "Fresh Greens (Mint Gradient)",
+    "sourceName": "Fresh Greens",
+    "colors": [
+      "#D8F3DC",
+      "#B7E4C7",
+      "#95D5B2",
+      "#74C69D",
+      "#52B788",
+      "#40916C",
+      "#2D6A4F",
+      "#1B4332",
+      "#081C15"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 51,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 99,
+    "name": "Spicy Delight",
+    "sourceName": "Spicy Delight",
+    "colors": [
+      "#FBBA72",
+      "#CA5310",
+      "#BB4D00",
+      "#8F250C",
+      "#691E06"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 52,
+    "sourcedOn": "2026-09-24"
+  },
+  {
+    "category": "Bold, Earthy & Retro",
+    "id": 100,
+    "name": "Autumn Glow",
+    "sourceName": "Autumn Glow",
+    "colors": [
+      "#780116",
+      "#F7B538",
+      "#DB7C26",
+      "#D8572A",
+      "#C32F27"
+    ],
+    "role": "Expressive covers and thematic highlights",
+    "source": "https://coolors.co/palettes/trending",
+    "sourcePosition": 53,
+    "sourcedOn": "2026-09-24"
+  }
+]

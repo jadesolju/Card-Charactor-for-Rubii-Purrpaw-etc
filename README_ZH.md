@@ -119,7 +119,7 @@ rubii --check
    - 半透明背景（`rgba(...)`）搭配发光边框变量（`--neon-p`, `--neon-s`, `--neon-accent`），完美融入各种设备壁纸。
 4. **100% 可复制文本节点（Copyable Text Nodes）：**
    - 所有文本均存放在原生 HTML 节点中（`user-select: text !important;`），杜绝用伪元素隐藏文本。
-5. **50 套大师级配色与排版矩阵：**
+5. **100 套配色与 50 套字体排版矩阵：**
    - 提供 **JSON、YAML 和 Markdown** 格式的完整设计资产库。
 
 ---
@@ -127,11 +127,11 @@ rubii --check
 ## 📦 多格式数据库与跨界主题模板 (Cross-Over Templates)
 
 * **JSON 数据库 (`data/json/`):**
-  - [`color_palettes_50.json`](data/json/color_palettes_50.json) — 50 套流行 CSS 配色与 Hex 代码。
+  - [`color_palettes_100.json`](data/json/color_palettes_100.json) — 100 套 CSS 配色与 Hex 代码，包含 50 套 Coolors Trending 配色。
   - [`typography_50.json`](data/json/typography_50.json) — 50 套中英文字体搭配。
   - [`theme_components.json`](data/json/theme_components.json) — 材质、遮罩与动效组件。
 * **YAML 格式 (`data/yaml/`):**
-  - [`color_palettes_50.yaml`](data/yaml/color_palettes_50.yaml)
+  - [`color_palettes_100.yaml`](data/yaml/color_palettes_100.yaml)
   - [`typography_50.yaml`](data/yaml/typography_50.yaml)
   - [`gem_plugin_config.yaml`](data/yaml/gem_plugin_config.yaml) — Agent 插件与 Gem 配置文件。
 * **跨界模板 (`templates/`):**

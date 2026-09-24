@@ -16,7 +16,7 @@
    - เปิดไฟล์ [`standalone/rubii_architect_v2.2.7_standalone.md`](../standalone/rubii_architect_v2.2.7_standalone.md)
    - คัดลอก (Copy) เนื้อหาทั้งหมด แล้วนำไปวางในช่อง **Instructions**
 4. ในช่อง **Knowledge (คลังความรู้ / ไฟล์แนบ)** (ถ้าต้องการ):
-   - แนบไฟล์ [`data/json/color_palettes_50.json`](../data/json/color_palettes_50.json)
+   - แนบไฟล์ [`data/json/color_palettes_100.json`](../data/json/color_palettes_100.json)
    - แนบไฟล์ [`data/json/typography_50.json`](../data/json/typography_50.json)
 5. คลิก **Save (บันทึก)**
 

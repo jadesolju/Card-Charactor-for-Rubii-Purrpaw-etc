@@ -8,7 +8,7 @@
     "entryCount": 50,
     "description": "คลัง Compound สำหรับประกอบ Themeplate การ์ด ใช้ข้อมูลตัวอย่างแบบ placeholder และ SVG ภายในโปรเจกต์เท่านั้น",
     "sources": {
-      "palettes": "data/json/color_palettes_50.json",
+      "palettes": "data/json/color_palettes_100.json",
       "typography": "data/json/typography_50.json",
       "themeplates": "data/json/theme_extended.json",
       "legacyComponents": "data/json/theme_components.json",

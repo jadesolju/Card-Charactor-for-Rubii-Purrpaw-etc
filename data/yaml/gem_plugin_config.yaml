@@ -45,6 +45,6 @@ command_gates:
     action: "Compile final minified production HTML/CSS code (STATE 11)"
 
 data_sources:
-  color_palettes: "data/json/color_palettes_50.json"
+  color_palettes: "data/json/color_palettes_100.json"
   typography_pairs: "data/json/typography_50.json"
   components_manifest: "data/json/theme_components.json"
