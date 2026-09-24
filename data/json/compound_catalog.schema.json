@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rubii-card-architect.local/schemas/compound-catalog.schema.json",
+  "title": "Rubii Compound Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["catalog", "tokenContract", "categories", "compounds"],
+  "properties": {
+    "catalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "language", "stage", "updated", "entryCount", "description", "sources", "runtimeConstraints"],
+      "properties": {
+        "id": { "const": "rubii.compound-library" },
+        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "language": { "enum": ["th", "en"] },
+        "stage": { "type": "string", "minLength": 1 },
+        "updated": { "type": "string", "format": "date" },
+        "entryCount": { "type": "integer", "minimum": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "sources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["palettes", "typography", "themeplates", "legacyComponents", "previewSprite"],
+          "properties": {
+            "palettes": { "type": "string" },
+            "typography": { "type": "string" },
+            "themeplates": { "type": "string" },
+            "legacyComponents": { "type": "string" },
+            "previewSprite": { "type": "string" }
+          }
+        },
+        "runtimeConstraints": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["minimumViewportPx", "maximumViewportPx", "cardOutput", "externalImageUrls", "motionFallback"],
+          "properties": {
+            "minimumViewportPx": { "type": "integer", "minimum": 320 },
+            "maximumViewportPx": { "type": "integer", "maximum": 440 },
+            "cardOutput": { "const": "HTML-CSS-Zero-JS" },
+            "externalImageUrls": { "const": false },
+            "motionFallback": { "type": "string" }
+          }
+        }
+      }
+    },
+    "tokenContract": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^--theme-[a-z-]+$" }
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "count"],
+        "properties": {
+          "id": { "enum": ["frame", "surface", "motion", "ornament", "information", "interaction"] },
+          "name": { "type": "string", "minLength": 1 },
+          "count": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
+    "compounds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "category", "summary", "slot", "recipe", "copyName", "svgSymbol", "paletteRoles", "motion", "performance", "reducedMotion", "tags"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^(frame|surface|motion|ornament|information|interaction)\\.[a-z0-9-]+$" },
+          "name": { "type": "string", "minLength": 2 },
+          "category": { "enum": ["frame", "surface", "motion", "ornament", "information", "interaction"] },
+          "summary": { "type": "string", "minLength": 12 },
+          "slot": { "type": "string", "minLength": 1 },
+          "recipe": { "type": "array", "minItems": 2, "items": { "type": "string", "minLength": 1 } },
+          "copyName": { "type": "string", "pattern": "^@compound/(frame|surface|motion|ornament|information|interaction)/[a-z0-9-]+$" },
+          "svgSymbol": { "type": "string", "pattern": "^compound-(frame|surface|motion|ornament|information|interaction)-[a-z0-9-]+$" },
+          "paletteRoles": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "enum": ["primary", "secondary", "accent", "surface", "surface-raised", "text", "muted", "border"] }
+          },
+          "motion": { "enum": ["static", "subtle", "active"] },
+          "performance": { "enum": ["low", "medium"] },
+          "reducedMotion": { "enum": ["static", "instant"] },
+          "tags": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+        }
+      }
+    }
+  }
+}

@@ -131,17 +131,22 @@ rubii --check
   * [`color_palettes_50.json`](data/json/color_palettes_50.json) — คลัง 50 ชุดสี Hex Codes
   * [`typography_50.json`](data/json/typography_50.json) — คลัง 50 คู่ฟอนต์ไทย/อังกฤษ
   * [`theme_components.json`](data/json/theme_components.json) — คลังเอฟเฟกต์และคอมโพเนนต์
+  * [`compound_catalog_v1.json`](data/json/compound_catalog_v1.json) — Compound ชุดตั้งต้น 50 รายการ พร้อม ID เรียกใช้และ SVG preview ในโปรเจกต์
+  * [`compound_catalog.schema.json`](data/json/compound_catalog.schema.json) — สัญญาข้อมูลสำหรับตรวจรูปแบบ Compound
 * **YAML Data (`data/yaml/`):**
   * [`color_palettes_50.yaml`](data/yaml/color_palettes_50.yaml)
   * [`typography_50.yaml`](data/yaml/typography_50.yaml)
   * [`gem_plugin_config.yaml`](data/yaml/gem_plugin_config.yaml) — คอนฟิกสำหรับ Gem / Custom Agent
 * **Cross-Over Templates (`templates/`):**
+  * [`themeplate_compound_skeleton.md`](templates/themeplate_compound_skeleton.md) — โครง Themeplate แบบ placeholder เชื่อม Palette, Typography และ Compound
   * [`template_cyber_gothic.md`](templates/template_cyber_gothic.md) *(Cyberpunk × Gothic Victorian)*
   * [`template_arcane_academia.md`](templates/template_arcane_academia.md) *(Dark Academia × Arcane Mage)*
   * [`template_pastel_glitch.md`](templates/template_pastel_glitch.md) *(Pastel Kawaii × Vaporwave Glitch)*
   * [`template_solar_steampunk.md`](templates/template_solar_steampunk.md) *(Solarpunk × Victorian Steampunk)*
   * [`template_divine_occult.md`](templates/template_divine_occult.md) *(Celestial Light × Occult Manuscript)*
   * [`template_quiet_luxury_noir.md`](templates/template_quiet_luxury_noir.md) *(Quiet Wealth × Film Noir)*
+
+มาตรฐานและรอบการขยายคลังอยู่ที่ [`docs/visual_library_standard.md`](docs/visual_library_standard.md); ภาพ SVG ของ Compound อยู่ใน `data/svg/compound_preview_sprite.svg` และไม่พึ่ง URL รูปภายนอก
 
 ---
 

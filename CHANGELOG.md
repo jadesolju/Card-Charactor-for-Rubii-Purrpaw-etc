@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased]
+
+### Added
+* **Visual Library Foundation:** Added a 50-entry Compound catalog, a strict JSON schema, a local SVG preview sprite, and a placeholder-only Themeplate skeleton. The catalog references the existing Palette, Typography, and Themeplate datasets and avoids external image URLs.
+
 ## [2.2.7] - 2026-09-20 (Current Release)
 
 ### 🚀 Highlights: GitHub Public Open-Source Release & Multilingual Support

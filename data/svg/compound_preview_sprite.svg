@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <symbol id="compound-frame-neon-corner-brackets" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+    <path d="M17 5H7v10M31 5h10v10M7 33v10h10M41 33v10H31"/><path d="M17 10h-5v5m24-5h-5m5 0v5M12 33v5h5m19-5v5h-5" opacity=".55"/>
+  </symbol>
+  <symbol id="compound-frame-double-editorial-line" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
+    <rect x="6" y="5" width="36" height="38" rx="2"/><rect x="10" y="9" width="28" height="30" rx="1" opacity=".6"/>
+  </symbol>
+  <symbol id="compound-frame-archive-dashed" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="6" y="7" width="36" height="34" rx="4" stroke-dasharray="4 3"/><path d="M13 15h22M13 21h15M13 29h22M13 35h11" opacity=".55"/>
+  </symbol>
+  <symbol id="compound-frame-cathedral-arch-window" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M6 42V24C6 14 14 6 24 6s18 8 18 18v18H6Z"/><path d="M12 42V24a12 12 0 0 1 24 0v18M24 12v30M12 24h24" opacity=".6"/>
+  </symbol>
+  <symbol id="compound-frame-offset-shadow" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="12" y="6" width="29" height="34" rx="3"/><path d="M7 12v30h28M17 15h19M17 21h14M17 29h19" opacity=".65"/>
+  </symbol>
+  <symbol id="compound-frame-ticket-perforation" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M7 9h34v9a6 6 0 0 0 0 12v9H7v-9a6 6 0 0 0 0-12V9Z"/><path d="M16 14v20M23 14v20M30 14v20" stroke-dasharray="1 4" opacity=".6"/>
+  </symbol>
+  <symbol id="compound-frame-tarot-inner-border" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+    <rect x="6" y="4" width="36" height="40" rx="3"/><rect x="10" y="8" width="28" height="32" rx="9"/><path d="M24 12v4m0 16v4M14 24h4m12 0h4"/>
+  </symbol>
+  <symbol id="compound-frame-split-accent-edge" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="6" y="6" width="36" height="36" rx="5"/><path d="M24 6v36M11 14h8M29 34h8" opacity=".7"/>
+  </symbol>
+  <symbol id="compound-frame-soft-rounded-outline" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="5" y="7" width="38" height="34" rx="9"/><path d="M13 15h22M13 21h15M13 32h22" opacity=".55"/>
+  </symbol>
+  <symbol id="compound-frame-scanline-rail" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+    <rect x="5" y="6" width="38" height="36" rx="3"/><path d="M8 13h32M8 19h32M8 25h32M8 31h32M8 37h32" opacity=".5"/>
+  </symbol>
+  <symbol id="compound-surface-frosted-glass" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="6" y="7" width="36" height="34" rx="6"/><path d="M12 15h15M12 21h24M12 28h18M12 34h11" opacity=".55"/><circle cx="34" cy="14" r="3" opacity=".7"/>
+  </symbol>
+  <symbol id="compound-surface-paper-stack" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M12 7h27v32H12z" opacity=".45"/><path d="M8 11h27v32H8z"/><path d="M13 18h17M13 24h17M13 31h12" opacity=".6"/>
+  </symbol>
+  <symbol id="compound-surface-midnight-gradient" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="5" y="6" width="38" height="36" rx="7"/><circle cx="25" cy="22" r="11" opacity=".45"/><path d="M11 35c7-6 19-6 26 0M16 22h18" opacity=".7"/>
+  </symbol>
+  <symbol id="compound-surface-pearl-sheen" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="5" y="7" width="38" height="34" rx="8"/><path d="M9 31c8-14 21-18 30-10M9 36c9-9 20-12 30-9M12 13c7-4 15-4 22-1" opacity=".65"/>
+  </symbol>
+  <symbol id="compound-surface-matte-clay" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="7" y="8" width="34" height="32" rx="9"/><path d="M13 16c5-4 17-4 22 0M13 33h22" opacity=".55"/>
+  </symbol>
+  <symbol id="compound-surface-brushed-metal" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="5" y="8" width="38" height="32" rx="4"/><path d="M9 15h30M9 20h30M9 27h30M9 33h30" opacity=".55"/><path d="m15 8-5 32m16-32-5 32m16-32-5 32" opacity=".22"/>
+  </symbol>
+  <symbol id="compound-surface-ceramic-glaze" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="6" y="7" width="36" height="34" rx="8"/><path d="M13 13c7-4 15-4 22 0M12 34h24" opacity=".65"/>
+  </symbol>
+  <symbol id="compound-surface-aurora-layers" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="5" y="7" width="38" height="34" rx="7"/><path d="M7 29c7-13 12 3 19-7s11-4 15-9M7 34c7-7 12 2 19-3s11 0 15-5" opacity=".7"/>
+  </symbol>
+  <symbol id="compound-motion-slow-float" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M12 33h24M16 27l8-10 8 10"/><path d="M24 7v10m-4-4 4 4 4-4" opacity=".65"/>
+  </symbol>
+  <symbol id="compound-motion-breathing-opacity" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="24" cy="24" r="13"/><circle cx="24" cy="24" r="7" opacity=".45"/><path d="M24 4v4M24 40v4M4 24h4M40 24h4" opacity=".65"/>
+  </symbol>
+  <symbol id="compound-motion-pulse-ring" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="24" cy="24" r="5"/><circle cx="24" cy="24" r="12" opacity=".6"/><circle cx="24" cy="24" r="19" opacity=".3"/>
+  </symbol>
+  <symbol id="compound-motion-shine-sweep" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="8" y="9" width="32" height="30" rx="5"/><path d="m18 37 12-26M12 17h4M32 31h4" opacity=".7"/>
+  </symbol>
+  <symbol id="compound-motion-border-radar" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="6" y="6" width="36" height="36" rx="4"/><path d="M24 24 39 11M24 24h16M24 24v-17" opacity=".65"/><circle cx="24" cy="24" r="3"/>
+  </symbol>
+  <symbol id="compound-motion-drift-stars" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="m13 11 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5ZM34 24l1.5 3.5L39 29l-3.5 1.5L34 34l-1.5-3.5L29 29l3.5-1.5L34 24Z"/><path d="M30 9v5m-2.5-2.5h5" opacity=".6"/>
+  </symbol>
+  <symbol id="compound-motion-scanline-static" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="6" y="8" width="36" height="32" rx="4"/><path d="M10 16h28M10 22h28M10 28h28M10 34h28" opacity=".5"/>
+  </symbol>
+  <symbol id="compound-motion-orbiting-marker" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="24" cy="24" r="5"/><ellipse cx="24" cy="24" rx="18" ry="9" transform="rotate(-35 24 24)"/><circle cx="38" cy="14" r="2.5" fill="currentColor"/>
+  </symbol>
+  <symbol id="compound-motion-reveal-fade-up" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M12 35h24M14 28h20M17 21h14M24 5v12m-5-5 5 5 5-5" opacity=".75"/>
+  </symbol>
+  <symbol id="compound-motion-glow-bloom" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="m24 5 4.5 13.5L42 24l-13.5 4.5L24 42l-4.5-13.5L6 24l13.5-5.5L24 5Z"/><circle cx="24" cy="24" r="4"/>
+  </symbol>
+  <symbol id="compound-ornament-constellation-corner" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="m9 36 9-15 11 5 10-17M18 21l8-12"/><circle cx="9" cy="36" r="2" fill="currentColor"/><circle cx="18" cy="21" r="2" fill="currentColor"/><circle cx="29" cy="26" r="2" fill="currentColor"/><circle cx="39" cy="9" r="2" fill="currentColor"/>
+  </symbol>
+  <symbol id="compound-ornament-botanical-corner" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M10 40C13 25 23 14 39 8M17 29c-8-1-10-7-9-12 7 0 12 3 13 9M26 18c-1-7 3-11 9-13 2 7 0 12-6 15"/><path d="m13 36 20-21" opacity=".55"/>
+  </symbol>
+  <symbol id="compound-ornament-orbit-rings" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="24" cy="24" r="5"/><ellipse cx="24" cy="24" rx="18" ry="8"/><ellipse cx="24" cy="24" rx="18" ry="8" transform="rotate(60 24 24)" opacity=".65"/>
+  </symbol>
+  <symbol id="compound-ornament-rune-medallion" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="13" opacity=".55"/><path d="M24 12v24M17 18l14 12M31 18 17 30"/>
+  </symbol>
+  <symbol id="compound-ornament-star-cluster" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="m16 8 3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8ZM35 27l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z"/>
+  </symbol>
+  <symbol id="compound-ornament-hex-grid-corner" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="m13 7 7 4v8l-7 4-7-4v-8l7-4Zm16 0 7 4v8l-7 4-7-4v-8l7-4ZM21 24l7 4v8l-7 4-7-4v-8l7-4Z"/>
+  </symbol>
+  <symbol id="compound-ornament-wax-seal" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="m24 5 5 3 6-1 2 6 5 4-2 6 2 6-5 4-2 6-6-1-5 4-5-4-6 1-2-6-5-4 2-6-2-6 5-4 2-6 6 1 5-3Z"/><circle cx="24" cy="24" r="8"/><path d="M20 24h8M24 20v8"/>
+  </symbol>
+  <symbol id="compound-ornament-gradient-divider" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M5 24h13m12 0h13M18 24h12" opacity=".45"/><path d="m21 20 3 4-3 4m6-8-3 4 3 4"/>
+  </symbol>
+  <symbol id="compound-information-status-pill" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="5" y="15" width="38" height="18" rx="9"/><circle cx="15" cy="24" r="3" fill="currentColor"/><path d="M22 21h14M22 27h10" opacity=".7"/>
+  </symbol>
+  <symbol id="compound-information-two-column-facts" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="5" y="7" width="38" height="34" rx="4"/><path d="M24 8v32M10 15h9m-9 6h9m10-6h9m-9 6h9M10 31h9m-9 5h9m10-5h9m-9 5h9" opacity=".7"/>
+  </symbol>
+  <symbol id="compound-information-stat-meter" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M8 12h32M8 24h32M8 36h32" opacity=".4"/><path d="M8 12h24M8 24h15M8 36h29" stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="compound-information-section-heading" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="13" cy="15" r="6"/><path d="M10 15h6m-3-3v6M23 12h17M23 18h12M7 31h34M7 37h24" opacity=".7"/>
+  </symbol>
+  <symbol id="compound-information-metadata-chips" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="5" y="9" width="18" height="12" rx="6"/><rect x="26" y="9" width="17" height="12" rx="6"/><rect x="10" y="27" width="27" height="12" rx="6"/><path d="M10 15h8m13 0h7m-15 18h13" opacity=".55"/>
+  </symbol>
+  <symbol id="compound-information-vertical-timeline" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M12 7v34"/><circle cx="12" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="25" r="3"/><circle cx="12" cy="37" r="3"/><path d="M21 12h18M21 25h15M21 37h18" opacity=".65"/>
+  </symbol>
+  <symbol id="compound-information-dossier-rows" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M7 9h34M7 20h34M7 31h34M7 41h34" opacity=".4"/><path d="M9 14h10m-10 11h10m-10 11h10M24 14h14M24 25h14M24 36h14"/>
+  </symbol>
+  <symbol id="compound-information-quote-callout" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M8 9h32v30H8z"/><path d="M14 17h20M14 23h17M14 30h20" opacity=".65"/><path d="M14 12v21" stroke-width="3"/>
+  </symbol>
+  <symbol id="compound-interaction-details-accordion" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="6" y="8" width="36" height="32" rx="4"/><path d="M10 17h20m-20 8h28m-28 7h23" opacity=".65"/><path d="m34 14 4 4 4-4"/>
+  </symbol>
+  <symbol id="compound-interaction-radio-mode-switch" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="5" y="14" width="38" height="20" rx="10"/><circle cx="16" cy="24" r="6"/><circle cx="32" cy="24" r="3" opacity=".5"/>
+  </symbol>
+  <symbol id="compound-interaction-radio-tabs" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M6 13h11m3 0h11m3 0h8M6 18h11m3-5v5m3 8h19v14H6V26h10"/><path d="M6 26h10v14H6z" opacity=".6"/>
+  </symbol>
+  <symbol id="compound-interaction-segmented-selector" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="5" y="14" width="38" height="20" rx="6"/><path d="M18 14v20m12-20v20" opacity=".65"/><rect x="6" y="15" width="11" height="18" rx="4"/>
+  </symbol>
+  <symbol id="compound-interaction-classified-reveal" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="6" y="8" width="36" height="32" rx="4"/><path d="M11 16h26M11 22h26M11 29h11m4 0h11"/><path d="m30 32 4 4 7-8" opacity=".65"/>
+  </symbol>
+  <symbol id="compound-interaction-swipe-carousel" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="5" y="10" width="18" height="28" rx="3"/><rect x="26" y="10" width="17" height="28" rx="3" opacity=".55"/><path d="M15 24h17m-5-5 5 5-5 5"/>
+  </symbol>
+</svg>

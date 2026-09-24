@@ -146,17 +146,22 @@ This repository provides structured master data across 3 standard formats:
   - [`color_palettes_50.json`](data/json/color_palettes_50.json) — 50 Trending palettes with hex codes and usage roles.
   - [`typography_50.json`](data/json/typography_50.json) — 50 Google Fonts / Western pairings.
   - [`theme_components.json`](data/json/theme_components.json) — Frameworks, surfaces, keyframes & components.
+  - [`compound_catalog_v1.json`](data/json/compound_catalog_v1.json) — A starter set of 50 named compounds with local SVG previews.
+  - [`compound_catalog.schema.json`](data/json/compound_catalog.schema.json) — The data contract for compound entries.
 * **YAML Data (`data/yaml/`):**
   - [`color_palettes_50.yaml`](data/yaml/color_palettes_50.yaml)
   - [`typography_50.yaml`](data/yaml/typography_50.yaml)
   - [`gem_plugin_config.yaml`](data/yaml/gem_plugin_config.yaml) — Gem, Custom GPT & Agent Plugin configuration.
 * **Cross-Over Templates (`templates/`):**
+  - [`themeplate_compound_skeleton.md`](templates/themeplate_compound_skeleton.md) — A placeholder-only themeplate scaffold linked to library IDs.
   - [`template_cyber_gothic.md`](templates/template_cyber_gothic.md) *(Cyberpunk × Gothic Victorian)*
   - [`template_arcane_academia.md`](templates/template_arcane_academia.md) *(Dark Academia × Arcane Mage)*
   - [`template_pastel_glitch.md`](templates/template_pastel_glitch.md) *(Pastel Kawaii × Vaporwave Glitch)*
   - [`template_solar_steampunk.md`](templates/template_solar_steampunk.md) *(Solarpunk × Victorian Steampunk)*
   - [`template_divine_occult.md`](templates/template_divine_occult.md) *(Celestial Light × Occult Manuscript)*
   - [`template_quiet_luxury_noir.md`](templates/template_quiet_luxury_noir.md) *(Quiet Wealth × Film Noir)*
+
+See [`docs/visual_library_standard.md`](docs/visual_library_standard.md) for catalog rules and expansion batches. Compound SVG symbols are stored locally in `data/svg/compound_preview_sprite.svg`.
 
 ---
 
